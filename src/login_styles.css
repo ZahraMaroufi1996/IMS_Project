@@ -1,0 +1,122 @@
+.Pre-Login-body {
+    background-image:url("../images/Pre-Login\ Page.svg");
+    object-fit: fill;
+    /* position: relative; */
+
+}
+
+.Login-body {
+    background-image:url("../images/Login\ Page\ –\ Language\ Toggle.svg");
+
+    /* position: relative; */ 
+}
+
+ .pre-login-logo {
+    margin : 400px auto ;
+    display: block;
+     /* position: absolute;  */
+    top: 100px;
+    
+    
+}
+
+.Login-container {
+ margin:200px auto;
+ display: block;
+}
+
+/* .Login-Avatar img {
+ margin:0 auto;
+ display: block;
+} */
+
+.Login-form{
+ margin:0 auto;
+ color: red;
+ display: block;
+}
+
+.username-container , .password-container {
+margin: 30px auto ;
+height : 5.2vh;
+width :340px ;
+border: 1px solid #707070;
+border-radius: 7px;
+display: flex;
+justify-content: center;
+opacity: 20%; 
+}
+
+input {
+     background-color : inherit;
+     border: none;
+     text-align: center;
+     color: white;
+     font-size: 20px;    
+}
+
+input::placeholder {
+    color: white;
+}
+
+button
+{
+    background-color:#83A79A ;
+    display: block;
+    border: 1px solid #707070;
+    border-radius: 7px;
+    margin-bottom: 20px; 
+    margin: 0 auto;
+    height: 56px;
+    width: 340px;
+    font-size: 20px; 
+    color : white ;
+    text-align: center;
+    }
+
+    .Login-Avatar {
+        margin: 0 auto;
+        border: 1px solid white;
+        border-radius: 50px;
+        height: 80px;
+        width: 80px;
+        margin-bottom: 20px;
+       }
+
+     .Avatar-image{
+        margin-top : 18px;
+        margin-left : 20px;
+       }
+
+
+       button.submit-button {
+        background-color:#68D5B0;
+        font-size: 22px; 
+        color : white ;
+       }
+
+    .Login-Logo-image{
+        display: block;
+        width: 200px;
+        height: 65px;
+        margin: 0 auto;
+    }
+
+    .Login-Logo-text {
+        text-align: center;
+        color: white;
+        font-size: 16px;
+        font-weight: thin;
+        /* font-family: ; */
+    }
+
+    .Login-Language {
+        background-color: #1A4348;
+        width: 74px;
+        height: 34px;
+        border: 1px solid #707070;
+        border-radius: 17px;
+        margin: 0 auto;
+        margin-top: 20px;
+        box-shadow: 0 3px 6px ;
+    }

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>IMS TOPOLOGY Page</title>
+    <meta charset="UTF-8" />
+    <link
+      href="src/IMS_TOPOLOGY_styles.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body class="IMS-TOPOLOGY-body">
+    <div class="sidebar">   
+
+      <button class="sidebar-button"> Save & Restart </button>
+        
+      <div class = "Selection-Box-in-Menu">
+        <div  class = "topology-in-menu" > 
+            <!-- <div class = "topology-in-menu-image">  -->
+              <img class = "topology-in-menu-image" src="images/IMS_TOPOLOGY_images/Group 8320.svg" />
+           <!-- </div> -->
+       </div>
+
+        <div  class ="configuration-in-menu" > 
+            <img class ="configuration-in-menu-image" src = "images/IMS_TOPOLOGY_images/Group 8321.svg" /> 
+        </div>
+
+        <div  class = "monitoring-in-menu" >
+             <img class = "monitoring-in-menu-image" src="images/IMS_TOPOLOGY_images/Group 8322.svg" /> 
+        </div>
+
+        <div  class = "troubleshooting-in-menu" > 
+            <img  class = "troubleshooting-in-menu-image" src="images/IMS_TOPOLOGY_images/Group 8323.svg" /> 
+        </div>
+
+        </div>
+
+        <div class="sidebar-logo">
+            <img src="images/IMS_TOPOLOGY_images/Group 8498.svg" />
+        </div>     
+    </div>
+
+    <div class="network-class">        
+        <div class="network-definition">
+            <span class="title-span">Network Definition</span>
+            <div class="network-definition-subnetmask">
+                <span>Subnet Mask</span>
+
+                <div class="subnetmask-boxes">
+                    <div class="subnetmask-box1"></div>
+                    <div  class="subnetmask-box2"></div>
+                    <div  class="subnetmask-box3"></div>
+                    <div  class="subnetmask-box4"></div>                  
+                </div>
+
+
+            </div>
+
+            <div class="network-definition-gateway">
+             <span>Gateway</span>
+                <div class="gateway-boxes">
+                    <div class="gateway-box1"></div>
+                    <div  class="gateway-box2"></div>
+                    <div  class="gateway-box3"></div>
+                    <div  class="gateway-box4"></div>                  
+                </div>
+
+            </div>
+
+        </div>
+        <button class="network-button">Set</button>
+    </div>
+
+    <div class="node-class">    
+        <div class="node-properties">    
+            <span class="title-span">Nodes IP Addresses</span>
+            <div class="node-name">
+                <span>Name</span>
+                <div  class="node-name-box"></div>  
+            </div>
+
+            <div class="node-ip">
+                <span>IP Address</span>
+                <div class="node-boxes">
+                    <div class="node-box1"></div>
+                    <div  class="node-box2"></div>
+                    <div  class="node-box3"></div>
+                    <div  class="node-box4"></div>                  
+                </div>
+            </div>
+
+            <button class ="add-node-button" >Add Node</button>
+
+            <div class="node-type">
+                <span>Node Types :</span>
+
+                <div class="node-type-checkboxes">
+                    <div class = "node-type-checkboxe1">
+                        <input type="radio" id="node-type-1" name="node-type-icon" value="P-CSCF">
+                        <label for="node-type-1">Core</label>
+                    </div>
+                    <div class = "node-type-checkboxe2">
+                        <input type="radio" id="node-type-2" name="node-type-icon" value="RTP Proxy">
+                        <label for="node-type-2">RTP Proxy</label> 
+                    </div>
+                    <div class = "node-type-checkboxe3">
+                        <input type="radio" id="node-type-3" name="node-type-icon" value="Core">
+                        <label for="node-type-3">P-CSCF</label>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>  
+
+
+
+        <div class="node-table">
+            <div class="node-table-titles">
+                 <div class="node-table-title1"><p>P-CSCF Nodes</p></div>
+                  <div class="node-table-title2"><p>RTP Proxy Nodes</p></div>
+                   <div class="node-table-title3"><p>Core Nodes</p></div>
+            </div>
+
+            <div class="node-table-content-title">
+                <div class="node-table-content-title-description" >
+                    <span>Node Name</span>
+                    <span>IP Address</span>
+                    <span>Status</span>
+                </div>
+            </div>
+
+            <div class="node-table-contents">
+
+                <div class="node-table-content1"></div>
+                <div class="node-table-content2"></div>
+                <div class="node-table-content3"></div>
+                <div class="node-table-content4"></div>
+        
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
+    <div class="box3">        
+    </div>
+
+    <div class="box4">        
+    </div>
+
+</body>
+</html>

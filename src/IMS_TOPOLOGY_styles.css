@@ -1,0 +1,543 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url(../Font_folder/firago_5.0.7/ttf/firago-latin-400-normal.ttf);
+}
+
+.IMS-TOPOLOGY-body {
+    background-color:rgba(0, 0, 0, 0.04) ;
+    /* opacity: 16% ; */
+}
+
+
+
+.sidebar {
+    width: 15.1vw;
+    height: 100vh;
+    background-color: #1A4348;
+    /* border: 1px solid #707070; */
+    /* border-top: 0.093vh;
+    border-bottom: 0.093vh;
+    border-left: 0.052vw;
+    border-right: 0.052vw;
+    border-color: #707070;
+    border-style: solid; */
+    /* border-radius: 20px; */
+    left: 0px;
+    top: 0px;
+    position: absolute;
+}
+
+.sidebar-logo {
+    width: 6.98vw;
+    height: 8.24vh;
+    bottom: 6.48vh;
+    left: 4.06vw;
+    position: absolute;
+}
+
+.sidebar-logo img {
+    width: 100%;
+    height: 100%;
+    /* display: block; */
+}
+
+.sidebar-button {
+    background-color: #68D5B0;
+    width: 9.58vw;
+    height: 3.70vh;
+    bottom: 27.13vh;
+    left: 3.64vw;
+    position: absolute;
+    color: white;
+    font-size: 1.66vh;
+    border-radius: 7px;
+    border: none;
+    
+}
+
+/* .sidebar-button button{
+    background-color: #68D5B0;
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-size: 18px;
+    /* display: block; 
+} */
+
+
+
+.topology-in-menu {
+    /* background-color:red; */
+    width: 15.1vw;
+    height: 7.13vh;
+    bottom: 69.54vh;
+    left: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.configuration-in-menu {
+    width: 15.1vw;
+    height: 7.13vh;
+    top: 34.44vh;
+    left: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.monitoring-in-menu {
+    width: 15.1vw;
+    height: 7.13vh;
+    bottom: 47.22vh;
+    left: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.troubleshooting-in-menu {
+    width: 15.1vw;
+    height: 7.13vh;
+    bottom: 36.85vh;
+    left: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* .Selection-Box-in-Menu img {
+    object-fit: contain;
+    left: 3.71vw; 
+    position: absolute;
+} */
+
+.topology-in-menu-image ,
+.monitoring-in-menu-image ,
+.troubleshooting-in-menu-image {
+    object-fit: contain;
+    left: 3.71vw; 
+    position: absolute;
+}
+
+.configuration-in-menu-image {
+    object-fit: contain;
+    left: 3.31vw; 
+    position: absolute;
+}
+
+
+.toolbar {
+    width: 84.89vw;
+    height: 5.92vh;
+    background-color: white;
+    right: 0px;
+    top: 0px;
+    position: absolute;
+}
+
+
+.network-class {    
+    background-color: white;
+    width: 78.75vw;
+    height: 9.35vh;
+    right: 4.69vw;
+    top : 8.52vh;
+    position: absolute;
+    border-radius: 20px;
+}
+
+.network-definition {
+    width: 48.91vw;
+    height: 3.7vh;
+    left: 1.19vw;
+    top : 2.82vh;   
+    position: absolute;
+    border: 0.5px solid red;
+    display: flex;
+
+}
+
+.network-definition-subnetmask {
+    width: 17.81vw;
+    height: 3.7vh;
+    right: 19.68vw;
+    position: absolute;
+    border: 0.5px solid red;
+     display: flex;
+}
+
+
+.network-definition-gateway {
+    width: 16.2vw;
+    height: 3.7vh;
+    right: 0vw;
+    position: absolute;
+    border: 0.5px solid red;
+    display: flex;
+}
+
+.network-definition span {
+ color:#83A79A ;
+ font-size: 1.66vh;
+ text-align: center;
+ top: 0.55vh ;
+ position: absolute;
+ /* font-family: */
+}
+
+
+.subnetmask-boxes , .gateway-boxes{
+    display: flex;
+}
+
+ .subnetmask-box1 , .gateway-box1 , .node-box1{
+    width: 2.604vw;
+    height: 3.7vh;
+    right: 0vw;
+    position: absolute;
+    border-radius: 0.65vh; 
+    background-color: #EEF5F2;
+ }
+
+ .subnetmask-box2 , .gateway-box2 , .node-box2 {
+    width: 2.604vw;
+    height: 3.7vh;
+    right: 3.125vw;
+    position: absolute;
+    border-radius: 0.65vh; 
+    background-color: #EEF5F2;
+ }
+
+ .subnetmask-box3 , .gateway-box3 , .node-box3 {
+    background-color: #EEF5F2;
+    width: 2.604vw;
+    height: 3.7vh;
+    right: 6.25vw;
+    position: absolute;
+    border-radius: 0.65vh; 
+ }
+
+ .subnetmask-box4 , .gateway-box4 , .node-box4 {
+    width: 2.604vw;
+    height: 3.7vh;
+    right: 9.43vw;
+    position: absolute;
+    border-radius: 0.65vh; 
+    background-color: #EEF5F2;
+ }
+
+
+ .network-button {
+    width: 7.29vw;
+    height: 3.7vh;
+    right: 1.45vw;
+    top: 2.87vh;
+    position: absolute;
+    border-style: none;
+    border-radius: 0.65vh; 
+    background-color: #1F666E;
+    color: white;
+ }
+
+
+
+.node-class {
+    background-color: white;
+    width: 47.39vw;
+    height: 72.31vh;
+    right: 36.04vw;
+    top : 20.46vh;
+    position: absolute;
+    border-radius: 20px;
+}
+
+.node-properties {
+    /* background-color: white; */
+    width: 44.61vw;
+    height: 9.91vh;
+    right: 1.58vw;
+    top : 3.15vh;
+    position: absolute;
+    /* border-radius: 20px; */
+    border : 1px solid red;
+    display: flex;
+}
+
+
+.node-ip {
+    width: 16.921vw;
+    height: 3.7vh;
+    right: 0vw;
+    top : 0vh;
+    position: absolute;
+    /* border-radius: 20px; */
+    border : 1px solid red;
+    display: flex;
+}
+
+.node-name {
+    width: 13.65vw;
+    height: 3.7vh;
+    right: 19.15vw;
+    top : 0vh;
+    position: absolute;
+    border : 1px solid red;
+    display: flex;
+}
+
+.node-name-box {
+    width: 10.42vw;
+    height: 3.7vh;
+    right: 0vw;
+    top : 0vh;
+    position: absolute;
+    border-radius: 0.65vh; 
+    background-color: #EEF5F2;
+}
+
+.add-node-button {
+    width: 5.73vw;
+    height: 3.7vh;
+    right: 0vw;
+    bottom: 0vh;
+    position: absolute;
+    border-radius: 0.65vh; 
+    background-color: #68D5B0;
+    color: white;
+    border-style: none;
+}
+
+.node-type {
+    width: 23.10vw;
+    height: 2.04vh;
+    right: 9.67vw;
+    top: 6.94vh;
+    position: absolute;
+    /* border-style: solid; */
+}
+
+.node-type-checkboxes{
+    display: flex;
+    right: 0vw;
+    top: 0vh;
+    position: absolute;
+}
+
+
+.node-type-checkboxe1 {
+    width: 3.19vw;
+    height: 2.04vh;
+    right: 0vw;
+    top: 0vh;
+    /* border-style: solid; */
+    position: absolute;
+    /* font-size: 1.48vh; */
+}
+
+.node-type-checkboxe2 {
+    width: 5.12vw;
+    height: 2.04vh;
+    right: 5.36vw;
+    top: 0vh;
+    /* border-style: solid; */
+    position: absolute;
+    /* font-size: 1.48vh; */
+}
+
+.node-type-checkboxe3 {
+    width: 4.13vw;
+    height: 2.04vh;
+    right: 12.49vw;
+    top: 0vh;
+    /* border-style: solid; */
+    position: absolute;
+    /* font-size: 1.48vh; */
+}
+
+/* .node-type-checkboxes input {
+    width: 0.73vw;
+    height: 1.29vh;
+    background-color: #37b2b2;
+    border-radius:50% ;
+} */
+
+/* #node-type-1 {
+    width: 0.73vw;
+    height: 1.29vh;
+    background-color: #37b2b2;
+    border-radius:50% ;
+} */
+
+label , .node-class span  , .network-class span{
+   color: #1A4348;
+   font-size: 1.48vh;
+   font-family:  myFirstFont;
+}
+
+span.title-span {
+   color: #83A79A;
+   font-size: 1.66vh;
+   font-family: myFirstFont;
+}
+
+button {
+   color: white;
+   font-size: 1.66vh;
+   font-family: myFirstFont; 
+}
+
+
+.node-table {
+    width: 42.99vw;
+    height: 20.51vh;
+    right: 1.58vw;
+    bottom: 30.18vh;
+    border: solid;
+    position: absolute;
+}
+
+
+.node-table-title3 {
+    width: 14.24vw;
+    height: 4.25vh;
+    right: 0vw;
+    top: 0vh;
+    border: solid;
+    position: absolute;
+    background-color: #1F666E;
+    color: white;
+    font-size: 1.66vh;
+    font-family: myFirstFont; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.node-table-title2{
+    width: 14.24vw;
+    height: 4.25vh;
+    right: 14.38vw;
+    top: 0vh;
+    border: solid;
+    position: absolute;
+    background-color: #1F666E;
+    color: white;
+    font-size: 1.66vh;
+    font-family: myFirstFont; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.node-table-title1{
+    width: 14.24vw;
+    height: 4.25vh;
+    left: 0vw;
+    top: 0vh;
+    border: solid;
+    position: absolute;
+    background-color: #1F666E;
+    color: white;
+    font-size: 1.66vh;
+    font-family: myFirstFont; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.node-table-content-title {
+    width: 42.66vw;
+    height: 4.25vh;
+    background-color: #1F666E;
+    right: 0.166vw; 
+    top: 4.7vh;
+    position: absolute;
+    border-color: white;
+}
+
+.node-table-content-title-description {
+    width: 31.9vw;
+    height: 1.76vh;
+    right: 9.088vw; 
+    top: 1.203vh;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+}
+
+.node-table-content-title-description span {
+   color: white;
+    font-size: 1.29vh;
+    font-family: myFirstFont;   
+}
+
+/* .node-table-content {
+   width: 31.9vw;
+    height: 1.76vh;
+    right: 9.088vw; 
+    top: 1.203vh;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+} */
+
+.node-table-contents {
+    /* width: 42.66vw;
+    right: 0.166vw; 
+    height: inherit;
+    border: 1px solid  red; */
+
+    width: 42.66vw;
+    height: 4.25vh;
+    background-color: red;
+    right: 0.166vw; 
+    top: 9.7vh;
+    position: absolute;
+    border-color: white;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+.box3 {
+    background-color: white;
+    width: 29.89vw;
+    height: 72.31vh;
+    right: 4.68vw;
+    top : 20.46vh;
+    position: absolute;
+    border-radius: 20px;
+}
+
+.box4 {
+     background-color: white;
+    width: 84.89vw;
+    height: 4.63vh;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    border-top: 0.046vh solid #83A79A ;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+}
+
