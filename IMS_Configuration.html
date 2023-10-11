@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>IMS TOPOLOGY Page</title>
+    <meta charset="UTF-8" />
+    <link
+      href="src/IMS_Configuration.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body class="IMS-TOPOLOGY-body">
+    <div class="toolbar-class">
+        <nav class="toolbar-nav">
+            <div class="toolbar-nav-content">
+                <a href="#"> <img src="images/IMS_TOPOLOGY_images/Title Bar Icon _ About.svg" /> </a> 
+                <a href="#"> <img src="images/IMS_TOPOLOGY_images/Title Bar Icon _ Help.svg" /> </a> 
+                <a href="#"> <img src="images/IMS_TOPOLOGY_images/Title Bar Icon _ Message.svg" /> </a> 
+                <a href="#"> <img src="images/IMS_TOPOLOGY_images/Title Bar Icon _ Sound.svg" /> </a>
+                <a href="#"> <img src="images/IMS_TOPOLOGY_images/Title Bar Icon _ Lock.svg" /> </a> 
+                <a href="#"> <img src="images/IMS_TOPOLOGY_images/Title Bar Icon _ Profile.svg" /> </a> 
+                <a href="#"> <img src="images/IMS_TOPOLOGY_images/Title Bar Icon _ Log Out.svg" /> </a> 
+                <a href="#"> <img src="images/IMS_TOPOLOGY_images/Title Bar Icon _ Exit.svg" /> </a>
+            </div>
+        </nav>
+    </div>
+
+
+    <div class="sidebar">   
+      <button class="sidebar-button"> Save & Restart </button>
+        
+      <div class = "Selection-Box-in-Menu">
+        <div  class = "topology-in-menu" > 
+            <!-- <div class = "topology-in-menu-image">  -->
+              <img class = "topology-in-menu-image" src="images/IMS_TOPOLOGY_images/Group 8320.svg" />
+           <!-- </div> -->
+       </div>
+
+        <div  class ="configuration-in-menu" > 
+            <img class ="configuration-in-menu-image" src = "images/IMS_TOPOLOGY_images/Group 8321.svg" /> 
+        </div>
+
+        <div  class = "monitoring-in-menu" >
+             <img class = "monitoring-in-menu-image" src="images/IMS_TOPOLOGY_images/Group 8322.svg" /> 
+        </div>
+
+        <div  class = "troubleshooting-in-menu" > 
+            <img  class = "troubleshooting-in-menu-image" src="images/IMS_TOPOLOGY_images/Group 8323.svg" /> 
+        </div>
+
+        </div>
+
+        <div class="sidebar-logo">
+            <img src="images/IMS_TOPOLOGY_images/Group 8498.svg" />
+        </div>     
+    </div>
+   
+
+    <div class="total-information-body-class">   
+        
+        <div class="General-class">
+            <div class="General-class-content">
+                <div class="General-class-content-title">General</div>
+                <div class="General-class-content-field1">
+                    <label for="test">IMS Domain*</label>
+                    <input class="General-class-content-field1-box" id="test"  type="text" name="IMS_Domain"/>
+                </div>
+
+                <div class="General-class-content-field2">
+                    <span>Enable Homer In :</span>
+                    <div class="General-class-content-field2-checkboxes">
+                        <div class = "General-class-content-field2-checkbox1">
+                            <input type="checkbox" id="General-type-1" name="General-type-icon" value="P-CSCF">
+                            <label for="General-type-1">P-CSCF</label>
+                        </div>
+                        <div class = "General-class-content-field2-checkbox2">
+                            <input type="checkbox" id="General-type-2" name="General-type-icon" value="S-CSCF">
+                            <label for="General-type-2">S-CSCF</label> 
+                        </div>
+                        <div class = "General-class-content-field2-checkbox3">
+                            <input type="checkbox" id="General-type-3" name="General-type-icon" value="I-CSCF">
+                            <label for="General-type-3">I-CSCF</label>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="P-CSCF-class">
+            <div class="P-CSCF-class-content">
+                <div class="P-CSCF-class-content-title">P-CSCF</div>
+                <div class="P-CSCF-class-content-field1">
+
+
+                </div>
+
+
+                <div class="P-CSCF-class-content-field2">
+                    <p>Supported IPsec Encryption Algorithms :</p>
+                    <div class="P-CSCF-class-content-field2-checkboxes">
+                        <div class = "P-CSCF-class-content-field2-checkbox1">
+                            <input type="checkbox" id="Encryption-Algorithm-type-1" name="Encryption-Algorithm-type-icon" value="AES-CBC">
+                            <label for="Encryption-Algorithm-type-1">AES-CBC</label> 
+                        </div>
+                        <div class = "P-CSCF-class-content-field2-checkbox2">
+                            <input type="checkbox" id="Encryption-Algorithm-type-2" name="Encryption-Algorithm-type-icon" value="DES-EDE3-CBC">
+                            <label for="Encryption-Algorithm-type-2">DES-EDE3-CBC</label> 
+                        </div>
+                        <div class = "P-CSCF-class-content-field2-checkbox3">
+                            <input type="checkbox" id="Encryption-Algorithm-type-3" name="Encryption-Algorithm-type-icon" value="Plain">
+                            <label for="Encryption-Algorithm-type-3">Plain (No encryption)</label> 
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="P-CSCF-class-content-field3"></div>
+
+
+                <div class="P-CSCF-class-content-field4">
+                    <div class = "P-CSCF-class-content-field4-input1">
+                        <label for="shared-memory">Shared Memory*</label>
+                        <input type="text" id="shared-memory" name="shared-memory">
+                        <span>MB</span>
+                    </div>
+                    <div class = "P-CSCF-class-content-field4-input2">
+                        <label for="private-memory">Private Memory*</label> 
+                        <input type="text" id="private-memory" name="private-memory">
+                        <span>MB</span>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="P-CSCF-class-Rx-configuration">
+                <div class="P-CSCF-class-Rx-configuration-title">Rx Configuration</div>
+                <div class="P-CSCF-class-Rx-configuration-field1">
+                    <span>PCRF IP Address*</span>
+                    <div class="PCRF-IP-Address-boxes">
+                        <div class="PCRF-IP-Address-box1"></div>
+                        <div  class="PCRF-IP-Address-box2"></div>
+                        <div  class="PCRF-IP-Address-box3"></div>
+                        <div  class="PCRF-IP-Address-box4"></div>                  
+                    </div>
+                </div>
+
+                <div class="P-CSCF-class-Rx-configuration-field2">
+                    <label for="Rx-configuration-field2">PCRF FQDN*</label>
+                    <input type="text" id="Rx-configuration-field2">
+                </div>
+
+                <div class="P-CSCF-class-Rx-configuration-field3">
+                    <label for="Rx-configuration-field3">PCRF Realm*</label>
+                    <input type="text" id="Rx-configuration-field3">
+                </div>
+
+                <div class="P-CSCF-class-Rx-configuration-field4">
+                    <span>Transport Protocol</span>
+                    <div class="Transport-Protocol-class1">
+                        <input type="radio" id="Transport-Protocol-type-1" name="Transport_Protocol" value="SCTP" />
+                        <label for="Transport-Protocol-type-1">SCTP</label>
+                    </div>
+
+                    <div class="Transport-Protocol-class2">
+                        <input type="radio" id="Transport-Protocol-type-2" name="Transport_Protocol" value="TCP" />
+                        <label for="Transport-Protocol-type-2">TCP</label>
+                    </div>
+
+                </div>
+
+                <div class="P-CSCF-class-Rx-configuration-field5">
+                    <span>Rx Source Port</span>
+                    <div class="Rx-Source-Port-button"></div>
+                    <div class="Rx-Source-Port-box"></div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="I-CSCF-class">
+            <span class = "I-CSCF-class-content-title">I-CSCF</span>
+            <div class = "I-CSCF-class-content-input1">
+                <label for="shared-memory">Shared Memory*</label>
+                    <input type="text" id="shared-memory" name="shared-memory">
+                    <span>MB</span>
+                </div>
+                <div class = "I-CSCF-class-content-input2">
+                    <label for="private-memory">Private Memory*</label> 
+                    <input type="text" id="private-memory" name="private-memory">
+                    <span>MB</span>
+                </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="S-CSCF-class"></div>
+        <div class="RTP-Proxy-class"></div>
+        <button class="information-save-button">Save</button>
+        <button class="information-edit-button">Save</button>
+
+    </div>
+
+</body>
+</html>

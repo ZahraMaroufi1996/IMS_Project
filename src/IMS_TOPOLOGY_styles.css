@@ -132,6 +132,26 @@
     position: absolute;
 }
 
+.toolbar-nav-content {
+    width: 23.62vw;
+    height: 2.77vh;
+    right: 4.66vw;
+    top: 1.57vh;
+    position: absolute;
+    display: flex;
+    /* border: 1px solid red; */
+    justify-content: space-between;
+}
+
+.toolbar-nav-content img {
+    width: 1.56vw;
+    height: 2.77vh;;
+    /* object-fit: ; */
+}
+
+
+
+
 
 .network-class {    
     background-color: white;
@@ -641,6 +661,7 @@ button {
     font-size: 1.66vh;
     font-family: myFirstFont; 
 }
+
 
 
 

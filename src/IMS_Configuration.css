@@ -1,0 +1,614 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url(../Font_folder/firago_5.0.7/ttf/firago-latin-400-normal.ttf);
+}
+
+.IMS-TOPOLOGY-body {
+    background-color:rgba(0, 0, 0, 0.04) ;
+    /* opacity: 16% ; */
+}
+
+
+.sidebar {
+    width: 15.1vw;
+    height: 100vh;
+    background-color: #1A4348;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+}
+
+.sidebar-logo {
+    width: 6.98vw;
+    height: 8.24vh;
+    bottom: 6.48vh;
+    left: 4.06vw;
+    position: absolute;
+}
+
+.sidebar-logo img {
+    width: 100%;
+    height: 100%;
+    /* display: block; */
+}
+
+.sidebar-button {
+    background-color: #68D5B0;
+    width: 9.58vw;
+    height: 3.70vh;
+    bottom: 27.13vh;
+    left: 3.64vw;
+    position: absolute;
+    color: white;
+    font-size: 1.66vh;
+    border-radius: 7px;
+    border: none;
+    
+}
+
+.topology-in-menu {
+    /* background-color:red; */
+    width: 15.1vw;
+    height: 7.13vh;
+    bottom: 69.54vh;
+    left: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.configuration-in-menu {
+    width: 15.1vw;
+    height: 7.13vh;
+    top: 34.44vh;
+    left: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.monitoring-in-menu {
+    width: 15.1vw;
+    height: 7.13vh;
+    bottom: 47.22vh;
+    left: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.troubleshooting-in-menu {
+    width: 15.1vw;
+    height: 7.13vh;
+    bottom: 36.85vh;
+    left: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.topology-in-menu-image ,
+.monitoring-in-menu-image ,
+.troubleshooting-in-menu-image {
+    object-fit: contain;
+    left: 3.71vw; 
+    position: absolute;
+}
+
+.configuration-in-menu-image {
+    object-fit: contain;
+    left: 3.31vw; 
+    position: absolute;
+}
+
+
+.toolbar-class {
+    width: 84.89vw;
+    height: 5.92vh;
+    background-color: white;
+    right: 0px;
+    top: 0px;
+    position: absolute;
+}
+
+.toolbar-nav-content {
+    width: 23.62vw;
+    height: 2.77vh;
+    right: 4.66vw;
+    top: 1.57vh;
+    position: absolute;
+    display: flex;
+    /* border: 1px solid red; */
+    justify-content: space-between;
+}
+
+.toolbar-nav-content img {
+    width: 1.56vw;
+    height: 2.77vh;;
+    /* object-fit: ; */
+}
+
+.total-information-body-class {
+    width: 78.75vw;
+    height: 84.26vh;
+    right: 4.68vw;
+    top: 8.52vh;
+    position: absolute;
+    background-color: white;
+    border-radius: 1.85vh;
+}
+
+.General-class {
+    width: 36.82vw;
+    height: 12.68vh;
+    left: 2.083vw;
+    top: 3.70vh;
+    border: 0.092vh solid #D5E8E1;
+    position: absolute;
+    border-radius: 0.83vh;
+}
+
+.General-class-content {
+    width: 34.48vw;
+    height: 8.42vh;
+    right: 1.021vw;
+    top: 1.75vh;
+    /* border: 0.092vh solid #D5E8E1; */
+    position: absolute;
+    border-radius: 0.83vh;
+}
+
+.General-class-content-field1 {
+    width: 29.06vw;
+    height: 3.70vh;
+    right: 0vw;
+    top: 0vh;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.General-class-content-title {
+    top: 0.98vh;
+    left: 0 ;
+    width: 3.17vw;
+    height: 2.22vh;
+    text-align: center;
+    color: #83A79A;
+    font-size: 1.66vh;
+    font-family: myFirstFont; 
+    position: absolute;
+}
+
+.General-class-content-field1-box {
+    width: 23.125vw;
+    height: 3.70vh;
+    right: 0vw;
+    top: 0vh;
+    background-color: #EEF5F2;
+    border-radius: 0.64vh;
+    position: absolute;
+}
+
+label , span , p {
+   color: #1A4348;
+   font-size: 1.48vh;
+   font-family: myFirstFont; 
+}
+
+input.General-class-content-field1-box {
+    border: none;
+}
+
+
+
+.General-class-content-field2 {
+    width: 28.92vw;
+    height: 2.037vh;
+    right: 0vw;
+    bottom: 0vh;
+    position: absolute;
+    display: flex;
+}
+
+
+.General-class-content-field2-checkbox1 {
+    width: 3.87vw;
+    height: 2.04vh;
+    right: 0vw;
+    top: 0vh;
+    position: absolute;
+}
+
+
+.General-class-content-field2-checkbox2 {
+    width: 4.082vw;
+    height: 2.04vh;
+    right: 7.91vw;
+    top: 0vh;
+    position: absolute;
+}
+
+.General-class-content-field2-checkbox3 {
+    width: 4.082vw;
+    height: 2.04vh;
+    right: 16.039vw;
+    top: 0vh;
+    position: absolute;
+}
+
+.P-CSCF-class {
+    width: 36.82vw;
+    height: 61.57vh;
+    left: 2.083vw;
+    bottom: 3.70vh;
+    border: 0.092vh solid #D5E8E1;
+    position: absolute;
+    border-radius: 0.83vh;
+}
+
+
+.P-CSCF-class-content {
+    width: 34.41vw;
+    height: 21.57vh;
+    left: 1.31vw;
+    top: 2.41vh;
+    border: 0.092vh solid #D5E8E1;
+    position: absolute;
+    border-radius: 0.83vh;
+}
+
+.P-CSCF-class-content-title {
+    font-size: 1.66vh;
+    font-family: myFirstFont; 
+    color: #83A79A;
+}
+
+.P-CSCF-class-content-field1 {
+    width: 7.62vw;
+    height: 1.94vh;
+    left: 5.61vw;
+    top: 0vh;
+    border: 0.092vh solid #D5E8E1;
+    position: absolute;
+    border-radius: 0.83vh;
+}
+
+.P-CSCF-class-content-field2 {
+    width: 28.82vw;
+    height: 5.69vh;
+    left: 5.51vw;
+    bottom: 11.11vh;
+    /* border: 0.092vh solid #D5E8E1; */
+    position: absolute;
+    border-radius: 0.83vh;
+} 
+
+
+
+
+.P-CSCF-class-content-field3 {
+    width: 7.048vw;
+    height: 1.94vh;
+    left: 5.51vw;
+    bottom: 6.53vh;
+    border: 0.092vh solid #D5E8E1;
+    position: absolute;
+    border-radius: 0.83vh;
+}
+
+.P-CSCF-class-content-field4 {
+    width: 28.95vw;
+    height: 3.7vh;
+    left: 5.51vw;
+    bottom: 0vh;
+    /* border: 0.092vh solid #D5E8E1; */
+    position: absolute;
+    border-radius: 0.83vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} 
+
+
+.P-CSCF-class-content-field4-input1 ,
+.P-CSCF-class-content-field4-input2  ,
+.I-CSCF-class-content-input1 ,
+.I-CSCF-class-content-input2 {
+    height: 3.7vh;
+    width: 11.61vw;
+    /* top:0 ;
+    position: absolute; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+#private-memory , #shared-memory {
+    height: 3.7vh;
+    width: 3.125vw;
+    /* top:0 ;
+    position: absolute; */
+    border: none;
+    background-color: #F9F9F9;
+    border-radius: 0.64vh;
+}
+
+.P-CSCF-class-Rx-configuration {
+    width: 29.01vw;
+    height: 32.59vh;
+    right: 1.09vw;
+    bottom: 2.037vh;
+    position: absolute;
+    border-radius: 0.83vh;
+} 
+
+
+.P-CSCF-class-Rx-configuration-field1 {
+    width: 19.43vw;
+    height: 3.7vh;
+    right: 0.88vw;
+    top: 1.75vh;
+    position: absolute;
+    border-radius: 0.83vh;
+    display: flex;
+    align-items: center;
+}
+
+.P-CSCF-class-Rx-configuration-field2 {
+    width: 19.63vw;
+    height: 3.7vh;
+    right: 0.88vw;
+    top: 8.79vh;
+    position: absolute;
+    border-radius: 0.83vh;
+    display: flex;
+    align-items: center;
+}
+
+.P-CSCF-class-Rx-configuration-field3 {
+    width: 19.43vw;
+    height: 3.7vh;
+    right: 0.88vw;
+    top: 15.83vh;
+    position: absolute;
+    border-radius: 0.83vh;
+    display: flex;
+    align-items: center;
+} 
+
+
+.P-CSCF-class-Rx-configuration-field4 {
+    width: 19.32vw;
+    right: 0.83vw;
+    top: 22.68vh;
+    height: 2.037vh;
+    position: absolute;
+    border-radius: 0.83vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Transport-Protocol-class-2 {
+    width: 3.3vw;
+    top: 0vh;
+    right: 0vh;
+    height: 2.037vh;
+    position: absolute;
+    border-radius: 0.83vh;
+}
+
+.Transport-Protocol-class-1 {
+    width: 3.3vw;
+    top: 0vh;
+    left: 18.70vh;
+    height: 2.037vh;
+    position: absolute;
+    border-radius: 0.83vh;
+}
+
+
+.P-CSCF-class-Rx-configuration-field5 {
+    width: 19.27vw;
+    right: 1.11vw;
+    bottom: 1.29vh;
+    height: 3.7vh;
+    position: absolute;
+    border-radius: 0.83vh;
+    display: flex;
+    align-items: center;
+}   
+
+.Rx-Source-Port-box {
+    width: 8.48vw;
+    right: 0vw;
+    top: 0vh;
+    height: 3.7vh;
+    position: absolute;
+    background-color: #F9F9F9;
+}
+
+
+.P-CSCF-class-content-field2 p {
+    margin-top: 0;
+}
+
+
+
+.P-CSCF-class-content-field2-checkboxes {
+    display: flex;
+    justify-content: space-between;
+}
+
+.P-CSCF-class-content-field2-checkbox1 {
+    width: 4.68vw;
+    left: 0vw;
+    bottom: 0vh; 
+    height: 2.037vh;
+    position: absolute;
+    color: #1A4348;
+    font-size: 1.48vh;
+    font-family: myFirstFont;
+}
+
+
+.P-CSCF-class-content-field2-checkbox2 {
+    width: 6.94vw;
+    left: 8.85vw;
+    bottom: 0vh; 
+    height: 2.037vh;
+    position: absolute;
+    color: #1A4348;
+    font-size: 1.48vh;
+    font-family: myFirstFont;
+}
+
+.P-CSCF-class-content-field2-checkbox3 {
+   width: 8.92vw;
+    right: 0vw;
+    bottom: 0vh; 
+    height: 2.037vh;
+    position: absolute;
+    color: #1A4348;
+    font-size: 1.48vh;
+    font-family: myFirstFont;
+}
+
+.I-CSCF-class-content-title {
+    color: #83A79A;
+    font-size: 1.66vh;
+    font-family: myFirstFont;
+}
+
+
+.PCRF-IP-Address-boxes
+{
+    display: flex;
+}
+
+
+.PCRF-IP-Address-box1 { 
+    width: 2.604vw;
+    height: 3.7vh;
+    right: 0vw;
+    position: absolute;
+    border-radius: 0.65vh; 
+    background-color: #EEF5F2;
+    top: 0vh ;
+ }
+
+
+.PCRF-IP-Address-box2 {
+    width: 2.604vw;
+    height: 3.7vh;
+    right: 3.125vw;
+    position: absolute;
+    border-radius: 0.65vh; 
+    background-color: #EEF5F2;
+    top: 0vh ;
+ }
+
+.PCRF-IP-Address-box3 {
+    background-color: #EEF5F2;
+    width: 2.604vw;
+    height: 3.7vh;
+    right: 6.25vw;
+    position: absolute;
+    border-radius: 0.65vh; 
+    top: 0vh ;
+ }
+
+.PCRF-IP-Address-box4 {
+    width: 2.604vw;
+    height: 3.7vh;
+    right: 9.43vw;
+    position: absolute;
+    border-radius: 0.65vh; 
+    background-color: #EEF5F2;
+    top: 0vh ;
+ }
+
+input#Rx-configuration-field2 ,
+input#Rx-configuration-field3 {
+    width: 12.03vw;
+    height: 3.7vh;
+    right: 0vw;
+    position: absolute;
+    border-radius: 0.65vh; 
+    background-color: #EEF5F2;
+    top: 0vh ;
+    border: none;
+}
+
+
+
+
+
+.I-CSCF-class {
+    width: 36.35vw;
+    height: 6.94vh;
+    right: 2.083vw;
+    top: 3.70vh;
+    border: 0.092vh solid #D5E8E1;
+    position: absolute;
+    border-radius: 0.83vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.S-CSCF-class {
+    width: 36.35vw;
+    height: 13.33vh;
+    right: 2.083vw;
+    top: 13.24vh;
+    border: 0.092vh solid #D5E8E1;
+    position: absolute;
+    border-radius: 0.83vh;
+}
+
+.RTP-Proxy-class {
+    width: 36.35vw;
+    height: 45.09vh;
+    right: 2.083vw;
+    top: 29.166vh;
+    border: 0.092vh solid #D5E8E1;
+    position: absolute;
+    border-radius: 0.83vh;
+}
+
+ .information-save-button {
+    width: 7.29vw;
+    height: 3.7vh;
+    right: 1.46vw;
+    bottom: 3.24vh;
+    position: absolute;
+    border-style: none;
+    border-radius: 0.65vh; 
+    background-color: #1F666E;
+ }
+
+ .information-edit-button {
+    width: 7.29vw;
+    height: 3.7vh;
+    right: 9.68vw;
+    bottom: 3.24vh;
+    position: absolute;
+    border-style: none;
+    border-radius: 0.65vh; 
+    background-color: #1F666E;
+ }
+
+button {
+   color: white;
+   font-size: 1.66vh;
+   font-family: myFirstFont; 
+}
