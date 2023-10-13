@@ -56,16 +56,26 @@
 }
 
 .topology-in-menu {
-    /* background-color:red; */
     width: 15.1vw;
     height: 7.13vh;
     bottom: 69.54vh;
     left: 0;
     position: absolute;
+}
+
+.topology-in-menu-content {
+    width: 6.38vw;
+    height: 2.77vh;
+    bottom: 2.14vh;
+    left: 3.71vw;
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
+    /* background-color: white; */
+    /* border:0.5px solid black; */
 }
+
 
 .configuration-in-menu {
     width: 15.1vw;
@@ -73,9 +83,19 @@
     top: 34.44vh;
     left: 0;
     position: absolute;
+}
+
+.configuration-in-menu-content {
+    width: 8.88vw;
+    height: 4.12vh;
+    bottom: 1.48vh;
+    left: 3.31vw;
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
+    /* background-color: white; */
+    /* border:0.5px solid black; */
 }
 
 
@@ -85,10 +105,19 @@
     bottom: 47.22vh;
     left: 0;
     position: absolute;
+}
+
+.monitoring-in-menu-content {
+    width: 7.18vw;
+    height: 2.77vh;
+    bottom: 2.175vh;
+    left: 3.71vw;
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 
 .troubleshooting-in-menu {
     width: 15.1vw;
@@ -96,33 +125,47 @@
     bottom: 36.85vh;
     left: 0;
     position: absolute;
+}
+
+.troubleshooting-in-menu-content {
+    width: 9.89vw;
+    height: 2.77vh;
+    bottom: 2.19vh;
+    left: 3.71vw;
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.Selection-Box-in-Menu span {
+   color: white;
+   font-size: 1.48vh;
+   font-family: myFirstFont; 
+   text-align: center;
+}
 
-/* .Selection-Box-in-Menu img {
-    object-fit: contain;
-    left: 3.71vw; 
-    position: absolute;
-} */
+.configuration-in-menu-image {
+ width: 2.31vw;
+ height: 4.12vh;
+ left: 0;
+ top: 0;
+ position: absolute;
+}
 
 .topology-in-menu-image ,
 .monitoring-in-menu-image ,
 .troubleshooting-in-menu-image {
-    object-fit: contain;
-    left: 3.71vw; 
+    height: 2.77vh;
+    width: 1.56vw;
+    left: 0;
+    top: 0;
     position: absolute;
+} 
+
+a {
+    text-decoration: none;
 }
-
-.configuration-in-menu-image {
-    object-fit: contain;
-    left: 3.31vw; 
-    position: absolute;
-}
-
-
 .toolbar-class {
     width: 84.89vw;
     height: 5.92vh;

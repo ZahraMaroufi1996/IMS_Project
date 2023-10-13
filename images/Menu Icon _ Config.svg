@@ -1,15 +1,5 @@
-<svg id="Group_8321" data-name="Group 8321" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="170.494" height="44.493" viewBox="0 0 170.494 44.493">
-  <defs>
-    <clipPath id="clip-path">
-      <rect width="122" height="21" fill="none"/>
-    </clipPath>
-  </defs>
-  <g id="Repeat_Grid_3" data-name="Repeat Grid 3" transform="translate(48.494 10.289)" clip-path="url(#clip-path)">
-    <g transform="translate(-48.494 -10.289)">
-      <text id="CONFIGURATION" transform="translate(48.494 27.289)" fill="#fff" font-size="16" font-family="SegoeUI-Light, Segoe UI" font-weight="300" letter-spacing="0.02em"><tspan x="0" y="0">CONFIGURATION</tspan></text>
-    </g>
-  </g>
-  <g id="Menu_Icon___Topology" data-name="Menu Icon _ Topology" transform="translate(0)">
+<svg xmlns="http://www.w3.org/2000/svg" width="44.493" height="44.493" viewBox="0 0 44.493 44.493">
+  <g id="Menu_Icon___Topology" data-name="Menu Icon _ Topology" transform="translate(0 0)">
     <g id="Group_8337" data-name="Group 8337">
       <path id="Path_6247" data-name="Path 6247" d="M31,15l-.7-.3A14.545,14.545,0,0,0,16.7,1.1L16.4.4a.842.842,0,0,0-.7-.4.752.752,0,0,0-.7.5l-.3.6A14.414,14.414,0,0,0,1.1,14.7L.5,15a.781.781,0,0,0-.4.4.731.731,0,0,0,.4,1l.7.3A14.414,14.414,0,0,0,14.8,30.3l.2.7a.752.752,0,0,0,.7.5h0a.752.752,0,0,0,.7-.5l.3-.6A14.414,14.414,0,0,0,30.3,16.8l.6-.3a.781.781,0,0,0,.4-.4A.714.714,0,0,0,31,15ZM15.7,28.9A13.2,13.2,0,1,1,29,15.7,13.166,13.166,0,0,1,15.7,28.9Z" transform="translate(6.514 6.497)" fill="#fff"/>
       <path id="Path_6247-2" data-name="Path 6247" d="M30.978,15l-.7-.3a14.545,14.545,0,0,0-13.6-13.6l-.3-.7a.842.842,0,0,0-.7-.4.752.752,0,0,0-.7.5l-.3.6a14.414,14.414,0,0,0-13.6,13.6l-.6.3a.781.781,0,0,0-.4.4.731.731,0,0,0,.4,1l.7.3a14.414,14.414,0,0,0,13.6,13.6l.2.7a.752.752,0,0,0,.7.5h0a.752.752,0,0,0,.7-.5l.3-.6a14.414,14.414,0,0,0,13.6-13.6l.6-.3a.781.781,0,0,0,.4-.4A.714.714,0,0,0,30.978,15Zm-15.3,13.9a13.2,13.2,0,1,1,13.3-13.2A13.166,13.166,0,0,1,15.678,28.9Z" transform="translate(0 22.219) rotate(-45)" fill="#fff"/>

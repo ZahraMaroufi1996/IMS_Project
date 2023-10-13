@@ -33,26 +33,37 @@
 
 
     <div class="sidebar">   
-      <button class="sidebar-button"> Save & Restart </button>
+        <button class="sidebar-button"> Save & Restart </button>
         
-      <div class = "Selection-Box-in-Menu">
-        <div  class = "topology-in-menu" > 
-            <!-- <div class = "topology-in-menu-image">  -->
-              <img class = "topology-in-menu-image" src="images/IMS_TOPOLOGY_images/Group 8320.svg" />
-           <!-- </div> -->
-       </div>
+        <div class = "Selection-Box-in-Menu">
+            <div class = "topology-in-menu" > 
+                <a href="IMS_Topology.html" class = "topology-in-menu-content"> 
+                    <img class = "topology-in-menu-image" src="images/Menu Icon _ Topology.svg" />
+                    <span>TOPOLOGY</span>
+                </a>
+            </div>
 
-        <div  class ="configuration-in-menu" > 
-            <img class ="configuration-in-menu-image" src = "images/IMS_TOPOLOGY_images/Group 8321.svg" /> 
-        </div>
+            <div class ="configuration-in-menu" > 
+                <di class="selected-menu"></div>
+                <a href="IMS_Configuration.html" class = "configuration-in-menu-content"> 
+                    <img class ="configuration-in-menu-image" src = "images/Menu Icon _ Config.svg" /> 
+                    <span>CONFIGURATION</span>
+                </a>
+            </div>
 
-        <div  class = "monitoring-in-menu" >
-             <img class = "monitoring-in-menu-image" src="images/IMS_TOPOLOGY_images/Group 8322.svg" /> 
-        </div>
+            <div  class = "monitoring-in-menu" >
+                <a class = "monitoring-in-menu-content">
+                    <img class = "monitoring-in-menu-image" src="images/Group 8329.svg" /> 
+                    <span>MONITORING</span>
+                </a>
+            </div>
 
-        <div  class = "troubleshooting-in-menu" > 
-            <img  class = "troubleshooting-in-menu-image" src="images/IMS_TOPOLOGY_images/Group 8323.svg" /> 
-        </div>
+            <div  class = "troubleshooting-in-menu" > 
+                <a href="IMS_Troubleshooting.html" class = "troubleshooting-in-menu-content">
+                    <img  class = "troubleshooting-in-menu-image" src="images/Group 8332.svg" /> 
+                    <span>TROUBLESHOOTING</span>
+                </a>
+            </div>
 
         </div>
 
@@ -98,10 +109,13 @@
             <div class="P-CSCF-class-content">
                 <div class="P-CSCF-class-content-title">P-CSCF</div>
                 <div class="P-CSCF-class-content-field1">
-
-
+                    <span>Enable IPsec :</span>
+                        <!-- <div class="slider-div">  -->
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
                 </div>
-
 
                 <div class="P-CSCF-class-content-field2">
                     <p>Supported IPsec Encryption Algorithms :</p>
@@ -122,7 +136,14 @@
                     </div>
                 </div>
 
-                <div class="P-CSCF-class-content-field3"></div>
+                <div class="P-CSCF-class-content-field3">
+                    <span>Enable TLS</span>
+                        <!-- <div class="slider-div">  -->
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
 
 
                 <div class="P-CSCF-class-content-field4">
@@ -146,10 +167,10 @@
                 <div class="P-CSCF-class-Rx-configuration-field1">
                     <span>PCRF IP Address*</span>
                     <div class="PCRF-IP-Address-boxes">
-                        <div class="PCRF-IP-Address-box1"></div>
-                        <div  class="PCRF-IP-Address-box2"></div>
-                        <div  class="PCRF-IP-Address-box3"></div>
-                        <div  class="PCRF-IP-Address-box4"></div>                  
+                        <input type="text" name="PCRF_IP_Address_box1" class="PCRF-IP-Address-box1">
+                        <input type="text" name="PCRF_IP_Address_box1" class="PCRF-IP-Address-box2">
+                        <input type="text" name="PCRF_IP_Address_box1" class="PCRF-IP-Address-box3">
+                        <input type="text" name="PCRF_IP_Address-box1" class="PCRF-IP-Address-box4">                  
                     </div>
                 </div>
 
@@ -178,9 +199,20 @@
                 </div>
 
                 <div class="P-CSCF-class-Rx-configuration-field5">
+                    <!-- <span>Rx Source Port</span>
+                    <div class="Rx-Source-Port-button">
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="Rx-Source-Port-box"></div> -->
                     <span>Rx Source Port</span>
-                    <div class="Rx-Source-Port-button"></div>
-                    <div class="Rx-Source-Port-box"></div>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                    <input type="text" id="Rx-Source-Port" name="Rx_Source_Port">
                 </div>
             </div>
 
@@ -202,6 +234,127 @@
         </div>
 
 
+        <div class="S-CSCF-class">
+            <div class="S-CSCF-class-content">
+                <span class = "S-CSCF-class-content-title">S-CSCF</span>
+                <div class = "S-CSCF-class-content-inputs">
+                    <div class = "S-CSCF-class-content-input1">
+                        <label for="Minimum-Register-Time">Minimum Register Time</label>
+                        <input type="text" id="Minimum-Register-Time" name="Minimum_Register_Time">
+                        <span>S</span>
+                    </div>
+                    <div class = "S-CSCF-class-content-input2">
+                        <label for="Maximum-Register-Time">Maximum Register Time</label>
+                        <input type="text" id="Maximum-Register-Time" name="Maximum_Register_Time">
+                        <span>S</span>
+                    </div>
+                    <div class = "S-CSCF-class-content-input3">
+                        <label for="shared-memory">Shared Memory*</label>
+                        <input type="text" id="shared-memory" name="shared-memory">
+                        <span>MB</span>
+                    </div>
+                    <div class = "S-CSCF-class-content-input4">
+                        <label for="private-memory">Private Memory*</label> 
+                        <input type="text" id="private-memory" name="private-memory">
+                        <span>MB</span>
+                    </div>
+                </div>
+            </div>               
+        </div>
+
+        <div class="RTP-Proxy-class">
+        <div class="RTP-Proxy-class-content">
+                <span class = "RTP-Proxy-class-content-title">RTP Proxy</span>
+                <div class = "RTP-Proxy-class-content-inputs">
+                    <div class = "RTP-Proxy-class-content-input1">
+                        <span>Supported HD Codecs :</span>
+                        <div class="RTP-Proxy-class-content-input1-checkboxes">
+                            <div class = "RTP-Proxy-class-content-input1-checkbox1">
+                                <input type="checkbox" id="Supported-HD-Codecs-type-1" name="Supported-HD-Codecs-type-icon" value="G.722">
+                                <label for="Supported-HD-Codecs-type-1">G.722</label>
+                            </div>
+                            <div class = "RTP-Proxy-class-content-input1-checkbox2">
+                                <input type="checkbox" id="Supported-HD-Codecs-type-2" name="Supported-HD-Codecs-type-icon" value="AMR-WB">
+                                <label for="Supported-HD-Codecs-type-2">AMR-WB</label> 
+                            </div>
+                        </div>
+        
+                    </div>
+                    <div class = "RTP-Proxy-class-content-input2">
+                        <span>Enable SRTP</span>
+                        <div class="slider-div">
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class = "RTP-Proxy-class-content-input3">
+                       <div class = "RTP-Proxy-Ports-title"><span>Outbound RTP Proxy Port Range :</span></div>
+                        <div class = "RTP-Proxy-Ports">
+                            <div class = "RTP-Proxy-Inbound-Port-Minimum">
+                                <label for="Inbound-Port-Minimum">Port Minimum*</label> 
+                                <input type="text" id="Inbound-Port-Minimum" class="port" name="Inbound_Port_Minimum">
+                            </div>
+                            <div class = "RTP-Proxy-Inbound-Port-Maximum">
+                                <label for="Inbound-Port-Maximum">Port Maximum*</label> 
+                                <input type="text" id="Inbound-Port-Maximum" class="port"  name="Inbound_Port_Maximum">
+                            </div>
+                        </div> 
+                    </div>
+
+
+                    <div class = "RTP-Proxy-class-content-input4">
+                         <div class = "RTP-Proxy-Ports-title"><span>Outbound RTP Proxy Port Range :</span></div>
+                        <div class = "RTP-Proxy-Ports">
+                            <div class = "RTP-Proxy-Outbound-Port-Minimum">
+                                <label for="Outbound-Port-Minimum">Port Minimum*</label> 
+                                <input type="text" id="Outbound-Port-Minimum" class="port" name="Outbound_Port_Minimum">
+                            </div>
+                            <div class = "RTP-Proxy-Outbound-Port-Maximum">
+                                <label for="Outbound-Port-Maximum">Port Maximum*</label> 
+                                <input type="text" id="Outbound-Port-Maximum" class="port" name="Outbound_Port_Maximum">
+                            </div>
+                        </div>                        
+                    </div>
+
+                    <div class = "RTP-Proxy-class-content-input5">
+
+                        <!-- <label for="Call-Duration">Enable Maximum Call Duration :</label> -->
+                        <span>Enable Maximum Call Duration :</span>
+                        <!-- <div class="slider-div">  -->
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                        <!-- </div> -->
+
+                        <div>
+                        <input type="text" id="Call-Duration" name="Call_Duration">
+                        <span>Second</span>
+                        </div>
+                    </div>
+                    <div class = "RTP-Proxy-class-content-input6">
+                        <label for="RTP-Loss-Timeout">RTP Loss Timeout :</label> 
+                        <div>
+                        <input type="text" id="RTP-Loss-Timeout" name="RTP_Loss_Timeout">
+                        <span>Second</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>  
+
+
+
+
+
+
+
+
+
+        </div>
 
 
 
@@ -215,8 +368,13 @@
 
 
 
-        <div class="S-CSCF-class"></div>
-        <div class="RTP-Proxy-class"></div>
+
+
+
+
+
+
+
         <button class="information-save-button">Save</button>
         <button class="information-edit-button">Save</button>
 
