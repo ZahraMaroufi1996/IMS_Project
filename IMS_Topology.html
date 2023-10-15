@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>IMS TOPOLOGY Page</title>
+    <title>IMS Topology Page</title>
     <meta charset="UTF-8" />
     <link
       href="src/IMS_TOPOLOGY_styles.css"
       rel="stylesheet"
     />
+    <link href="https://free.bboxtype.com/embedfonts/?family=FiraGO:400" rel="stylesheet">
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
@@ -36,8 +37,15 @@
 
     <div class="sidebar">   
 
+        <div class="Account-info">
+            <div class="Account-name">
+                <span class="Saleh-username">Saleh Zekavati</span>
+                <span class="username">username</span>
+            </div>
+        </div>
+
       <button class="sidebar-button"> Save & Restart </button>
-        
+
          <div class = "Selection-Box-in-Menu">
             <div class = "topology-in-menu" > 
                 <a href="IMS_Topology.html" class = "topology-in-menu-content"> 
@@ -74,17 +82,17 @@
         </div>     
     </div>
 
-    <div class="network-class">        
-        <div class="network-definition">
+    <div class="network-class">     
+        <form id="NetworkDefinition-form" > 
+            <div class="network-definition">
             <span class="title-span">Network Definition</span>
             <div class="network-definition-subnetmask">
                 <span>Subnet Mask</span>
-
                 <div class="subnetmask-boxes">
-                    <div class="subnetmask-box1"></div>
-                    <div  class="subnetmask-box2"></div>
-                    <div  class="subnetmask-box3"></div>
-                    <div  class="subnetmask-box4"></div>                  
+                    <input type="text" name="subnetmask_field4" class="subnetmask-box1">
+                    <input type="text" name="subnetmask_field3" class="subnetmask-box2">
+                    <input type="text" name="subnetmask_field2" class="subnetmask-box3">
+                    <input type="text" name="subnetmask_field1" class="subnetmask-box4">                
                 </div>
 
 
@@ -93,16 +101,18 @@
             <div class="network-definition-gateway">
              <span>Gateway</span>
                 <div class="gateway-boxes">
-                    <div class="gateway-box1"></div>
-                    <div  class="gateway-box2"></div>
-                    <div  class="gateway-box3"></div>
-                    <div  class="gateway-box4"></div>                  
+                    <input type="text" name="gateway_field4" class="gateway-box1">
+                    <input type="text" name="gateway_field3" class="gateway-box2">
+                    <input type="text" name="gateway_field2" class="gateway-box3">
+                    <input type="text" name="gateway_field1" class="gateway-box4">              
                 </div>
 
             </div>
 
-        </div>
-        <button class="network-button">Set</button>
+            </div>
+            <button type="submit" class="network-button">Set</button>
+
+        </form>
     </div>
 
     <div class="node-class">    
@@ -110,16 +120,16 @@
             <span class="title-span">Nodes IP Addresses</span>
             <div class="node-name">
                 <span>Name</span>
-                <div  class="node-name-box"></div>  
+                <input type="text" name="node_name" class="node-name-box">
             </div>
 
             <div class="node-ip">
                 <span>IP Address</span>
                 <div class="node-boxes">
-                    <div class="node-box1"></div>
-                    <div  class="node-box2"></div>
-                    <div  class="node-box3"></div>
-                    <div  class="node-box4"></div>                  
+                    <input  type="text" name="IP_Address_field4" class="node-box1">
+                    <input  type="text" name="IP_Address_field3" class="node-box2">
+                    <input  type="text" name="IP_Address_field2" class="node-box3">
+                    <input  type="text" name="IP_Address_field1" class="node-box4">                 
                 </div>
             </div>
 
@@ -130,7 +140,7 @@
 
                 <div class="node-type-checkboxes">
                     <div class = "node-type-checkboxe1">
-                        <input type="radio" id="node-type-1" name="node-type-icon" value="P-CSCF">
+                        <input type="radio" id="node-type-1" name="node-type-icon" value="Core">
                         <label for="node-type-1">Core</label>
                     </div>
                     <div class = "node-type-checkboxe2">
@@ -138,7 +148,7 @@
                         <label for="node-type-2">RTP Proxy</label> 
                     </div>
                     <div class = "node-type-checkboxe3">
-                        <input type="radio" id="node-type-3" name="node-type-icon" value="Core">
+                        <input type="radio" id="node-type-3" name="node-type-icon" value="P-CSCF">
                         <label for="node-type-3">P-CSCF</label>
                     </div>
                 </div>
@@ -188,14 +198,15 @@
     </div>
     
     <div class="Virtual-IPs-class">  
+        <form id="Virtual-IPs-form">
         <div class="Virtual-IPs-class-title">Virtual IPs for Load Balancers</div>
         <div class="Virtual-IPs-Database">
             <div class="Virtual-IPs-up-text">Database Virtual IP*</div>
             <div class="Virtual-IPs-Database-boxes">
-                <div class="Virtual-IPs-Database-box1"></div>
-                <div class="Virtual-IPs-Database-box2"></div>
-                <div class="Virtual-IPs-Database-box3"></div>
-                <div class="Virtual-IPs-Database-box4"></div>                  
+                <input type="text" name="Virtual_IPs_Database_field4" class="Virtual-IPs-Database-box1">
+                <input type="text" name="Virtual_IPs_Database_field3" class="Virtual-IPs-Database-box2">
+                <input type="text" name="Virtual_IPs_Database_field2" class="Virtual-IPs-Database-box3">
+                <input type="text" name="Virtual_IPs_Database_field1" class="Virtual-IPs-Database-box4">                 
             </div>
             <div class="Virtual-IPs-down-text">Main database used by IMS services</div>
         </div>
@@ -204,10 +215,10 @@
         <div class="Virtual-IPs-DNSserver">
             <div class="Virtual-IPs-up-text">DNS Server Virtual IP*</div>
             <div class="Virtual-IPs-DNSserver-boxes">
-                <div class="Virtual-IPs-DNSserver-box1"></div>
-                <div class="Virtual-IPs-DNSserver-box2"></div>
-                <div class="Virtual-IPs-DNSserver-box3"></div>
-                <div class="Virtual-IPs-DNSserver-box4"></div>                  
+                <input type="text" name="Virtual_IPs_DNSserver_field4" class="Virtual-IPs-DNSserver-box1">
+                <input type="text" name="Virtual_IPs_DNSserver_field3" class="Virtual-IPs-DNSserver-box2">
+                <input type="text" name="Virtual_IPs_DNSserver_field2" class="Virtual-IPs-DNSserver-box3">
+                <input type="text" name="Virtual_IPs_DNSserver_field1" class="Virtual-IPs-DNSserver-box4">                 
             </div>
              <div class="Virtual-IPs-down-text">Internal DNS server used by IMS services</div>
         </div>
@@ -216,20 +227,215 @@
         <div class="Virtual-IPs-Homer">
         <div class="Virtual-IPs-up-text">Homer Virtual IP*</div>
              <div class="Virtual-IPs-Homer-boxes">
-                <div class="Virtual-IPs-Homer-box1"></div>
-                <div class="Virtual-IPs-Homer-box2"></div>
-                <div class="Virtual-IPs-Homer-box3"></div>
-                <div class="Virtual-IPs-Homer-box4"></div>                  
+                <input type="text" name="Virtual_IPs_Homer_field4" class="Virtual-IPs-Homer-box1">
+                <input type="text" name="Virtual_IPs_Homer_field3" class="Virtual-IPs-Homer-box2">
+                <input type="text" name="Virtual_IPs_Homer_field2" class="Virtual-IPs-Homer-box3">
+                <input type="text" name="Virtual_IPs_Homer_field1" class="Virtual-IPs-Homer-box4">                  
             </div>
            <div class="Virtual-IPs-down-text">Used for monitoring SIP flows</div>
         </div>
 
 
-        <button class="Virtual-IPs-save-button">Save</button>
+        <button type = "submit" class="Virtual-IPs-save-button">Save</button>
+        </form>
     </div>
 
     <div class="box4">        
     </div>
+
+<script>
+
+let  network_Info = {} ;
+let  Subnetmask = [];
+let  Gateway = [];
+let  Node_IP = [];
+let  Node_Name ;
+let  Node_Type ;
+let  Database_Virtual_I = [];
+let  DNS_Server_Virtual_IP = [];
+let  Homer_Virtual_IP = [];
+// const  Gateway= [] ;
+
+function load_page()
+{
+
+    console.log("22222");
+    fetch("https://75f1b08b-e4e1-4506-af9e-8a4ed610dbb5.mock.pstmn.io/api/topology")
+.then((response) => response.json())
+.then((data) => 
+{ 
+    console.log(data);
+    network_Info = data;          
+    for (let i = 0 ; i < 4 ; i++)
+    {
+        Subnetmask[i] = document.querySelector(`.subnetmask-box${4-i}`);
+        Subnetmask[i].setAttribute("value",`${network_Info.subnetMask.split(".")[i]}`);
+
+        Gateway[i] = document.querySelector(`.gateway-box${4-i}`);
+        Gateway[i].setAttribute("value",`${network_Info.gateway.split(".")[i]}`);
+
+        // Node_IP[i] = document.querySelector(`.node-box${4-i}`);
+        // Node_IP[i].setAttribute("value",`${network_Info.Node_ip.split(".")[i]}`);
+
+        Database_Virtual_I[i] = document.querySelector(`.Virtual-IPs-Database-box${4-i}`);
+        Database_Virtual_I[i].setAttribute("value",`${network_Info.databaseVirtualIp.split(".")[i]}`);
+
+        DNS_Server_Virtual_IP[i] = document.querySelector(`.Virtual-IPs-DNSserver-box${4-i}`);
+        DNS_Server_Virtual_IP[i].setAttribute("value",`${network_Info.dnsVirtualIp.split(".")[i]}`);
+
+        Homer_Virtual_IP[i] = document.querySelector(`.Virtual-IPs-Homer-box${4-i}`);
+        Homer_Virtual_IP[i].setAttribute("value",`${network_Info.homerVirtualIp.split(".")[i]}`);
+
+
+        // Node_IP[i] = document.querySelector(`.node-box${4-i}`);
+        // Node_IP[i].setAttribute("value",`${network_Info.Node_ip.split(".")[i]}`);
+
+    }
+
+        // Node_Name = document.querySelector(`.node-name-box`);
+        // Node_Name .setAttribute("value",`${network_Info.Node_Name}`);
+
+        // Node_Type = network_Info.Node_Type;
+        // let a = [] ;
+        // let value = [] ;
+        // a = document.getElementsByName("node-type-icon");
+        // // console.log(a);
+
+        // for(let i = 0 ; i < a.length ; i++) {
+        // //    console.log(a[i].value);
+        //     if(a[i].value === Node_Type)
+        //         {
+        //            a[i].checked = true;  
+        //             // console.log(a[i]);
+        //         }       
+        //     }
+
+})
+.catch((error) => {console.log(error)});
+}
+
+async function init() {
+await load_page() ;
+}
+
+ console.log("hiiiii");
+init();
+
+/////////////////
+let  Network_Definition_form = document.getElementById("NetworkDefinition-form");
+console.log(Network_Definition_form);
+
+Network_Definition_form.addEventListener("submit", function (e) {
+e.preventDefault();
+const formData = Object.fromEntries(new FormData(e.target));
+const subnetmak = [] ;
+const gateway = [] ;
+
+// console.log(formData);
+gateway[0] = formData.gateway_field1 ;
+gateway[1] = formData.gateway_field2 ;
+gateway[2] = formData.gateway_field3 ;
+gateway[3] = formData.gateway_field4 ;
+
+subnetmak[0] = formData.subnetmask_field1 ;
+subnetmak[1] = formData.subnetmask_field2 ;
+subnetmak[2] = formData.subnetmask_field3 ;
+subnetmak[3] = formData.subnetmask_field4 ;
+
+let final_formdata = {SubnetMask : subnetmak.join(".") , Gateway : gateway.join(".")}
+// console.log( final_formdata );
+// console.log(JSON.stringify(final_formdata));
+hasMessage = false;
+result =fetch("https://75f1b08b-e4e1-4506-af9e-8a4ed610dbb5.mock.pstmn.io/api/topology/networkDefinition", {
+  method: 'POST',
+  headers: {
+   'Content-Type': 'application/json' 
+ },
+  body: JSON.stringify(final_formdata),
+})
+.then(response=>{
+    if(response.status!==200)
+        hasMessage = true;
+}
+    );
+    if(hasMessage)
+    {
+        result
+.then((response) => response.json())
+.then((data) => {console.log(data);})
+.catch((error) => {console.log(error)});
+    }
+
+
+
+});
+
+
+// fetch("https://75f1b08b-e4e1-4506-af9e-8a4ed610dbb5.mock.pstmn.io/api/topology/networkDefinition", {
+//   method: 'POST',
+//   headers: {
+//    'Content-Type': 'application/json' 
+//  },
+//   body: JSON.stringify(final_formdata),
+// })
+// .then(response=>{
+//     if(response.status===200)
+//     console.log("ok shod");
+// else
+//     console.log("nashod")}
+//     )
+// .then((response) => response.json())
+// .then((data) => {console.log(data);})
+// .catch((error) => {console.log(error)});
+// });
+
+// ////////////////////////////////////////////////////////
+
+let  Virtual_IPs_form = document.getElementById("Virtual-IPs-form");
+Virtual_IPs_form.addEventListener("submit", function (e) {
+e.preventDefault();
+const formData = Object.fromEntries(new FormData(e.target));
+const DatabaseVirtualIP = [] ;
+const DNSServerVirtualIP = [] ;
+const HomerVirtualIP = [] ;
+
+// console.log(formData);
+DatabaseVirtualIP[0] = formData.Virtual_IPs_Database_field1 ;
+DatabaseVirtualIP[1] = formData.Virtual_IPs_Database_field2 ;
+DatabaseVirtualIP[2] = formData.Virtual_IPs_Database_field3 ;
+DatabaseVirtualIP[3] = formData.Virtual_IPs_Database_field4 ;
+
+DNSServerVirtualIP[0] = formData.Virtual_IPs_DNSserver_field1 ;
+DNSServerVirtualIP[1] = formData.Virtual_IPs_DNSserver_field2 ;
+DNSServerVirtualIP[2] = formData.Virtual_IPs_DNSserver_field3 ;
+DNSServerVirtualIP[3] = formData.Virtual_IPs_DNSserver_field4 ;
+
+HomerVirtualIP[0] = formData.Virtual_IPs_Homer_field1 ;
+HomerVirtualIP[1] = formData.Virtual_IPs_Homer_field2 ;
+HomerVirtualIP[2] = formData.Virtual_IPs_Homer_field3 ;
+HomerVirtualIP[3] = formData.Virtual_IPs_Homer_field4 ;
+
+let final_formdata = {databaseVirtualIp: DatabaseVirtualIP.join(".") , dnsVirtualIp : DNSServerVirtualIP.join(".") , homerVirtualIp : HomerVirtualIP.join(".")}
+// console.log( final_formdata );
+console.log(JSON.stringify(final_formdata));
+
+fetch("https://75f1b08b-e4e1-4506-af9e-8a4ed610dbb5.mock.pstmn.io/api/topology/virtualIps", {
+  method: 'POST',
+  headers: {
+   'Content-Type': 'application/json' 
+ },
+  body: JSON.stringify(final_formdata),
+})
+.then((response) => response.json())
+.then((data) => {console.log(data);})
+.catch((error) => {console.log(error)});
+});
+////////////////////
+</script>
+
+
+
+
 
 </body>
 </html>

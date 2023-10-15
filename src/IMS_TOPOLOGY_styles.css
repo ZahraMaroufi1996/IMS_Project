@@ -1,7 +1,7 @@
-@font-face {
+/* @font-face {
     font-family: myFirstFont;
     src: url(../Font_folder/firago_5.0.7/ttf/firago-latin-400-normal.ttf);
-}
+} */
 
 .IMS-TOPOLOGY-body {
     background-color:rgba(0, 0, 0, 0.04) ;
@@ -26,6 +26,56 @@
     top: 0px;
     position: absolute;
 }
+
+.Account-info {
+    width: 6.977vw;
+    height: 5.197vh;
+    top: 8.33vh;
+    left: 4.088vw;
+    position: absolute;
+    border-bottom: 0.092vh solid  rgba(255 , 255 , 255 , 0.25);
+
+}
+
+.Account-name {
+    width: 4.79vw;
+    height: 3.79vh;
+    top: 0vh;
+    left: 1.093vw;
+    position: absolute;
+    /* border:1px solid  red; */
+}
+
+.Account-name span {
+   font-size: 1.296vh;
+    /* font-family: myFirstFont;   */
+   font-family: 'FiraGO', sans-serif;
+   line-height: 1.76vh;
+   /* text-align: center; */
+}
+
+.username {
+    color: #A6D4C4;
+    text-align: right;
+    width: 3.23vw;
+    height: 1.76vh;
+    bottom: 0vh;
+    left: 0.78vw;
+    /* border: 1px solid red; */
+    position: absolute;
+    text-align: start;
+}
+
+.Saleh-username {
+    color: #ffffff ;
+    width: 4.79vw;
+    height: 1.76vh;
+    top: 0vh;
+    left: 0vw;
+    /* border: 1px solid red; */
+    position: absolute;
+}
+
 
 .sidebar-logo {
     width: 6.98vw;
@@ -141,7 +191,8 @@
 .Selection-Box-in-Menu span {
    color: white;
    font-size: 1.48vh;
-   font-family: myFirstFont; 
+   /* font-family: myFirstFont;  */
+   font-family: 'FiraGO', sans-serif;
    text-align: center;
 }
 
@@ -163,9 +214,14 @@
     position: absolute;
 } 
 
-a {
+.Selection-Box-in-Menu a {
     text-decoration: none;
+    /* text-align: center; */
+    display: flex;
+    /* justify-content: space-evenly; */
 }
+
+
 .toolbar-class {
     width: 84.89vw;
     height: 5.92vh;
@@ -354,7 +410,13 @@ a {
     top : 0vh;
     position: absolute;
     display: flex;
+    /* align-items: center; */
 }
+
+.node-ip span {
+    margin-top: 0.9vh;
+}
+
 
 .node-name {
     width: 13.65vw;
@@ -363,6 +425,7 @@ a {
     top : 0vh;
     position: absolute;
     display: flex;
+    align-items: center;
 }
 
 .node-name-box {
@@ -443,21 +506,28 @@ a {
 label , .node-class span  , .network-class span{
    color: #1A4348;
    font-size: 1.48vh;
-   font-family:  myFirstFont;
+   /* font-family:  myFirstFont; */
+   font-family: 'FiraGO', sans-serif;
 }
 
 span.title-span {
    color: #83A79A;
    font-size: 1.66vh;
-   font-family: myFirstFont;
+   /* font-family: myFirstFont; */
+   font-family: 'FiraGO', sans-serif;
 }
 
 button {
    color: white;
    font-size: 1.66vh;
-   font-family: myFirstFont; 
+   /* font-family: myFirstFont;  */
+   font-family: 'FiraGO', sans-serif;
 }
 
+input {
+    border: none;
+    text-align: center;
+}
 
 .node-table {
     width: 42.99vw;
@@ -479,7 +549,8 @@ button {
     background-color: #1F666E;
     color: white;
     font-size: 1.66vh;
-    font-family: myFirstFont; 
+    /* font-family: myFirstFont;  */
+    font-family: 'FiraGO', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -495,7 +566,8 @@ button {
     background-color: #1F666E;
     color: white;
     font-size: 1.66vh;
-    font-family: myFirstFont; 
+    /* font-family: myFirstFont;  */
+    font-family: 'FiraGO', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -511,7 +583,8 @@ button {
     background-color: #1F666E;
     color: white;
     font-size: 1.66vh;
-    font-family: myFirstFont; 
+    /* font-family: myFirstFont;  */
+    font-family: 'FiraGO', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -541,7 +614,8 @@ button {
 .node-table-content-title-description span {
    color: white;
     font-size: 1.29vh;
-    font-family: myFirstFont;   
+    /* font-family: myFirstFont;    */
+    font-family: 'FiraGO', sans-serif;
 }
 
 .node-table-contents {
@@ -567,7 +641,8 @@ button {
     position: absolute;
     color: #1A4348;
     font-size: 1.2vh;
-    font-family: myFirstFont;
+    /* font-family: myFirstFont; */
+    font-family: 'FiraGO', sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -584,7 +659,8 @@ button {
     position: absolute;
     color: #1A4348;
     font-size: 1.2vh;
-    font-family: myFirstFont;
+    /* font-family: myFirstFont; */
+    font-family: 'FiraGO', sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -600,7 +676,8 @@ button {
     left: 30.67vw;
     position: absolute;
     font-size: 1.2vh;
-    font-family: myFirstFont;
+    /* font-family: myFirstFont; */
+    font-family: 'FiraGO', sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -676,7 +753,8 @@ button {
 .Virtual-IPs-up-text {
     color:#1A4348;
     font-size: 1.66vh;
-    font-family: myFirstFont; 
+    /* font-family: myFirstFont;  */
+    font-family: 'FiraGO', sans-serif;
     left: 0vw;
     top: 0.64vh;
     position: absolute;
@@ -686,7 +764,8 @@ button {
 .Virtual-IPs-down-text {
     color:#1F666E;
     font-size: 1.48vh;
-    font-family: myFirstFont; 
+    /* font-family: myFirstFont;  */
+    font-family: 'FiraGO', sans-serif;
     left: 0vw;
     bottom: 0vh;
     position: absolute;
@@ -702,7 +781,8 @@ button {
     position: absolute;
     color: #83A79A;
     font-size: 1.66vh;
-    font-family: myFirstFont; 
+    /* font-family: myFirstFont;  */
+    font-family: 'FiraGO', sans-serif;
 }
 
 

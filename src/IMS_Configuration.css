@@ -1,7 +1,7 @@
-@font-face {
+/* @font-face {
     font-family: myFirstFont;
     src: url(../Font_folder/firago_5.0.7/ttf/firago-latin-400-normal.ttf);
-}
+} */
 
 .IMS-TOPOLOGY-body {
     background-color:rgba(0, 0, 0, 0.04) ;
@@ -17,6 +17,56 @@
     top: 0px;
     position: absolute;
 }
+
+.Account-info {
+    width: 6.977vw;
+    height: 5.197vh;
+    top: 8.33vh;
+    left: 4.088vw;
+    position: absolute;
+    border-bottom: 0.092vh solid  rgba(255 , 255 , 255 , 0.25);
+
+}
+
+.Account-name {
+    width: 4.79vw;
+    height: 3.79vh;
+    top: 0vh;
+    left: 1.093vw;
+    position: absolute;
+    /* border:1px solid  red; */
+}
+
+.Account-name span {
+   font-size: 1.296vh;
+    /* font-family: myFirstFont;   */
+   font-family: 'FiraGO', sans-serif;
+   line-height: 1.76vh;
+   /* text-align: center; */
+}
+
+.username {
+    color: #A6D4C4;
+    text-align: right;
+    width: 3.23vw;
+    height: 1.76vh;
+    bottom: 0vh;
+    left: 0.78vw;
+    /* border: 1px solid red; */
+    position: absolute;
+    text-align: start;
+}
+
+.Saleh-username {
+    color: #ffffff ;
+    width: 4.79vw;
+    height: 1.76vh;
+    top: 0vh;
+    left: 0vw;
+    /* border: 1px solid red; */
+    position: absolute;
+}
+
 
 .sidebar-logo {
     width: 6.98vw;
@@ -85,6 +135,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    /* background-color: white; */
+    /* border:0.5px solid black; */
 }
 
 
@@ -130,7 +182,8 @@
 .Selection-Box-in-Menu span {
    color: white;
    font-size: 1.48vh;
-   font-family: myFirstFont; 
+   /* font-family: myFirstFont;  */
+   font-family: 'FiraGO', sans-serif;
    text-align: center;
 }
 
@@ -152,9 +205,11 @@
     position: absolute;
 } 
 
-a {
+.Selection-Box-in-Menu a {
     text-decoration: none;
-    /* position: fixed; */
+    /* text-align: center; */
+    display: flex;
+    /* justify-content: space-evenly; */
 }
 
 .selected-menu {
@@ -241,7 +296,8 @@ a {
     text-align: center;
     color: #83A79A;
     font-size: 1.66vh;
-    font-family: myFirstFont; 
+    /* font-family: myFirstFont;  */
+    font-family: 'FiraGO', sans-serif;
     position: absolute;
 }
 
@@ -258,7 +314,8 @@ a {
 label , span , p {
    color: #1A4348;
    font-size: 1.48vh;
-   font-family: myFirstFont; 
+   /* font-family: myFirstFont;  */
+   font-family: 'FiraGO', sans-serif;
 }
 
 input.General-class-content-field1-box {
@@ -326,7 +383,8 @@ input.General-class-content-field1-box {
 .P-CSCF-class-content-title , .S-CSCF-class-content-title , .RTP-Proxy-class-content-title
 {
     font-size: 1.66vh;
-    font-family: myFirstFont; 
+    /* font-family: myFirstFont;  */
+    font-family: 'FiraGO', sans-serif;
     color: #83A79A;
 }
 
@@ -434,7 +492,8 @@ input.General-class-content-field1-box {
     border-radius: 0.83vh;
     color: #83A79A;
     font-size: 1.66vh;
-    font-family: myFirstFont;
+    /* font-family: myFirstFont; */
+    font-family: 'FiraGO', sans-serif;
 }
 
 .P-CSCF-class-Rx-configuration-field1 {
@@ -537,6 +596,16 @@ input.General-class-content-field1-box {
     justify-content: space-between;
 }
 
+.P-CSCF-class-content-field2-checkboxes input , 
+.General-class-content-field2-checkboxes input ,
+.RTP-Proxy-class-content-input1-checkboxes input {
+    width: 1.042vw;
+    height: 1.85vh;
+    color: black;
+    /* border: 0.092vh solid green;
+    background-color: red; */
+}
+
 .P-CSCF-class-content-field2-checkbox1 {
     width: 4.68vw;
     left: 0vw;
@@ -545,7 +614,8 @@ input.General-class-content-field1-box {
     position: absolute;
     color: #1A4348;
     font-size: 1.48vh;
-    font-family: myFirstFont;
+    /* font-family: myFirstFont; */
+    font-family: 'FiraGO', sans-serif;
 }
 
 
@@ -557,8 +627,10 @@ input.General-class-content-field1-box {
     position: absolute;
     color: #1A4348;
     font-size: 1.48vh;
-    font-family: myFirstFont;
+    /* font-family: myFirstFont; */
+    font-family: 'FiraGO', sans-serif;
 }
+
 
 .P-CSCF-class-content-field2-checkbox3 {
    width: 8.92vw;
@@ -568,13 +640,15 @@ input.General-class-content-field1-box {
     position: absolute;
     color: #1A4348;
     font-size: 1.48vh;
-    font-family: myFirstFont;
+    /* font-family: myFirstFont; */
+    font-family: 'FiraGO', sans-serif;
 }
 
 .I-CSCF-class-content-title {
     color: #83A79A;
     font-size: 1.66vh;
-    font-family: myFirstFont;
+    /* font-family: myFirstFont; */
+    font-family: 'FiraGO', sans-serif;
 }
 
 
@@ -824,28 +898,34 @@ input#Rx-configuration-field3 {
   content: "";
   height: 0.972vh;
   width: 0.546vw;
-  right: 0.156vw;
+  left: 0.156vw;
   bottom: 0.277vh;
-  background-color:  #68D5B0;
   border: 0.138vh solid white;
   /* -webkit-transition: .4s;
   transition: .4s; */
 }
 
-input:checked + .slider {
+input:checked + .slider , 
+input:checked + .slider:before{
   background-color: #68D5B0;
 }
 
+input + .slider ,
+input + .slider:before {
+  /* background-color: #68D5B0; */
+  background-color: #FF8888;
+}
 
 /* input:focus + .slider {
   box-shadow: 0 0 1px #2196F3;
 } */
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(-0.83vw);
-  -ms-transform: translateX(-0.83vw);
-  transform: translateX(-0.83vw);
+  -webkit-transform: translateX(0.83vw);
+  -ms-transform: translateX(0.83vw);
+  transform: translateX(0.83vw);
 }
+
 
 /* Rounded sliders */
 .slider.round {
@@ -859,12 +939,9 @@ input:checked + .slider:before {
  .slider-div {
    color: #1A4348;
    font-size: 1.48vh;
-   font-family: myFirstFont; 
+   /* font-family: myFirstFont;  */
+   font-family: 'FiraGO', sans-serif;
 }
-
-
-
-
 
 
 .RTP-Proxy-class-content-input3 {
@@ -1014,5 +1091,6 @@ input:checked + .slider:before {
 button {
    color: white;
    font-size: 1.66vh;
-   font-family: myFirstFont; 
+   /* font-family: myFirstFont;  */
+   font-family: 'FiraGO', sans-serif;
 }
