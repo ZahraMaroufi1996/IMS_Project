@@ -14,6 +14,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body class="IMS-TOPOLOGY-body">
@@ -175,25 +176,30 @@
                 </div>
             </div>
 
-            <div class="node-table-contents">
+            <div id="node-table-contents">
 
                 <div class="node-table-content">
-                    <div class="node-table-content-name"><p>Folan</p></div>
-                    <div class="node-table-content-ip"><p>192.168.11.12</p></div>
-                    <div class="node-table-content-status"><p>Not Reachable</p></div>
-                    <div class="node-table-content-icon"></div>
-
+                    <input type="text" class="node-table-content-name" value = "Folan" />
+                    <input type="text" class="node-table-content-ip" value= "192.168.11.12" />
+                    <input type="text" class="node-table-content-status" value= "Not Reachable" />
+                    <div class="node-table-content-icon">
+                        <img class="pencil" src="images/IMS_TOPOLOGY_images/pencil.svg" />
+                        <img class="trash" src="images/IMS_TOPOLOGY_images/trash-simple.svg" />
+                    </div>
                 </div>
-                <!-- <div class="node-table-content2"></div>
-                <div class="node-table-content3"></div>
-                <div class="node-table-content4"></div> -->
-        
+
+                <!-- <div class="node-table-content">
+                    <div class="node-table-content-name" >bisar</div>
+                    <div class="node-table-content-ip">192.168.11.12</div>
+                    <div class="node-table-content-status">Not Reachable</div>
+                     <div class="node-table-content-icon"></div>
+                </div> -->
+   
             </div>
 
         </div>
 
         <button class="save-node-button">Save</button>
-
 
     </div>
     
@@ -250,22 +256,30 @@ let  Subnetmask = [];
 let  Gateway = [];
 let  Node_IP = [];
 let  Node_Name ;
+let  Node_Info ;
 let  Node_Type ;
 let  Database_Virtual_I = [];
 let  DNS_Server_Virtual_IP = [];
 let  Homer_Virtual_IP = [];
+let  node_type= [] ;
 // const  Gateway= [] ;
 
 function load_page()
 {
 
-    console.log("22222");
-    fetch("https://75f1b08b-e4e1-4506-af9e-8a4ed610dbb5.mock.pstmn.io/api/topology")
+console.log("22222");
+fetch("https://75f1b08b-e4e1-4506-af9e-8a4ed610dbb5.mock.pstmn.io/api/topology")
 .then((response) => response.json())
 .then((data) => 
 { 
     console.log(data);
-    network_Info = data;          
+    network_Info = data; 
+    Node_Info = data.nodes;  
+  
+    node_type[0] = Node_Info.filter(q => q.type === "pcscf") ;
+    node_type[1] = Node_Info.filter(q => q.type === "rtpProxy") ;
+    node_type[2] = Node_Info.filter(q => q.type === "core") ;
+
     for (let i = 0 ; i < 4 ; i++)
     {
         Subnetmask[i] = document.querySelector(`.subnetmask-box${4-i}`);
@@ -273,9 +287,6 @@ function load_page()
 
         Gateway[i] = document.querySelector(`.gateway-box${4-i}`);
         Gateway[i].setAttribute("value",`${network_Info.gateway.split(".")[i]}`);
-
-        // Node_IP[i] = document.querySelector(`.node-box${4-i}`);
-        // Node_IP[i].setAttribute("value",`${network_Info.Node_ip.split(".")[i]}`);
 
         Database_Virtual_I[i] = document.querySelector(`.Virtual-IPs-Database-box${4-i}`);
         Database_Virtual_I[i].setAttribute("value",`${network_Info.databaseVirtualIp.split(".")[i]}`);
@@ -286,29 +297,8 @@ function load_page()
         Homer_Virtual_IP[i] = document.querySelector(`.Virtual-IPs-Homer-box${4-i}`);
         Homer_Virtual_IP[i].setAttribute("value",`${network_Info.homerVirtualIp.split(".")[i]}`);
 
-
-        // Node_IP[i] = document.querySelector(`.node-box${4-i}`);
-        // Node_IP[i].setAttribute("value",`${network_Info.Node_ip.split(".")[i]}`);
-
     }
 
-        // Node_Name = document.querySelector(`.node-name-box`);
-        // Node_Name .setAttribute("value",`${network_Info.Node_Name}`);
-
-        // Node_Type = network_Info.Node_Type;
-        // let a = [] ;
-        // let value = [] ;
-        // a = document.getElementsByName("node-type-icon");
-        // // console.log(a);
-
-        // for(let i = 0 ; i < a.length ; i++) {
-        // //    console.log(a[i].value);
-        //     if(a[i].value === Node_Type)
-        //         {
-        //            a[i].checked = true;  
-        //             // console.log(a[i]);
-        //         }       
-        //     }
 
 })
 .catch((error) => {console.log(error)});
@@ -318,10 +308,9 @@ async function init() {
 await load_page() ;
 }
 
- console.log("hiiiii");
+
 init();
 
-/////////////////
 let  Network_Definition_form = document.getElementById("NetworkDefinition-form");
 console.log(Network_Definition_form);
 
@@ -331,7 +320,6 @@ const formData = Object.fromEntries(new FormData(e.target));
 const subnetmak = [] ;
 const gateway = [] ;
 
-// console.log(formData);
 gateway[0] = formData.gateway_field1 ;
 gateway[1] = formData.gateway_field2 ;
 gateway[2] = formData.gateway_field3 ;
@@ -343,8 +331,6 @@ subnetmak[2] = formData.subnetmask_field3 ;
 subnetmak[3] = formData.subnetmask_field4 ;
 
 let final_formdata = {SubnetMask : subnetmak.join(".") , Gateway : gateway.join(".")}
-// console.log( final_formdata );
-// console.log(JSON.stringify(final_formdata));
 hasMessage = false;
 result =fetch("https://75f1b08b-e4e1-4506-af9e-8a4ed610dbb5.mock.pstmn.io/api/topology/networkDefinition", {
   method: 'POST',
@@ -365,9 +351,6 @@ result =fetch("https://75f1b08b-e4e1-4506-af9e-8a4ed610dbb5.mock.pstmn.io/api/to
 .then((data) => {console.log(data);})
 .catch((error) => {console.log(error)});
     }
-
-
-
 });
 
 
@@ -430,12 +413,50 @@ fetch("https://75f1b08b-e4e1-4506-af9e-8a4ed610dbb5.mock.pstmn.io/api/topology/v
 .then((data) => {console.log(data);})
 .catch((error) => {console.log(error)});
 });
-////////////////////
+
+
+let node_table_title = [] ;
+for(let i = 0 ; i < 3 ; i++)
+{
+    node_table_title[i] = document.querySelector(`.node-table-title${i+1}`);
+    // console.log(node_table_title[i]);
+    node_table_title[i].addEventListener("click", function (e) {
+    e.preventDefault();
+    const render_table_type = node_type[i].map( q => {
+    return `
+                <div class="node-table-content">
+                    <div class="node-table-content-name">${q.name}</div>
+                    <div class="node-table-content-ip">${q.ip}</div>
+                    <div class="node-table-content-status">${q.status}</div>
+                </div>` ;
+
+    }) ;
+    let  node_list = $("#node-table-contents");
+    node_list.html(render_table_type.join(''));
+    });
+}
+
+
+
+
+
+              <div class="node-table-content">
+                    <input type="text" class="node-table-content-name" value = "Folan" />
+                    <input type="text" class="node-table-content-ip" value= "192.168.11.12" />
+                    <input type="text" class="node-table-content-status" value= "Not Reachable" />
+                    <div class="node-table-content-icon">
+                        <img class="pencil" src="images/IMS_TOPOLOGY_images/pencil.svg" />
+                        <img class="trash" src="images/IMS_TOPOLOGY_images/trash-simple.svg" />
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
 </script>
-
-
-
-
-
 </body>
 </html>

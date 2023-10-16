@@ -524,10 +524,17 @@ button {
    font-family: 'FiraGO', sans-serif;
 }
 
-input {
+/* input {
     border: none;
     text-align: center;
+} */
+
+input[ type="text"] {
+    text-align: center;
+    color : #2FBC8C ;
+    border: none;
 }
+
 
 .node-table {
     width: 42.99vw;
@@ -554,6 +561,7 @@ input {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .node-table-title2{
@@ -571,6 +579,7 @@ input {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .node-table-title1{
@@ -588,8 +597,8 @@ input {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
-
 
 .node-table-content-title {
     width: 42.66vw;
@@ -618,22 +627,27 @@ input {
     font-family: 'FiraGO', sans-serif;
 }
 
-.node-table-contents {
+#node-table-contents {
     width: 42.66vw;
     right: 0.166vw; 
     top: 9.49vh;
     position: absolute;
     border-color: white;
+    background-color: white;
+
 }
+
 
 .node-table-content {
     width: 42.66vw;
     height: 2.77vh;
     border-bottom: 0.046vh  solid #DFDFDF;
+    position: relative;
 }
 
+
 .node-table-content-name {
-    background-color: red;
+    /* background-color: red; */
     width: 3.64vw;
     height: 1.85vh;
     top: 0.46vh;
@@ -646,12 +660,13 @@ input {
     display: flex;
     align-items: center;
     justify-content: center;
-     border-radius: 0.277vh
+    border-radius: 0.277vh
 }
 
 
+
 .node-table-content-ip {
-    background-color: red;
+    /* background-color: red; */
     width: 4.68vw;
     height: 1.85vh;
     top: 0.46vh;
@@ -668,10 +683,11 @@ input {
 }
 
 
+
 .node-table-content-status {
     width: 4.37vw;
     height: 1.57vh;
-    background-color: red;
+    /* background-color: #1A4348; */
     top: 0.6vh;
     left: 30.67vw;
     position: absolute;
@@ -682,6 +698,27 @@ input {
     align-items: center;
     justify-content: center;
 } 
+
+.pencil {
+    right: 1.073vw;
+    top: 1.092vh;
+    position: absolute;
+}
+
+.trash {
+    right: 0vw;
+    top: 1.092vh;
+    position: absolute;
+}
+
+
+
+
+
+
+
+
+
 
 
  .save-node-button {

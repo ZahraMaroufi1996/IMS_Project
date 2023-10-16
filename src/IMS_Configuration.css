@@ -322,7 +322,11 @@ input.General-class-content-field1-box {
     border: none;
 }
 
-
+input[ type="text"] {
+    text-align: center;
+    color : #2FBC8C ;
+    border: none;
+}
 
 .General-class-content-field2 {
     width: 28.92vw;
@@ -454,7 +458,7 @@ input.General-class-content-field1-box {
 }
 
 
-#private-memory , #shared-memory {
+.private-memory , .shared-memory {
     height: 3.7vh;
     width: 3.125vw;
     /* top:0 ;
