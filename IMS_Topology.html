@@ -116,8 +116,12 @@
         </form>
     </div>
 
+
+
     <div class="node-class">    
-        <div class="node-properties">    
+
+        <form id="add-node-form">
+            <div class="node-properties">    
             <span class="title-span">Nodes IP Addresses</span>
             <div class="node-name">
                 <span>Name</span>
@@ -134,33 +138,32 @@
                 </div>
             </div>
 
-            <button class ="add-node-button" >Add Node</button>
-
-            <div class="node-type">
-                <span>Node Types :</span>
-
-                <div class="node-type-checkboxes">
-                    <div class = "node-type-checkboxe1">
-                        <input type="radio" id="node-type-1" name="node-type-icon" value="Core">
-                        <label for="node-type-1">Core</label>
-                    </div>
-                    <div class = "node-type-checkboxe2">
-                        <input type="radio" id="node-type-2" name="node-type-icon" value="RTP Proxy">
-                        <label for="node-type-2">RTP Proxy</label> 
-                    </div>
-                    <div class = "node-type-checkboxe3">
-                        <input type="radio" id="node-type-3" name="node-type-icon" value="P-CSCF">
-                        <label for="node-type-3">P-CSCF</label>
+   
+                <div class="node-type">
+                    <span>Node Types :</span>
+                    <div class="node-type-checkboxes">
+                        <div class = "node-type-checkboxe1">
+                            <input type="radio" id="node-type-1" name="node_type_icon" value="core">
+                            <label for="node-type-1">Core</label>
+                        </div>
+                        <div class = "node-type-checkboxe2">
+                            <input type="radio" id="node-type-2" name="node_type_icon" value="rtpProxy">
+                            <label for="node-type-2">RTP Proxy</label> 
+                        </div>
+                        <div class = "node-type-checkboxe3">
+                            <input type="radio" id="node-type-3" name="node_type_icon" value="pcscf">
+                            <label for="node-type-3">P-CSCF</label>
+                        </div>
                     </div>
                 </div>
-
-
-            </div>
+                <button type="submit" class ="add-node-button" >Add Node</button>
 
         </div>  
 
+        </form>
 
 
+        
         <div class="node-table">
             <div class="node-table-titles">
                  <div class="node-table-title1"><p>P-CSCF Nodes</p></div>
@@ -177,23 +180,32 @@
             </div>
 
             <div id="node-table-contents">
-
+<!-- 
                 <div class="node-table-content">
                     <input type="text" class="node-table-content-name" value = "Folan" />
                     <input type="text" class="node-table-content-ip" value= "192.168.11.12" />
                     <input type="text" class="node-table-content-status" value= "Not Reachable" />
                     <div class="node-table-content-icon">
-                        <img class="pencil" src="images/IMS_TOPOLOGY_images/pencil.svg" />
+                        <img  class="pencil" src="images/IMS_TOPOLOGY_images/pencil.svg" />
                         <img class="trash" src="images/IMS_TOPOLOGY_images/trash-simple.svg" />
+                        <img class="close" src="images/IMS_TOPOLOGY_images/tick.svg" />
+                        <img class="tick" src="images/IMS_TOPOLOGY_images/close.svg" />
                     </div>
                 </div>
 
-                <!-- <div class="node-table-content">
-                    <div class="node-table-content-name" >bisar</div>
-                    <div class="node-table-content-ip">192.168.11.12</div>
-                    <div class="node-table-content-status">Not Reachable</div>
-                     <div class="node-table-content-icon"></div>
+
+                <div class="node-table-content">
+                    <input type="text" class="node-table-content-name" value = "bahman" />
+                    <input type="text" class="node-table-content-ip" value= "192.168.11.12" />
+                    <input type="text" class="node-table-content-status" value= "Not Reachable" />
+                    <div class="node-table-content-icon">
+                        <img  class="pencil" src="images/IMS_TOPOLOGY_images/pencil.svg" />
+                        <img class="trash" src="images/IMS_TOPOLOGY_images/trash-simple.svg" />
+                        <img class="close" src="images/IMS_TOPOLOGY_images/tick.svg" />
+                        <img class="tick" src="images/IMS_TOPOLOGY_images/close.svg" />
+                    </div>
                 </div> -->
+
    
             </div>
 
@@ -202,7 +214,28 @@
         <button class="save-node-button">Save</button>
 
     </div>
-    
+
+
+    <div id ="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-close">&times;</span>
+                <p>Confirm Delete</p>
+            </div>
+
+            <div class="modal-body">
+                <p>Do you want to remove the selected Item? </p>
+                <div class = "modal-buttons">
+                    <button id="modal-delete-button"> Delete</button>
+                    <button id="modal-cancel-button"> Cancel</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
     <div class="Virtual-IPs-class">  
         <form id="Virtual-IPs-form">
         <div class="Virtual-IPs-class-title">Virtual IPs for Load Balancers</div>
@@ -240,11 +273,10 @@
             </div>
            <div class="Virtual-IPs-down-text">Used for monitoring SIP flows</div>
         </div>
-
-
         <button type = "submit" class="Virtual-IPs-save-button">Save</button>
         </form>
     </div>
+
 
     <div class="box4">        
     </div>
@@ -267,18 +299,21 @@ let  node_type= [] ;
 function load_page()
 {
 
-console.log("22222");
-fetch("https://75f1b08b-e4e1-4506-af9e-8a4ed610dbb5.mock.pstmn.io/api/topology")
+fetch("https://fcc65d6f-800a-4e80-bce5-b2a158ad46dd.mock.pstmn.io/api/topology")
 .then((response) => response.json())
 .then((data) => 
-{ 
-    console.log(data);
+{
+ 
+   
     network_Info = data; 
     Node_Info = data.nodes;  
   
     node_type[0] = Node_Info.filter(q => q.type === "pcscf") ;
+    // console.log(node_type[0]);
     node_type[1] = Node_Info.filter(q => q.type === "rtpProxy") ;
+    // console.log(node_type[1]);
     node_type[2] = Node_Info.filter(q => q.type === "core") ;
+    // console.log(node_type[2]);
 
     for (let i = 0 ; i < 4 ; i++)
     {
@@ -297,11 +332,14 @@ fetch("https://75f1b08b-e4e1-4506-af9e-8a4ed610dbb5.mock.pstmn.io/api/topology")
         Homer_Virtual_IP[i] = document.querySelector(`.Virtual-IPs-Homer-box${4-i}`);
         Homer_Virtual_IP[i].setAttribute("value",`${network_Info.homerVirtualIp.split(".")[i]}`);
 
+        render(0) ;
+        default_node = "pcscf" ;
+
     }
 
 
 })
-.catch((error) => {console.log(error)});
+.catch((error) => {console.log("error")});
 }
 
 async function init() {
@@ -311,9 +349,8 @@ await load_page() ;
 
 init();
 
-let  Network_Definition_form = document.getElementById("NetworkDefinition-form");
-console.log(Network_Definition_form);
 
+let  Network_Definition_form = document.getElementById("NetworkDefinition-form");
 Network_Definition_form.addEventListener("submit", function (e) {
 e.preventDefault();
 const formData = Object.fromEntries(new FormData(e.target));
@@ -332,7 +369,7 @@ subnetmak[3] = formData.subnetmask_field4 ;
 
 let final_formdata = {SubnetMask : subnetmak.join(".") , Gateway : gateway.join(".")}
 hasMessage = false;
-result =fetch("https://75f1b08b-e4e1-4506-af9e-8a4ed610dbb5.mock.pstmn.io/api/topology/networkDefinition", {
+result =fetch("https://fcc65d6f-800a-4e80-bce5-b2a158ad46dd.mock.pstmn.io/api/topology/networkDefinition", {
   method: 'POST',
   headers: {
    'Content-Type': 'application/json' 
@@ -353,24 +390,6 @@ result =fetch("https://75f1b08b-e4e1-4506-af9e-8a4ed610dbb5.mock.pstmn.io/api/to
     }
 });
 
-
-// fetch("https://75f1b08b-e4e1-4506-af9e-8a4ed610dbb5.mock.pstmn.io/api/topology/networkDefinition", {
-//   method: 'POST',
-//   headers: {
-//    'Content-Type': 'application/json' 
-//  },
-//   body: JSON.stringify(final_formdata),
-// })
-// .then(response=>{
-//     if(response.status===200)
-//     console.log("ok shod");
-// else
-//     console.log("nashod")}
-//     )
-// .then((response) => response.json())
-// .then((data) => {console.log(data);})
-// .catch((error) => {console.log(error)});
-// });
 
 // ////////////////////////////////////////////////////////
 
@@ -402,7 +421,7 @@ let final_formdata = {databaseVirtualIp: DatabaseVirtualIP.join(".") , dnsVirtua
 // console.log( final_formdata );
 console.log(JSON.stringify(final_formdata));
 
-fetch("https://75f1b08b-e4e1-4506-af9e-8a4ed610dbb5.mock.pstmn.io/api/topology/virtualIps", {
+fetch("https://fcc65d6f-800a-4e80-bce5-b2a158ad46dd.mock.pstmn.io/api/topology/virtualIps", {
   method: 'POST',
   headers: {
    'Content-Type': 'application/json' 
@@ -419,16 +438,27 @@ let node_table_title = [] ;
 for(let i = 0 ; i < 3 ; i++)
 {
     node_table_title[i] = document.querySelector(`.node-table-title${i+1}`);
-    // console.log(node_table_title[i]);
     node_table_title[i].addEventListener("click", function (e) {
     e.preventDefault();
+    console.log(node_type[i]);
+    console.log(node_type);
+
     const render_table_type = node_type[i].map( q => {
     return `
                 <div class="node-table-content">
-                    <div class="node-table-content-name">${q.name}</div>
-                    <div class="node-table-content-ip">${q.ip}</div>
-                    <div class="node-table-content-status">${q.status}</div>
-                </div>` ;
+                    <form id="${q.id}edit-form">
+                    <input type="text" id="${q.id}pname" class="node-table-content-name" value = "${q.name}"  disabled />
+                    <input type="text" id="${q.id}pip" class="node-table-content-ip" value= "${q.ip}"  disabled />
+                    <input type="text" id="${q.id}pstatus" class="node-table-content-status" value= "${q.status}"  disabled />
+                    </form>
+                    <div class="node-table-content-icon">
+                        <img class="pencil" id="${q.id}p" src="images/IMS_TOPOLOGY_images/pencil.svg" />
+                        <img class="trash" id="${q.id}" src="images/IMS_TOPOLOGY_images/trash-simple.svg" />
+                        <img class="tick"  type= "submit" id="${q.id}pt" src="images/IMS_TOPOLOGY_images/tick.svg" />
+                        <img class="close"  id="${q.id}pc" src="images/IMS_TOPOLOGY_images/close.svg" />
+                    </div>
+                    </form>
+                </div>`;
 
     }) ;
     let  node_list = $("#node-table-contents");
@@ -437,24 +467,266 @@ for(let i = 0 ; i < 3 ; i++)
 }
 
 
+let  node_type_name = [ "pcscf" , "rtpProxy" , "core"] ;
 
-
-
-              <div class="node-table-content">
-                    <input type="text" class="node-table-content-name" value = "Folan" />
-                    <input type="text" class="node-table-content-ip" value= "192.168.11.12" />
-                    <input type="text" class="node-table-content-status" value= "Not Reachable" />
+function render(type_index) {
+   const render_table_type = node_type[type_index].map( q => {
+    return `
+                <div class="node-table-content">
+                    <form id="${q.id}edit-form">
+                    <input type="text" id="${q.id}pname" class="node-table-content-name" value = "${q.name}"  disabled />
+                    <input type="text" id="${q.id}pip" class="node-table-content-ip" value= "${q.ip}"  disabled />
+                    <input type="text" id="${q.id}pstatus" class="node-table-content-status" value= "${q.status}"  disabled />
                     <div class="node-table-content-icon">
-                        <img class="pencil" src="images/IMS_TOPOLOGY_images/pencil.svg" />
-                        <img class="trash" src="images/IMS_TOPOLOGY_images/trash-simple.svg" />
+                        <img class="pencil" id="${q.id}p" src="images/IMS_TOPOLOGY_images/pencil.svg" />
+                        <img class="trash" id="${q.id}" src="images/IMS_TOPOLOGY_images/trash-simple.svg" />
+                        <img class="tick" type= "submit"  id="${q.id}pt" src="images/IMS_TOPOLOGY_images/tick.svg" />
+                        <img class="close" id="${q.id}pc" src="images/IMS_TOPOLOGY_images/close.svg" />
                     </div>
-                </div>
+                    </form>
+                </div>`;
+
+    });
+
+    let  node_list = $("#node-table-contents");
+    node_list.html(render_table_type.join(''));
+}
+
+
+let new_Node ;
+let  add_node_form = document.getElementById("add-node-form");
+add_node_form.addEventListener("submit", function (e) {
+e.preventDefault();
+const formData = Object.fromEntries(new FormData(e.target));
+console.log(formData) ;
+let node_ip = [] ;
+let node_name ;
+let current_node_type ;
+
+node_name = formData.node_name ; 
+current_node_type = formData.node_type_icon ;
+
+console.log(current_node_type);
+node_ip[0] = formData.IP_Address_field1 ;
+node_ip[1] = formData.IP_Address_field2 ;
+node_ip[2] = formData.IP_Address_field3 ;
+node_ip[3] = formData.IP_Address_field4 ;
+
+let final_formdata = {name : node_name , ip : node_ip.join(".") , type : current_node_type}
+result =fetch("https://fcc65d6f-800a-4e80-bce5-b2a158ad46dd.mock.pstmn.io/api/topology/addNode", {
+  method: 'POST',
+  headers: {
+   'Content-Type': 'application/json' 
+ },
+  body: JSON.stringify(final_formdata),
+})
+.then((response) => response.json())
+.then((data) => {console.log(data);
+                 new_Node = data ;
+                
+
+                 if (new_Node.type === "pcscf")
+                 {
+                        console.log("hi1");
+                        //  node_type[0] = node_type[0].push(new_Node) ;
+                        console.log(node_type[0]);
+                        node_type[0].push(new_Node);
+                        console.log(node_type[0]);
+                 }
+                //  switch(new_Node.type) {
+                //     case "pcscf":
+                //         console.log("hi1");
+                //         //  node_type[0] = node_type[0].push(new_Node) ;
+                //         console.log(node_type[0]);
+                //         node_type.push(new_Node);
+                //         break;
+
+                //     case "rtpProxy":
+                //         console.log("hi2");
+                //         //  node_type[1] = node_type[1].push(new_Node) ;
+                //         //  console.log(node_type[1]);
+                //          node_type[1].push(new_Node);
+                //         break;
+
+                //     case "core":
+                //         console.log("hi3");
+                //         //  node_type[2] = node_type[2].push(new_Node) ;
+                //         //  console.log(node_type[2]);
+                //          node_type[2].push(new_Node);
+                //         break;
+                //     default:
+                //         console.log("hi4");
+// }
+
+})
+.catch((error) => {console.log(error)});
+});
+
+
+
+/////////////////////////////////////////////
+
+let modal = document.getElementById("modal");
+let default_node =  "pcscf";
+let itemWillDeleteData = null;
+
+let editable_data_before= {} ;
+let editable_data_next= {} ;
+let editable_form_number ;
+let modal_close = document.querySelector(".modal-close");
+let modal_delete_button = document.getElementById("modal-delete-button") ;
+let modal_cancel_button = document.getElementById("modal-cancel-button") ;
+let node_table = document.querySelector(".node-table") ;
+
+node_table.addEventListener("click", function (e) {
+    e.preventDefault();
+    const target = e.target;
+    if(target.classList.contains("trash")){
+        const data = Node_Info.find((item)=>{
+            return item.id == target.id
+        })
+        modal.style.display = "block";
+        console.log({data})
+        itemWillDeleteData = data;
+      
+    }
+    
+
+    else if(target.classList.contains("pencil"))
+    {
+        console.log(target.id);
+        let close_icon = document.getElementById(`${target.id}c`) ;
+        let tick_icon = document.getElementById(`${target.id}t`) ; 
+
+        close_icon.style.display = "block";
+        tick_icon.style.display = "block";
+
+        editable_data_before = Node_Info.find((item)=>{
+            return item.id == target.id.substring(0, target.id.length - 1);
+        })
+
+        //    console.log(editable_data_before);
+        //    console.log("hi in pen");
+        //     console.log(target.id);
+        //     console.log(`${target.id}name`) ;
+            // let edit_name = 
+        document.getElementById(`${target.id}name`).disabled = false ;
+        document.getElementById(`${target.id}ip`).disabled = false ;
+        document.getElementById(`${target.id}status`).disabled = false ;
+        editable_form_number = target.id.substring(0, target.id.length - 1) + "edit-form";
+        console.log(editable_form_number);
+
+
+        let  edit_form = document.getElementById(`${editable_form_number}`);
+        edit_form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const formData = Object.fromEntries(new FormData(e.target));
+        const subnetmak = [] ;
+        const gateway = [] ;
+
+        console.log(formData)
+// gateway[0] = formData.gateway_field1 ;
+// gateway[1] = formData.gateway_field2 ;
+// gateway[2] = formData.gateway_field3 ;
+// gateway[3] = formData.gateway_field4 ;
+
+// subnetmak[0] = formData.subnetmask_field1 ;
+// subnetmak[1] = formData.subnetmask_field2 ;
+// subnetmak[2] = formData.subnetmask_field3 ;
+// subnetmak[3] = formData.subnetmask_field4 ;
+
+// let final_formdata = {SubnetMask : subnetmak.join(".") , Gateway : gateway.join(".")}
+// hasMessage = false;
+// result =fetch("https://fcc65d6f-800a-4e80-bce5-b2a158ad46dd.mock.pstmn.io/api/topology/networkDefinition", {
+//   method: 'POST',
+//   headers: {
+//    'Content-Type': 'application/json' 
+//  },
+//   body: JSON.stringify(final_formdata),
+// })
+// .then(response=>{
+//     if(response.status!==200)
+//         hasMessage = true;
+// }
+//     );
+//     if(hasMessage)
+//     {
+//         result
+// .then((response) => response.json())
+// .then((data) => {console.log(data);})
+// .catch((error) => {console.log(error)});
+//     }
+});
 
 
 
 
 
 
+
+
+    }
+});
+
+////////////////////////////////////////////////////////
+
+
+modal_close.addEventListener("click", function (e) {
+    e.preventDefault();
+    modal.style.display = "none";
+});
+
+
+modal_cancel_button.addEventListener("click", function (e) {
+    e.preventDefault();
+    modal.style.display = "none";
+});
+
+
+
+modal_delete_button.addEventListener("click", function (e) {
+    console.log({itemWillDeleteData})
+    e.preventDefault();
+    modal.style.display = "none";
+
+    let hasMessage = false;
+    let final_formdata = { name : itemWillDeleteData.name , ip : itemWillDeleteData.ip , type : itemWillDeleteData.type }
+
+result =fetch("https://fcc65d6f-800a-4e80-bce5-b2a158ad46dd.mock.pstmn.io/api/topology/deleteNode", {
+  method: 'POST',
+  headers: {
+   'Content-Type': 'application/json' 
+ },
+  body: JSON.stringify(final_formdata),
+})
+.then(response=>{
+    if(response.status!==200)
+        hasMessage = true;
+    else 
+    {
+        console.log("shod")
+        let  index = node_type_name.findIndex((num) => num === itemWillDeleteData.type);
+        node_type[index] = node_type[index].filter( q =>  !( (q.type === itemWillDeleteData.type) &&  (q.name === itemWillDeleteData.name )  &&  ( q.ip === itemWillDeleteData.ip) )  === true ) ;
+        render(index);
+    }   
+}
+);
+ 
+    if(hasMessage)
+    {
+        result
+        .then((response) => response.json())
+        .then((data) => {console.log(data);})
+        .catch((error) => {console.log(error)});
+    }
+
+});
+
+
+// let modal_close = document.querySelector(".modal-close");
+// let modal_delete_button = document.getElementById("modal-delete-button") ;
+// let modal_cancel_button = document.getElementById("modal-cancel-button") ;
+// let node_table = document.querySelector(".node-table") ;
 
 
 </script>

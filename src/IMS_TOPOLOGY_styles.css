@@ -122,8 +122,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: white; */
-    /* border:0.5px solid black; */
+    /* background-color: #ffffff; */
+    /* gap: 20px; */
 }
 
 
@@ -191,10 +191,14 @@
 .Selection-Box-in-Menu span {
    color: white;
    font-size: 1.48vh;
-   /* font-family: myFirstFont;  */
+   padding-left : 12px;
    font-family: 'FiraGO', sans-serif;
    text-align: center;
 }
+
+/* .troubleshooting-in-menu span {
+     padding-left : 8px;
+} */
 
 .configuration-in-menu-image {
  width: 2.31vw;
@@ -217,7 +221,7 @@
 .Selection-Box-in-Menu a {
     text-decoration: none;
     /* text-align: center; */
-    display: flex;
+    /* display: flex; */
     /* justify-content: space-evenly; */
 }
 
@@ -390,8 +394,104 @@
     right: 36.04vw;
     top : 20.46vh;
     position: absolute;
-    border-radius: 20px;
+    border-radius: 1.85vh;
 }
+
+
+#modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1;     
+    width: 47.39vw;
+    height: 72.31vh;
+    right: 36.04vw;
+    top : 20.46vh;
+    border-radius: 1.85vh;
+    overflow: auto; 
+    background-color: rgba(31,102,110, 0.22); 
+    color : white;
+}
+
+
+.modal-content {
+    position: absolute;  
+    /* z-index: 1;      */
+    width: 21.56vw;
+    height: 19.44vh;
+    right: 12.91vw;
+    top : 26.48vh; 
+    margin : auto auto ;
+    border-radius: 1.85vh;
+    /* overflow: auto;  */
+    background-color: #1A4348; 
+    opacity: 80%;
+}
+
+
+.modal-buttons {
+    position: absolute;  
+    width: 12.5vw;
+    height: 3.148vh;
+    right: 4.53vw;
+    top : 12.41vh; 
+    display: flex;
+    justify-content: space-between;
+    /* background-color: red; */
+    align-items: center;
+}
+
+#modal-cancel-button , 
+#modal-delete-button {
+    width: 5vw;
+    height: 3.148vh;
+    top : 0vh;
+    font-size: 1.48vh;
+    font-family: 'FiraGO', sans-serif;
+    color : white;
+    background-color: #FF8888;
+    border-radius: 0.92vh;
+    border: none;
+    /* opacity: 100%; */
+}
+
+
+ #modal-cancel-button {
+    background-color: #1A4348 ;
+    /* opacity: 60%; */
+ }
+
+
+.modal-header p {
+    font-size: 1.29vh;
+    font-family: 'FiraGO', sans-serif;
+    position: absolute;
+    top : 2.96vh;
+    text-align: center;
+    right: 8.38vw;
+    margin-top: 0;
+}
+
+
+.modal-body p {
+    font-size: 1.66vh;
+    font-family: 'FiraGO', sans-serif;
+    position: absolute;
+    top : 7.41vh;
+    text-align: center;
+    right: 3.42vw;
+    margin-top: 0;
+}
+
+
+.modal-close {
+  color: #A6D4C4;
+  float: right;
+  font-size: 28px;
+  margin-right: 1.32vw;
+  margin-top: 1.3vh;
+  /* font-weight: bold; */
+}
+
 
 .node-properties {
     width: 44.61vw;
@@ -401,7 +501,6 @@
     position: absolute;
     display: flex;
 }
-
 
 .node-ip {
     width: 16.921vw;
@@ -700,25 +799,30 @@ input[ type="text"] {
 } 
 
 .pencil {
-    right: 1.073vw;
-    top: 1.092vh;
+    right: 1.29vw;
+    top: 0.814vh;
     position: absolute;
 }
 
 .trash {
-    right: 0vw;
-    top: 1.092vh;
+    right: 0.223vw;
+    top: .814vh;
     position: absolute;
 }
 
+.close {
+    right:  4.062vw;
+    top: 0.64vh;
+    position: absolute;
+    display: none;
+}
 
-
-
-
-
-
-
-
+.tick {
+    right: 2.67vw;
+    top: 0.64vh;
+    position: absolute;
+    display: none;
+}
 
 
  .save-node-button {
@@ -821,9 +925,6 @@ input[ type="text"] {
     /* font-family: myFirstFont;  */
     font-family: 'FiraGO', sans-serif;
 }
-
-
-
 
 
 

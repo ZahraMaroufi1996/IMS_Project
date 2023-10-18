@@ -182,7 +182,7 @@
 .Selection-Box-in-Menu span {
    color: white;
    font-size: 1.48vh;
-   /* font-family: myFirstFont;  */
+   padding-left : 12px;
    font-family: 'FiraGO', sans-serif;
    text-align: center;
 }
