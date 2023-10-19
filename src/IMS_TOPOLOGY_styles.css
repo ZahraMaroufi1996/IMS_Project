@@ -9,19 +9,63 @@
 }
 
 
+.show-error {
+    z-index: 1;
+    width: 20.83vw;
+    height: 9.26vh;
+    background-color: #1A4348;
+    right: 4.166vw;
+    bottom: 7.41vh;
+    position: fixed;
+    background-color: rgba(198,81,97);
+    border-radius: 0.65vh;
+    /* display: none; */
+}
+
+
+.error-close {
+  color: white;
+  /* float: right; */
+  font-size: 24px;
+  right: 0.5vw;
+  top: 0.23vh;
+  position: absolute;
+  /* font-weight: bold; */
+}
+
+.error-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 1.85vh ;
+    left: 1.042vw ;
+    position: absolute;
+}
+
+#erroe-message {
+    color: white;
+    font-size: 1.66vh;
+   font-family: 'FiraGO', sans-serif;
+   display: block;
+}
+
+#erroe-message:first-letter {
+    text-transform: uppercase;
+}
+
+.error-logo {
+    width: 1.042vw;
+    height: 1.85vh;
+    background-color:  white;
+    margin: 3px;
+    float: left;
+}
+
 
 .sidebar {
     width: 15.1vw;
     height: 100vh;
     background-color: #1A4348;
-    /* border: 1px solid #707070; */
-    /* border-top: 0.093vh;
-    border-bottom: 0.093vh;
-    border-left: 0.052vw;
-    border-right: 0.052vw;
-    border-color: #707070;
-    border-style: solid; */
-    /* border-radius: 20px; */
     left: 0px;
     top: 0px;
     position: absolute;
@@ -817,13 +861,26 @@ input[ type="text"] {
     display: none;
 }
 
-.tick {
-    right: 2.67vw;
-    top: 0.64vh;
+img.tick {
+    right: 0vw;
+    top: 0vh;
     position: absolute;
-    display: none;
+    width: 0.83vw;
+    height: 1.48vh;
+    padding: 0;
+    /* display: none; */
 }
 
+button.tick {
+    right: 2.67vw;
+    top: 1.48vh;
+    position: absolute;
+    border: none;
+    width: 0.83vw;
+    height: 1.48vh;
+    display: none;
+    background-color: red;
+}
 
  .save-node-button {
     width: 7.29vw;
@@ -927,16 +984,41 @@ input[ type="text"] {
 }
 
 
-
-.box4 {
+.footer {
     background-color: white;
     width: 84.89vw;
     height: 4.63vh;
     right: 0;
     bottom: 0;
     position: absolute;
-    border-top: 0.046vh solid #83A79A ;
-    border-bottom: none;
-    border-left: none;
-    border-right: none;
+} 
+
+#time-box {
+    /* background-color: red; */
+    width: 13.32vw;
+    height: 3vh;
+    right: 4.70vw;
+    top: 0.78vh;
+    position: absolute;
+    border-left: 0.046vh solid #83A79A;
+    border-right: 0.046vh solid #83A79A;
+}
+
+#time-content {
+    width: 10.46vw;
+    height: 1.76vh;
+    left: 1.41vw;
+    top: 0.46vh;
+    position: absolute;
+    /* background-color: red; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+#time-content span {
+    color: #83A79A;
+    font-size: 1.58vh;
+    font-family: 'FiraGO', sans-serif;   
 }

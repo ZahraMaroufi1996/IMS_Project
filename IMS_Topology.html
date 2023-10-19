@@ -34,6 +34,17 @@
 
     </div>
 
+    <div class="show-error">
+            <div class="modal-header">
+                <span class="error-close">&times;</span>
+            </div>
+            <div class="error-content">
+                <p id = "erroe-message">     
+                    successfull message!!!!
+                    <img  src="images/About Icon.svg" class="error-logo"/>
+                </p>
+            </div>
+        </div>
 
 
     <div class="sidebar">   
@@ -158,7 +169,7 @@
                 </div>
                 <button type="submit" class ="add-node-button" >Add Node</button>
 
-        </div>  
+                </div>  
 
         </form>
 
@@ -277,8 +288,14 @@
         </form>
     </div>
 
-
-    <div class="box4">        
+    <div class="footer">    
+        <div id="time-box">
+            <div id="time-content">
+                <span>Server Time</span>
+                <span id = "local-time" >21.04.17</span>
+                <span id = "global-time"> 18:42:23</span>
+            </div>
+        </div>    
     </div>
 
 <script>
@@ -450,11 +467,10 @@ for(let i = 0 ; i < 3 ; i++)
                     <input type="text" id="${q.id}pname" class="node-table-content-name" value = "${q.name}"  disabled />
                     <input type="text" id="${q.id}pip" class="node-table-content-ip" value= "${q.ip}"  disabled />
                     <input type="text" id="${q.id}pstatus" class="node-table-content-status" value= "${q.status}"  disabled />
-                    </form>
                     <div class="node-table-content-icon">
                         <img class="pencil" id="${q.id}p" src="images/IMS_TOPOLOGY_images/pencil.svg" />
                         <img class="trash" id="${q.id}" src="images/IMS_TOPOLOGY_images/trash-simple.svg" />
-                        <img class="tick"  type= "submit" id="${q.id}pt" src="images/IMS_TOPOLOGY_images/tick.svg" />
+                        <button class ="tick" id="${q.id}pt" type="submit">55</button>
                         <img class="close"  id="${q.id}pc" src="images/IMS_TOPOLOGY_images/close.svg" />
                     </div>
                     </form>
@@ -465,6 +481,7 @@ for(let i = 0 ; i < 3 ; i++)
     node_list.html(render_table_type.join(''));
     });
 }
+
 
 
 let  node_type_name = [ "pcscf" , "rtpProxy" , "core"] ;
@@ -480,7 +497,7 @@ function render(type_index) {
                     <div class="node-table-content-icon">
                         <img class="pencil" id="${q.id}p" src="images/IMS_TOPOLOGY_images/pencil.svg" />
                         <img class="trash" id="${q.id}" src="images/IMS_TOPOLOGY_images/trash-simple.svg" />
-                        <img class="tick" type= "submit"  id="${q.id}pt" src="images/IMS_TOPOLOGY_images/tick.svg" />
+                        <button class ="tick" id="${q.id}pt" type="submit">55</button>
                         <img class="close" id="${q.id}pc" src="images/IMS_TOPOLOGY_images/close.svg" />
                     </div>
                     </form>
@@ -562,8 +579,6 @@ result =fetch("https://fcc65d6f-800a-4e80-bce5-b2a158ad46dd.mock.pstmn.io/api/to
 .catch((error) => {console.log(error)});
 });
 
-
-
 /////////////////////////////////////////////
 
 let modal = document.getElementById("modal");
@@ -590,8 +605,6 @@ node_table.addEventListener("click", function (e) {
         itemWillDeleteData = data;
       
     }
-    
-
     else if(target.classList.contains("pencil"))
     {
         console.log(target.id);
@@ -605,7 +618,8 @@ node_table.addEventListener("click", function (e) {
             return item.id == target.id.substring(0, target.id.length - 1);
         })
 
-        //    console.log(editable_data_before);
+         console.log("hi in pen");
+        console.log(editable_data_before);
         //    console.log("hi in pen");
         //     console.log(target.id);
         //     console.log(`${target.id}name`) ;
@@ -616,24 +630,20 @@ node_table.addEventListener("click", function (e) {
         editable_form_number = target.id.substring(0, target.id.length - 1) + "edit-form";
         console.log(editable_form_number);
 
-
         let  edit_form = document.getElementById(`${editable_form_number}`);
+        console.log(edit_form);
         edit_form.addEventListener("submit", function (e) {
         e.preventDefault();
+        console.log("hi in tickkkkkk");
         const formData = Object.fromEntries(new FormData(e.target));
         const subnetmak = [] ;
         const gateway = [] ;
 
-        console.log(formData)
+        console.log(formData);
 // gateway[0] = formData.gateway_field1 ;
 // gateway[1] = formData.gateway_field2 ;
 // gateway[2] = formData.gateway_field3 ;
 // gateway[3] = formData.gateway_field4 ;
-
-// subnetmak[0] = formData.subnetmask_field1 ;
-// subnetmak[1] = formData.subnetmask_field2 ;
-// subnetmak[2] = formData.subnetmask_field3 ;
-// subnetmak[3] = formData.subnetmask_field4 ;
 
 // let final_formdata = {SubnetMask : subnetmak.join(".") , Gateway : gateway.join(".")}
 // hasMessage = false;
@@ -660,16 +670,10 @@ node_table.addEventListener("click", function (e) {
 
 
 
-
-
-
-
-
     }
 });
 
 ////////////////////////////////////////////////////////
-
 
 modal_close.addEventListener("click", function (e) {
     e.preventDefault();
@@ -681,7 +685,6 @@ modal_cancel_button.addEventListener("click", function (e) {
     e.preventDefault();
     modal.style.display = "none";
 });
-
 
 
 modal_delete_button.addEventListener("click", function (e) {
@@ -716,17 +719,74 @@ result =fetch("https://fcc65d6f-800a-4e80-bce5-b2a158ad46dd.mock.pstmn.io/api/to
     {
         result
         .then((response) => response.json())
-        .then((data) => {console.log(data);})
+        .then((data) => {console.log(data);                                     
+         console.log("hiiiiii");
+        })
         .catch((error) => {console.log(error)});
     }
 
 });
 
 
-// let modal_close = document.querySelector(".modal-close");
-// let modal_delete_button = document.getElementById("modal-delete-button") ;
-// let modal_cancel_button = document.getElementById("modal-cancel-button") ;
-// let node_table = document.querySelector(".node-table") ;
+function setTime() 
+{
+    let my_date = new Date();
+    let my_local_hour = my_date.getHours();
+    let my_local_min = my_date.getMinutes();
+    let my_local_sec = my_date.getSeconds();
+
+    let my_global_hour = my_date.getUTCHours();
+    let my_global_min = my_date.getUTCMinutes();
+    let my_global_sec = my_date.getUTCSeconds();
+
+    if ( my_local_hour < 10 )
+    {
+       my_local_hour = `0${my_local_hour}`;
+    }
+
+    if (my_local_min < 10) 
+    {
+      my_local_min = `0${my_local_min}`;
+    } 
+
+    if (my_local_sec < 10)
+    {
+      my_local_sec = `0${my_local_sec}`;
+    } 
+
+    if (my_global_hour < 10 )
+    {
+       my_global_hour = `0${my_global_hour}`;
+    }
+
+    if  (my_global_min < 10) 
+    {
+      my_global_min = `0${my_global_min}`;
+    } 
+
+    if (my_global_sec < 10)
+    {
+      my_global_sec = `0${my_global_sec}`;
+    } 
+
+    let local_time = document.getElementById("local-time");
+    let global_time = document.getElementById("global-time");
+
+    local_time.innerHTML = `${my_local_hour}:${my_local_min}:${my_local_sec}`  
+    global_time.innerHTML = `${my_global_hour}:${my_global_min}:${my_global_sec}` 
+}
+
+let timerId = setInterval( setTime , 1000);
+
+
+let error_close = document.querySelector(".error-close");
+let show_error = document.querySelector(".show-error");
+
+error_close.addEventListener("click", function (e) {
+    e.preventDefault();
+    show_error.style.display = "none";
+});
+
 
 
 </script>
