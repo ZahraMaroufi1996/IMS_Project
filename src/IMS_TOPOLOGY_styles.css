@@ -19,9 +19,8 @@
     position: fixed;
     background-color: rgba(198,81,97);
     border-radius: 0.65vh;
-    /* display: none; */
+    display: none;
 }
-
 
 .error-close {
   color: white;

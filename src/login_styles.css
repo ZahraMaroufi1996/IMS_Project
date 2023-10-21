@@ -20,103 +20,236 @@
     
 }
 
-.Login-container {
+/* .Login-container {
  margin:200px auto;
- display: block;
-}
-
-/* .Login-Avatar img {
- margin:0 auto;
  display: block;
 } */
 
-.Login-form{
+
+
+/* .Login-form{
  margin:0 auto;
  color: red;
  display: block;
+} */
+
+
+.Login-container {
+    /* background-color: black; */
+   position: absolute;
+   width :17.71vw ;
+   height : 40.83vh;
+   top: 29.53vh;
+   right: 41.14vw;
+
 }
 
+
 .username-container , .password-container {
-margin: 30px auto ;
-height : 5.2vh;
-width :340px ;
-border: 1px solid #707070;
-border-radius: 7px;
+background-color: #83A79A;
+/* margin: 30px auto ; */
+height : 5.185vh;
+width :17.71vw ;
+border: 0.092vh solid #A6D4C4;
+border-radius: 0.65vh;
 display: flex;
 justify-content: center;
 opacity: 20%; 
 }
 
+.username-container {
+    top : 11.11vh;
+    right: 0;
+    position: absolute;
+}
+
+.password-container {
+    top : 20vh;
+    right: 0;
+    position: absolute;
+}
+
+
 input {
+     height : 5.175vh;
+     /* width: ; */
+     left: 0;
+     top: 0;
      background-color : inherit;
      border: none;
      text-align: center;
      color: white;
-     font-size: 20px;    
+     font-size: 1.85vh;    
 }
 
 input::placeholder {
     color: white;
+    font-family: 'Iranian Sans', sans-serif;
 }
 
-button
-{
-    background-color:#83A79A ;
-    display: block;
-    border: 1px solid #707070;
-    border-radius: 7px;
-    margin-bottom: 20px; 
-    margin: 0 auto;
-    height: 56px;
-    width: 340px;
-    font-size: 20px; 
-    color : white ;
-    text-align: center;
-    }
+.username-icon ,
+ .password-icon {
+  right: 0.72vw;
+  top:0.78vh;
+  width: 1.87vw;
+  height: 3.70vh;
+  position: absolute;
+
+}
 
     .Login-Avatar {
-        margin: 0 auto;
         border: 1px solid white;
-        border-radius: 50px;
-        height: 80px;
-        width: 80px;
-        margin-bottom: 20px;
+        border-radius: 50%;
+        position: absolute;
+        width : 4.16vw ;
+        height : 7.41vh;
+       top: 0vh;
+       right: 6.77vw;
        }
 
-     .Avatar-image{
-        margin-top : 18px;
-        margin-left : 20px;
-       }
+       .Login-Avatar img {
+            margin:auto auto;
+            display: block;
+            margin-top : 8px;
+        }
 
 
        button.submit-button {
         background-color:#68D5B0;
-        font-size: 22px; 
+        /* font-size: 22px;  */
         color : white ;
-       }
+        right: 0;
+        bottom: 6.76vh;
+        height : 5.185vh;
+        width :17.71vw ;
+        position: absolute;
+        border: none;
+        border-radius: 0.65vh;
+        font-size: 2.037vh;
+    /* font-family: myFirstFont;  */
+       /* font-family: 'FiraGO', sans-serif; */
+       font-family: 'Iranian Sans', sans-serif;
+
+}
 
     .Login-Logo-image{
         display: block;
-        width: 200px;
-        height: 65px;
-        margin: 0 auto;
+        width: 10.42vw;
+        height: 6.018vh;
+        /* margin: 0 auto; */
+        bottom: 11.61vh;
+        right: 44.80vw;
+        position: absolute;
     }
+
 
     .Login-Logo-text {
         text-align: center;
         color: white;
-        font-size: 16px;
+        font-size: 1.48vh;
         font-weight: thin;
+        /* right: 44.80vw; 8.41*/
+        right: 44.40vw;
+        position: absolute;
+        bottom: 7vh;
+        font-family: 'FiraGO', sans-serif;
+        width: 10.83vw;
+        height: 1.94vh;
         /* font-family: ; */
     }
 
-    .Login-Language {
-        background-color: #1A4348;
-        width: 74px;
-        height: 34px;
-        border: 1px solid #707070;
-        border-radius: 17px;
-        margin: 0 auto;
-        margin-top: 20px;
-        box-shadow: 0 3px 6px ;
-    }
+    
+.Login-Language {
+  position: absolute;
+  width: 3.85vw;
+  height: 3.15vh;
+  right: 6.87vw;
+  bottom: 0;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 3.85vw;
+  height: 3.15vh;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0px;
+  height: 0px;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background-color: #1A4348; */
+  /* -webkit-transition: .4s;
+  transition: .4s; */
+}
+
+span.slider {
+  color : #68D5B0 ;
+  font-size: 1.29vh;
+  font-family: 'FiraGO', sans-serif;
+  padding: 7px;
+}
+
+.slider:before {
+  text-align:center;
+  position: absolute;
+  content: "فا";
+  height: 2.22vh;
+  width: 1.25vw;
+  right: 0.26vw;
+  bottom: 0.46vh;
+  border: none;
+  color : black ;
+  font-size: 1.29vh;
+  /* font-family: 'FiraGO', sans-serif; */
+  font-family: 'Iranian Sans', sans-serif;
+  /* -webkit-transition: .4s;
+  transition: .4s; */
+}
+ 
+input:checked + .slider:before {
+  background-color: #68D5B0 ;
+}
+
+
+input + .slider:before {
+   background-color: #68D5B0;
+}
+
+
+input:checked + .slider ,
+input + .slider {
+    background-color: #1A4348;
+}
+
+/* input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+} */
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(-2.02vw);
+  -ms-transform: translateX(-2.02vw);
+  transform: translateX(-2.02vw);
+}
+
+
+
+.slider.round {
+  border-radius: 3.14vh;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+

@@ -398,13 +398,14 @@
     let  Supported_HD_Codes = [];
     let  inbound_Port_Minimum , inbound_Port_Maximum ;
     let  outbound_Port_Minimum , outbound_Port_Maximum ;
+    const url = "https://c8ac2942-4708-4210-9423-78748fdbcd54.mock.pstmn.io"
 
 
  function load_page()
  {
 
-    console.log("22222");
-    fetch("https://75f1b08b-e4e1-4506-af9e-8a4ed610dbb5.mock.pstmn.io/api/configuration")
+    // console.log("22222");
+    fetch(`${url}/api/configuration`)
     .then((response) => response.json())
     .then((data) => 
     { 
@@ -443,8 +444,6 @@
         }
 
 
-
-
         let  Encryption_Algorithm1 = []
         Encryption_Algorithm1 = document.getElementsByName(`Encryption-Algorithm-type-icon1`);
 
@@ -480,7 +479,6 @@
             }
                   
         }
-
 
 
         let  Supported_HD_Code1 = []
@@ -629,7 +627,7 @@ total_form.addEventListener("submit", function (e) {
 e.preventDefault();
 const formData = Object.fromEntries(new FormData(e.target));
 let hasMessage = false;
-let result =fetch("https://fcc65d6f-800a-4e80-bce5-b2a158ad46dd.mock.pstmn.io/api/configuration/submittForm", {
+let result =fetch(`${url}/api/configuration/submittForm`, {
   method: 'POST',
   headers: {
    'Content-Type': 'application/json' 
@@ -659,16 +657,31 @@ let result =fetch("https://fcc65d6f-800a-4e80-bce5-b2a158ad46dd.mock.pstmn.io/ap
 .catch((error) => {console.log(error)});
 });
 
-function setTime() 
+function getTime() 
 {
-    let my_date = new Date();
-    let my_local_hour = my_date.getHours();
-    let my_local_min = my_date.getMinutes();
-    let my_local_sec = my_date.getSeconds();
 
-    let my_global_hour = my_date.getUTCHours();
-    let my_global_min = my_date.getUTCMinutes();
-    let my_global_sec = my_date.getUTCSeconds();
+fetch(`${url}/api/general`)
+.then((response) => response.json())
+.then((data) => 
+{
+   
+    time_Info = data;
+    // console.log(data);
+    let my_global_hour = time_Info.timeHour;
+    let my_global_min  = time_Info.timeMin;
+    let my_global_sec  = time_Info.timeSec;
+   
+
+    let my_local_hour ;
+    let my_local_min ;
+    let my_local_sec ;
+
+    if(time_Info.timeZone === "Iran") {
+        
+        my_local_hour = time_Info.timeHour + 3;
+        my_local_min  = time_Info.timeMin + 30 ;
+        my_local_sec  = time_Info.timeSec;
+    }
 
     if ( my_local_hour < 10 )
     {
@@ -703,18 +716,15 @@ function setTime()
     let local_time = document.getElementById("local-time");
     let global_time = document.getElementById("global-time");
 
-    local_time.innerHTML = `${my_local_hour}:${my_local_min}:${my_local_sec}`  
-    global_time.innerHTML = `${my_global_hour}:${my_global_min}:${my_global_sec}` 
+    local_time.innerHTML = `${my_local_hour}:${my_local_min}:${my_local_sec}`  ; 
+    global_time.innerHTML = `${my_global_hour}:${my_global_min}:${my_global_sec}` ;
+   
+})
+.catch((error) => {console.log("error")});
 }
 
-let timerId = setInterval( setTime , 1000);
-
-
-
-
-
-
-
+getTime();
+setInterval( getTime ,  60 * 1000 * 15);
 
 
 </script>

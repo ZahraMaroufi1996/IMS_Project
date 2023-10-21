@@ -191,21 +191,23 @@
             </div>
 
             <div id="node-table-contents">
-<!-- 
-                <div class="node-table-content">
-                    <input type="text" class="node-table-content-name" value = "Folan" />
-                    <input type="text" class="node-table-content-ip" value= "192.168.11.12" />
-                    <input type="text" class="node-table-content-status" value= "Not Reachable" />
+
+           <!-- <div class="node-table-content">
+                    <form id="1edit-form">
+                    <input type="text" id="1pname" class="node-table-content-name" value = "${q.name}"  disabled />
+                    <input type="text" id="1pip" class="node-table-content-ip" value= "{q.ip}"  disabled />
+                    <input type="text" id="1pstatus" class="node-table-content-status" value= "{q.status}"  disabled />
                     <div class="node-table-content-icon">
-                        <img  class="pencil" src="images/IMS_TOPOLOGY_images/pencil.svg" />
-                        <img class="trash" src="images/IMS_TOPOLOGY_images/trash-simple.svg" />
-                        <img class="close" src="images/IMS_TOPOLOGY_images/tick.svg" />
-                        <img class="tick" src="images/IMS_TOPOLOGY_images/close.svg" />
+                        <img class="pencil" id="1p" src="images/IMS_TOPOLOGY_images/pencil.svg" />
+                        <img class="trash" id="1" src="images/IMS_TOPOLOGY_images/trash-simple.svg" />
+                        <button class ="tick" id="1pt" type="submit">55</button>
+                        <img class="close"  id="1pc" src="images/IMS_TOPOLOGY_images/close.svg" />
                     </div>
-                </div>
+                    </form>
+                </div>; -->
 
 
-                <div class="node-table-content">
+                <!-- <div class="node-table-content">
                     <input type="text" class="node-table-content-name" value = "bahman" />
                     <input type="text" class="node-table-content-ip" value= "192.168.11.12" />
                     <input type="text" class="node-table-content-status" value= "Not Reachable" />
@@ -215,7 +217,7 @@
                         <img class="close" src="images/IMS_TOPOLOGY_images/tick.svg" />
                         <img class="tick" src="images/IMS_TOPOLOGY_images/close.svg" />
                     </div>
-                </div> -->
+                </div> --> 
 
    
             </div>
@@ -311,12 +313,13 @@ let  Database_Virtual_I = [];
 let  DNS_Server_Virtual_IP = [];
 let  Homer_Virtual_IP = [];
 let  node_type= [] ;
+const url = "https://c8ac2942-4708-4210-9423-78748fdbcd54.mock.pstmn.io"
 // const  Gateway= [] ;
 
 function load_page()
 {
 
-fetch("https://fcc65d6f-800a-4e80-bce5-b2a158ad46dd.mock.pstmn.io/api/topology")
+fetch(`${url}/api/topology`)
 .then((response) => response.json())
 .then((data) => 
 {
@@ -363,9 +366,7 @@ async function init() {
 await load_page() ;
 }
 
-
 init();
-
 
 let  Network_Definition_form = document.getElementById("NetworkDefinition-form");
 Network_Definition_form.addEventListener("submit", function (e) {
@@ -386,7 +387,7 @@ subnetmak[3] = formData.subnetmask_field4 ;
 
 let final_formdata = {SubnetMask : subnetmak.join(".") , Gateway : gateway.join(".")}
 hasMessage = false;
-result =fetch("https://fcc65d6f-800a-4e80-bce5-b2a158ad46dd.mock.pstmn.io/api/topology/networkDefinition", {
+result =fetch(`${url}/api/topology/networkDefinition`, {
   method: 'POST',
   headers: {
    'Content-Type': 'application/json' 
@@ -394,22 +395,41 @@ result =fetch("https://fcc65d6f-800a-4e80-bce5-b2a158ad46dd.mock.pstmn.io/api/to
   body: JSON.stringify(final_formdata),
 })
 .then(response=>{
+    console.log(response) ;
+    // console.log(response.status) ;
     if(response.status!==200)
-        hasMessage = true;
-}
-    );
-    if(hasMessage)
     {
-        result
-.then((response) => response.json())
-.then((data) => {console.log(data);})
-.catch((error) => {console.log(error)});
+        hasMessage = true;
+        show_error.style.display = "block";
+        show_error.style.backgroundColor = "#c65161";
+        let error_msg = document.getElementById("erroe-message");
+        error_msg.innerHTML= `Your request was failed (status code : ${response.status}) ` + `<img  src="images/About Icon.svg" class="error-logo"/>`;
+
+    } else 
+    { 
+        hasMessage = false;
+        show_error.style.display = "block";
+        show_error.style.backgroundColor = "#58cc87";
+        let success_msg = document.getElementById("erroe-message");
+        success_msg.innerHTML= "Your request was done successfully" + `<img  src="images/About Icon.svg" class="error-logo"/>`;
     }
+})
+.catch((error) => {console.log(error)});
+// .then(response=>{
+//     if(response.status!==200)
+//         hasMessage = true;
+// }
+//     );
+//     if(hasMessage)
+//     {
+//         result
+// .then((response) => response.json())
+// .then((data) => {console.log(data);})
+// .catch((error) => {console.log(error)});
+//     }
 });
 
-
 // ////////////////////////////////////////////////////////
-
 let  Virtual_IPs_form = document.getElementById("Virtual-IPs-form");
 Virtual_IPs_form.addEventListener("submit", function (e) {
 e.preventDefault();
@@ -438,16 +458,37 @@ let final_formdata = {databaseVirtualIp: DatabaseVirtualIP.join(".") , dnsVirtua
 // console.log( final_formdata );
 console.log(JSON.stringify(final_formdata));
 
-fetch("https://fcc65d6f-800a-4e80-bce5-b2a158ad46dd.mock.pstmn.io/api/topology/virtualIps", {
+fetch(`${url}/api/topology/virtualIps`, {
   method: 'POST',
   headers: {
    'Content-Type': 'application/json' 
  },
   body: JSON.stringify(final_formdata),
 })
-.then((response) => response.json())
-.then((data) => {console.log(data);})
+.then(response=>{
+    console.log(response) ;
+    // console.log(response.status) ;
+    if(response.status!==200)
+    {
+        hasMessage = true;
+        show_error.style.display = "block";
+        show_error.style.backgroundColor = "#c65161";
+        let error_msg = document.getElementById("erroe-message");
+        error_msg.innerHTML= `Your request was failed (status code : ${response.status}) ` + `<img  src="images/About Icon.svg" class="error-logo"/>`;
+
+    } else 
+    { 
+        hasMessage = false;
+        show_error.style.display = "block";
+        show_error.style.backgroundColor = "#58cc87";
+        let success_msg = document.getElementById("erroe-message");
+        success_msg.innerHTML= "Your request was done successfully" + `<img  src="images/About Icon.svg" class="error-logo"/>`;
+    }
+})
 .catch((error) => {console.log(error)});
+// .then((response) => response.json())
+// .then((data) => {console.log(data);})
+// .catch((error) => {console.log(error)});
 });
 
 
@@ -530,50 +571,58 @@ node_ip[2] = formData.IP_Address_field3 ;
 node_ip[3] = formData.IP_Address_field4 ;
 
 let final_formdata = {name : node_name , ip : node_ip.join(".") , type : current_node_type}
-result =fetch("https://fcc65d6f-800a-4e80-bce5-b2a158ad46dd.mock.pstmn.io/api/topology/addNode", {
+result =fetch(`${url}/api/topology/addNode`, {
   method: 'POST',
   headers: {
    'Content-Type': 'application/json' 
  },
   body: JSON.stringify(final_formdata),
 })
-.then((response) => response.json())
+.then(response=>{
+    console.log(response) ;
+    // console.log(response.status) ;
+    if(response.status!==200)
+    {
+        hasMessage = true;
+        show_error.style.display = "block";
+        show_error.style.backgroundColor = "#c65161";
+        let error_msg = document.getElementById("erroe-message");
+        error_msg.innerHTML= `Your request was failed (status code : ${response.status}) ` + `<img  src="images/About Icon.svg" class="error-logo"/>`;
+
+    } else 
+    { 
+        hasMessage = false;
+        show_error.style.display = "block";
+        show_error.style.backgroundColor = "#58cc87";
+        let success_msg = document.getElementById("erroe-message");
+        success_msg.innerHTML= "Your request was done successfully" + `<img  src="images/About Icon.svg" class="error-logo"/>`;
+    }
+
+    return response.json() ; })
 .then((data) => {console.log(data);
-                 new_Node = data ;
-                
+                 new_Node = data ;               
 
-                 if (new_Node.type === "pcscf")
-                 {
-                        console.log("hi1");
+                 switch(new_Node.type) {
+                    case "pcscf":
                         //  node_type[0] = node_type[0].push(new_Node) ;
-                        console.log(node_type[0]);
+                        // console.log(node_type[0]);
                         node_type[0].push(new_Node);
-                        console.log(node_type[0]);
-                 }
-                //  switch(new_Node.type) {
-                //     case "pcscf":
-                //         console.log("hi1");
-                //         //  node_type[0] = node_type[0].push(new_Node) ;
-                //         console.log(node_type[0]);
-                //         node_type.push(new_Node);
-                //         break;
+                        // console.log(node_type[0]);
+                        render(0);
+                        break;
 
-                //     case "rtpProxy":
-                //         console.log("hi2");
-                //         //  node_type[1] = node_type[1].push(new_Node) ;
-                //         //  console.log(node_type[1]);
-                //          node_type[1].push(new_Node);
-                //         break;
+                    case "rtpProxy":
+                        node_type[1].push(new_Node);
+                        render(1);
+                        break;
 
-                //     case "core":
-                //         console.log("hi3");
-                //         //  node_type[2] = node_type[2].push(new_Node) ;
-                //         //  console.log(node_type[2]);
-                //          node_type[2].push(new_Node);
-                //         break;
-                //     default:
-                //         console.log("hi4");
-// }
+                    case "core":
+                        node_type[2].push(new_Node);
+                        render(2);
+                        break;
+                    default:
+                        console.log(" some problems!");
+                }
 
 })
 .catch((error) => {console.log(error)});
@@ -607,79 +656,87 @@ node_table.addEventListener("click", function (e) {
     }
     else if(target.classList.contains("pencil"))
     {
-        console.log(target.id);
-        let close_icon = document.getElementById(`${target.id}c`) ;
-        let tick_icon = document.getElementById(`${target.id}t`) ; 
+//         console.log(target.id);
+//         let close_icon = document.getElementById(`${target.id}c`) ;
+//         let tick_icon = document.getElementById(`${target.id}t`) ; 
 
-        close_icon.style.display = "block";
-        tick_icon.style.display = "block";
+//         close_icon.style.display = "block";
+//         tick_icon.style.display = "block";
 
-        editable_data_before = Node_Info.find((item)=>{
-            return item.id == target.id.substring(0, target.id.length - 1);
-        })
+//         editable_data_before = Node_Info.find((item)=>{
+//             return item.id == target.id.substring(0, target.id.length - 1);
+//         })
 
-         console.log("hi in pen");
-        console.log(editable_data_before);
-        //    console.log("hi in pen");
-        //     console.log(target.id);
-        //     console.log(`${target.id}name`) ;
-            // let edit_name = 
-        document.getElementById(`${target.id}name`).disabled = false ;
-        document.getElementById(`${target.id}ip`).disabled = false ;
-        document.getElementById(`${target.id}status`).disabled = false ;
-        editable_form_number = target.id.substring(0, target.id.length - 1) + "edit-form";
-        console.log(editable_form_number);
+//         console.log("hi in pen");
+//         console.log(editable_data_before);
 
-        let  edit_form = document.getElementById(`${editable_form_number}`);
-        console.log(edit_form);
-        edit_form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        console.log("hi in tickkkkkk");
-        const formData = Object.fromEntries(new FormData(e.target));
-        const subnetmak = [] ;
-        const gateway = [] ;
+//         document.getElementById(`${target.id}name`).disabled = false ;
+//         document.getElementById(`${target.id}ip`).disabled = false ;
+//         document.getElementById(`${target.id}status`).disabled = false ;
+//         // editable_form_number = target.id.substring(0, target.id.length - 1) + "edit-form";
+//         editable_row_number = target.id.substring(0, target.id.length - 1);
+//         console.log(editable_row_number);
 
-        console.log(formData);
-// gateway[0] = formData.gateway_field1 ;
-// gateway[1] = formData.gateway_field2 ;
-// gateway[2] = formData.gateway_field3 ;
-// gateway[3] = formData.gateway_field4 ;
+//         // let  edit_form = document.getElementById(`${editable_form_number}`);
+//         // console.log(edit_form);
 
-// let final_formdata = {SubnetMask : subnetmak.join(".") , Gateway : gateway.join(".")}
-// hasMessage = false;
-// result =fetch("https://fcc65d6f-800a-4e80-bce5-b2a158ad46dd.mock.pstmn.io/api/topology/networkDefinition", {
-//   method: 'POST',
-//   headers: {
-//    'Content-Type': 'application/json' 
-//  },
-//   body: JSON.stringify(final_formdata),
+
+//         let  current_tick = document.getElementById(`${target.id}t`);
+
+//         current_tick.addEventListener("click" , function(e){
+//         console.log("hi in actual tickkkkkk");
+//         console.log(e.target.id);
+
+//         let edit_content_name = e.target.parentElement.parentElement.children[0].value;
+//         let edit_content_ip = e.target.parentElement.parentElement.children[1].value;
+//         let edit_content_status = e.target.parentElement.parentElement.children[2].value;
+//         // console.log(e.target.parentElement.parentElement.children[0].value);
+//         // console.log(e.target.parentElement.parentElement.children[1].value);
+//         // console.log(e.target.parentElement.parentElement.children[2].value);
+//         let final_formdata = { name : edit_content_name , ip : edit_content_ip , status : edit_content_status }
+//         hasMessage = false;
+//         result =fetch(`${url}/api/topology/networkDefinition`, {
+//         method: 'POST',
+//         headers: {
+//         'Content-Type': 'application/json' 
+//         },
+//         body: JSON.stringify(final_formdata),
+//         })
+//         .then(response=>{
+//             if(response.status==200) 
+//             {
+//                 // hasMessage = true;
+//                 console.log("shod")
+//                 // let  index = node_type_name.findIndex((num) => num === itemWillDeleteData.type);
+//                 node_type[0] = node_type[0].filter( q =>  !( (q.type === itemWillDeleteData.type) &&  (q.name === itemWillDeleteData.name )  &&  ( q.ip === itemWillDeleteData.ip) )  === true ) ;
+//                 render(index);
+//             } 
+
+
+
+//         else 
+//         {
+//             console.log("shod")
+//             let  index = node_type_name.findIndex((num) => num === itemWillDeleteData.type);
+//             node_type[index] = node_type[index].filter( q =>  !( (q.type === itemWillDeleteData.type) &&  (q.name === itemWillDeleteData.name )  &&  ( q.ip === itemWillDeleteData.ip) )  === true ) ;
+//             render(index);
+//         } 
+
+
 // })
-// .then(response=>{
-//     if(response.status!==200)
-//         hasMessage = true;
-// }
-//     );
-//     if(hasMessage)
-//     {
-//         result
-// .then((response) => response.json())
-// .then((data) => {console.log(data);})
-// .catch((error) => {console.log(error)});
-//     }
-});
-
-
 
     }
+
 });
 
-////////////////////////////////////////////////////////
+
+
+///////////////////////////////////////////////////////
 
 modal_close.addEventListener("click", function (e) {
     e.preventDefault();
     modal.style.display = "none";
 });
-
 
 modal_cancel_button.addEventListener("click", function (e) {
     e.preventDefault();
@@ -695,7 +752,7 @@ modal_delete_button.addEventListener("click", function (e) {
     let hasMessage = false;
     let final_formdata = { name : itemWillDeleteData.name , ip : itemWillDeleteData.ip , type : itemWillDeleteData.type }
 
-result =fetch("https://fcc65d6f-800a-4e80-bce5-b2a158ad46dd.mock.pstmn.io/api/topology/deleteNode", {
+result =fetch(`${url}/api/topology/deleteNode`, {
   method: 'POST',
   headers: {
    'Content-Type': 'application/json' 
@@ -728,16 +785,34 @@ result =fetch("https://fcc65d6f-800a-4e80-bce5-b2a158ad46dd.mock.pstmn.io/api/to
 });
 
 
-function setTime() 
+function getTime() 
 {
-    let my_date = new Date();
-    let my_local_hour = my_date.getHours();
-    let my_local_min = my_date.getMinutes();
-    let my_local_sec = my_date.getSeconds();
 
-    let my_global_hour = my_date.getUTCHours();
-    let my_global_min = my_date.getUTCMinutes();
-    let my_global_sec = my_date.getUTCSeconds();
+fetch(`${url}/api/general`)
+.then((response) => response.json())
+.then((data) => 
+{
+   
+    time_Info = data;
+    // console.log(data);
+    let my_global_hour = time_Info.timeHour;
+    let my_global_min  = time_Info.timeMin;
+    let my_global_sec  = time_Info.timeSec;
+    // console.log(my_global_hour);
+    // console.log(my_global_min);
+    // console.log(my_global_sec);
+
+    let my_local_hour ;
+    let my_local_min ;
+    let my_local_sec ;
+
+
+    if(time_Info.timeZone === "Iran") {
+        
+        my_local_hour = time_Info.timeHour + 3;
+        my_local_min  = time_Info.timeMin + 30 ;
+        my_local_sec  = time_Info.timeSec;
+    }
 
     if ( my_local_hour < 10 )
     {
@@ -772,12 +847,15 @@ function setTime()
     let local_time = document.getElementById("local-time");
     let global_time = document.getElementById("global-time");
 
-    local_time.innerHTML = `${my_local_hour}:${my_local_min}:${my_local_sec}`  
-    global_time.innerHTML = `${my_global_hour}:${my_global_min}:${my_global_sec}` 
+    local_time.innerHTML = `${my_local_hour}:${my_local_min}:${my_local_sec}`  ; 
+    global_time.innerHTML = `${my_global_hour}:${my_global_min}:${my_global_sec}` ;
+   
+})
+.catch((error) => {console.log("error")});
 }
 
-let timerId = setInterval( setTime , 1000);
-
+getTime();
+setInterval( getTime ,  60 * 1000 * 15);
 
 let error_close = document.querySelector(".error-close");
 let show_error = document.querySelector(".show-error");
@@ -786,7 +864,6 @@ error_close.addEventListener("click", function (e) {
     e.preventDefault();
     show_error.style.display = "none";
 });
-
 
 
 </script>
