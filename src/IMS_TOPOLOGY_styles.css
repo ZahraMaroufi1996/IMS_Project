@@ -4,1020 +4,1154 @@
 } */
 
 .IMS-TOPOLOGY-body {
-    background-color:rgba(0, 0, 0, 0.04) ;
-    /* opacity: 16% ; */
+  background-color: rgba(0, 0, 0, 0.04);
 }
 
-
 .show-error {
-    z-index: 1;
-    width: 20.83vw;
-    height: 9.26vh;
-    background-color: #1A4348;
-    right: 4.166vw;
-    bottom: 7.41vh;
-    position: fixed;
-    background-color: rgba(198,81,97);
-    border-radius: 0.65vh;
-    display: none;
+  z-index: 1;
+  width: 20.83vw;
+  height: 9.26vh;
+  background-color: #1a4348;
+  right: 4.166vw;
+  bottom: 7.41vh;
+  position: fixed;
+  background-color: rgba(198, 81, 97);
+  border-radius: 0.65vh;
+  display: none;
 }
 
 .error-close {
   color: white;
-  /* float: right; */
   font-size: 24px;
   right: 0.5vw;
   top: 0.23vh;
   position: absolute;
-  /* font-weight: bold; */
 }
 
-.error-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 1.85vh ;
-    left: 1.042vw ;
-    position: absolute;
+#error-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 1.85vh;
+  left: 1.042vw;
+  position: absolute;
 }
 
 #erroe-message {
-    color: white;
-    font-size: 1.66vh;
-   font-family: 'FiraGO', sans-serif;
-   display: block;
+  color: white;
+  font-size: 1.66vh;
+  font-family: "FiraGO", sans-serif;
+  display: block;
+  /* padding-bottom: 1px; */
+  padding-left: 3px;
 }
 
 #erroe-message:first-letter {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .error-logo {
-    width: 1.042vw;
-    height: 1.85vh;
-    background-color:  white;
-    margin: 3px;
-    float: left;
+  width: 1.042vw;
+  height: 1.85vh;
+  /* background-color: white; */
+  /* margin: 3px;
+  float: left; */
 }
 
-
 .sidebar {
-    width: 15.1vw;
-    height: 100vh;
-    background-color: #1A4348;
-    left: 0px;
-    top: 0px;
-    position: absolute;
+  width: 15.1vw;
+  height: 100vh;
+  background-color: #1a4348;
+  left: 0px;
+  top: 0px;
+  position: absolute;
 }
 
 .Account-info {
-    width: 6.977vw;
-    height: 5.197vh;
-    top: 8.33vh;
-    left: 4.088vw;
-    position: absolute;
-    border-bottom: 0.092vh solid  rgba(255 , 255 , 255 , 0.25);
-
+  width: 6.977vw;
+  height: 5.197vh;
+  top: 8.33vh;
+  left: 4.088vw;
+  position: absolute;
+  border-bottom: 0.092vh solid rgba(255, 255, 255, 0.25);
 }
 
 .Account-name {
-    width: 4.79vw;
-    height: 3.79vh;
-    top: 0vh;
-    left: 1.093vw;
-    position: absolute;
-    /* border:1px solid  red; */
+  width: 4.79vw;
+  height: 3.79vh;
+  top: 0vh;
+  left: 1.093vw;
+  position: absolute;
 }
 
 .Account-name span {
-   font-size: 1.296vh;
-    /* font-family: myFirstFont;   */
-   font-family: 'FiraGO', sans-serif;
-   line-height: 1.76vh;
-   /* text-align: center; */
+  font-size: 1.296vh;
+  font-family: "FiraGO", sans-serif;
+  line-height: 1.76vh;
 }
 
 .username {
-    color: #A6D4C4;
-    text-align: right;
-    width: 3.23vw;
-    height: 1.76vh;
-    bottom: 0vh;
-    left: 0.78vw;
-    /* border: 1px solid red; */
-    position: absolute;
-    text-align: start;
+  color: #a6d4c4;
+  text-align: right;
+  width: 3.23vw;
+  height: 1.76vh;
+  bottom: 0vh;
+  left: 0.78vw;
+  position: absolute;
+  text-align: start;
 }
 
 .Saleh-username {
-    color: #ffffff ;
-    width: 4.79vw;
-    height: 1.76vh;
-    top: 0vh;
-    left: 0vw;
-    /* border: 1px solid red; */
-    position: absolute;
+  color: #ffffff;
+  width: 4.79vw;
+  height: 1.76vh;
+  top: 0vh;
+  left: 0vw;
+  position: absolute;
 }
 
-
 .sidebar-logo {
-    width: 6.98vw;
-    height: 8.24vh;
-    bottom: 6.48vh;
-    left: 4.06vw;
-    position: absolute;
+  width: 6.98vw;
+  height: 8.24vh;
+  bottom: 6.48vh;
+  left: 4.06vw;
+  position: absolute;
 }
 
 .sidebar-logo img {
-    width: 100%;
-    height: 100%;
-    /* display: block; */
+  width: 100%;
+  height: 100%;
 }
 
 .sidebar-button {
-    background-color: #68D5B0;
-    width: 9.58vw;
-    height: 3.70vh;
-    bottom: 27.13vh;
-    left: 3.64vw;
-    position: absolute;
-    color: white;
-    font-size: 1.66vh;
-    border-radius: 7px;
-    border: none;
-    
+  background-color: #68d5b0;
+  width: 9.58vw;
+  height: 3.7vh;
+  bottom: 27.13vh;
+  left: 3.64vw;
+  position: absolute;
+  color: white;
+  font-size: 1.66vh;
+  border-radius: 7px;
+  border: none;
 }
 
 .topology-in-menu {
-    width: 15.1vw;
-    height: 7.13vh;
-    bottom: 69.54vh;
-    left: 0;
-    position: absolute;
+  width: 15.1vw;
+  height: 7.13vh;
+  bottom: 69.54vh;
+  left: 0;
+  position: absolute;
 }
 
 .topology-in-menu-content {
-    width: 6.38vw;
-    height: 2.77vh;
-    bottom: 2.14vh;
-    left: 3.71vw;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* background-color: #ffffff; */
-    /* gap: 20px; */
+  width: 6.38vw;
+  height: 2.77vh;
+  bottom: 2.14vh;
+  left: 3.71vw;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
 .configuration-in-menu {
-    width: 15.1vw;
-    height: 7.13vh;
-    top: 34.44vh;
-    left: 0;
-    position: absolute;
+  width: 15.1vw;
+  height: 7.13vh;
+  top: 34.44vh;
+  left: 0;
+  position: absolute;
 }
 
 .configuration-in-menu-content {
-    width: 8.88vw;
-    height: 4.12vh;
-    bottom: 1.48vh;
-    left: 3.31vw;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* background-color: white; */
-    /* border:0.5px solid black; */
+  width: 8.88vw;
+  height: 4.12vh;
+  bottom: 1.48vh;
+  left: 3.31vw;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
 .monitoring-in-menu {
-    width: 15.1vw;
-    height: 7.13vh;
-    bottom: 47.22vh;
-    left: 0;
-    position: absolute;
+  width: 15.1vw;
+  height: 7.13vh;
+  bottom: 47.22vh;
+  left: 0;
+  position: absolute;
 }
 
 .monitoring-in-menu-content {
-    width: 7.18vw;
-    height: 2.77vh;
-    bottom: 2.175vh;
-    left: 3.71vw;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 7.18vw;
+  height: 2.77vh;
+  bottom: 2.175vh;
+  left: 3.71vw;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
 .troubleshooting-in-menu {
-    width: 15.1vw;
-    height: 7.13vh;
-    bottom: 36.85vh;
-    left: 0;
-    position: absolute;
+  width: 15.1vw;
+  height: 7.13vh;
+  bottom: 36.85vh;
+  left: 0;
+  position: absolute;
 }
 
 .troubleshooting-in-menu-content {
-    width: 9.89vw;
-    height: 2.77vh;
-    bottom: 2.19vh;
-    left: 3.71vw;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 9.89vw;
+  height: 2.77vh;
+  bottom: 2.19vh;
+  left: 3.71vw;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .Selection-Box-in-Menu span {
-   color: white;
-   font-size: 1.48vh;
-   padding-left : 12px;
-   font-family: 'FiraGO', sans-serif;
-   text-align: center;
+  color: white;
+  font-size: 1.48vh;
+  padding-left: 12px;
+  font-family: "FiraGO", sans-serif;
+  text-align: center;
 }
-
-/* .troubleshooting-in-menu span {
-     padding-left : 8px;
-} */
 
 .configuration-in-menu-image {
- width: 2.31vw;
- height: 4.12vh;
- left: 0;
- top: 0;
- position: absolute;
+  width: 2.31vw;
+  height: 4.12vh;
+  left: 0;
+  top: 0;
+  position: absolute;
 }
 
-.topology-in-menu-image ,
-.monitoring-in-menu-image ,
+.topology-in-menu-image,
+.monitoring-in-menu-image,
 .troubleshooting-in-menu-image {
-    height: 2.77vh;
-    width: 1.56vw;
-    left: 0;
-    top: 0;
-    position: absolute;
-} 
+  height: 2.77vh;
+  width: 1.56vw;
+  left: 0;
+  top: 0;
+  position: absolute;
+}
 
 .Selection-Box-in-Menu a {
-    text-decoration: none;
-    /* text-align: center; */
-    /* display: flex; */
-    /* justify-content: space-evenly; */
+  text-decoration: none;
 }
 
-
 .toolbar-class {
-    width: 84.89vw;
-    height: 5.92vh;
-    background-color: white;
-    right: 0px;
-    top: 0px;
-    position: absolute;
+  width: 84.89vw;
+  height: 5.92vh;
+  background-color: white;
+  right: 0px;
+  top: 0px;
+  position: absolute;
 }
 
 .toolbar-nav-content {
-    width: 23.62vw;
-    height: 2.77vh;
-    right: 4.66vw;
-    top: 1.57vh;
-    position: absolute;
-    display: flex;
-    /* border: 1px solid red; */
-    justify-content: space-between;
+  width: 23.62vw;
+  height: 2.77vh;
+  right: 4.66vw;
+  top: 1.57vh;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
 }
 
 .toolbar-nav-content img {
-    width: 1.56vw;
-    height: 2.77vh;;
-    /* object-fit: ; */
+  width: 1.56vw;
+  height: 2.77vh;
 }
 
-
-
-
-
-.network-class {    
-    background-color: white;
-    width: 78.75vw;
-    height: 9.35vh;
-    right: 4.69vw;
-    top : 8.52vh;
-    position: absolute;
-    border-radius: 20px;
+.network-class {
+  background-color: white;
+  width: 78.75vw;
+  height: 9.35vh;
+  right: 4.69vw;
+  top: 8.52vh;
+  position: absolute;
+  border-radius: 20px;
 }
 
 .network-definition {
-    width: 48.91vw;
-    height: 3.7vh;
-    left: 1.19vw;
-    top : 2.82vh;   
-    position: absolute;
-    /* border: 0.5px solid red; */
-    display: flex;
-
+  width: 48.91vw;
+  height: 3.7vh;
+  left: 1.19vw;
+  top: 2.82vh;
+  position: absolute;
+  display: flex;
 }
 
 .network-definition-subnetmask {
-    width: 17.81vw;
-    height: 3.7vh;
-    right: 19.68vw;
-    position: absolute;
-    /* border: 0.5px solid red; */
-     display: flex;
+  width: 17.81vw;
+  height: 3.7vh;
+  right: 19.68vw;
+  position: absolute;
+  display: flex;
 }
 
-
 .network-definition-gateway {
-    width: 16.2vw;
-    height: 3.7vh;
-    right: 0vw;
-    position: absolute;
-    /* border: 0.5px solid red; */
-    display: flex;
+  width: 16.2vw;
+  height: 3.7vh;
+  right: 0vw;
+  position: absolute;
+  display: flex;
 }
 
 .network-definition span {
- color:#83A79A ;
- font-size: 1.66vh;
- text-align: center;
- top: 0.55vh ;
- position: absolute;
- /* font-family: */
+  color: #83a79a;
+  font-size: 1.66vh;
+  text-align: center;
+  top: 0.55vh;
+  position: absolute;
+  /* font-family: */
 }
 
-
-.subnetmask-boxes , 
-.gateway-boxes , 
-.Virtual-IPs-Database-boxes ,
-.Virtual-IPs-DNSserver-boxes ,
-.Virtual-IPs-Homer-boxes
-{
-    display: flex;
+.subnetmask-boxes,
+.gateway-boxes,
+.Virtual-IPs-Database-boxes,
+.Virtual-IPs-DNSserver-boxes,
+.Virtual-IPs-Homer-boxes {
+  display: flex;
 }
 
- .subnetmask-box1 , 
- .gateway-box1 , 
- .node-box1 , 
- .Virtual-IPs-Database-box1 , 
- .Virtual-IPs-DNSserver-box1 , 
- .Virtual-IPs-Homer-box1{ 
-    width: 2.604vw;
-    height: 3.7vh;
-    right: 0vw;
-    position: absolute;
-    border-radius: 0.65vh; 
-    background-color: #EEF5F2;
- }
+.subnetmask-box1,
+.gateway-box1,
+.node-box1,
+.Virtual-IPs-Database-box1,
+.Virtual-IPs-DNSserver-box1,
+.Virtual-IPs-Homer-box1 {
+  width: 2.604vw;
+  height: 3.7vh;
+  right: 0vw;
+  position: absolute;
+  border-radius: 0.65vh;
+  background-color: #eef5f2;
+}
 
+.subnetmask-box2,
+.gateway-box2,
+.node-box2,
+.Virtual-IPs-Database-box2,
+.Virtual-IPs-DNSserver-box2,
+.Virtual-IPs-Homer-box2 {
+  width: 2.604vw;
+  height: 3.7vh;
+  right: 3.125vw;
+  position: absolute;
+  border-radius: 0.65vh;
+  background-color: #eef5f2;
+}
 
-.subnetmask-box2 , 
-.gateway-box2 , 
-.node-box2 ,  
-.Virtual-IPs-Database-box2 ,
-.Virtual-IPs-DNSserver-box2 , 
-.Virtual-IPs-Homer-box2{
-    width: 2.604vw;
-    height: 3.7vh;
-    right: 3.125vw;
-    position: absolute;
-    border-radius: 0.65vh; 
-    background-color: #EEF5F2;
- }
-
-.subnetmask-box3 , 
-.gateway-box3 , 
-.node-box3 ,  
-.Virtual-IPs-Database-box3 ,
-.Virtual-IPs-DNSserver-box3 , 
+.subnetmask-box3,
+.gateway-box3,
+.node-box3,
+.Virtual-IPs-Database-box3,
+.Virtual-IPs-DNSserver-box3,
 .Virtual-IPs-Homer-box3 {
-    background-color: #EEF5F2;
-    width: 2.604vw;
-    height: 3.7vh;
-    right: 6.25vw;
-    position: absolute;
-    border-radius: 0.65vh; 
- }
+  background-color: #eef5f2;
+  width: 2.604vw;
+  height: 3.7vh;
+  right: 6.25vw;
+  position: absolute;
+  border-radius: 0.65vh;
+}
 
-.subnetmask-box4 , 
-.gateway-box4 , 
-.node-box4 , 
+.subnetmask-box4,
+.gateway-box4,
+.node-box4,
 .Virtual-IPs-Database-box4,
-.Virtual-IPs-DNSserver-box4 , 
+.Virtual-IPs-DNSserver-box4,
 .Virtual-IPs-Homer-box4 {
-    width: 2.604vw;
-    height: 3.7vh;
-    right: 9.43vw;
-    position: absolute;
-    border-radius: 0.65vh; 
-    background-color: #EEF5F2;
- }
+  width: 2.604vw;
+  height: 3.7vh;
+  right: 9.43vw;
+  position: absolute;
+  border-radius: 0.65vh;
+  background-color: #eef5f2;
+}
 
-
- .network-button {
-    width: 7.29vw;
-    height: 3.7vh;
-    right: 1.45vw;
-    top: 2.87vh;
-    position: absolute;
-    border-style: none;
-    border-radius: 0.65vh; 
-    background-color: #1F666E;
-    color: white;
- }
-
-
+.network-button {
+  width: 7.29vw;
+  height: 3.7vh;
+  right: 1.45vw;
+  top: 2.87vh;
+  position: absolute;
+  border-style: none;
+  border-radius: 0.65vh;
+  background-color: #1f666e;
+  color: white;
+}
 
 .node-class {
-    background-color: white;
-    width: 47.39vw;
-    height: 72.31vh;
-    right: 36.04vw;
-    top : 20.46vh;
-    position: absolute;
-    border-radius: 1.85vh;
+  background-color: white;
+  width: 47.39vw;
+  height: 72.31vh;
+  right: 36.04vw;
+  top: 20.46vh;
+  position: absolute;
+  border-radius: 1.85vh;
 }
-
 
 #modal {
-    display: none; 
-    position: fixed; 
-    z-index: 1;     
-    width: 47.39vw;
-    height: 72.31vh;
-    right: 36.04vw;
-    top : 20.46vh;
-    border-radius: 1.85vh;
-    overflow: auto; 
-    background-color: rgba(31,102,110, 0.22); 
-    color : white;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  width: 47.39vw;
+  height: 72.31vh;
+  right: 36.04vw;
+  top: 20.46vh;
+  border-radius: 1.85vh;
+  overflow: auto;
+  background-color: rgba(31, 102, 110, 0.22);
+  color: white;
 }
-
 
 .modal-content {
-    position: absolute;  
-    /* z-index: 1;      */
-    width: 21.56vw;
-    height: 19.44vh;
-    right: 12.91vw;
-    top : 26.48vh; 
-    margin : auto auto ;
-    border-radius: 1.85vh;
-    /* overflow: auto;  */
-    background-color: #1A4348; 
-    opacity: 80%;
+  position: absolute;
+  /* z-index: 1;      */
+  width: 21.56vw;
+  height: 19.44vh;
+  right: 12.91vw;
+  top: 26.48vh;
+  margin: auto auto;
+  border-radius: 1.85vh;
+  background-color: #1a4348;
+  opacity: 80%;
 }
-
 
 .modal-buttons {
-    position: absolute;  
-    width: 12.5vw;
-    height: 3.148vh;
-    right: 4.53vw;
-    top : 12.41vh; 
-    display: flex;
-    justify-content: space-between;
-    /* background-color: red; */
-    align-items: center;
+  position: absolute;
+  width: 12.5vw;
+  height: 3.148vh;
+  right: 4.53vw;
+  top: 12.41vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-#modal-cancel-button , 
+#modal-cancel-button,
 #modal-delete-button {
-    width: 5vw;
-    height: 3.148vh;
-    top : 0vh;
-    font-size: 1.48vh;
-    font-family: 'FiraGO', sans-serif;
-    color : white;
-    background-color: #FF8888;
-    border-radius: 0.92vh;
-    border: none;
-    /* opacity: 100%; */
+  width: 5vw;
+  height: 3.148vh;
+  top: 0vh;
+  font-size: 1.48vh;
+  font-family: "FiraGO", sans-serif;
+  color: white;
+  background-color: #ff8888;
+  border-radius: 0.92vh;
+  border: none;
 }
 
-
- #modal-cancel-button {
-    background-color: #1A4348 ;
-    /* opacity: 60%; */
- }
-
+#modal-cancel-button {
+  background-color: #1a4348;
+}
 
 .modal-header p {
-    font-size: 1.29vh;
-    font-family: 'FiraGO', sans-serif;
-    position: absolute;
-    top : 2.96vh;
-    text-align: center;
-    right: 8.38vw;
-    margin-top: 0;
+  font-size: 1.29vh;
+  font-family: "FiraGO", sans-serif;
+  position: absolute;
+  top: 2.96vh;
+  text-align: center;
+  right: 8.38vw;
+  margin-top: 0;
 }
-
 
 .modal-body p {
-    font-size: 1.66vh;
-    font-family: 'FiraGO', sans-serif;
-    position: absolute;
-    top : 7.41vh;
-    text-align: center;
-    right: 3.42vw;
-    margin-top: 0;
+  font-size: 1.66vh;
+  font-family: "FiraGO", sans-serif;
+  position: absolute;
+  top: 7.41vh;
+  text-align: center;
+  right: 3.42vw;
+  margin-top: 0;
 }
 
-
 .modal-close {
-  color: #A6D4C4;
+  color: #a6d4c4;
   float: right;
   font-size: 28px;
   margin-right: 1.32vw;
   margin-top: 1.3vh;
-  /* font-weight: bold; */
 }
 
-
 .node-properties {
-    width: 44.61vw;
-    height: 9.91vh;
-    right: 1.58vw;
-    top : 3.15vh;
-    position: absolute;
-    display: flex;
+  width: 44.61vw;
+  height: 9.91vh;
+  right: 1.58vw;
+  top: 3.15vh;
+  position: absolute;
+  display: flex;
 }
 
 .node-ip {
-    width: 16.921vw;
-    height: 3.7vh;
-    right: 0vw;
-    top : 0vh;
-    position: absolute;
-    display: flex;
-    /* align-items: center; */
+  width: 16.921vw;
+  height: 3.7vh;
+  right: 0vw;
+  top: 0vh;
+  position: absolute;
+  display: flex;
 }
 
 .node-ip span {
-    margin-top: 0.9vh;
+  margin-top: 0.9vh;
 }
 
-
 .node-name {
-    width: 13.65vw;
-    height: 3.7vh;
-    right: 19.15vw;
-    top : 0vh;
-    position: absolute;
-    display: flex;
-    align-items: center;
+  width: 13.65vw;
+  height: 3.7vh;
+  right: 19.15vw;
+  top: 0vh;
+  position: absolute;
+  display: flex;
+  align-items: center;
 }
 
 .node-name-box {
-    width: 10.42vw;
-    height: 3.7vh;
-    right: 0vw;
-    top : 0vh;
-    position: absolute;
-    border-radius: 0.65vh; 
-    background-color: #EEF5F2;
+  width: 10.42vw;
+  height: 3.7vh;
+  right: 0vw;
+  top: 0vh;
+  position: absolute;
+  border-radius: 0.65vh;
+  background-color: #eef5f2;
 }
 
 .add-node-button {
-    width: 5.73vw;
-    height: 3.7vh;
-    right: 0vw;
-    bottom: 0vh;
-    position: absolute;
-    border-radius: 0.65vh; 
-    background-color: #68D5B0;
-    border-style: none;
+  width: 5.73vw;
+  height: 3.7vh;
+  right: 0vw;
+  bottom: 0vh;
+  position: absolute;
+  border-radius: 0.65vh;
+  background-color: #68d5b0;
+  border-style: none;
 }
 
 .node-type {
-    width: 23.10vw;
-    height: 2.04vh;
-    right: 9.67vw;
-    top: 6.94vh;
-    position: absolute;
+  width: 23.1vw;
+  height: 2.04vh;
+  right: 9.67vw;
+  top: 6.94vh;
+  position: absolute;
 }
 
-.node-type-checkboxes{
-    display: flex;
-    right: 0vw;
-    top: 0vh;
-    position: absolute;
+.node-type-checkboxes {
+  display: flex;
+  right: 0vw;
+  top: 0vh;
+  position: absolute;
 }
-
 
 .node-type-checkboxe1 {
-    width: 3.19vw;
-    height: 2.04vh;
-    right: 0vw;
-    top: 0vh;
-    position: absolute;
+  width: 3.19vw;
+  height: 2.04vh;
+  right: 0vw;
+  top: 0vh;
+  position: absolute;
 }
 
 .node-type-checkboxe2 {
-    width: 5.12vw;
-    height: 2.04vh;
-    right: 5.36vw;
-    top: 0vh;
-    position: absolute;
+  width: 5.12vw;
+  height: 2.04vh;
+  right: 5.36vw;
+  top: 0vh;
+  position: absolute;
 }
 
 .node-type-checkboxe3 {
-    width: 4.13vw;
-    height: 2.04vh;
-    right: 12.49vw;
-    top: 0vh;
-    position: absolute;
+  width: 4.13vw;
+  height: 2.04vh;
+  right: 12.49vw;
+  top: 0vh;
+  position: absolute;
 }
 
-/* .node-type-checkboxes input {
-    width: 0.73vw;
-    height: 1.29vh;
-    background-color: #37b2b2;
-    border-radius:50% ;
-} */
-
-/* #node-type-1 {
-    width: 0.73vw;
-    height: 1.29vh;
-    background-color: #37b2b2;
-    border-radius:50% ;
-} */
-
-label , .node-class span  , .network-class span{
-   color: #1A4348;
-   font-size: 1.48vh;
-   /* font-family:  myFirstFont; */
-   font-family: 'FiraGO', sans-serif;
+label,
+.node-class span,
+.network-class span {
+  color: #1a4348;
+  font-size: 1.48vh;
+  font-family: "FiraGO", sans-serif;
 }
 
 span.title-span {
-   color: #83A79A;
-   font-size: 1.66vh;
-   /* font-family: myFirstFont; */
-   font-family: 'FiraGO', sans-serif;
+  color: #83a79a;
+  font-size: 1.66vh;
+  font-family: "FiraGO", sans-serif;
 }
 
 button {
-   color: white;
-   font-size: 1.66vh;
-   /* font-family: myFirstFont;  */
-   font-family: 'FiraGO', sans-serif;
+  color: white;
+  font-size: 1.66vh;
+  font-family: "FiraGO", sans-serif;
 }
 
-/* input {
-    border: none;
-    text-align: center;
-} */
-
-input[ type="text"] {
-    text-align: center;
-    color : #2FBC8C ;
-    border: none;
+input[type="text"] {
+  text-align: center;
+  color: #2fbc8c;
+  border: none;
 }
-
 
 .node-table {
-    width: 42.99vw;
-    height: 20.51vh;
-    right: 1.58vw;
-    bottom: 30.18vh;
-    /* border: solid; */
-    position: absolute;
+  width: 42.99vw;
+  height: 20.51vh;
+  right: 1.58vw;
+  bottom: 30.18vh;
+  position: absolute;
 }
-
 
 .node-table-title3 {
-    width: 14.24vw;
-    height: 4.25vh;
-    right: 0vw;
-    top: 0vh;
-    border: solid;
-    position: absolute;
-    background-color: #1F666E;
-    color: white;
-    font-size: 1.66vh;
-    /* font-family: myFirstFont;  */
-    font-family: 'FiraGO', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+  width: 14.24vw;
+  height: 4.25vh;
+  right: 0vw;
+  top: 0vh;
+  border: solid;
+  position: absolute;
+  background-color: #1f666e;
+  color: white;
+  font-size: 1.66vh;
+  font-family: "FiraGO", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
-.node-table-title2{
-    width: 14.24vw;
-    height: 4.25vh;
-    right: 14.38vw;
-    top: 0vh;
-    border: solid;
-    position: absolute;
-    background-color: #1F666E;
-    color: white;
-    font-size: 1.66vh;
-    /* font-family: myFirstFont;  */
-    font-family: 'FiraGO', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+.node-table-title2 {
+  width: 14.24vw;
+  height: 4.25vh;
+  right: 14.38vw;
+  top: 0vh;
+  border: solid;
+  position: absolute;
+  background-color: #1f666e;
+  color: white;
+  font-size: 1.66vh;
+  font-family: "FiraGO", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
-.node-table-title1{
-    width: 14.24vw;
-    height: 4.25vh;
-    left: 0vw;
-    top: 0vh;
-    border: solid;
-    position: absolute;
-    background-color: #1F666E;
-    color: white;
-    font-size: 1.66vh;
-    /* font-family: myFirstFont;  */
-    font-family: 'FiraGO', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+.node-table-title1 {
+  width: 14.24vw;
+  height: 4.25vh;
+  left: 0vw;
+  top: 0vh;
+  border: solid;
+  position: absolute;
+  background-color: #1f666e;
+  color: white;
+  font-size: 1.66vh;
+  font-family: "FiraGO", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
 .node-table-content-title {
-    width: 42.66vw;
-    height: 4.25vh;
-    background-color: #1F666E;
-    right: 0.166vw; 
-    top: 4.7vh;
-    position: absolute;
-    border-color: white;
+  width: 42.66vw;
+  height: 4.25vh;
+  background-color: #1f666e;
+  right: 0.166vw;
+  top: 4.7vh;
+  position: absolute;
+  border-color: white;
 }
 
 .node-table-content-title-description {
-    width: 31.9vw;
-    height: 1.76vh;
-    right: 9.088vw; 
-    top: 1.203vh;
-    position: absolute;
-    display: flex;
-    justify-content: space-between;
+  width: 31.9vw;
+  height: 1.76vh;
+  right: 9.088vw;
+  top: 1.203vh;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
 }
 
 .node-table-content-title-description span {
-   color: white;
-    font-size: 1.29vh;
-    /* font-family: myFirstFont;    */
-    font-family: 'FiraGO', sans-serif;
+  color: white;
+  font-size: 1.29vh;
+  font-family: "FiraGO", sans-serif;
 }
 
 #node-table-contents {
-    width: 42.66vw;
-    right: 0.166vw; 
-    top: 9.49vh;
-    position: absolute;
-    border-color: white;
-    background-color: white;
-
+  width: 42.66vw;
+  right: 0.166vw;
+  top: 9.49vh;
+  position: absolute;
+  border-color: white;
+  background-color: white;
 }
-
 
 .node-table-content {
-    width: 42.66vw;
-    height: 2.77vh;
-    border-bottom: 0.046vh  solid #DFDFDF;
-    position: relative;
+  width: 42.66vw;
+  height: 2.77vh;
+  border-bottom: 0.046vh solid #dfdfdf;
+  position: relative;
 }
-
 
 .node-table-content-name {
-    /* background-color: red; */
-    width: 3.64vw;
-    height: 1.85vh;
-    top: 0.46vh;
-    left: 2.32vw;
-    position: absolute;
-    color: #1A4348;
-    font-size: 1.2vh;
-    /* font-family: myFirstFont; */
-    font-family: 'FiraGO', sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0.277vh
+  width: 3.64vw;
+  height: 1.85vh;
+  top: 0.46vh;
+  left: 2.32vw;
+  position: absolute;
+  color: #1a4348;
+  font-size: 1.2vh;
+  font-family: "FiraGO", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.277vh;
 }
-
-
 
 .node-table-content-ip {
-    /* background-color: red; */
-    width: 4.68vw;
-    height: 1.85vh;
-    top: 0.46vh;
-    left: 16.58vw;
-    position: absolute;
-    color: #1A4348;
-    font-size: 1.2vh;
-    /* font-family: myFirstFont; */
-    font-family: 'FiraGO', sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0.277vh;
+  width: 4.68vw;
+  height: 1.85vh;
+  top: 0.46vh;
+  left: 16.58vw;
+  position: absolute;
+  color: #1a4348;
+  font-size: 1.2vh;
+  font-family: "FiraGO", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.277vh;
 }
 
-
-
 .node-table-content-status {
-    width: 4.37vw;
-    height: 1.57vh;
-    /* background-color: #1A4348; */
-    top: 0.6vh;
-    left: 30.67vw;
-    position: absolute;
-    font-size: 1.2vh;
-    /* font-family: myFirstFont; */
-    font-family: 'FiraGO', sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} 
+  width: 4.37vw;
+  height: 1.57vh;
+  top: 0.6vh;
+  left: 30.67vw;
+  position: absolute;
+  font-size: 1.2vh;
+  font-family: "FiraGO", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .pencil {
-    right: 1.29vw;
-    top: 0.814vh;
-    position: absolute;
+  right: 1.29vw;
+  top: 0.814vh;
+  position: absolute;
 }
 
 .trash {
-    right: 0.223vw;
-    top: .814vh;
-    position: absolute;
+  right: 0.223vw;
+  top: 0.814vh;
+  position: absolute;
 }
 
 .close {
-    right:  4.062vw;
-    top: 0.64vh;
-    position: absolute;
-    display: none;
+  right: 4.062vw;
+  top: 0.64vh;
+  position: absolute;
+  display: none;
 }
 
-img.tick {
-    right: 0vw;
-    top: 0vh;
-    position: absolute;
-    width: 0.83vw;
-    height: 1.48vh;
-    padding: 0;
-    /* display: none; */
+/* img.tick {
+  right: 0vw;
+  top: 0vh;
+  position: absolute;
+  width: 0.83vw;
+  height: 1.48vh;
+  padding: 0;
+  /* display: none; 
+} */
+
+.tick {
+  right: 2.67vw;
+  top: 0.64vh;
+  position: absolute;
+  border: none;
+  display: none;
 }
 
-button.tick {
-    right: 2.67vw;
-    top: 1.48vh;
-    position: absolute;
-    border: none;
-    width: 0.83vw;
-    height: 1.48vh;
-    display: none;
-    background-color: red;
+.save-node-button {
+  width: 7.29vw;
+  height: 3.7vh;
+  right: 1.56vw;
+  bottom: 3.24vh;
+  position: absolute;
+  border-style: none;
+  border-radius: 0.65vh;
+  background-color: #1f666e;
 }
-
- .save-node-button {
-    width: 7.29vw;
-    height: 3.7vh;
-    right: 1.56vw;
-    bottom: 3.24vh;
-    position: absolute;
-    border-style: none;
-    border-radius: 0.65vh; 
-    background-color: #1F666E;
- }
-
 
 .Virtual-IPs-class {
-    background-color: white;
-    width: 29.89vw;
-    height: 72.31vh;
-    right: 4.68vw;
-    top : 20.46vh;
-    position: absolute;
-    border-radius: 20px;
+  background-color: white;
+  width: 29.89vw;
+  height: 72.31vh;
+  right: 4.68vw;
+  top: 20.46vh;
+  position: absolute;
+  border-radius: 20px;
 }
 
-
- .Virtual-IPs-save-button {
-    width: 7.29vw;
-    height: 3.7vh;
-    right: 1.46vw;
-    bottom: 3.24vh;
-    position: absolute;
-    border-style: none;
-    border-radius: 0.65vh; 
-    background-color: #1F666E;
- }
-
-
+.Virtual-IPs-save-button {
+  width: 7.29vw;
+  height: 3.7vh;
+  right: 1.46vw;
+  bottom: 3.24vh;
+  position: absolute;
+  border-style: none;
+  border-radius: 0.65vh;
+  background-color: #1f666e;
+}
 
 .Virtual-IPs-Database {
-    /* border: 1px solid red; */
-    width: 27.083vw;
-    height: 6.29vh;
-    right: 1.46vw;
-    top: 8.15vh;
-    position: absolute;
-    border-radius: 0.65vh; 
+  width: 27.083vw;
+  height: 6.29vh;
+  right: 1.46vw;
+  top: 8.15vh;
+  position: absolute;
+  border-radius: 0.65vh;
 }
 
 .Virtual-IPs-DNSserver {
-    /* border: 1px solid red; */
-    width: 27.083vw;
-    height: 6.29vh;
-    right: 1.46vw;
-    top: 16.66vh;
-    position: absolute;
-    border-radius: 0.65vh; 
+  width: 27.083vw;
+  height: 6.29vh;
+  right: 1.46vw;
+  top: 16.66vh;
+  position: absolute;
+  border-radius: 0.65vh;
 }
 
 .Virtual-IPs-Homer {
-    /* border: 1px solid red; */
-    width: 27.083vw;
-    height: 6.29vh;
-    right: 1.46vw;
-    top: 25.18vh;
-    position: absolute;
-    border-radius: 0.65vh; 
+  width: 27.083vw;
+  height: 6.29vh;
+  right: 1.46vw;
+  top: 25.18vh;
+  position: absolute;
+  border-radius: 0.65vh;
 }
 
 .Virtual-IPs-up-text {
-    color:#1A4348;
-    font-size: 1.66vh;
-    /* font-family: myFirstFont;  */
-    font-family: 'FiraGO', sans-serif;
-    left: 0vw;
-    top: 0.64vh;
-    position: absolute;
+  color: #1a4348;
+  font-size: 1.66vh;
+  font-family: "FiraGO", sans-serif;
+  left: 0vw;
+  top: 0.64vh;
+  position: absolute;
 }
 
-
 .Virtual-IPs-down-text {
-    color:#1F666E;
-    font-size: 1.48vh;
-    /* font-family: myFirstFont;  */
-    font-family: 'FiraGO', sans-serif;
-    left: 0vw;
-    bottom: 0vh;
-    position: absolute;
+  color: #1f666e;
+  font-size: 1.48vh;
+  font-family: "FiraGO", sans-serif;
+  left: 0vw;
+  bottom: 0vh;
+  position: absolute;
 }
 
 .Virtual-IPs-class-title {
-    width: 11.98vw;
-    height: 2.22vh ;
-    left: 1.35vw;
-    top: 3.7vh; 
-    width: 11.98vw;
-    height: 2.22vh ;
-    position: absolute;
-    color: #83A79A;
-    font-size: 1.66vh;
-    /* font-family: myFirstFont;  */
-    font-family: 'FiraGO', sans-serif;
+  width: 11.98vw;
+  height: 2.22vh;
+  left: 1.35vw;
+  top: 3.7vh;
+  width: 11.98vw;
+  height: 2.22vh;
+  position: absolute;
+  color: #83a79a;
+  font-size: 1.66vh;
+  font-family: "FiraGO", sans-serif;
 }
 
-
 .footer {
-    background-color: white;
-    width: 84.89vw;
-    height: 4.63vh;
-    right: 0;
-    bottom: 0;
-    position: absolute;
-} 
+  background-color: white;
+  width: 84.89vw;
+  height: 4.63vh;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+}
 
 #time-box {
-    /* background-color: red; */
-    width: 13.32vw;
-    height: 3vh;
-    right: 4.70vw;
-    top: 0.78vh;
-    position: absolute;
-    border-left: 0.046vh solid #83A79A;
-    border-right: 0.046vh solid #83A79A;
+  width: 13.32vw;
+  height: 3vh;
+  right: 4.7vw;
+  top: 0.78vh;
+  position: absolute;
+  border-left: 0.046vh solid #83a79a;
+  border-right: 0.046vh solid #83a79a;
 }
 
 #time-content {
-    width: 10.46vw;
-    height: 1.76vh;
-    left: 1.41vw;
-    top: 0.46vh;
-    position: absolute;
-    /* background-color: red; */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  width: 10.46vw;
+  height: 1.76vh;
+  left: 1.41vw;
+  top: 0.46vh;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#time-content span {
+  color: #83a79a;
+  font-size: 1.58vh;
+  font-family: "FiraGO", sans-serif;
 }
 
 
-#time-content span {
-    color: #83A79A;
-    font-size: 1.58vh;
-    font-family: 'FiraGO', sans-serif;   
+
+.exit {
+  display: none;
+  width: 20.31vw;
+  height: 20.01vh;
+  right: 1.01vw;
+  top: 5.37vh;
+  position: fixed;
+  z-index: 1;
+  /* background-color: red; */
+}
+
+.exit-content {
+ /* border : 1px solid black; */
+  width: 18.48vw;
+  height: 17.037vh;
+  right: 0.73vw;
+  top: 1.29vh;
+  position: absolute;
+  background-color: #374775;
+  border-radius: 1.38vh;
+  /* opacity: 90%; */
+}
+
+.exit-buttons {
+  width: 15.73vw;
+  height: 3.15vh;
+  right: 1.4vw;
+  bottom: 2.96vh;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+}
+
+.exit-button  , 
+.exit-cancel-button {
+  width: 6.77vw;
+  height: 3.15vh;
+  border-radius: 0.65vh;
+  background-color: #C65161;
+  border: none;
+  color: white;
+  font-size: 1.48vh;
+  font-family: "FiraGO", sans-serif;
+}
+.exit-cancel-button {
+    background-color: #313F68;
+    opacity: 100%;
+}
+
+.exit-staying {
+  color: white;
+  font-size: 1.29vh;
+  font-family: "FiraGO", sans-serif;
+  right: 6.56vw;
+  bottom: 12.41vh;
+  position: absolute;
+  /* margin: auto; */
+  margin-bottom: 0;
+}
+
+.exit-question {
+  color: white;
+  font-size: 1.66vh;
+  font-family: "FiraGO", sans-serif;
+  /* right: 4.53vw; */
+  bottom: 8.79vh;
+  position: absolute;
+  margin-bottom: 0;
+}
+
+
+.log-out {
+  display: none;
+  width: 20.31vw;
+  height: 20.01vh;
+  right: 3.96vw;
+  top: 5.37vh;
+  position: fixed;
+  z-index: 1;
+}
+
+.log-out-content {
+  width: 18.48vw;
+  height: 17.037vh;
+  right: 0.73vw;
+  top: 1.29vh;
+  position: absolute;
+  background-color: #374775;
+  border-radius: 1.38vh;
+  /* opacity: 90%; */
+}
+
+.log-out-buttons {
+  width: 15.73vw;
+  height: 3.15vh;
+  right: 1.4vw;
+  bottom: 2.96vh;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+}
+
+.log-out-button  , 
+.log-out-cancel-button {
+  width: 6.77vw;
+  height: 3.15vh;
+  border-radius: 0.65vh;
+  background-color: #FF8946;
+  border: none;
+  color: white;
+  font-size: 1.48vh;
+  font-family: "FiraGO", sans-serif;
+}
+.log-out-cancel-button {
+    background-color: #313F68;
+    opacity: 100%;
+}
+
+.log-out-title {
+  color: white;
+  font-size: 1.29vh;
+  font-family: "FiraGO", sans-serif;
+  right: 7.55vw;
+  bottom: 12.41vh;
+  position: absolute;
+  margin-bottom: 0;
+}
+
+.log-out-question {
+  color: white;
+  font-size: 1.66vh;
+  font-family: "FiraGO", sans-serif;
+  /* right: 2.55vw; */
+  right: 3.55vw;
+  bottom: 8.79vh;
+  position: absolute;
+  margin-bottom: 0;
+}
+
+.profile {
+  position: fixed;
+  width: 18.49vw;
+  height: 45.86vh;
+  right: 4.68vw;
+  top: 5.53vh;
+  /* border: 1px solid red; */
+  z-index: 1;
+}
+
+.profile-content {
+  width: 18.49vw;
+  height: 44.72vh;
+  right: 0vw;
+  bottom: 0vh;
+  border-radius: 1.38vh;
+  background-color: #374775;
+  position: absolute;
+}
+
+.profile-content-images {
+  width: 16.2vw;
+  height: 28.79vh;
+  right: 1.14vw;
+  bottom: 3.79vh;
+  /* background-color: red ; */
+  position: absolute;
+  display: grid;
+  grid-row-gap: 0.83vw;
+  grid-column-gap: 1.48vh;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto;
+    /* padding: 10px; */
+}
+
+.profile-footer {
+  width: 17.39vw;
+  height: 1.76vh;
+  right: 0.57vw;
+  bottom: 0.94vh;
+  /* background-color: black ; */
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile-footer img {
+  width: 0.98vw;
+  height: 1.76vh;
+}
+
+.saleh {
+  color:  white;
+  font-size: 1.66vh;
+  font-family: "FiraGO", sans-serif;
+  left: 1.48vw;
+  /* bottom: 54.63vh; */
+  top: 0.93vh ;
+  /* background-color : red ; */
+  position: absolute;
+  margin-top: 5px;
+}
+
+.saleh  span {
+    margin-left: 12px;
+}
+
+.saleh img {
+    float: left;
+}
+
+.user {
+  left: 3.021vw;
+  bottom: 38.61vh;
+  position: absolute;
+  color:  #58CC87;
+  font-size: 1.66vh;
+  font-family: "FiraGO", sans-serif;
+  margin-bottom: 0;
+  /* padding: 1px; */
+}
+
+
+.made {
+  left: 3.021vw;
+  bottom: 36.48vh;
+  position: absolute;
+  color: white;
+  font-size: 1.29vh;
+  font-family: "FiraGO", sans-serif;
+  margin-bottom: 0;
+}
+
+
+.last {
+  left: 3.021vw;
+  bottom: 34.35vh;
+  position: absolute;
+  color: white;
+  font-size: 1.29vh;
+  font-family: "FiraGO", sans-serif;
+  margin-bottom: 0;
+}
+
+.profile-content-images img {
+  width: 4.84vw;
+  height: 8.61vh;
+  /* right: 0.57vw;
+  bottom: 0.94vh; */
 }

@@ -492,6 +492,69 @@ input:checked + .slider:before {
 
 
 
+ let node_type_name = ["pcscf", "rtpProxy", "core"];
+let cur_node_type ;
+
+cur_node_type = node_type_name[type_index];
+ colors.indexOf("red");
 
 
 
+
+
+
+
+
+     if (response.status !== 200) {
+              hasMessage = true;
+              show_error.style.display = "block";
+              show_error.style.backgroundColor = "#c65161";
+              let error_msg = document.getElementById("erroe-message");
+              error_msg.innerHTML =
+                `Your request was failed (status code : ${response.status}) ` +
+                `<img  src="images/About Icon.svg" class="error-logo"/>`;
+            } else {
+              hasMessage = false;
+              show_error.style.display = "block";
+              show_error.style.backgroundColor = "#58cc87";
+              let success_msg = document.getElementById("erroe-message");
+              success_msg.innerHTML =
+                "Your request was done successfully" +
+                `<img  src="images/About Icon.svg" class="error-logo"/>`;
+            }
+
+
+
+            error-logo.svg
+
+            success Icon.svg
+
+
+
+             <img src="images/success Icon.svg" class="error-logo" />
+        <p id="erroe-message">
+          successfull message!
+        </p>
+
+
+            <div id="error-content">
+        <img src="images/success Icon.svg" class="error-logo" />
+        <p id="erroe-message">
+          successfull message!
+        </p>
+      </div>
+
+
+       `<img  src="images/error-logo.svg" class="error-logo"/>
+                <p id="erroe-message">
+                Your request was failed (status code : ${response.status})
+                </p>`
+
+
+
+
+
+                 `<img  src="images/success Icon.svg" class="error-logo"/>
+                <p id="erroe-message">
+                Your request was done successfully!
+                </p>`

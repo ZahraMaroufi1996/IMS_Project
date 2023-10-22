@@ -1,23 +1,20 @@
 .Pre-Login-body {
-    background-image:url("../images/Pre-Login\ Page.svg");
-    object-fit: fill;
-    /* position: relative; */
-
+  background-image: url("../images/Pre-Login\ Page.svg");
+  object-fit: fill;
+  /* position: relative; */
 }
 
 .Login-body {
-    background-image:url("../images/Login\ Page\ –\ Language\ Toggle.svg");
+  background-image: url("../images/Login\ Page\ –\ Language\ Toggle.svg");
 
-    /* position: relative; */ 
+  /* position: relative; */
 }
 
- .pre-login-logo {
-    margin : 400px auto ;
-    display: block;
-     /* position: absolute;  */
-    top: 100px;
-    
-    
+.pre-login-logo {
+  margin: 400px auto;
+  display: block;
+  /* position: absolute;  */
+  top: 100px;
 }
 
 /* .Login-container {
@@ -25,140 +22,130 @@
  display: block;
 } */
 
-
-
 /* .Login-form{
  margin:0 auto;
  color: red;
  display: block;
 } */
 
-
 .Login-container {
-    /* background-color: black; */
-   position: absolute;
-   width :17.71vw ;
-   height : 40.83vh;
-   top: 29.53vh;
-   right: 41.14vw;
-
+  /* background-color: black; */
+  position: absolute;
+  width: 17.71vw;
+  height: 40.83vh;
+  top: 29.53vh;
+  right: 41.14vw;
 }
 
-
-.username-container , .password-container {
-background-color: #83A79A;
-/* margin: 30px auto ; */
-height : 5.185vh;
-width :17.71vw ;
-border: 0.092vh solid #A6D4C4;
-border-radius: 0.65vh;
-display: flex;
-justify-content: center;
-opacity: 20%; 
+.username-container,
+.password-container {
+  background-color: #83a79a;
+  /* margin: 30px auto ; */
+  height: 5.185vh;
+  width: 17.71vw;
+  border: 0.092vh solid #a6d4c4;
+  border-radius: 0.65vh;
+  display: flex;
+  justify-content: center;
+  opacity: 20%;
 }
 
 .username-container {
-    top : 11.11vh;
-    right: 0;
-    position: absolute;
+  top: 11.11vh;
+  right: 0;
+  position: absolute;
 }
 
 .password-container {
-    top : 20vh;
-    right: 0;
-    position: absolute;
+  top: 20vh;
+  right: 0;
+  position: absolute;
 }
 
-
 input {
-     height : 5.175vh;
-     /* width: ; */
-     left: 0;
-     top: 0;
-     background-color : inherit;
-     border: none;
-     text-align: center;
-     color: white;
-     font-size: 1.85vh;    
+  height: 5.175vh;
+  /* width: ; */
+  left: 0;
+  top: 0;
+  background-color: inherit;
+  border: none;
+  text-align: center;
+  color: white;
+  font-size: 1.85vh;
 }
 
 input::placeholder {
-    color: white;
-    font-family: 'Iranian Sans', sans-serif;
+  color: white;
+  font-family: "Iranian Sans", sans-serif;
 }
 
-.username-icon ,
- .password-icon {
+.username-icon,
+.password-icon {
   right: 0.72vw;
-  top:0.78vh;
+  top: 0.78vh;
   width: 1.87vw;
-  height: 3.70vh;
+  height: 3.7vh;
   position: absolute;
-
 }
 
-    .Login-Avatar {
-        border: 1px solid white;
-        border-radius: 50%;
-        position: absolute;
-        width : 4.16vw ;
-        height : 7.41vh;
-       top: 0vh;
-       right: 6.77vw;
-       }
-
-       .Login-Avatar img {
-            margin:auto auto;
-            display: block;
-            margin-top : 8px;
-        }
-
-
-       button.submit-button {
-        background-color:#68D5B0;
-        /* font-size: 22px;  */
-        color : white ;
-        right: 0;
-        bottom: 6.76vh;
-        height : 5.185vh;
-        width :17.71vw ;
-        position: absolute;
-        border: none;
-        border-radius: 0.65vh;
-        font-size: 2.037vh;
-    /* font-family: myFirstFont;  */
-       /* font-family: 'FiraGO', sans-serif; */
-       font-family: 'Iranian Sans', sans-serif;
-
+.Login-Avatar {
+  border: 1px solid white;
+  border-radius: 50%;
+  position: absolute;
+  width: 4.16vw;
+  height: 7.41vh;
+  top: 0vh;
+  right: 6.77vw;
 }
 
-    .Login-Logo-image{
-        display: block;
-        width: 10.42vw;
-        height: 6.018vh;
-        /* margin: 0 auto; */
-        bottom: 11.61vh;
-        right: 44.80vw;
-        position: absolute;
-    }
+.Login-Avatar img {
+  margin: auto auto;
+  display: block;
+  margin-top: 8px;
+}
 
+button.submit-button {
+  background-color: #68d5b0;
+  /* font-size: 22px;  */
+  color: white;
+  right: 0;
+  bottom: 6.76vh;
+  height: 5.185vh;
+  width: 17.71vw;
+  position: absolute;
+  border: none;
+  border-radius: 0.65vh;
+  font-size: 2.037vh;
+  /* font-family: myFirstFont;  */
+  /* font-family: 'FiraGO', sans-serif; */
+  font-family: "Iranian Sans", sans-serif;
+}
 
-    .Login-Logo-text {
-        text-align: center;
-        color: white;
-        font-size: 1.48vh;
-        font-weight: thin;
-        /* right: 44.80vw; 8.41*/
-        right: 44.40vw;
-        position: absolute;
-        bottom: 7vh;
-        font-family: 'FiraGO', sans-serif;
-        width: 10.83vw;
-        height: 1.94vh;
-        /* font-family: ; */
-    }
+.Login-Logo-image {
+  display: block;
+  width: 10.42vw;
+  height: 6.018vh;
+  /* margin: 0 auto; */
+  bottom: 11.61vh;
+  right: 44.8vw;
+  position: absolute;
+}
 
-    
+.Login-Logo-text {
+  text-align: center;
+  color: white;
+  font-size: 1.48vh;
+  font-weight: thin;
+  /* right: 44.80vw; 8.41*/
+  right: 44.4vw;
+  position: absolute;
+  bottom: 7vh;
+  font-family: "FiraGO", sans-serif;
+  width: 10.83vw;
+  height: 1.94vh;
+  /* font-family: ; */
+}
+
 .Login-Language {
   position: absolute;
   width: 3.85vw;
@@ -195,14 +182,14 @@ input::placeholder {
 }
 
 span.slider {
-  color : #68D5B0 ;
+  color: #68d5b0;
   font-size: 1.29vh;
-  font-family: 'FiraGO', sans-serif;
+  font-family: "FiraGO", sans-serif;
   padding: 7px;
 }
 
 .slider:before {
-  text-align:center;
+  text-align: center;
   position: absolute;
   content: "فا";
   height: 2.22vh;
@@ -210,27 +197,25 @@ span.slider {
   right: 0.26vw;
   bottom: 0.46vh;
   border: none;
-  color : black ;
+  color: black;
   font-size: 1.29vh;
   /* font-family: 'FiraGO', sans-serif; */
-  font-family: 'Iranian Sans', sans-serif;
+  font-family: "Iranian Sans", sans-serif;
   /* -webkit-transition: .4s;
   transition: .4s; */
 }
- 
-input:checked + .slider:before {
-  background-color: #68D5B0 ;
-}
 
+input:checked + .slider:before {
+  background-color: #68d5b0;
+}
 
 input + .slider:before {
-   background-color: #68D5B0;
+  background-color: #68d5b0;
 }
 
-
-input:checked + .slider ,
+input:checked + .slider,
 input + .slider {
-    background-color: #1A4348;
+  background-color: #1a4348;
 }
 
 /* input:focus + .slider {
@@ -243,8 +228,6 @@ input:checked + .slider:before {
   transform: translateX(-2.02vw);
 }
 
-
-
 .slider.round {
   border-radius: 3.14vh;
 }
@@ -252,4 +235,3 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
-

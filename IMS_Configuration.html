@@ -3,730 +3,1026 @@
   <head>
     <title>IMS Configuration Page</title>
     <meta charset="UTF-8" />
+    <link href="src/IMS_Configuration.css" rel="stylesheet" />
     <link
-      href="src/IMS_Configuration.css"
+      href="https://free.bboxtype.com/embedfonts/?family=FiraGO:400"
       rel="stylesheet"
     />
-    <link href="https://free.bboxtype.com/embedfonts/?family=FiraGO:400" rel="stylesheet">
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
       crossorigin="anonymous"
     ></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-</head>
+  </head>
 
-<body class="IMS-TOPOLOGY-body">
+  <body class="IMS-TOPOLOGY-body">
     <div class="toolbar-class">
-        <nav class="toolbar-nav">
-            <div class="toolbar-nav-content">
-                <a href="#"> <img src="images/IMS_TOPOLOGY_images/Title Bar Icon _ About.svg" /> </a> 
-                <a href="#"> <img src="images/IMS_TOPOLOGY_images/Title Bar Icon _ Help.svg" /> </a> 
-                <a href="#"> <img src="images/IMS_TOPOLOGY_images/Title Bar Icon _ Message.svg" /> </a> 
-                <a href="#"> <img src="images/IMS_TOPOLOGY_images/Title Bar Icon _ Sound.svg" /> </a>
-                <a href="#"> <img src="images/IMS_TOPOLOGY_images/Title Bar Icon _ Lock.svg" /> </a> 
-                <a href="#"> <img src="images/IMS_TOPOLOGY_images/Title Bar Icon _ Profile.svg" /> </a> 
-                <a href="#"> <img src="images/IMS_TOPOLOGY_images/Title Bar Icon _ Log Out.svg" /> </a> 
-                <a href="#"> <img src="images/IMS_TOPOLOGY_images/Title Bar Icon _ Exit.svg" /> </a>
-            </div>
-        </nav>
+      <nav class="toolbar-nav">
+        <div class="toolbar-nav-content">
+          <a href="#">
+            <img src="images/IMS_TOPOLOGY_images/Title Bar Icon _ About.svg" />
+          </a>
+          <a href="#">
+            <img src="images/IMS_TOPOLOGY_images/Title Bar Icon _ Help.svg" />
+          </a>
+          <a href="#">
+            <img
+              src="images/IMS_TOPOLOGY_images/Title Bar Icon _ Message.svg"
+            />
+          </a>
+          <a href="#">
+            <img src="images/IMS_TOPOLOGY_images/Title Bar Icon _ Sound.svg" />
+          </a>
+          <a href="#">
+            <img src="images/IMS_TOPOLOGY_images/Title Bar Icon _ Lock.svg" />
+          </a>
+          <a href="#">
+            <img
+              src="images/IMS_TOPOLOGY_images/Title Bar Icon _ Profile.svg"
+            />
+          </a>
+          <a href="#">
+            <img
+              src="images/IMS_TOPOLOGY_images/Title Bar Icon _ Log Out.svg"
+            />
+          </a>
+          <a href="#">
+            <img src="images/IMS_TOPOLOGY_images/Title Bar Icon _ Exit.svg" />
+          </a>
+        </div>
+      </nav>
     </div>
 
-
-    <div class="sidebar">   
-
-        <div class="Account-info">
-            <div class="Account-name">
-                <span class="Saleh-username">Saleh Zekavati</span>
-                <span class="username">username</span>
-            </div>
+    <div class="sidebar">
+      <div class="Account-info">
+        <div class="Account-name">
+          <span class="Saleh-username">Saleh Zekavati</span>
+          <span class="username">username</span>
         </div>
-        <button class="sidebar-button"> Save & Restart </button>
-        
-        <div class = "Selection-Box-in-Menu">
-            <div class = "topology-in-menu" > 
-                <a href="IMS_Topology.html" class = "topology-in-menu-content"> 
-                    <img class = "topology-in-menu-image" src="images/Menu Icon _ Topology.svg" />
-                    <span>TOPOLOGY</span>
-                </a>
-            </div>
+      </div>
+      <button class="sidebar-button">Save & Restart</button>
 
-            <div class ="configuration-in-menu" > 
-                <div class="selected-menu"></div>
-                <a href="IMS_Configuration.html" class = "configuration-in-menu-content"> 
-                    <img class ="configuration-in-menu-image" src = "images/Menu Icon _ Config.svg" /> 
-                    <span>CONFIGURATION</span>
-                </a>
-            </div>
-
-            <div  class = "monitoring-in-menu" >
-                <a href="IMS_Monitoring.html" class = "monitoring-in-menu-content" target= "_blank">
-                    <img class = "monitoring-in-menu-image" target= "_blank" src="images/Group 8329.svg" /> 
-                    <span>MONITORING</span>
-                </a>
-            </div>
-
-            <div  class = "troubleshooting-in-menu" > 
-                <a href="IMS_Troubleshooting.html" target= "_blank" class = "troubleshooting-in-menu-content">
-                    <img  class = "troubleshooting-in-menu-image" src="images/Group 8332.svg" /> 
-                    <span>TROUBLESHOOTING</span>
-                </a>
-            </div>
-
+      <div class="Selection-Box-in-Menu">
+        <div class="topology-in-menu">
+          <a href="IMS_Topology.html" class="topology-in-menu-content">
+            <img
+              class="topology-in-menu-image"
+              src="images/Menu Icon _ Topology.svg"
+            />
+            <span>TOPOLOGY</span>
+          </a>
         </div>
 
-        <div class="sidebar-logo">
-            <img src="images/IMS_TOPOLOGY_images/Group 8498.svg" />
-        </div>     
+        <div class="configuration-in-menu">
+          <div class="selected-menu"></div>
+          <a
+            href="IMS_Configuration.html"
+            class="configuration-in-menu-content"
+          >
+            <img
+              class="configuration-in-menu-image"
+              src="images/Menu Icon _ Config.svg"
+            />
+            <span>CONFIGURATION</span>
+          </a>
+        </div>
+
+        <div class="monitoring-in-menu">
+          <a
+            href="IMS_Monitoring.html"
+            class="monitoring-in-menu-content"
+            target="_blank"
+          >
+            <img
+              class="monitoring-in-menu-image"
+              target="_blank"
+              src="images/Group 8329.svg"
+            />
+            <span>MONITORING</span>
+          </a>
+        </div>
+
+        <div class="troubleshooting-in-menu">
+          <a
+            href="IMS_Troubleshooting.html"
+            target="_blank"
+            class="troubleshooting-in-menu-content"
+          >
+            <img
+              class="troubleshooting-in-menu-image"
+              src="images/Group 8332.svg"
+            />
+            <span>TROUBLESHOOTING</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="sidebar-logo">
+        <img src="images/IMS_TOPOLOGY_images/Group 8498.svg" />
+      </div>
     </div>
-   
 
-        <div class="show-error">
-            <div class="modal-header">
-                <span class="error-close">&times;</span>
-            </div>
-            <div class="error-content">
-                <p id = "erroe-message">     
-                    successfull message!!!!
-                    <img  src="images/About Icon.svg" class="error-logo"/>
-                </p>
-            </div>
-        </div>
+    <div class="show-error">
+      <div class="modal-header">
+        <span class="error-close">&times;</span>
+      </div>
+      <div class="error-content">
+        <p id="erroe-message">
+          successfull message!!!!
+          <img src="images/About Icon.svg" class="error-logo" />
+        </p>
+      </div>
+    </div>
 
-
-    <div class="total-information-body-class">   
-        <form id="total-form">
-
+    <div class="total-information-body-class">
+      <form id="total-form">
         <div class="General-class">
-            <div class="General-class-content">
-                <div class="General-class-content-title">General</div>
-                <div class="General-class-content-field1">
-                    <label for="test">IMS Domain*</label>
-                    <input class="General-class-content-field1-box" id="test"  type="text" name="IMS_Domain" disabled >
-                </div>
-
-                <div class="General-class-content-field2">
-                    <span>Enable Homer In :</span>
-                    <div class="General-class-content-field2-checkboxes">
-                        <div class = "General-class-content-field2-checkbox1">
-                            <input type="checkbox" id="General-type-1" name="General-type-icon1" value="p_cscf" disabled >
-                            <label for="General-type-1">P-CSCF</label>
-                        </div>
-                        <div class = "General-class-content-field2-checkbox2">
-                            <input type="checkbox" id="General-type-2" name="General-type-icon2" value="s_cscf" disabled>
-                            <label for="General-type-2">S-CSCF</label> 
-                        </div>
-                        <div class = "General-class-content-field2-checkbox3">
-                            <input type="checkbox" id="General-type-3" name="General-type-icon3" value="i_cscf" disabled>
-                            <label for="General-type-3">I-CSCF</label>
-                        </div>
-                    </div>
-
-                </div>
-
+          <div class="General-class-content">
+            <div class="General-class-content-title">General</div>
+            <div class="General-class-content-field1">
+              <label for="test">IMS Domain*</label>
+              <input
+                class="General-class-content-field1-box"
+                id="test"
+                type="text"
+                name="IMS_Domain"
+                disabled
+              />
             </div>
+
+            <div class="General-class-content-field2">
+              <span>Enable Homer In :</span>
+              <div class="General-class-content-field2-checkboxes">
+                <div class="General-class-content-field2-checkbox1">
+                  <input
+                    type="checkbox"
+                    id="General-type-1"
+                    name="General-type-icon1"
+                    value="p_cscf"
+                    disabled
+                  />
+                  <label for="General-type-1">P-CSCF</label>
+                </div>
+                <div class="General-class-content-field2-checkbox2">
+                  <input
+                    type="checkbox"
+                    id="General-type-2"
+                    name="General-type-icon2"
+                    value="s_cscf"
+                    disabled
+                  />
+                  <label for="General-type-2">S-CSCF</label>
+                </div>
+                <div class="General-class-content-field2-checkbox3">
+                  <input
+                    type="checkbox"
+                    id="General-type-3"
+                    name="General-type-icon3"
+                    value="i_cscf"
+                    disabled
+                  />
+                  <label for="General-type-3">I-CSCF</label>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="P-CSCF-class">
-            <div class="P-CSCF-class-content">
-                <div class="P-CSCF-class-content-title">P-CSCF</div>
-                <div class="P-CSCF-class-content-field1">
-                    <span>Enable IPsec :</span>
-                        <!-- <div class="slider-div">  -->
-                    <label class="switch">
-                        <input type="checkbox" name ="Enable-IPsec" id = "ipsec" disabled>
-                        <span class="slider round"></span>
-                    </label>
-                </div>
-
-                <div class="P-CSCF-class-content-field2">
-                    <p>Supported IPsec Encryption Algorithms :</p>
-                    <div class="P-CSCF-class-content-field2-checkboxes">
-                        <div class = "P-CSCF-class-content-field2-checkbox1">
-                            <input type="checkbox" id="Encryption-Algorithm-type-1" name="Encryption-Algorithm-type-icon1" value="AES_CBC" disabled>
-                            <label for="Encryption-Algorithm-type-1">AES-CBC</label> 
-                        </div>
-                        <div class = "P-CSCF-class-content-field2-checkbox2">
-                            <input type="checkbox" id="Encryption-Algorithm-type-2" name="Encryption-Algorithm-type-icon2" value="DES_EDE3_CBC" disabled>
-                            <label for="Encryption-Algorithm-type-2">DES-EDE3-CBC</label> 
-                        </div>
-                        <div class = "P-CSCF-class-content-field2-checkbox3">
-                            <input type="checkbox" id="Encryption-Algorithm-type-3" name="Encryption-Algorithm-type-icon3" value="Plain" disabled>
-                            <label for="Encryption-Algorithm-type-3">Plain (No encryption)</label> 
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="P-CSCF-class-content-field3">
-                    <span>Enable TLS</span>
-                        <!-- <div class="slider-div">  -->
-                    <label class="switch">
-                        <input type="checkbox" name ="Enable-TLS" id = "tls" disabled>
-                        <span class="slider round"></span>
-                    </label>
-                </div>
-
-
-                <div class="P-CSCF-class-content-field4">
-                    <div class = "P-CSCF-class-content-field4-input1">
-                        <label for="shared-memory">Shared Memory*</label>
-                        <input type="text" id="pcscf-shared-memory" name="p_shared_memory" class ="shared-memory" disabled>
-                        <span>MB</span>
-                    </div>
-                    <div class = "P-CSCF-class-content-field4-input2">
-                        <label for="private-memory">Private Memory*</label> 
-                        <input type="text" id="pcscf-private-memory" name="p_private_memory"  class="private-memory" disabled>
-                        <span>MB</span>
-                    </div>
-                </div>
-
-
+          <div class="P-CSCF-class-content">
+            <div class="P-CSCF-class-content-title">P-CSCF</div>
+            <div class="P-CSCF-class-content-field1">
+              <span>Enable IPsec :</span>
+              <!-- <div class="slider-div">  -->
+              <label class="switch">
+                <input
+                  type="checkbox"
+                  name="Enable-IPsec"
+                  id="ipsec"
+                  disabled
+                />
+                <span class="slider round"></span>
+              </label>
             </div>
 
-            <div class="P-CSCF-class-Rx-configuration">
-                <div class="P-CSCF-class-Rx-configuration-title">Rx Configuration</div>
-                <div class="P-CSCF-class-Rx-configuration-field1">
-                    <span>PCRF IP Address*</span>
-                    <div class="PCRF-IP-Address-boxes">
-                        <input type="text" name="PCRF_IP_Address_box4" class="PCRF-IP-Address-box1" disabled>
-                        <input type="text" name="PCRF_IP_Address_box3" class="PCRF-IP-Address-box2" disabled>
-                        <input type="text" name="PCRF_IP_Address_box2" class="PCRF-IP-Address-box3" disabled>
-                        <input type="text" name="PCRF_IP_Address-box1" class="PCRF-IP-Address-box4" disabled>                  
-                    </div>
+            <div class="P-CSCF-class-content-field2">
+              <p>Supported IPsec Encryption Algorithms :</p>
+              <div class="P-CSCF-class-content-field2-checkboxes">
+                <div class="P-CSCF-class-content-field2-checkbox1">
+                  <input
+                    type="checkbox"
+                    id="Encryption-Algorithm-type-1"
+                    name="Encryption-Algorithm-type-icon1"
+                    value="AES_CBC"
+                    disabled
+                  />
+                  <label for="Encryption-Algorithm-type-1">AES-CBC</label>
                 </div>
-
-                <div class="P-CSCF-class-Rx-configuration-field2">
-                    <label for="Rx-configuration-field2">PCRF FQDN*</label>
-                    <input type="text" id="Rx-configuration-field2">
+                <div class="P-CSCF-class-content-field2-checkbox2">
+                  <input
+                    type="checkbox"
+                    id="Encryption-Algorithm-type-2"
+                    name="Encryption-Algorithm-type-icon2"
+                    value="DES_EDE3_CBC"
+                    disabled
+                  />
+                  <label for="Encryption-Algorithm-type-2">DES-EDE3-CBC</label>
                 </div>
-
-                <div class="P-CSCF-class-Rx-configuration-field3">
-                    <label for="Rx-configuration-field3">PCRF Realm*</label>
-                    <input type="text" id="Rx-configuration-field3" disabled>
+                <div class="P-CSCF-class-content-field2-checkbox3">
+                  <input
+                    type="checkbox"
+                    id="Encryption-Algorithm-type-3"
+                    name="Encryption-Algorithm-type-icon3"
+                    value="Plain"
+                    disabled
+                  />
+                  <label for="Encryption-Algorithm-type-3"
+                    >Plain (No encryption)</label
+                  >
                 </div>
-
-                <div class="P-CSCF-class-Rx-configuration-field4">
-                    <span>Transport Protocol</span>
-                    <div class="Transport-Protocol-class1">
-                        <input type="radio" id="Transport-Protocol-type-1" name="Transport_Protocol" value="SCTP" disabled/>
-                        <label for="Transport-Protocol-type-1">SCTP</label>
-                    </div>
-
-                    <div class="Transport-Protocol-class2">
-                        <input type="radio" id="Transport-Protocol-type-2" name="Transport_Protocol" value="TCP" disabled/>
-                        <label for="Transport-Protocol-type-2">TCP</label>
-                    </div>
-
-                </div>
-
-                <div class="P-CSCF-class-Rx-configuration-field5">
-                    <span>Rx Source Port</span>
-                    <label class="switch">
-                        <input type="checkbox" id = "Enable-Rx-Source-Port" name ="Enable-Rx-Source-Port" disabled>
-                        <span class="slider round"></span>
-                    </label>
-                    <input type="text" id="Rx-Source-Port" name="Rx_Source_Port" disabled>
-                </div>
+              </div>
             </div>
 
+            <div class="P-CSCF-class-content-field3">
+              <span>Enable TLS</span>
+              <!-- <div class="slider-div">  -->
+              <label class="switch">
+                <input type="checkbox" name="Enable-TLS" id="tls" disabled />
+                <span class="slider round"></span>
+              </label>
+            </div>
+
+            <div class="P-CSCF-class-content-field4">
+              <div class="P-CSCF-class-content-field4-input1">
+                <label for="shared-memory">Shared Memory*</label>
+                <input
+                  type="text"
+                  id="pcscf-shared-memory"
+                  name="p_shared_memory"
+                  class="shared-memory"
+                  disabled
+                />
+                <span>MB</span>
+              </div>
+              <div class="P-CSCF-class-content-field4-input2">
+                <label for="private-memory">Private Memory*</label>
+                <input
+                  type="text"
+                  id="pcscf-private-memory"
+                  name="p_private_memory"
+                  class="private-memory"
+                  disabled
+                />
+                <span>MB</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="P-CSCF-class-Rx-configuration">
+            <div class="P-CSCF-class-Rx-configuration-title">
+              Rx Configuration
+            </div>
+            <div class="P-CSCF-class-Rx-configuration-field1">
+              <span>PCRF IP Address*</span>
+              <div class="PCRF-IP-Address-boxes">
+                <input
+                  type="text"
+                  name="PCRF_IP_Address_box4"
+                  class="PCRF-IP-Address-box1"
+                  disabled
+                />
+                <input
+                  type="text"
+                  name="PCRF_IP_Address_box3"
+                  class="PCRF-IP-Address-box2"
+                  disabled
+                />
+                <input
+                  type="text"
+                  name="PCRF_IP_Address_box2"
+                  class="PCRF-IP-Address-box3"
+                  disabled
+                />
+                <input
+                  type="text"
+                  name="PCRF_IP_Address-box1"
+                  class="PCRF-IP-Address-box4"
+                  disabled
+                />
+              </div>
+            </div>
+
+            <div class="P-CSCF-class-Rx-configuration-field2">
+              <label for="Rx-configuration-field2">PCRF FQDN*</label>
+              <input type="text" id="Rx-configuration-field2" />
+            </div>
+
+            <div class="P-CSCF-class-Rx-configuration-field3">
+              <label for="Rx-configuration-field3">PCRF Realm*</label>
+              <input type="text" id="Rx-configuration-field3" disabled />
+            </div>
+
+            <div class="P-CSCF-class-Rx-configuration-field4">
+              <span>Transport Protocol</span>
+              <div class="Transport-Protocol-class1">
+                <input
+                  type="radio"
+                  id="Transport-Protocol-type-1"
+                  name="Transport_Protocol"
+                  value="SCTP"
+                  disabled
+                />
+                <label for="Transport-Protocol-type-1">SCTP</label>
+              </div>
+
+              <div class="Transport-Protocol-class2">
+                <input
+                  type="radio"
+                  id="Transport-Protocol-type-2"
+                  name="Transport_Protocol"
+                  value="TCP"
+                  disabled
+                />
+                <label for="Transport-Protocol-type-2">TCP</label>
+              </div>
+            </div>
+
+            <div class="P-CSCF-class-Rx-configuration-field5">
+              <span>Rx Source Port</span>
+              <label class="switch">
+                <input
+                  type="checkbox"
+                  id="Enable-Rx-Source-Port"
+                  name="Enable-Rx-Source-Port"
+                  disabled
+                />
+                <span class="slider round"></span>
+              </label>
+              <input
+                type="text"
+                id="Rx-Source-Port"
+                name="Rx_Source_Port"
+                disabled
+              />
+            </div>
+          </div>
         </div>
-
 
         <div class="I-CSCF-class">
-            <span class = "I-CSCF-class-content-title">I-CSCF</span>
-            <div class = "I-CSCF-class-content-input1">
-                <label for="shared-memory">Shared Memory*</label>
-                    <input type="text" id="icscf-shared-memory" name="i_shared_memory" class ="shared-memory" disabled>
-                    <span>MB</span>
-                </div>
-                <div class = "I-CSCF-class-content-input2">
-                    <label for="private-memory">Private Memory*</label> 
-                    <input type="text" id="icscf-private-memory" name="i_private_memory" class="private-memory" disabled>
-                    <span>MB</span>
-                </div>
+          <span class="I-CSCF-class-content-title">I-CSCF</span>
+          <div class="I-CSCF-class-content-input1">
+            <label for="shared-memory">Shared Memory*</label>
+            <input
+              type="text"
+              id="icscf-shared-memory"
+              name="i_shared_memory"
+              class="shared-memory"
+              disabled
+            />
+            <span>MB</span>
+          </div>
+          <div class="I-CSCF-class-content-input2">
+            <label for="private-memory">Private Memory*</label>
+            <input
+              type="text"
+              id="icscf-private-memory"
+              name="i_private_memory"
+              class="private-memory"
+              disabled
+            />
+            <span>MB</span>
+          </div>
         </div>
 
-
         <div class="S-CSCF-class">
-            <div class="S-CSCF-class-content">
-                <span class = "S-CSCF-class-content-title">S-CSCF</span>
-                <div class = "S-CSCF-class-content-inputs">
-                    <div class = "S-CSCF-class-content-input1">
-                        <label for="Minimum-Register-Time">Minimum Register Time</label>
-                        <input type="text" id="Minimum-Register-Time" name="Minimum_Register_Time" disabled>
-                        <span>S</span>
-                    </div>
-                    <div class = "S-CSCF-class-content-input2">
-                        <label for="Maximum-Register-Time">Maximum Register Time</label>
-                        <input type="text" id="Maximum-Register-Time" name="Maximum_Register_Time" disabled>
-                        <span>S</span>
-                    </div>
-                    <div class = "S-CSCF-class-content-input3">
-                        <label for="shared-memory">Shared Memory*</label>
-                        <input type="text" id="scscf-shared-memory" name="s_shared_memory" class ="shared-memory" disabled>
-                        <span>MB</span>
-                    </div>
-                    <div class = "S-CSCF-class-content-input4">
-                        <label for="private-memory">Private Memory*</label> 
-                        <input type="text" id="scscf-private-memory" name="s_private_memory" class="private-memory" disabled>
-                        <span>MB</span>
-                    </div>
-                </div>
-            </div>               
+          <div class="S-CSCF-class-content">
+            <span class="S-CSCF-class-content-title">S-CSCF</span>
+            <div class="S-CSCF-class-content-inputs">
+              <div class="S-CSCF-class-content-input1">
+                <label for="Minimum-Register-Time">Minimum Register Time</label>
+                <input
+                  type="text"
+                  id="Minimum-Register-Time"
+                  name="Minimum_Register_Time"
+                  disabled
+                />
+                <span>S</span>
+              </div>
+              <div class="S-CSCF-class-content-input2">
+                <label for="Maximum-Register-Time">Maximum Register Time</label>
+                <input
+                  type="text"
+                  id="Maximum-Register-Time"
+                  name="Maximum_Register_Time"
+                  disabled
+                />
+                <span>S</span>
+              </div>
+              <div class="S-CSCF-class-content-input3">
+                <label for="shared-memory">Shared Memory*</label>
+                <input
+                  type="text"
+                  id="scscf-shared-memory"
+                  name="s_shared_memory"
+                  class="shared-memory"
+                  disabled
+                />
+                <span>MB</span>
+              </div>
+              <div class="S-CSCF-class-content-input4">
+                <label for="private-memory">Private Memory*</label>
+                <input
+                  type="text"
+                  id="scscf-private-memory"
+                  name="s_private_memory"
+                  class="private-memory"
+                  disabled
+                />
+                <span>MB</span>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="RTP-Proxy-class">
-        <div class="RTP-Proxy-class-content">
-                <span class = "RTP-Proxy-class-content-title">RTP Proxy</span>
-                <div class = "RTP-Proxy-class-content-inputs">
-                    <div class = "RTP-Proxy-class-content-input1">
-                        <span>Supported HD Codecs :</span>
-                        <div class="RTP-Proxy-class-content-input1-checkboxes">
-                            <div class = "RTP-Proxy-class-content-input1-checkbox1">
-                                <input type="checkbox" id="Supported-HD-Codecs-type-1" name="Supported-HD-Codecs-type-icon1" value="G.722" disabled>
-                                <label for="Supported-HD-Codecs-type-1">G.722</label>
-                            </div>
-                            <div class = "RTP-Proxy-class-content-input1-checkbox2">
-                                <input type="checkbox" id="Supported-HD-Codecs-type-2" name="Supported-HD-Codecs-type-icon2" value="AMR_WB" disabled>
-                                <label for="Supported-HD-Codecs-type-2">AMR-WB</label> 
-                            </div>
-                        </div>
-        
-                    </div>
-                    <div class = "RTP-Proxy-class-content-input2">
-                        <span>Enable SRTP</span>
-                        <div class="slider-div">
-                            <label class="switch">
-                                <input type="checkbox" id="srtp" name ="Enable-SRTP" disabled>
-                                <span class="slider round"></span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class = "RTP-Proxy-class-content-input3">
-                       <div class = "RTP-Proxy-Ports-title"><span>Outbound RTP Proxy Port Range :</span></div>
-                        <div class = "RTP-Proxy-Ports">
-                            <div class = "RTP-Proxy-Inbound-Port-Minimum">
-                                <label for="Inbound-Port-Minimum">Port Minimum*</label> 
-                                <input type="text" id="Inbound-Port-Minimum" class="port" name="Inbound_Port_Minimum" disabled>
-                            </div>
-                            <div class = "RTP-Proxy-Inbound-Port-Maximum">
-                                <label for="Inbound-Port-Maximum">Port Maximum*</label> 
-                                <input type="text" id="Inbound-Port-Maximum" class="port"  name="Inbound_Port_Maximum" disabled>
-                            </div>
-                        </div> 
-                    </div>
-
-
-                    <div class = "RTP-Proxy-class-content-input4">
-                         <div class = "RTP-Proxy-Ports-title"><span>Outbound RTP Proxy Port Range :</span></div>
-                        <div class = "RTP-Proxy-Ports">
-                            <div class = "RTP-Proxy-Outbound-Port-Minimum">
-                                <label for="Outbound-Port-Minimum">Port Minimum*</label> 
-                                <input type="text" id="Outbound-Port-Minimum" class="port" name="Outbound_Port_Minimum" disabled>
-                            </div>
-                            <div class = "RTP-Proxy-Outbound-Port-Maximum">
-                                <label for="Outbound-Port-Maximum">Port Maximum*</label> 
-                                <input type="text" id="Outbound-Port-Maximum" class="port" name="Outbound_Port_Maximum" disabled>
-                            </div>
-                        </div>                        
-                    </div>
-
-                    <div class = "RTP-Proxy-class-content-input5">
-
-                        <!-- <label for="Call-Duration">Enable Maximum Call Duration :</label> -->
-                        <span>Enable Maximum Call Duration :</span>
-                        <!-- <div class="slider-div">  -->
-                            <label class="switch">
-                                <input type="checkbox" id="Enable-Call-Duration" name ="Enable-Maximum-Call-Duration" disabled>
-                                <span class="slider round"></span>
-                            </label>
-                        <!-- </div> -->
-
-                        <div>
-                        <input type="text" id="Call-Duration" name="Call_Duration" disabled>
-                        <span>Second</span>
-                        </div>
-                    </div>
-                    <div class = "RTP-Proxy-class-content-input6">
-                        <label for="RTP-Loss-Timeout">RTP Loss Timeout :</label> 
-                        <div>
-                        <input type="text" id="RTP-Loss-Timeout" name="RTP_Loss_Timeout" disabled>
-                        <span>Second</span>
-                        </div>
-                    </div>
-
+          <div class="RTP-Proxy-class-content">
+            <span class="RTP-Proxy-class-content-title">RTP Proxy</span>
+            <div class="RTP-Proxy-class-content-inputs">
+              <div class="RTP-Proxy-class-content-input1">
+                <span>Supported HD Codecs :</span>
+                <div class="RTP-Proxy-class-content-input1-checkboxes">
+                  <div class="RTP-Proxy-class-content-input1-checkbox1">
+                    <input
+                      type="checkbox"
+                      id="Supported-HD-Codecs-type-1"
+                      name="Supported-HD-Codecs-type-icon1"
+                      value="G.722"
+                      disabled
+                    />
+                    <label for="Supported-HD-Codecs-type-1">G.722</label>
+                  </div>
+                  <div class="RTP-Proxy-class-content-input1-checkbox2">
+                    <input
+                      type="checkbox"
+                      id="Supported-HD-Codecs-type-2"
+                      name="Supported-HD-Codecs-type-icon2"
+                      value="AMR_WB"
+                      disabled
+                    />
+                    <label for="Supported-HD-Codecs-type-2">AMR-WB</label>
+                  </div>
                 </div>
-            </div>  
+              </div>
+              <div class="RTP-Proxy-class-content-input2">
+                <span>Enable SRTP</span>
+                <div class="slider-div">
+                  <label class="switch">
+                    <input
+                      type="checkbox"
+                      id="srtp"
+                      name="Enable-SRTP"
+                      disabled
+                    />
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+              </div>
 
+              <div class="RTP-Proxy-class-content-input3">
+                <div class="RTP-Proxy-Ports-title">
+                  <span>Outbound RTP Proxy Port Range :</span>
+                </div>
+                <div class="RTP-Proxy-Ports">
+                  <div class="RTP-Proxy-Inbound-Port-Minimum">
+                    <label for="Inbound-Port-Minimum">Port Minimum*</label>
+                    <input
+                      type="text"
+                      id="Inbound-Port-Minimum"
+                      class="port"
+                      name="Inbound_Port_Minimum"
+                      disabled
+                    />
+                  </div>
+                  <div class="RTP-Proxy-Inbound-Port-Maximum">
+                    <label for="Inbound-Port-Maximum">Port Maximum*</label>
+                    <input
+                      type="text"
+                      id="Inbound-Port-Maximum"
+                      class="port"
+                      name="Inbound_Port_Maximum"
+                      disabled
+                    />
+                  </div>
+                </div>
+              </div>
 
+              <div class="RTP-Proxy-class-content-input4">
+                <div class="RTP-Proxy-Ports-title">
+                  <span>Outbound RTP Proxy Port Range :</span>
+                </div>
+                <div class="RTP-Proxy-Ports">
+                  <div class="RTP-Proxy-Outbound-Port-Minimum">
+                    <label for="Outbound-Port-Minimum">Port Minimum*</label>
+                    <input
+                      type="text"
+                      id="Outbound-Port-Minimum"
+                      class="port"
+                      name="Outbound_Port_Minimum"
+                      disabled
+                    />
+                  </div>
+                  <div class="RTP-Proxy-Outbound-Port-Maximum">
+                    <label for="Outbound-Port-Maximum">Port Maximum*</label>
+                    <input
+                      type="text"
+                      id="Outbound-Port-Maximum"
+                      class="port"
+                      name="Outbound_Port_Maximum"
+                      disabled
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="RTP-Proxy-class-content-input5">
+                <!-- <label for="Call-Duration">Enable Maximum Call Duration :</label> -->
+                <span>Enable Maximum Call Duration :</span>
+                <!-- <div class="slider-div">  -->
+                <label class="switch">
+                  <input
+                    type="checkbox"
+                    id="Enable-Call-Duration"
+                    name="Enable-Maximum-Call-Duration"
+                    disabled
+                  />
+                  <span class="slider round"></span>
+                </label>
+                <!-- </div> -->
+
+                <div>
+                  <input
+                    type="text"
+                    id="Call-Duration"
+                    name="Call_Duration"
+                    disabled
+                  />
+                  <span>Second</span>
+                </div>
+              </div>
+              <div class="RTP-Proxy-class-content-input6">
+                <label for="RTP-Loss-Timeout">RTP Loss Timeout :</label>
+                <div>
+                  <input
+                    type="text"
+                    id="RTP-Loss-Timeout"
+                    name="RTP_Loss_Timeout"
+                    disabled
+                  />
+                  <span>Second</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <button type="submit" class="information-save-button">Save</button>
         <button class="information-edit-button">Edit</button>
-
-    </form>
+      </form>
     </div>
 
-
-    <div class="footer">    
-        <div id="time-box">
-            <div id="time-content">
-                <span>Server Time</span>
-                <span id = "local-time" >21.04.17</span>
-                <span id = "global-time"> 18:42:23</span>
-            </div>
-        </div>    
+    <div class="footer">
+      <div id="time-box">
+        <div id="time-content">
+          <span>Server Time</span>
+          <span id="local-time">21.04.17</span>
+          <span id="global-time"> 18:42:23</span>
+        </div>
+      </div>
     </div>
-
-
 
     <script>
+      let network_Info = {};
+      let ims_Domain;
+      let Encryption_Algorithms = [];
+      let pcscf_Shared_Memory, icscf_Shared_Memory, scscf_Shared_Memory;
+      let pcscf_Private_Memory, icscf_Private_Memory, scscf_Private_Memory;
+      let PCRF_IP_Address = [];
+      let PCRF_FQDN;
+      let PCRF_Realm;
+      let Transport_Protocol = [];
+      let Enable_SRTP,
+        Enable_IPsec,
+        Enable_Rx_Source_Port,
+        Enable_TLS,
+        Enable_CallDuration,
+        CallDuration,
+        LossTimeout;
+      let Minimum_Register_Time, Maximum_Register_Time;
+      let Supported_HD_Codes = [];
+      let inbound_Port_Minimum, inbound_Port_Maximum;
+      let outbound_Port_Minimum, outbound_Port_Maximum;
+      const url = "https://c8ac2942-4708-4210-9423-78748fdbcd54.mock.pstmn.io";
 
-    let  network_Info = {} ;
-    let  ims_Domain ;
-    let  Encryption_Algorithms = [] ;
-    let  pcscf_Shared_Memory , icscf_Shared_Memory , scscf_Shared_Memory ;
-    let  pcscf_Private_Memory , icscf_Private_Memory , scscf_Private_Memory ;
-    let  PCRF_IP_Address = []; 
-    let  PCRF_FQDN ;
-    let  PCRF_Realm ;
-    let  Transport_Protocol = [] ;
-    let  Enable_SRTP , Enable_IPsec , Enable_Rx_Source_Port , Enable_TLS , Enable_CallDuration , CallDuration , LossTimeout;
-    let  Minimum_Register_Time  , Maximum_Register_Time ;
-    let  Supported_HD_Codes = [];
-    let  inbound_Port_Minimum , inbound_Port_Maximum ;
-    let  outbound_Port_Minimum , outbound_Port_Maximum ;
-    const url = "https://c8ac2942-4708-4210-9423-78748fdbcd54.mock.pstmn.io"
+      function load_page() {
+        // console.log("22222");
+        fetch(`${url}/api/configuration`)
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data);
+            network_Info = data;
 
+            ims_Domain = document.querySelector(
+              `.General-class-content-field1-box`
+            );
+            ims_Domain.setAttribute("value", `${network_Info.domain}`);
 
- function load_page()
- {
+            let Enable_Homer_In1 = [];
+            Enable_Homer_In1 = document.getElementsByName(`General-type-icon1`);
 
-    // console.log("22222");
-    fetch(`${url}/api/configuration`)
-    .then((response) => response.json())
-    .then((data) => 
-    { 
-        console.log(data);
-        network_Info = data;          
+            let Enable_Homer_In2 = [];
+            Enable_Homer_In2 = document.getElementsByName(`General-type-icon2`);
 
-        ims_Domain = document.querySelector(`.General-class-content-field1-box`);
-        ims_Domain.setAttribute("value",`${network_Info.domain}`);
+            let Enable_Homer_In3 = [];
+            Enable_Homer_In3 = document.getElementsByName(`General-type-icon3`);
 
+            let Enable_Homer_In = [
+              Enable_Homer_In1[0],
+              Enable_Homer_In2[0],
+              Enable_Homer_In3[0],
+            ];
 
-
-        let  Enable_Homer_In1 = []
-        Enable_Homer_In1 = document.getElementsByName(`General-type-icon1`);
-
-        let  Enable_Homer_In2 = []
-        Enable_Homer_In2 = document.getElementsByName(`General-type-icon2`);
-
-        let  Enable_Homer_In3 = []
-        Enable_Homer_In3 = document.getElementsByName(`General-type-icon3`);
-
-        let Enable_Homer_In = [Enable_Homer_In1[0] , Enable_Homer_In2[0] , Enable_Homer_In3[0]] ;
-
-        for(let i = 0 ; i < network_Info.homerEnable.length ; i++) 
-        {
-
-            for(let j = 0 ; j <  Enable_Homer_In.length ; j++)
-            {
+            for (let i = 0; i < network_Info.homerEnable.length; i++) {
+              for (let j = 0; j < Enable_Homer_In.length; j++) {
                 // console.log(j);
 
-                if(Enable_Homer_In[j].value === network_Info.homerEnable[i])
-                {
-                    // console.log(Enable_Homer_In[j].value );
-                    Enable_Homer_In[j].checked = true;  
-                }   
-            }                  
-        }
-
-
-        let  Encryption_Algorithm1 = []
-        Encryption_Algorithm1 = document.getElementsByName(`Encryption-Algorithm-type-icon1`);
-
-        let  Encryption_Algorithm2 = []
-        Encryption_Algorithm2 = document.getElementsByName(`Encryption-Algorithm-type-icon2`);
-
-        let  Encryption_Algorithm3 = []
-        Encryption_Algorithm3 = document.getElementsByName(`Encryption-Algorithm-type-icon3`);
-
-
-        Encryption_Algorithms = [Encryption_Algorithm1[0] , Encryption_Algorithm2[0] , Encryption_Algorithm3[0]] ;
-
-        for(let i = 0 ; i < network_Info.pcscf.algorithms.length ; i++) 
-        {
-            for(let j = 0 ; j <  Encryption_Algorithms.length ; j++)
-            {
-                if(Encryption_Algorithms[j].value === network_Info.pcscf.algorithms[i])
-                {
-                    Encryption_Algorithms[j].checked = true;  
-                }   
+                if (Enable_Homer_In[j].value === network_Info.homerEnable[i]) {
+                  // console.log(Enable_Homer_In[j].value );
+                  Enable_Homer_In[j].checked = true;
+                }
+              }
             }
-                  
-        }
 
-        Transport_Protocol  = document.getElementsByName("Transport_Protocol");
-        for(let i = 0 ; i <  Transport_Protocol.length ; i++) 
-        {
-            {
-                if(Transport_Protocol[i].value === network_Info.pcscf.rxConfiguration.protocol)
-                {
-                    Transport_Protocol[i].checked = true;  
-                }   
+            let Encryption_Algorithm1 = [];
+            Encryption_Algorithm1 = document.getElementsByName(
+              `Encryption-Algorithm-type-icon1`
+            );
+
+            let Encryption_Algorithm2 = [];
+            Encryption_Algorithm2 = document.getElementsByName(
+              `Encryption-Algorithm-type-icon2`
+            );
+
+            let Encryption_Algorithm3 = [];
+            Encryption_Algorithm3 = document.getElementsByName(
+              `Encryption-Algorithm-type-icon3`
+            );
+
+            Encryption_Algorithms = [
+              Encryption_Algorithm1[0],
+              Encryption_Algorithm2[0],
+              Encryption_Algorithm3[0],
+            ];
+
+            for (let i = 0; i < network_Info.pcscf.algorithms.length; i++) {
+              for (let j = 0; j < Encryption_Algorithms.length; j++) {
+                if (
+                  Encryption_Algorithms[j].value ===
+                  network_Info.pcscf.algorithms[i]
+                ) {
+                  Encryption_Algorithms[j].checked = true;
+                }
+              }
             }
-                  
-        }
 
-
-        let  Supported_HD_Code1 = []
-        Supported_HD_Code1 = document.getElementsByName(`Supported-HD-Codecs-type-icon1`);
-
-        let  Supported_HD_Code2 = []
-        Supported_HD_Code2 = document.getElementsByName(`Supported-HD-Codecs-type-icon2`);
-
-        Supported_HD_Codes = [Supported_HD_Code1[0] , Supported_HD_Code2[0]] ;
-
-        for(let i = 0 ; i < network_Info.rtpProxy.supportedHdCoders.length ; i++) 
-        {
-            for(let j = 0 ; j <  Supported_HD_Codes.length ; j++)
-            {
-                if(Supported_HD_Codes[j].value === network_Info.rtpProxy.supportedHdCoders[i])
-                {
-                    Supported_HD_Codes[j].checked = true;  
-                }   
+            Transport_Protocol =
+              document.getElementsByName("Transport_Protocol");
+            for (let i = 0; i < Transport_Protocol.length; i++) {
+              {
+                if (
+                  Transport_Protocol[i].value ===
+                  network_Info.pcscf.rxConfiguration.protocol
+                ) {
+                  Transport_Protocol[i].checked = true;
+                }
+              }
             }
-                  
+
+            let Supported_HD_Code1 = [];
+            Supported_HD_Code1 = document.getElementsByName(
+              `Supported-HD-Codecs-type-icon1`
+            );
+
+            let Supported_HD_Code2 = [];
+            Supported_HD_Code2 = document.getElementsByName(
+              `Supported-HD-Codecs-type-icon2`
+            );
+
+            Supported_HD_Codes = [Supported_HD_Code1[0], Supported_HD_Code2[0]];
+
+            for (
+              let i = 0;
+              i < network_Info.rtpProxy.supportedHdCoders.length;
+              i++
+            ) {
+              for (let j = 0; j < Supported_HD_Codes.length; j++) {
+                if (
+                  Supported_HD_Codes[j].value ===
+                  network_Info.rtpProxy.supportedHdCoders[i]
+                ) {
+                  Supported_HD_Codes[j].checked = true;
+                }
+              }
+            }
+
+            for (let i = 0; i < 4; i++) {
+              PCRF_IP_Address[i] = document.querySelector(
+                `.PCRF-IP-Address-box${4 - i}`
+              );
+              PCRF_IP_Address[i].setAttribute(
+                "value",
+                `${network_Info.pcscf.rxConfiguration.ip.split(".")[i]}`
+              );
+            }
+
+            Enable_IPsec = document.getElementById("ipsec");
+            // console.log(Enable_IPsec);
+            if (network_Info.pcscf.ipSec === true) {
+              Enable_IPsec.checked = true;
+            }
+
+            Enable_TLS = document.getElementById("tls");
+            if (network_Info.pcscf.tls === true) {
+              Enable_TLS.checked = true;
+            }
+
+            Enable_Rx_Source_Port = document.getElementById(
+              "Enable-Rx-Source-Port"
+            );
+            if (network_Info.pcscf.rxConfiguration.sourcePortEnabled === true) {
+              Enable_Rx_Source_Port.checked = true;
+            }
+
+            Enable_SRTP = document.getElementById("srtp");
+            if (network_Info.rtpProxy.srtp === true) {
+              Enable_SRTP.checked = true;
+            }
+
+            Enable_CallDuration = document.getElementById(
+              "Enable-Call-Duration"
+            );
+            if (network_Info.rtpProxy.maximumCallDurationEnable === true) {
+              Enable_CallDuration.checked = true;
+            }
+
+            pcscf_Shared_Memory = document.getElementById(
+              "pcscf-shared-memory"
+            );
+            pcscf_Shared_Memory.setAttribute(
+              "value",
+              `${network_Info.pcscf.shareMemory}`
+            );
+            pcscf_Private_Memory = document.getElementById(
+              "pcscf-private-memory"
+            );
+            pcscf_Private_Memory.setAttribute(
+              "value",
+              `${network_Info.pcscf.privateMemory}`
+            );
+
+            scscf_Shared_Memory = document.getElementById(
+              "scscf-shared-memory"
+            );
+            scscf_Shared_Memory.setAttribute(
+              "value",
+              `${network_Info.scscf.shareMemory}`
+            );
+            scscf_Private_Memory = document.getElementById(
+              "scscf-private-memory"
+            );
+            scscf_Private_Memory.setAttribute(
+              "value",
+              `${network_Info.scscf.privateMemory}`
+            );
+
+            icscf_Shared_Memory = document.getElementById(
+              "icscf-shared-memory"
+            );
+            icscf_Shared_Memory.setAttribute(
+              "value",
+              `${network_Info.icscf.shareMemory}`
+            );
+            icscf_Private_Memory = document.getElementById(
+              "icscf-private-memory"
+            );
+            icscf_Private_Memory.setAttribute(
+              "value",
+              `${network_Info.icscf.privateMemory}`
+            );
+
+            Minimum_Register_Time = document.getElementById(
+              "Minimum-Register-Time"
+            );
+            Minimum_Register_Time.setAttribute(
+              "value",
+              `${network_Info.scscf.minimumRegisterTime}`
+            );
+            Maximum_Register_Time = document.getElementById(
+              "Maximum-Register-Time"
+            );
+            Maximum_Register_Time.setAttribute(
+              "value",
+              `${network_Info.scscf.maximumRegisterTime}`
+            );
+
+            inbound_Port_Minimum = document.getElementById(
+              "Inbound-Port-Minimum"
+            );
+            inbound_Port_Minimum.setAttribute(
+              "value",
+              `${network_Info.rtpProxy.inboundPortMinimum}`
+            );
+            inbound_Port_Maximum = document.getElementById(
+              "Inbound-Port-Maximum"
+            );
+            inbound_Port_Maximum.setAttribute(
+              "value",
+              `${network_Info.rtpProxy.inboundPortMaximum}`
+            );
+
+            outbound_Port_Minimum = document.getElementById(
+              "Outbound-Port-Minimum"
+            );
+            outbound_Port_Minimum.setAttribute(
+              "value",
+              `${network_Info.rtpProxy.outboundPortMinimum}`
+            );
+            outbound_Port_Maximum = document.getElementById(
+              "Outbound-Port-Maximum"
+            );
+            outbound_Port_Maximum.setAttribute(
+              "value",
+              `${network_Info.rtpProxy.outboundPortMaximum}`
+            );
+
+            CallDuration = document.getElementById("Call-Duration");
+            CallDuration.setAttribute(
+              "value",
+              `${network_Info.rtpProxy.maximumCallDuration}`
+            );
+            LossTimeout = document.getElementById("RTP-Loss-Timeout");
+            LossTimeout.setAttribute(
+              "value",
+              `${network_Info.rtpProxy.rtpLossTimeout}`
+            );
+
+            Rx_Source_Port = document.getElementById("Rx-Source-Port");
+            Rx_Source_Port.setAttribute(
+              "value",
+              `${network_Info.pcscf.rxConfiguration.sourcePort}`
+            );
+
+            PCRF_FQDN = document.getElementById("Rx-configuration-field2");
+            PCRF_FQDN.setAttribute(
+              "value",
+              `${network_Info.pcscf.rxConfiguration.sourcePort}`
+            );
+
+            PCRF_Realm = document.getElementById("Rx-configuration-field3");
+            PCRF_Realm.setAttribute(
+              "value",
+              `${network_Info.pcscf.rxConfiguration.sourcePort}`
+            );
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
+
+      async function init() {
+        await load_page();
+      }
+
+      init();
+
+      /////////////////////////////////////// edit -icon /////////////////////////////////////
+      let edit_btn = document.querySelector(".information-edit-button");
+      edit_btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        const all_inputs = document.getElementsByTagName("input");
+        for (let i = 0; i < all_inputs.length; i++) {
+          all_inputs[i].disabled = false;
         }
+      });
 
-    
-        for(let i = 0 ; i < 4 ; i++){
-            PCRF_IP_Address[i] = document.querySelector(`.PCRF-IP-Address-box${4-i}`) ;
-            PCRF_IP_Address[i].setAttribute("value",`${network_Info.pcscf.rxConfiguration.ip.split(".")[i]}`);
+      ///////////////////////////////////////// error show /////////////////////////
+      let error_close = document.querySelector(".error-close");
+      let show_error = document.querySelector(".show-error");
 
-        }
- 
-        Enable_IPsec = document.getElementById("ipsec") ;
-        // console.log(Enable_IPsec);
-        if(network_Info.pcscf.ipSec === true)
-        {
-            Enable_IPsec.checked = true;  
-        } 
+      error_close.addEventListener("click", function (e) {
+        e.preventDefault();
+        show_error.style.display = "none";
+      });
 
-        Enable_TLS = document.getElementById("tls") ;
-        if(network_Info.pcscf.tls === true)
-        {
-            Enable_TLS.checked = true;  
-        }
+      ////////////////////////////////////////////////////////////////////////////////
 
-        Enable_Rx_Source_Port = document.getElementById("Enable-Rx-Source-Port") ;
-        if(network_Info.pcscf.rxConfiguration.sourcePortEnabled === true)
-        {
-             Enable_Rx_Source_Port.checked = true;  
-        }
+      ////////////////////////////////// save icon ////////////////////////////////////
 
-        Enable_SRTP = document.getElementById("srtp") ;
-        if(network_Info.rtpProxy.srtp === true)
-        {
-            Enable_SRTP.checked = true;  
-        }
+      let total_form = document.getElementById("total-form");
+      total_form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const formData = Object.fromEntries(new FormData(e.target));
+        let hasMessage = false;
+        let result = fetch(`${url}/api/configuration/submittForm`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        })
+          .then((response) => {
+            console.log(response);
+            // console.log(response.status) ;
+            if (response.status !== 200) {
+              hasMessage = true;
+              show_error.style.display = "block";
+              show_error.style.backgroundColor = "#c65161";
+              let error_msg = document.getElementById("erroe-message");
+              error_msg.innerHTML =
+                `Your request was failed (status code : ${response.status}) ` +
+                `<img  src="images/About Icon.svg" class="error-logo"/>`;
+            } else {
+              hasMessage = false;
+              show_error.style.display = "block";
+              show_error.style.backgroundColor = "#58cc87";
+              let success_msg = document.getElementById("erroe-message");
+              success_msg.innerHTML =
+                "Your request was done successfully" +
+                `<img  src="images/About Icon.svg" class="error-logo"/>`;
+            }
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      });
 
-        Enable_CallDuration = document.getElementById("Enable-Call-Duration") ;
-        if(network_Info.rtpProxy.maximumCallDurationEnable === true)
-        {
-             Enable_CallDuration.checked = true;  
-        }
+      function getTime() {
+        fetch(`${url}/api/general`)
+          .then((response) => response.json())
+          .then((data) => {
+            time_Info = data;
+            // console.log(data);
+            let my_global_hour = time_Info.timeHour;
+            let my_global_min = time_Info.timeMin;
+            let my_global_sec = time_Info.timeSec;
 
+            let my_local_hour;
+            let my_local_min;
+            let my_local_sec;
 
-        pcscf_Shared_Memory = document.getElementById("pcscf-shared-memory") ;
-        pcscf_Shared_Memory.setAttribute("value",`${network_Info.pcscf.shareMemory}`);
-        pcscf_Private_Memory = document.getElementById("pcscf-private-memory") ;
-        pcscf_Private_Memory.setAttribute("value",`${network_Info.pcscf.privateMemory}`);
+            if (time_Info.timeZone === "Iran") {
+              my_local_hour = time_Info.timeHour + 3;
+              my_local_min = time_Info.timeMin + 30;
+              my_local_sec = time_Info.timeSec;
+            }
 
-        scscf_Shared_Memory = document.getElementById("scscf-shared-memory") ;
-        scscf_Shared_Memory.setAttribute("value",`${network_Info.scscf.shareMemory}`);
-        scscf_Private_Memory = document.getElementById("scscf-private-memory") ;
-        scscf_Private_Memory.setAttribute("value",`${network_Info.scscf.privateMemory}`);
+            if (my_local_hour < 10) {
+              my_local_hour = `0${my_local_hour}`;
+            }
 
-        icscf_Shared_Memory = document.getElementById("icscf-shared-memory") ;
-        icscf_Shared_Memory.setAttribute("value",`${network_Info.icscf.shareMemory}`);
-        icscf_Private_Memory = document.getElementById("icscf-private-memory") ;
-        icscf_Private_Memory.setAttribute("value",`${network_Info.icscf.privateMemory}`);
+            if (my_local_min < 10) {
+              my_local_min = `0${my_local_min}`;
+            }
 
+            if (my_local_sec < 10) {
+              my_local_sec = `0${my_local_sec}`;
+            }
 
-        Minimum_Register_Time = document.getElementById("Minimum-Register-Time") ;
-        Minimum_Register_Time.setAttribute("value",`${network_Info.scscf.minimumRegisterTime}`);
-        Maximum_Register_Time  = document.getElementById("Maximum-Register-Time") ;
-        Maximum_Register_Time .setAttribute("value",`${network_Info.scscf.maximumRegisterTime}`);
+            if (my_global_hour < 10) {
+              my_global_hour = `0${my_global_hour}`;
+            }
 
+            if (my_global_min < 10) {
+              my_global_min = `0${my_global_min}`;
+            }
 
-       inbound_Port_Minimum = document.getElementById("Inbound-Port-Minimum") ;
-       inbound_Port_Minimum.setAttribute("value",`${network_Info.rtpProxy.inboundPortMinimum}`);
-       inbound_Port_Maximum   = document.getElementById("Inbound-Port-Maximum") ;
-       inbound_Port_Maximum .setAttribute("value",`${network_Info.rtpProxy.inboundPortMaximum}`);
+            if (my_global_sec < 10) {
+              my_global_sec = `0${my_global_sec}`;
+            }
 
-       outbound_Port_Minimum = document.getElementById("Outbound-Port-Minimum") ;
-       outbound_Port_Minimum.setAttribute("value",`${network_Info.rtpProxy.outboundPortMinimum}`);
-       outbound_Port_Maximum   = document.getElementById("Outbound-Port-Maximum") ;
-       outbound_Port_Maximum .setAttribute("value",`${network_Info.rtpProxy.outboundPortMaximum}`);
+            let local_time = document.getElementById("local-time");
+            let global_time = document.getElementById("global-time");
 
+            local_time.innerHTML = `${my_local_hour}:${my_local_min}:${my_local_sec}`;
+            global_time.innerHTML = `${my_global_hour}:${my_global_min}:${my_global_sec}`;
+          })
+          .catch((error) => {
+            console.log("error");
+          });
+      }
 
-       CallDuration = document.getElementById("Call-Duration") ;
-       CallDuration.setAttribute("value",`${network_Info.rtpProxy.maximumCallDuration}`);
-       LossTimeout  = document.getElementById("RTP-Loss-Timeout") ;
-        LossTimeout.setAttribute("value",`${network_Info.rtpProxy.rtpLossTimeout}`);
-
-        Rx_Source_Port = document.getElementById("Rx-Source-Port") ;
-        Rx_Source_Port.setAttribute("value",`${network_Info.pcscf.rxConfiguration.sourcePort}`);
-
-        PCRF_FQDN = document.getElementById("Rx-configuration-field2") ;
-        PCRF_FQDN.setAttribute("value",`${network_Info.pcscf.rxConfiguration.sourcePort}`);
-
-        PCRF_Realm  = document.getElementById("Rx-configuration-field3") ;
-        PCRF_Realm.setAttribute("value",`${network_Info.pcscf.rxConfiguration.sourcePort}`);
-})
-.catch((error) => {console.log(error)});
-}
-
-async function init() {
-await load_page() ;
-}
-
-init();
-
-/////////////////////////////////////// edit -icon /////////////////////////////////////
-let edit_btn = document.querySelector(".information-edit-button") ;
-edit_btn.addEventListener("click" ,function (e) {
-    e.preventDefault();
-    const all_inputs = document.getElementsByTagName("input");
-    for( let i = 0 ; i < all_inputs.length ; i++) {
-    all_inputs[i].disabled = false;
-}
-});
-
-
-///////////////////////////////////////// error show /////////////////////////
-let error_close = document.querySelector(".error-close");
-let show_error = document.querySelector(".show-error");
-
-error_close.addEventListener("click", function (e) {
-    e.preventDefault();
-    show_error.style.display = "none";
-});
-
-////////////////////////////////////////////////////////////////////////////////
-
-
-
-////////////////////////////////// save icon ////////////////////////////////////
-
-let  total_form = document.getElementById("total-form");
-total_form.addEventListener("submit", function (e) {
-e.preventDefault();
-const formData = Object.fromEntries(new FormData(e.target));
-let hasMessage = false;
-let result =fetch(`${url}/api/configuration/submittForm`, {
-  method: 'POST',
-  headers: {
-   'Content-Type': 'application/json' 
- },
-  body: JSON.stringify(formData),
-})
-.then(response=>{
-    console.log(response) ;
-    // console.log(response.status) ;
-    if(response.status!==200)
-    {
-        hasMessage = true;
-        show_error.style.display = "block";
-        show_error.style.backgroundColor = "#c65161";
-        let error_msg = document.getElementById("erroe-message");
-        error_msg.innerHTML= `Your request was failed (status code : ${response.status}) ` + `<img  src="images/About Icon.svg" class="error-logo"/>`;
-
-    } else 
-    { 
-        hasMessage = false;
-        show_error.style.display = "block";
-        show_error.style.backgroundColor = "#58cc87";
-        let success_msg = document.getElementById("erroe-message");
-        success_msg.innerHTML= "Your request was done successfully" + `<img  src="images/About Icon.svg" class="error-logo"/>`;
-    }
-})
-.catch((error) => {console.log(error)});
-});
-
-function getTime() 
-{
-
-fetch(`${url}/api/general`)
-.then((response) => response.json())
-.then((data) => 
-{
-   
-    time_Info = data;
-    // console.log(data);
-    let my_global_hour = time_Info.timeHour;
-    let my_global_min  = time_Info.timeMin;
-    let my_global_sec  = time_Info.timeSec;
-   
-
-    let my_local_hour ;
-    let my_local_min ;
-    let my_local_sec ;
-
-    if(time_Info.timeZone === "Iran") {
-        
-        my_local_hour = time_Info.timeHour + 3;
-        my_local_min  = time_Info.timeMin + 30 ;
-        my_local_sec  = time_Info.timeSec;
-    }
-
-    if ( my_local_hour < 10 )
-    {
-       my_local_hour = `0${my_local_hour}`;
-    }
-
-    if (my_local_min < 10) 
-    {
-      my_local_min = `0${my_local_min}`;
-    } 
-
-    if (my_local_sec < 10)
-    {
-      my_local_sec = `0${my_local_sec}`;
-    } 
-
-    if (my_global_hour < 10 )
-    {
-       my_global_hour = `0${my_global_hour}`;
-    }
-
-    if  (my_global_min < 10) 
-    {
-      my_global_min = `0${my_global_min}`;
-    } 
-
-    if (my_global_sec < 10)
-    {
-      my_global_sec = `0${my_global_sec}`;
-    } 
-
-    let local_time = document.getElementById("local-time");
-    let global_time = document.getElementById("global-time");
-
-    local_time.innerHTML = `${my_local_hour}:${my_local_min}:${my_local_sec}`  ; 
-    global_time.innerHTML = `${my_global_hour}:${my_global_min}:${my_global_sec}` ;
-   
-})
-.catch((error) => {console.log("error")});
-}
-
-getTime();
-setInterval( getTime ,  60 * 1000 * 15);
-
-
-</script>
-</body>
+      getTime();
+      setInterval(getTime, 60 * 1000 * 15);
+    </script>
+  </body>
 </html>
