@@ -42,7 +42,6 @@
   font-size: 1.66vh;
   font-family: "FiraGO", sans-serif;
   display: block;
-  /* padding-bottom: 1px; */
   padding-left: 3px;
 }
 
@@ -53,9 +52,6 @@
 .error-logo {
   width: 1.042vw;
   height: 1.85vh;
-  /* background-color: white; */
-  /* margin: 3px;
-  float: left; */
 }
 
 .sidebar {
@@ -69,17 +65,28 @@
 
 .Account-info {
   width: 6.977vw;
-  height: 5.197vh;
+  height: 12.96vh;
   top: 8.33vh;
   left: 4.088vw;
   position: absolute;
   border-bottom: 0.092vh solid rgba(255, 255, 255, 0.25);
 }
 
+
+.Account-info  img {
+  width: 3.33vw;
+  height: 5.93vh;
+  right: 1.97vw;
+  top:0;
+  position: absolute;
+}
+
+
+
 .Account-name {
   width: 4.79vw;
   height: 3.79vh;
-  top: 0vh;
+  top: 8.15vh;
   left: 1.093vw;
   position: absolute;
 }
@@ -307,7 +314,6 @@
   text-align: center;
   top: 0.55vh;
   position: absolute;
-  /* font-family: */
 }
 
 .subnetmask-boxes,
@@ -760,16 +766,6 @@ input[type="text"] {
   display: none;
 }
 
-/* img.tick {
-  right: 0vw;
-  top: 0vh;
-  position: absolute;
-  width: 0.83vw;
-  height: 1.48vh;
-  padding: 0;
-  /* display: none; 
-} */
-
 .tick {
   right: 2.67vw;
   top: 0.64vh;
@@ -914,11 +910,9 @@ input[type="text"] {
   top: 5.37vh;
   position: fixed;
   z-index: 1;
-  /* background-color: red; */
 }
 
 .exit-content {
- /* border : 1px solid black; */
   width: 18.48vw;
   height: 17.037vh;
   right: 0.73vw;
@@ -962,7 +956,6 @@ input[type="text"] {
   right: 6.56vw;
   bottom: 12.41vh;
   position: absolute;
-  /* margin: auto; */
   margin-bottom: 0;
 }
 
@@ -970,7 +963,7 @@ input[type="text"] {
   color: white;
   font-size: 1.66vh;
   font-family: "FiraGO", sans-serif;
-  /* right: 4.53vw; */
+  right: 4.53vw;
   bottom: 8.79vh;
   position: absolute;
   margin-bottom: 0;
@@ -1038,7 +1031,6 @@ input[type="text"] {
   color: white;
   font-size: 1.66vh;
   font-family: "FiraGO", sans-serif;
-  /* right: 2.55vw; */
   right: 3.55vw;
   bottom: 8.79vh;
   position: absolute;
@@ -1051,8 +1043,8 @@ input[type="text"] {
   height: 45.86vh;
   right: 4.68vw;
   top: 5.53vh;
-  /* border: 1px solid red; */
   z-index: 1;
+  display: none;
 }
 
 .profile-content {
@@ -1070,14 +1062,12 @@ input[type="text"] {
   height: 28.79vh;
   right: 1.14vw;
   bottom: 3.79vh;
-  /* background-color: red ; */
   position: absolute;
   display: grid;
   grid-row-gap: 0.83vw;
   grid-column-gap: 1.48vh;
   grid-template-columns: auto auto auto;
   grid-template-rows: auto auto auto;
-    /* padding: 10px; */
 }
 
 .profile-footer {
@@ -1085,7 +1075,6 @@ input[type="text"] {
   height: 1.76vh;
   right: 0.57vw;
   bottom: 0.94vh;
-  /* background-color: black ; */
   position: absolute;
   display: flex;
   justify-content: space-between;
@@ -1101,9 +1090,7 @@ input[type="text"] {
   font-size: 1.66vh;
   font-family: "FiraGO", sans-serif;
   left: 1.48vw;
-  /* bottom: 54.63vh; */
   top: 0.93vh ;
-  /* background-color : red ; */
   position: absolute;
   margin-top: 5px;
 }
@@ -1124,7 +1111,6 @@ input[type="text"] {
   font-size: 1.66vh;
   font-family: "FiraGO", sans-serif;
   margin-bottom: 0;
-  /* padding: 1px; */
 }
 
 
@@ -1152,6 +1138,4 @@ input[type="text"] {
 .profile-content-images img {
   width: 4.84vw;
   height: 8.61vh;
-  /* right: 0.57vw;
-  bottom: 0.94vh; */
 }

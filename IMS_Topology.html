@@ -32,28 +32,29 @@
               src="images/IMS_TOPOLOGY_images/Title Bar Icon _ Message.svg"
             />
           </a>
-          <a href="#">
+          <a href="#" id= "sound-icon">
             <img src="images/IMS_TOPOLOGY_images/Title Bar Icon _ Sound.svg" />
           </a>
           <a href="#">
             <img src="images/IMS_TOPOLOGY_images/Title Bar Icon _ Lock.svg" />
           </a>
-          <a href="#">
+          <a href="#" id= "profile-icon">
             <img
               src="images/IMS_TOPOLOGY_images/Title Bar Icon _ Profile.svg"
             />
           </a>
-          <a href="#">
+          <a href="#" id= "log-out-icon">
             <img
               src="images/IMS_TOPOLOGY_images/Title Bar Icon _ Log Out.svg"
             />
           </a>
-          <a href="#">
-            <img src="images/IMS_TOPOLOGY_images/Title Bar Icon _ Exit.svg" />
+          <a href="#" id= "exit-icon">
+            <img  src="images/IMS_TOPOLOGY_images/Title Bar Icon _ Exit.svg" />
           </a>
         </div>
       </nav>
     </div>
+
 
     <div class="exit">
         <div class="exit-content">
@@ -81,7 +82,6 @@
 
     <div class="profile">
         <div class="profile-content">
-            
             <p class = "saleh" > 
                 <span>Saleh Zekavati</span>
                  <img  src="images/Path 6240.svg"/> 
@@ -91,37 +91,23 @@
             <p class = "last" > Last login 2021.11.12 at 08:02:56 </p>
 
             <div class="profile-content-images">
-
                 <img src="images/Saleh_photo.svg" />
-                <img src="images/Saleh_photo.svg" />
-                <img src="images/Saleh_photo.svg" />
-                <img src="images/Saleh_photo.svg" />
-                <img src="images/Saleh_photo.svg" />
-                <img src="images/Saleh_photo.svg" />
-                <img src="images/Saleh_photo.svg" />
-                <img src="images/Saleh_photo.svg" />
-                <img src="images/Saleh_photo.svg" />
-
+                <img src="images/Mask Group 11.svg" />
+                <img src="images/Group 2054.svg" />
+                <img src="images/Mask Group 13.svg" />
+                <img src="images/Mask Group 14.svg" />
+                <img src="images/Mask Group 20.svg" />
+                <img src="images/Mask Group 16.svg" />
+                <img src="images/Mask Group 17.svg" />
+                <img src="images/Avatars-08.svg" />
             </div>
            
             <div class="profile-footer">
-                <img src="images/success Icon.svg" />
-                <!-- <span>Reset Password?</span> -->
-                <img src="images/success Icon.svg" />
+                <img src="images/Group 1470.svg" />
+                <img src="images/Group 1471.svg" />
             </div>
-
-
         </div>
     </div>
-
-
-
-
-
-
-
-
-
 
 
     <div class="show-error">
@@ -138,6 +124,7 @@
 
     <div class="sidebar">
       <div class="Account-info">
+        <img  class="Account-info-img" src="images/Saleh_photo.svg">
         <div class="Account-name">
           <span class="Saleh-username">Saleh Zekavati</span>
           <span class="username">username</span>
@@ -461,628 +448,7 @@
         </div>
       </div>
     </div>
-
-    <script>
-      let network_Info = {};
-      let Subnetmask = [];
-      let Gateway = [];
-      let Node_IP = [];
-      let Node_Name;
-      let Node_Info;
-      let Node_Type;
-      let Database_Virtual_I = [];
-      let DNS_Server_Virtual_IP = [];
-      let Homer_Virtual_IP = [];
-      let node_type = [];
-      const url = "https://c8ac2942-4708-4210-9423-78748fdbcd54.mock.pstmn.io";
-      // const  Gateway= [] ;
-
-      function load_page() {
-        fetch(`${url}/api/topology`)
-          .then((response) => response.json())
-          .then((data) => {
-            network_Info = data;
-            Node_Info = data.nodes;
-
-            node_type[0] = Node_Info.filter((q) => q.type === "pcscf");
-            // console.log(node_type[0]);
-            node_type[1] = Node_Info.filter((q) => q.type === "rtpProxy");
-            // console.log(node_type[1]);
-            node_type[2] = Node_Info.filter((q) => q.type === "core");
-            // console.log(node_type[2]);
-
-            for (let i = 0; i < 4; i++) {
-              Subnetmask[i] = document.querySelector(`.subnetmask-box${4 - i}`);
-              Subnetmask[i].setAttribute(
-                "value",
-                `${network_Info.subnetMask.split(".")[i]}`
-              );
-
-              Gateway[i] = document.querySelector(`.gateway-box${4 - i}`);
-              Gateway[i].setAttribute(
-                "value",
-                `${network_Info.gateway.split(".")[i]}`
-              );
-
-              Database_Virtual_I[i] = document.querySelector(
-                `.Virtual-IPs-Database-box${4 - i}`
-              );
-              Database_Virtual_I[i].setAttribute(
-                "value",
-                `${network_Info.databaseVirtualIp.split(".")[i]}`
-              );
-
-              DNS_Server_Virtual_IP[i] = document.querySelector(
-                `.Virtual-IPs-DNSserver-box${4 - i}`
-              );
-              DNS_Server_Virtual_IP[i].setAttribute(
-                "value",
-                `${network_Info.dnsVirtualIp.split(".")[i]}`
-              );
-
-              Homer_Virtual_IP[i] = document.querySelector(
-                `.Virtual-IPs-Homer-box${4 - i}`
-              );
-              Homer_Virtual_IP[i].setAttribute(
-                "value",
-                `${network_Info.homerVirtualIp.split(".")[i]}`
-              );
-
-              render(0);
-              default_node = "pcscf";
-            }
-          })
-          .catch((error) => {
-            console.log("error");
-          });
-      }
-
-      async function init() {
-        await load_page();
-      }
-
-      init();
-
-      let Network_Definition_form = document.getElementById(
-        "NetworkDefinition-form"
-      );
-      Network_Definition_form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        const formData = Object.fromEntries(new FormData(e.target));
-        const subnetmak = [];
-        const gateway = [];
-
-        gateway[0] = formData.gateway_field1;
-        gateway[1] = formData.gateway_field2;
-        gateway[2] = formData.gateway_field3;
-        gateway[3] = formData.gateway_field4;
-
-        subnetmak[0] = formData.subnetmask_field1;
-        subnetmak[1] = formData.subnetmask_field2;
-        subnetmak[2] = formData.subnetmask_field3;
-        subnetmak[3] = formData.subnetmask_field4;
-
-        let final_formdata = {
-          SubnetMask: subnetmak.join("."),
-          Gateway: gateway.join("."),
-        };
-        hasMessage = false;
-        result = fetch(`${url}/api/topology/networkDefinition`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(final_formdata),
-        })
-          .then((response) => {
-            console.log(response);
-            // console.log(response.status) ;
-            if (response.status !== 200) {
-              hasMessage = true;
-              show_error.style.display = "block";
-              show_error.style.backgroundColor = "#c65161";
-              let error_msg = document.getElementById("error-content");
-              error_msg.innerHTML =
-                `<img  src="images/error-logo.svg" class="error-logo"/>
-                <p id="erroe-message">
-                Your request was failed (status code : ${response.status})
-                </p>` ;
-                // `Your request was failed (status code : ${response.status}) ` +
-                // `<img  src="images/error-logo.svg" class="error-logo"/>`;
-            } else {
-              hasMessage = false;
-              show_error.style.display = "block";
-              show_error.style.backgroundColor = "#58cc87";
-              let success_msg = document.getElementById("error-content");
-              success_msg.innerHTML =
-                `<img  src="images/success Icon.svg" class="error-logo"/>
-                <p id="erroe-message">
-                Your request was done successfully!
-                </p>` ;
-            }
-          })
-          .catch((error) => {
-            console.log(error);
-          });
-        // .then(response=>{
-        //     if(response.status!==200)
-        //         hasMessage = true;
-        // }
-        //     );
-        //     if(hasMessage)
-        //     {
-        //         result
-        // .then((response) => response.json())
-        // .then((data) => {console.log(data);})
-        // .catch((error) => {console.log(error)});
-        //     }
-      });
-
-      // ////////////////////////////////////////////////////////
-      let Virtual_IPs_form = document.getElementById("Virtual-IPs-form");
-      Virtual_IPs_form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        const formData = Object.fromEntries(new FormData(e.target));
-        const DatabaseVirtualIP = [];
-        const DNSServerVirtualIP = [];
-        const HomerVirtualIP = [];
-
-        // console.log(formData);
-        DatabaseVirtualIP[0] = formData.Virtual_IPs_Database_field1;
-        DatabaseVirtualIP[1] = formData.Virtual_IPs_Database_field2;
-        DatabaseVirtualIP[2] = formData.Virtual_IPs_Database_field3;
-        DatabaseVirtualIP[3] = formData.Virtual_IPs_Database_field4;
-
-        DNSServerVirtualIP[0] = formData.Virtual_IPs_DNSserver_field1;
-        DNSServerVirtualIP[1] = formData.Virtual_IPs_DNSserver_field2;
-        DNSServerVirtualIP[2] = formData.Virtual_IPs_DNSserver_field3;
-        DNSServerVirtualIP[3] = formData.Virtual_IPs_DNSserver_field4;
-
-        HomerVirtualIP[0] = formData.Virtual_IPs_Homer_field1;
-        HomerVirtualIP[1] = formData.Virtual_IPs_Homer_field2;
-        HomerVirtualIP[2] = formData.Virtual_IPs_Homer_field3;
-        HomerVirtualIP[3] = formData.Virtual_IPs_Homer_field4;
-
-        let final_formdata = {
-          databaseVirtualIp: DatabaseVirtualIP.join("."),
-          dnsVirtualIp: DNSServerVirtualIP.join("."),
-          homerVirtualIp: HomerVirtualIP.join("."),
-        };
-        // console.log( final_formdata );
-        console.log(JSON.stringify(final_formdata));
-
-        fetch(`${url}/api/topology/virtualIps`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(final_formdata),
-        })
-          .then((response) => {
-            console.log(response);
-            // console.log(response.status) ;
-            if (response.status !== 200) {
-              hasMessage = true;
-              show_error.style.display = "block";
-              show_error.style.backgroundColor = "#c65161";
-              let error_msg = document.getElementById("error-content");
-              error_msg.innerHTML =
-                `<img  src="images/error-logo.svg" class="error-logo"/>
-                <p id="erroe-message">
-                Your request was failed (status code : ${response.status})
-                </p>` ;
-            } else {
-              hasMessage = false;
-              show_error.style.display = "block";
-              show_error.style.backgroundColor = "#58cc87";
-              let success_msg = document.getElementById("error-content");
-              success_msg.innerHTML =
-               `<img  src="images/success Icon.svg" class="error-logo"/>
-                <p id="erroe-message">
-                Your request was done successfully!
-                </p>` ;
-            }
-          })
-          .catch((error) => {
-            console.log(error);
-          });
-        // .then((response) => response.json())
-        // .then((data) => {console.log(data);})
-        // .catch((error) => {console.log(error)});
-      });
-
-      let node_type_name = ["pcscf", "rtpProxy", "core"];
-      let cur_node_type ;
-      let node_table_title = [];
-      for (let i = 0; i < 3; i++) {
-        node_table_title[i] = document.querySelector(
-          `.node-table-title${i + 1}`
-        );
-        node_table_title[i].addEventListener("click", function (e) {
-          e.preventDefault();
-          console.log(node_type[i]);
-          console.log(node_type);
-
-          const render_table_type = node_type[i].map((q) => {
-            return `
-                <div class="node-table-content">
-                    <form id="${q.id}edit-form">
-                    <input type="text" id="${q.id}pname" class="node-table-content-name" value = "${q.name}"  disabled />
-                    <input type="text" id="${q.id}pip" class="node-table-content-ip" value= "${q.ip}"  disabled />
-                    <input type="text" id="${q.id}pstatus" class="node-table-content-status" value= "${q.status}"  disabled />
-                    <div class="node-table-content-icon">
-                        <img class="pencil" id="${q.id}p" src="images/IMS_TOPOLOGY_images/pencil.svg" />
-                        <img class="trash" id="${q.id}" src="images/IMS_TOPOLOGY_images/trash-simple.svg" />
-                        <img class ="tick" id="${q.id}pt"src="images/IMS_TOPOLOGY_images/tick.svg" />
-                        <img class ="close"  id="${q.id}pc" src="images/IMS_TOPOLOGY_images/close.svg" />
-                    </div>
-                    </form>
-                </div>`;
-          });
-          let node_list = $("#node-table-contents");
-          node_list.html(render_table_type.join(""));
-          cur_node_type = node_type_name[i];
-          console.log(cur_node_type );
-        });
-      }
-
-    //   let node_type_name = ["pcscf", "rtpProxy", "core"];
-
-      function render(type_index) {
-        const render_table_type = node_type[type_index].map((q) => {
-          return `
-                <div class="node-table-content">
-                    <form id="${q.id}edit-form">
-                    <input type="text" id="${q.id}pname" class="node-table-content-name" value = "${q.name}"  disabled />
-                    <input type="text" id="${q.id}pip" class="node-table-content-ip" value= "${q.ip}"  disabled />
-                    <input type="text" id="${q.id}pstatus" class="node-table-content-status" value= "${q.status}"  disabled />
-                    <div class="node-table-content-icon">
-                        <img class="pencil" id="${q.id}p" src="images/IMS_TOPOLOGY_images/pencil.svg" />
-                        <img class="trash" id="${q.id}" src="images/IMS_TOPOLOGY_images/trash-simple.svg" />
-                        <img class ="tick" id="${q.id}pt"src="images/IMS_TOPOLOGY_images/tick.svg" />
-                        <img class="close" id="${q.id}pc" src="images/IMS_TOPOLOGY_images/close.svg" />
-                    </div>
-                    </form>
-                </div>`;
-        });
-
-        let node_list = $("#node-table-contents");
-        node_list.html(render_table_type.join(""));
-        cur_node_type = node_type_name[type_index];
-        console.log(cur_node_type );
-      }
-
-      let new_Node;
-      let add_node_form = document.getElementById("add-node-form");
-      add_node_form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        const formData = Object.fromEntries(new FormData(e.target));
-        console.log(formData);
-        let node_ip = [];
-        let node_name;
-        let current_node_type;
-
-        node_name = formData.node_name;
-        current_node_type = formData.node_type_icon;
-
-        console.log(current_node_type);
-        node_ip[0] = formData.IP_Address_field1;
-        node_ip[1] = formData.IP_Address_field2;
-        node_ip[2] = formData.IP_Address_field3;
-        node_ip[3] = formData.IP_Address_field4;
-
-        let final_formdata = {
-          name: node_name,
-          ip: node_ip.join("."),
-          type: current_node_type,
-        };
-        result = fetch(`${url}/api/topology/addNode`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(final_formdata),
-        })
-          .then((response) => {
-            console.log(response);
-            // console.log(response.status) ;
-            if (response.status !== 200) {
-              hasMessage = true;
-              show_error.style.display = "block";
-              show_error.style.backgroundColor = "#c65161";
-              let error_msg = document.getElementById("error-content");
-              error_msg.innerHTML =
-                `<img  src="images/error-logo.svg" class="error-logo"/>
-                <p id="erroe-message">
-                Your request was failed (status code : ${response.status})
-                </p>` ;
-
-            } else {
-              hasMessage = false;
-              show_error.style.display = "block";
-              show_error.style.backgroundColor = "#58cc87";
-              let success_msg = document.getElementById("error-content");
-              success_msg.innerHTML =
-                `<img  src="images/success Icon.svg" class="error-logo"/>
-                <p id="erroe-message">
-                Your request was done successfully!
-                </p>` ;
-            }
-
-            return response.json();
-          })
-          .then((data) => {
-            console.log(data);
-            new_Node = data;
-
-            switch (new_Node.type) {
-              case "pcscf":
-                //  node_type[0] = node_type[0].push(new_Node) ;
-                // console.log(node_type[0]);
-                node_type[0].push(new_Node);
-                // console.log(node_type[0]);
-                render(0);
-                break;
-
-              case "rtpProxy":
-                node_type[1].push(new_Node);
-                render(1);
-                break;
-
-              case "core":
-                node_type[2].push(new_Node);
-                render(2);
-                break;
-              default:
-                console.log(" some problems!");
-            }
-          })
-          .catch((error) => {
-            console.log(error);
-          });
-      });
-
-      /////////////////////////////////////////////
-
-      let modal = document.getElementById("modal");
-      let default_node = "pcscf";
-      let itemWillDeleteData = null;
-
-      let editable_data_before = {};
-      let editable_data_next = {};
-      let editable_form_number;
-      let modal_close = document.querySelector(".modal-close");
-      let modal_delete_button = document.getElementById("modal-delete-button");
-      let modal_cancel_button = document.getElementById("modal-cancel-button");
-      let node_table = document.querySelector(".node-table");
-
-      node_table.addEventListener("click", function (e) {
-        e.preventDefault();
-        const target = e.target;
-        if (target.classList.contains("trash")) {
-          const data = Node_Info.find((item) => {
-            return item.id == target.id;
-          });
-          modal.style.display = "block";
-          console.log({ data });
-          itemWillDeleteData = data;
-        } else if (target.classList.contains("pencil")) {
-                  console.log(target.id);
-                  let close_icon = document.getElementById(`${target.id}c`) ;
-                  let tick_icon = document.getElementById(`${target.id}t`) ;
-                  close_icon.style.display = "block";
-                  tick_icon.style.display = "block";
-                  editable_data_before = Node_Info.find((item)=>{
-                      return item.id == target.id.substring(0, target.id.length - 1);
-                  })
-                  console.log("hi in pen");
-                  console.log(editable_data_before);
-                  document.getElementById(`${target.id}name`).disabled = false ;
-                  document.getElementById(`${target.id}ip`).disabled = false ;
-                  document.getElementById(`${target.id}status`).disabled = false ;
-                  // editable_form_number = target.id.substring(0, target.id.length - 1) + "edit-form";
-                  editable_row_number = target.id.substring(0, target.id.length - 1);
-                  console.log(editable_row_number);
-                  // let  edit_form = document.getElementById(`${editable_form_number}`);
-                  // console.log(edit_form);
-                  let  current_tick = document.getElementById(`${target.id}t`);
-                  current_tick.addEventListener("click" , function(e){
-                //   console.log("hi in actual tickkkkkk");
-                //   console.log(e.target.id);
-                  let edit_content_name = e.target.parentElement.parentElement.children[0].value;
-                  let edit_content_ip = e.target.parentElement.parentElement.children[1].value;
-                  let edit_content_status = e.target.parentElement.parentElement.children[2].value;
-            
-                //   console.log(cur_node_type);
-                  let final_formdata = { name : edit_content_name , ip : edit_content_ip , type : cur_node_type } ;
-                  console.log(JSON.stringify(final_formdata));
-                  hasMessage = false;
-                  result =fetch(`${url}/api/topology/editNode`, {
-                  method: 'POST',
-                  headers: {
-                  'Content-Type': 'application/json'
-                  },
-                  body: JSON.stringify(final_formdata),
-                  })
-                  .then(response=>{
-                    if(response.status !==200)
-                      {
-
-                        show_error.style.display = "block";
-                        show_error.style.backgroundColor = "#c65161";
-                        let error_msg = document.getElementById("error-content");
-                        error_msg.innerHTML =
-                        `<img  src="images/error-logo.svg" class="error-logo"/>
-                        <p id="erroe-message">
-                        Your request was failed (status code : ${response.status})
-                        </p>` ;
-                        render(node_type_name.indexOf(cur_node_type));
-
-                      }
-                      else
-                      {
-                
-                        show_error.style.display = "block";
-                        show_error.style.backgroundColor = "#58cc87";
-                        let success_msg = document.getElementById("error-content");
-                        success_msg.innerHTML =
-                        `<img  src="images/success Icon.svg" class="error-logo"/>
-                        <p id="erroe-message">
-                        Your request was done successfully!
-                        </p>` ;
-
-                        let desired_row = node_type[0].findIndex( q => q.id == editable_row_number );
-                        node_type[node_type_name.indexOf(cur_node_type)][desired_row].name = edit_content_name;
-                        node_type[node_type_name.indexOf(cur_node_type)][desired_row].ip = edit_content_ip;
-                        node_type[node_type_name.indexOf(cur_node_type)][desired_row].status = edit_content_status;
-                        e.target.parentElement.parentElement.children[0].disabled = true;
-                        e.target.parentElement.parentElement.children[1].disabled = true;
-                        e.target.parentElement.parentElement.children[2].disabled = true;
-                        render(node_type_name.indexOf(cur_node_type));
-                       }
-                    })
-                })
-
-/////////////////////////////////////////////////////////////////////////
-                    let  current_close = document.getElementById(`${target.id}c`);
-                    current_close.addEventListener("click" , function(e){
-                    console.log("hi in actual close");
-                    render(node_type_name.indexOf(cur_node_type));
-                   })
-
-////////////////////////////////////////////////////////////////////
-                }      
-            });
-
-//////////////////////////////////////////////////////////////////////
-      modal_close.addEventListener("click", function (e) {
-        e.preventDefault();
-        modal.style.display = "none";
-      });
-
-      modal_cancel_button.addEventListener("click", function (e) {
-        e.preventDefault();
-        modal.style.display = "none";
-      });
-
-      modal_delete_button.addEventListener("click", function (e) {
-        console.log({ itemWillDeleteData });
-        e.preventDefault();
-        modal.style.display = "none";
-
-        let hasMessage = false;
-        let final_formdata = {
-          name: itemWillDeleteData.name,
-          ip: itemWillDeleteData.ip,
-          type: itemWillDeleteData.type,
-        };
-
-        result = fetch(`${url}/api/topology/deleteNode`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(final_formdata),
-        }).then((response) => {
-          if (response.status !== 200) hasMessage = true;
-          else {
-            console.log("shod");
-            let index = node_type_name.findIndex(
-              (num) => num === itemWillDeleteData.type
-            );
-            node_type[index] = node_type[index].filter(
-              (q) =>
-                !(
-                  q.type === itemWillDeleteData.type &&
-                  q.name === itemWillDeleteData.name &&
-                  q.ip === itemWillDeleteData.ip
-                ) === true
-            );
-            render(index);
-          }
-        });
-
-        if (hasMessage) {
-          result
-            .then((response) => response.json())
-            .then((data) => {
-              console.log(data);
-            //   console.log("hiiiiii");
-            })
-            .catch((error) => {
-              console.log(error);
-            });
-        }
-      });
-
-      function getTime() {
-        fetch(`${url}/api/general`)
-          .then((response) => response.json())
-          .then((data) => {
-            time_Info = data;
-            // console.log(data);
-            let my_global_hour = time_Info.timeHour;
-            let my_global_min = time_Info.timeMin;
-            let my_global_sec = time_Info.timeSec;
-            // console.log(my_global_hour);
-            // console.log(my_global_min);
-            // console.log(my_global_sec);
-
-            let my_local_hour;
-            let my_local_min;
-            let my_local_sec;
-
-            if (time_Info.timeZone === "Iran") {
-              my_local_hour = time_Info.timeHour + 3;
-              my_local_min = time_Info.timeMin + 30;
-              my_local_sec = time_Info.timeSec;
-            }
-
-            if (my_local_hour < 10) {
-              my_local_hour = `0${my_local_hour}`;
-            }
-
-            if (my_local_min < 10) {
-              my_local_min = `0${my_local_min}`;
-            }
-
-            if (my_local_sec < 10) {
-              my_local_sec = `0${my_local_sec}`;
-            }
-
-            if (my_global_hour < 10) {
-              my_global_hour = `0${my_global_hour}`;
-            }
-
-            if (my_global_min < 10) {
-              my_global_min = `0${my_global_min}`;
-            }
-
-            if (my_global_sec < 10) {
-              my_global_sec = `0${my_global_sec}`;
-            }
-
-            let local_time = document.getElementById("local-time");
-            let global_time = document.getElementById("global-time");
-
-            local_time.innerHTML = `${my_local_hour}:${my_local_min}:${my_local_sec}`;
-            global_time.innerHTML = `${my_global_hour}:${my_global_min}:${my_global_sec}`;
-          })
-          .catch((error) => {
-            console.log("error");
-          });
-      }
-
-      getTime();
-      setInterval(getTime, 60 * 1000 * 15);
-
-      let error_close = document.querySelector(".error-close");
-      let show_error = document.querySelector(".show-error");
-
-      error_close.addEventListener("click", function (e) {
-        e.preventDefault();
-        show_error.style.display = "none";
-      });
-    </script>
+    
+    <script src="topology.js"></script>
   </body>
 </html>

@@ -67,17 +67,26 @@
 
 .Account-info {
   width: 6.977vw;
-  height: 5.197vh;
+  height: 12.96vh;
   top: 8.33vh;
   left: 4.088vw;
   position: absolute;
   border-bottom: 0.092vh solid rgba(255, 255, 255, 0.25);
 }
 
+
+.Account-info  img {
+  width: 3.33vw;
+  height: 5.93vh;
+  right: 1.97vw;
+  top:0;
+  position: absolute;
+}
+
 .Account-name {
   width: 4.79vw;
   height: 3.79vh;
-  top: 0vh;
+  top: 8.15vh;
   left: 1.093vw;
   position: absolute;
 }
@@ -1060,4 +1069,242 @@ button {
   color: #83a79a;
   font-size: 1.58vh;
   font-family: "FiraGO", sans-serif;
+}
+
+.exit {
+  display: none;
+  width: 20.31vw;
+  height: 20.01vh;
+  right: 1.01vw;
+  top: 5.37vh;
+  position: fixed;
+  z-index: 1;
+}
+
+.exit-content {
+  width: 18.48vw;
+  height: 17.037vh;
+  right: 0.73vw;
+  top: 1.29vh;
+  position: absolute;
+  background-color: #374775;
+  border-radius: 1.38vh;
+  /* opacity: 90%; */
+}
+
+.exit-buttons {
+  width: 15.73vw;
+  height: 3.15vh;
+  right: 1.4vw;
+  bottom: 2.96vh;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+}
+
+.exit-button  , 
+.exit-cancel-button {
+  width: 6.77vw;
+  height: 3.15vh;
+  border-radius: 0.65vh;
+  background-color: #C65161;
+  border: none;
+  color: white;
+  font-size: 1.48vh;
+  font-family: "FiraGO", sans-serif;
+}
+.exit-cancel-button {
+    background-color: #313F68;
+    opacity: 100%;
+}
+
+.exit-staying {
+  color: white;
+  font-size: 1.29vh;
+  font-family: "FiraGO", sans-serif;
+  right: 6.56vw;
+  bottom: 12.41vh;
+  position: absolute;
+  margin-bottom: 0;
+}
+
+.exit-question {
+  color: white;
+  font-size: 1.66vh;
+  font-family: "FiraGO", sans-serif;
+  right: 4.53vw;
+  bottom: 8.79vh;
+  position: absolute;
+  margin-bottom: 0;
+}
+
+
+.log-out {
+  display: none;
+  width: 20.31vw;
+  height: 20.01vh;
+  right: 3.96vw;
+  top: 5.37vh;
+  position: fixed;
+  z-index: 1;
+}
+
+.log-out-content {
+  width: 18.48vw;
+  height: 17.037vh;
+  right: 0.73vw;
+  top: 1.29vh;
+  position: absolute;
+  background-color: #374775;
+  border-radius: 1.38vh;
+  /* opacity: 90%; */
+}
+
+.log-out-buttons {
+  width: 15.73vw;
+  height: 3.15vh;
+  right: 1.4vw;
+  bottom: 2.96vh;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+}
+
+.log-out-button  , 
+.log-out-cancel-button {
+  width: 6.77vw;
+  height: 3.15vh;
+  border-radius: 0.65vh;
+  background-color: #FF8946;
+  border: none;
+  color: white;
+  font-size: 1.48vh;
+  font-family: "FiraGO", sans-serif;
+}
+.log-out-cancel-button {
+    background-color: #313F68;
+    opacity: 100%;
+}
+
+.log-out-title {
+  color: white;
+  font-size: 1.29vh;
+  font-family: "FiraGO", sans-serif;
+  right: 7.55vw;
+  bottom: 12.41vh;
+  position: absolute;
+  margin-bottom: 0;
+}
+
+.log-out-question {
+  color: white;
+  font-size: 1.66vh;
+  font-family: "FiraGO", sans-serif;
+  right: 3.55vw;
+  bottom: 8.79vh;
+  position: absolute;
+  margin-bottom: 0;
+}
+
+.profile {
+  position: fixed;
+  width: 18.49vw;
+  height: 45.86vh;
+  right: 4.68vw;
+  top: 5.53vh;
+  z-index: 1;
+  display: none;
+}
+
+.profile-content {
+  width: 18.49vw;
+  height: 44.72vh;
+  right: 0vw;
+  bottom: 0vh;
+  border-radius: 1.38vh;
+  background-color: #374775;
+  position: absolute;
+}
+
+.profile-content-images {
+  width: 16.2vw;
+  height: 28.79vh;
+  right: 1.14vw;
+  bottom: 3.79vh;
+  position: absolute;
+  display: grid;
+  grid-row-gap: 0.83vw;
+  grid-column-gap: 1.48vh;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto;
+}
+
+.profile-footer {
+  width: 17.39vw;
+  height: 1.76vh;
+  right: 0.57vw;
+  bottom: 0.94vh;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile-footer img {
+  width: 0.98vw;
+  height: 1.76vh;
+}
+
+.saleh {
+  color:  white;
+  font-size: 1.66vh;
+  font-family: "FiraGO", sans-serif;
+  left: 1.48vw;
+  top: 0.93vh ;
+  position: absolute;
+  margin-top: 5px;
+}
+
+.saleh  span {
+    margin-left: 12px;
+}
+
+.saleh img {
+    float: left;
+}
+
+.user {
+  left: 3.021vw;
+  bottom: 38.61vh;
+  position: absolute;
+  color:  #58CC87;
+  font-size: 1.66vh;
+  font-family: "FiraGO", sans-serif;
+  margin-bottom: 0;
+}
+
+
+.made {
+  left: 3.021vw;
+  bottom: 36.48vh;
+  position: absolute;
+  color: white;
+  font-size: 1.29vh;
+  font-family: "FiraGO", sans-serif;
+  margin-bottom: 0;
+}
+
+
+.last {
+  left: 3.021vw;
+  bottom: 34.35vh;
+  position: absolute;
+  color: white;
+  font-size: 1.29vh;
+  font-family: "FiraGO", sans-serif;
+  margin-bottom: 0;
+}
+
+.profile-content-images img {
+  width: 4.84vw;
+  height: 8.61vh;
 }
