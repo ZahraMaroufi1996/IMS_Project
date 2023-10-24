@@ -6,30 +6,41 @@
 
 .Login-body {
   background-image: url("../images/Login\ Page\ –\ Language\ Toggle.svg");
+}
 
-  /* position: relative; */
+ .After-Login-body {
+  background-image: url("../images/After_Login_Page.svg");
+}  
+
+.saleh-photo {
+  width: 6.25vw;
+  height: 11.11vh;
+  position: absolute;
+  top : 42.5vh;
+  right: 46.87vw;
+  display: block;
+}
+
+.After-login-text {
+  color: white;
+  right: 47.18vw;
+  top: 56.02vh;
+  position: absolute;
+  font-size: 2.59vh;
+  font-family: "FiraGO", sans-serif;
+  margin-top: 0;
+  margin-right: 5px;
 }
 
 .pre-login-logo {
-  margin: 400px auto;
-  display: block;
-  /* position: absolute;  */
-  top: 100px;
+  width: 5.34vw;
+  height: 6.73vh;
+  right: 47.33vw;
+  top: 46.66vh;
+  position: absolute;
 }
 
-/* .Login-container {
- margin:200px auto;
- display: block;
-} */
-
-/* .Login-form{
- margin:0 auto;
- color: red;
- display: block;
-} */
-
 .Login-container {
-  /* background-color: black; */
   position: absolute;
   width: 17.71vw;
   height: 40.83vh;
@@ -40,7 +51,6 @@
 .username-container,
 .password-container {
   background-color: #83a79a;
-  /* margin: 30px auto ; */
   height: 5.185vh;
   width: 17.71vw;
   border: 0.092vh solid #a6d4c4;
@@ -64,7 +74,6 @@
 
 input {
   height: 5.175vh;
-  /* width: ; */
   left: 0;
   top: 0;
   background-color: inherit;
@@ -106,7 +115,6 @@ input::placeholder {
 
 button.submit-button {
   background-color: #68d5b0;
-  /* font-size: 22px;  */
   color: white;
   right: 0;
   bottom: 6.76vh;
@@ -116,8 +124,6 @@ button.submit-button {
   border: none;
   border-radius: 0.65vh;
   font-size: 2.037vh;
-  /* font-family: myFirstFont;  */
-  /* font-family: 'FiraGO', sans-serif; */
   font-family: "Iranian Sans", sans-serif;
 }
 
@@ -125,7 +131,6 @@ button.submit-button {
   display: block;
   width: 10.42vw;
   height: 6.018vh;
-  /* margin: 0 auto; */
   bottom: 11.61vh;
   right: 44.8vw;
   position: absolute;
@@ -136,14 +141,12 @@ button.submit-button {
   color: white;
   font-size: 1.48vh;
   font-weight: thin;
-  /* right: 44.80vw; 8.41*/
   right: 44.4vw;
   position: absolute;
   bottom: 7vh;
   font-family: "FiraGO", sans-serif;
   width: 10.83vw;
   height: 1.94vh;
-  /* font-family: ; */
 }
 
 .Login-Language {
@@ -176,7 +179,6 @@ button.submit-button {
   left: 0;
   right: 0;
   bottom: 0;
-  /* background-color: #1A4348; */
   /* -webkit-transition: .4s;
   transition: .4s; */
 }
@@ -199,7 +201,6 @@ span.slider {
   border: none;
   color: black;
   font-size: 1.29vh;
-  /* font-family: 'FiraGO', sans-serif; */
   font-family: "Iranian Sans", sans-serif;
   /* -webkit-transition: .4s;
   transition: .4s; */
@@ -217,10 +218,6 @@ input:checked + .slider,
 input + .slider {
   background-color: #1a4348;
 }
-
-/* input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
-} */
 
 input:checked + .slider:before {
   -webkit-transform: translateX(-2.02vw);

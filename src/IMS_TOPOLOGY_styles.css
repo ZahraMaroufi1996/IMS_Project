@@ -559,6 +559,8 @@
   right: 0vw;
   top: 0vh;
   position: absolute;
+  display: flex;
+  align-items: center;
 }
 
 .node-type-checkboxe2 {
@@ -567,6 +569,8 @@
   right: 5.36vw;
   top: 0vh;
   position: absolute;
+  display: flex;
+  align-items: center;
 }
 
 .node-type-checkboxe3 {
@@ -575,6 +579,8 @@
   right: 12.49vw;
   top: 0vh;
   position: absolute;
+  display: flex;
+  align-items: center;
 }
 
 label,
@@ -980,6 +986,25 @@ input[type="text"] {
   z-index: 1;
 }
 
+
+.log-out-triangle , 
+.exit-triangle ,
+.profile-triangle {
+  width: 0;
+  height: 0;
+  border: 0.49vw solid transparent;
+  border-top: 0;
+  border-bottom: 1.32vh solid #374775;
+  top: 0vh;
+  /* right: 2.79vw; */
+  right: 4.125vw;
+  position: absolute;
+}
+
+.profile-triangle {
+  right: 6.60vw;
+}
+
 .log-out-content {
   width: 18.48vw;
   height: 17.037vh;
@@ -1138,4 +1163,64 @@ input[type="text"] {
 .profile-content-images img {
   width: 4.84vw;
   height: 8.61vh;
+}
+
+.sound {
+  width: 6.27vw;
+  height: 3.85vh;
+  right: 14.58vw;
+  top: 5.21vh;
+  position: fixed;
+  z-index: 1;
+}
+
+.sound-triangle {
+  width: 0;
+  height: 0;
+  border: 0.34vw solid transparent;
+  border-top: 0;
+  border-bottom: 0.93vh solid #374775;
+  top: 0vh;
+  /* right: 2.79vw; */
+  right: 2.9vw;
+  position: absolute;
+}
+
+.sound-content {
+  width: 6.27vw;
+  height: 3.05vh;
+  bottom: 0vh;
+  position: absolute;
+  background-color: #374775;
+  color: white;
+  font-size: 1.11vh;
+  font-family: "FiraGO", sans-serif;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ .chb {
+  visibility: hidden;
+}
+
+.chb + label {
+  position: relative;
+  padding-right: 5px;
+}
+
+.chb-1-circle + label::before {
+  position: absolute;
+  width: 0.91vw;
+  height: 1.75vh; 
+  background-color: #E9E9E9;
+  border-radius: 50%;
+  content: "";
+  border : 0.093vh solid  #707070 ;
+  left: -25px;
+}
+
+.chb-1-circle:checked + label::before  {
+  background-color: #68D5B0;
 }
