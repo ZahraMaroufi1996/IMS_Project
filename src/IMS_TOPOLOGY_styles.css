@@ -150,6 +150,14 @@
   left: 0;
   position: absolute;
 }
+.selected-menu {
+  height: 7.13vh;
+  width: 0.625vw;
+  left: 0;
+  top: 0;
+  position: absolute;
+  background-color: #68d5b0;
+}
 
 .topology-in-menu-content {
   width: 6.38vw;
@@ -658,7 +666,7 @@ input[type="text"] {
   top: 0vh;
   border: solid;
   position: absolute;
-  background-color: #1f666e;
+  background-color: #A6D4C4;
   color: white;
   font-size: 1.66vh;
   font-family: "FiraGO", sans-serif;
@@ -1171,8 +1179,21 @@ input[type="text"] {
   right: 14.58vw;
   top: 5.21vh;
   position: fixed;
-  z-index: 1;
+  z-index: 1;  
+  display: none;
 }
+/* /* div {
+    transition: opacity 1s ease-out;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.sound.active {
+    opacity: 1;
+    height: auto;
+} 
+  */
 
 .sound-triangle {
   width: 0;

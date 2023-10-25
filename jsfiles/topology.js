@@ -10,7 +10,8 @@
       let Homer_Virtual_IP = [];
       let node_type = [];
 
-      const url = "https://98401295-f480-4dc2-9243-a8bca787ee46.mock.pstmn.io";
+      // const url = "https://98401295-f480-4dc2-9243-a8bca787ee46.mock.pstmn.io";
+      const url = "https://88d188a7-0705-4aa4-b0f9-0d2781378c89.mock.pstmn.io" ;
       let my_token = localStorage.getItem('token');
     
       function load_page() {
@@ -151,7 +152,6 @@
         const DNSServerVirtualIP = [];
         const HomerVirtualIP = [];
 
-        // console.log(formData);
         DatabaseVirtualIP[0] = formData.Virtual_IPs_Database_field1;
         DatabaseVirtualIP[1] = formData.Virtual_IPs_Database_field2;
         DatabaseVirtualIP[2] = formData.Virtual_IPs_Database_field3;
@@ -173,7 +173,6 @@
           homerVirtualIp: HomerVirtualIP.join("."),
         };
       
-        console.log(JSON.stringify(final_formdata));
 
         fetch(`${url}/api/topology/virtualIps`, {
           method: "POST",
@@ -221,8 +220,12 @@
         );
         node_table_title[i].addEventListener("click", function (e) {
           e.preventDefault();
-          console.log(node_type[i]);
-          console.log(node_type);
+
+          for(let i= 0 ; i < 3 ; i++){
+            node_table_title[i].style.backgroundColor = "#1F666E" ;
+          }
+
+          node_table_title[i].style.backgroundColor = "#A6D4C4" ;
 
           const render_table_type = node_type[i].map((q) => {
             return `
@@ -243,7 +246,6 @@
           let node_list = $("#node-table-contents");
           node_list.html(render_table_type.join(""));
           cur_node_type = node_type_name[i];
-          console.log(cur_node_type );
         });
       }
 
@@ -269,7 +271,6 @@
         let node_list = $("#node-table-contents");
         node_list.html(render_table_type.join(""));
         cur_node_type = node_type_name[type_index];
-        console.log(cur_node_type );
       }
 
       let new_Node;
@@ -277,7 +278,7 @@
       add_node_form.addEventListener("submit", function (e) {
         e.preventDefault();
         const formData = Object.fromEntries(new FormData(e.target));
-        console.log(formData);
+
         let node_ip = [];
         let node_name;
         let current_node_type;
@@ -285,7 +286,6 @@
         node_name = formData.node_name;
         current_node_type = formData.node_type_icon;
 
-        console.log(current_node_type);
         node_ip[0] = formData.IP_Address_field1;
         node_ip[1] = formData.IP_Address_field2;
         node_ip[2] = formData.IP_Address_field3;
@@ -332,7 +332,6 @@
             return response.json();
           })
           .then((data) => {
-            console.log(data);
             new_Node = data;
 
             switch (new_Node.type) {
@@ -381,10 +380,8 @@
             return item.id == target.id;
           });
           modal.style.display = "block";
-          console.log({ data });
           itemWillDeleteData = data;
         } else if (target.classList.contains("pencil")) {
-                  console.log(target.id);
                   let close_icon = document.getElementById(`${target.id}c`) ;
                   let tick_icon = document.getElementById(`${target.id}t`) ;
                   close_icon.style.display = "block";
@@ -392,13 +389,12 @@
                   editable_data_before = Node_Info.find((item)=>{
                       return item.id == target.id.substring(0, target.id.length - 1);
                   })
-                  console.log("hi in pen");
-                  console.log(editable_data_before);
+          
                   document.getElementById(`${target.id}name`).disabled = false ;
                   document.getElementById(`${target.id}ip`).disabled = false ;
                   document.getElementById(`${target.id}status`).disabled = false ;
                   editable_row_number = target.id.substring(0, target.id.length - 1);
-                  console.log(editable_row_number);
+                 
                   let  current_tick = document.getElementById(`${target.id}t`);
                   current_tick.addEventListener("click" , function(e){
         
@@ -407,7 +403,7 @@
                   let edit_content_status = e.target.parentElement.parentElement.children[2].value;
             
                   let final_formdata = { name : edit_content_name , ip : edit_content_ip , type : cur_node_type } ;
-                  console.log(JSON.stringify(final_formdata));
+                
                   hasMessage = false;
                   result =fetch(`${url}/api/topology/editNode`, {
                   method: 'POST',
@@ -456,15 +452,12 @@
                     })
                 })
 
-/////////////////////////////////////////////////////////////////////////
 
                     let  current_close = document.getElementById(`${target.id}c`);
                     current_close.addEventListener("click" , function(e){
-                    console.log("hi in actual close");
                     render(node_type_name.indexOf(cur_node_type));
                    })
 
-////////////////////////////////////////////////////////////////////
                 }      
             });
 
@@ -480,7 +473,6 @@
       });
 
       modal_delete_button.addEventListener("click", function (e) {
-        console.log({ itemWillDeleteData });
         e.preventDefault();
         modal.style.display = "none";
 
@@ -500,9 +492,26 @@
           },
           body: JSON.stringify(final_formdata),
         }).then((response) => {
-          if (response.status !== 200) hasMessage = true;
+          if (response.status !== 200) {
+
+            show_error.style.display = "block";
+            show_error.style.backgroundColor = "#c65161";
+            let error_msg = document.getElementById("error-content");
+            error_msg.innerHTML =
+              `<img  src="images/error-logo.svg" class="error-logo"/>
+              <p id="erroe-message">
+              Your request was failed (status code : ${response.status})
+              </p>` ;
+          }                
           else {
-            console.log("shod");
+              show_error.style.display = "block";
+              show_error.style.backgroundColor = "#58cc87";
+              let success_msg = document.getElementById("error-content");
+              success_msg.innerHTML =
+                `<img  src="images/success Icon.svg" class="error-logo"/>
+                <p id="erroe-message">
+                Your request was done successfully!
+                </p>` ;
             let index = node_type_name.findIndex(
               (num) => num === itemWillDeleteData.type
             );
@@ -516,19 +525,13 @@
             );
             render(index);
           }
-        });
+        })
+         .catch((error) => {
+            console.log(error);
+          });
 
-        if (hasMessage) {
-          result
-            .then((response) => response.json())
-            .then((data) => {
-              console.log(data);
-            })
-            .catch((error) => {
-              console.log(error);
-            });
-        }
       });
+      
 
       function getTime() {
         fetch(`${url}/api/general`)
@@ -602,13 +605,6 @@ let exit_icon =  document.getElementById("exit-icon");
 let exit_button =  document.querySelector(".exit-button");
 let exit_cancel_button =  document.querySelector(".exit-cancel-button");
 
-
-let log_out_show =  document.querySelector(".log-out");
-let log_out_icon =  document.getElementById("log-out-icon");
-let log_out_button =  document.querySelector(".log-out-button");
-let log_out_cancel_button =  document.querySelector(".log-out-cancel-button");
-
-
     exit_icon.addEventListener("click", function (e) {
         e.preventDefault();
         exit_show.style.display = "block";
@@ -618,7 +614,6 @@ let log_out_cancel_button =  document.querySelector(".log-out-cancel-button");
      exit_button.addEventListener("click", function (e) {
         'use strict';
         e.preventDefault();
-        console.log("hiiii in exit")
         var confirm_result = confirm("Are you sure you want to quit?");
         if (confirm_result == true) {
             window.close();
@@ -630,6 +625,11 @@ let log_out_cancel_button =  document.querySelector(".log-out-cancel-button");
         exit_show.style.display = "none";
       });
 
+
+let log_out_show =  document.querySelector(".log-out");
+let log_out_icon =  document.getElementById("log-out-icon");
+let log_out_button =  document.querySelector(".log-out-button");
+let log_out_cancel_button =  document.querySelector(".log-out-cancel-button");
 
     log_out_icon.addEventListener("click", function (e) {
         e.preventDefault();
@@ -647,3 +647,78 @@ let log_out_cancel_button =  document.querySelector(".log-out-cancel-button");
         e.preventDefault();
          log_out_show.style.display  = "none";
       });
+
+
+      /////////////////////////////////////////////
+
+let profile_show =  document.querySelector(".profile");
+let profile_icon =  document.getElementById("profile-icon");
+let image_close_icon =  document.getElementById("image-close");
+let image_tick_icon =  document.getElementById("image-tick");
+let profile_content_images =  document.querySelector(".profile-content-images");
+let Account_info_img =  document.querySelector(".Account-info-img");
+
+
+    profile_icon.addEventListener("click", function (e) {
+        e.preventDefault();
+        profile_show.style.display = "block";
+      });
+
+
+    profile_content_images.addEventListener("click", function (e) {
+      e.preventDefault();
+      for (let i = 0 ; i < profile_content_images.children.length ; i++) {
+        profile_content_images.children[i].style.backgroundColor= "#374775";
+      }
+  
+      if (e.target.classList.contains("img-list")) {
+        const id = e.target.id;
+         e.target.style.backgroundColor= "white";
+
+       image_tick_icon.addEventListener("click", function (e) {
+        e.preventDefault();
+        Account_info_img.setAttribute("src",`images/${id}.svg`);
+       })
+      }
+      })
+
+      image_close_icon.addEventListener("click", function (e) {
+        e.preventDefault();
+        for (let i = 0 ; i < 9 ; i++) {
+        profile_content_images.children[i].style.backgroundColor= "#374775";
+        }
+         profile_content_images.style.backgroundColor = "#374775";
+         profile_show.style.display  = "none";
+      });
+      ///////////////////////////////////
+
+
+let sound_show =  document.querySelector(".sound");
+let sound_icon =  document.getElementById("sound-icon");
+let sound_text =  document.querySelector(".sound-text");
+let sound_img =  sound_icon.children[0];
+
+let sound_enable = true ;
+
+ sound_icon.addEventListener("click", function (e) {
+        e.preventDefault();
+        sound_show.style.display = "block";
+
+        sound_enable = !(sound_enable) ;
+
+          if (sound_enable === true) {
+            sound_text.innerHTML= "System has unmuted!" ;
+            sound_img.setAttribute("src",`images/IMS_TOPOLOGY_images/Title Bar Icon _ Sound.svg`);
+          }
+        
+          else {
+           sound_text.innerHTML= "System has muted!" ;
+           sound_img.setAttribute("src",`images/Title Bar Icon _ Sound OFF.svg`);
+
+          }
+
+        setTimeout(() => {sound_show.style.display = "none" } , 2000);
+  
+      });
+
+

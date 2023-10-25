@@ -18,9 +18,9 @@ let network_Info = {};
       let Supported_HD_Codes = [];
       let inbound_Port_Minimum, inbound_Port_Maximum;
       let outbound_Port_Minimum, outbound_Port_Maximum;
-      const url = "https://98401295-f480-4dc2-9243-a8bca787ee46.mock.pstmn.io";
+      // const url = "https://98401295-f480-4dc2-9243-a8bca787ee46.mock.pstmn.io";
+      const url = "https://88d188a7-0705-4aa4-b0f9-0d2781378c89.mock.pstmn.io" ;
       let my_token = localStorage.getItem('token');
-      console.log(my_token);
 
       function load_page() {
         fetch(`${url}/api/configuration` ,  {
@@ -145,7 +145,6 @@ let network_Info = {};
             }
 
             Enable_IPsec = document.getElementById("ipsec");
-            // console.log(Enable_IPsec);
             if (network_Info.pcscf.ipSec === true) {
               Enable_IPsec.checked = true;
             }
@@ -345,23 +344,26 @@ let network_Info = {};
         })
           .then((response) => {
             console.log(response);
-            // console.log(response.status) ;
             if (response.status !== 200) {
               hasMessage = true;
               show_error.style.display = "block";
               show_error.style.backgroundColor = "#c65161";
-              let error_msg = document.getElementById("erroe-message");
+              let error_msg = document.getElementById("error-content");
               error_msg.innerHTML =
-                `Your request was failed (status code : ${response.status}) ` +
-                `<img  src="images/About Icon.svg" class="error-logo"/>`;
+               `<img  src="images/error-logo.svg" class="error-logo"/>
+                <p id="erroe-message">
+                Your request was failed (status code : ${response.status})
+                </p>`;
             } else {
               hasMessage = false;
               show_error.style.display = "block";
               show_error.style.backgroundColor = "#58cc87";
-              let success_msg = document.getElementById("erroe-message");
+              let success_msg = document.getElementById("error-content");
               success_msg.innerHTML =
-                "Your request was done successfully" +
-                `<img  src="images/About Icon.svg" class="error-logo"/>`;
+                `<img  src="images/success Icon.svg" class="error-logo"/>
+                  <p id="erroe-message">
+                  Your request was done successfully!
+                  </p>` ;
             }
           })
           .catch((error) => {
@@ -374,7 +376,6 @@ let network_Info = {};
           .then((response) => response.json())
           .then((data) => {
             time_Info = data;
-            // console.log(data);
             let my_global_hour = time_Info.timeHour;
             let my_global_min = time_Info.timeMin;
             let my_global_sec = time_Info.timeSec;
@@ -447,7 +448,6 @@ let network_Info = {};
      exit_button.addEventListener("click", function (e) {
         'use strict';
         e.preventDefault();
-        console.log("hiiii in exit")
         var confirm_result = confirm("Are you sure you want to quit?");
         if (confirm_result == true) {
             window.close();
@@ -476,3 +476,83 @@ let network_Info = {};
         e.preventDefault();
          log_out_show.style.display  = "none";
       });
+
+
+      ////////////////////////////
+
+let profile_show =  document.querySelector(".profile");
+let profile_icon =  document.getElementById("profile-icon");
+let image_close_icon =  document.getElementById("image-close");
+let image_tick_icon =  document.getElementById("image-tick");
+let profile_content_images =  document.querySelector(".profile-content-images");
+let Account_info_img =  document.querySelector(".Account-info-img");
+
+
+    profile_icon.addEventListener("click", function (e) {
+        e.preventDefault();
+        profile_show.style.display = "block";
+      });
+
+
+    profile_content_images.addEventListener("click", function (e) {
+      e.preventDefault();
+      for (let i = 0 ; i < profile_content_images.children.length ; i++) {
+        profile_content_images.children[i].style.backgroundColor= "#374775";
+      }
+  
+      if (e.target.classList.contains("img-list")) {
+        const id = e.target.id;
+         e.target.style.backgroundColor= "white";
+
+       image_tick_icon.addEventListener("click", function (e) {
+        e.preventDefault();
+        Account_info_img.setAttribute("src",`images/${id}.svg`);
+       })
+      }
+      })
+
+      image_close_icon.addEventListener("click", function (e) {
+        e.preventDefault();
+        for (let i = 0 ; i < 9 ; i++) {
+        profile_content_images.children[i].style.backgroundColor= "#374775";
+        }
+         profile_content_images.style.backgroundColor = "#374775";
+         profile_show.style.display  = "none";
+      });
+
+
+let sound_show =  document.querySelector(".sound");
+let sound_icon =  document.getElementById("sound-icon");
+let sound_text =  document.querySelector(".sound-text");
+let sound_img =  sound_icon.children[0];
+
+let sound_enable = true ;
+
+ sound_icon.addEventListener("click", function (e) {
+        e.preventDefault();
+        sound_show.style.display = "block";
+
+        sound_enable = !(sound_enable) ;
+
+          if (sound_enable === true) {
+            sound_text.innerHTML= "System has unmuted!" ;
+            sound_img.setAttribute("src",`images/IMS_TOPOLOGY_images/Title Bar Icon _ Sound.svg`);
+          }
+        
+          else {
+           sound_text.innerHTML= "System has muted!" ;
+           sound_img.setAttribute("src",`images/Title Bar Icon _ Sound OFF.svg`);
+
+          }
+
+        setTimeout(() => {sound_show.style.display = "none" } , 2000);
+  
+      });
+
+
+
+
+
+
+
+      //////////////////////////////////////

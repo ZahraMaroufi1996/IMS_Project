@@ -28,7 +28,7 @@
   position: absolute;
 }
 
-.error-content {
+#error-content {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,6 +42,7 @@
   font-size: 1.66vh;
   font-family: "FiraGO", sans-serif;
   display: block;
+  padding-left: 3px;
 }
 
 #erroe-message:first-letter {
@@ -51,9 +52,6 @@
 .error-logo {
   width: 1.042vw;
   height: 1.85vh;
-  background-color: white;
-  margin: 3px;
-  float: left;
 }
 
 .sidebar {
@@ -486,6 +484,17 @@ input[type="text"] {
   align-items: center;
 }
 
+
+.I-CSCF-class-content-input2  {
+  right: 13px;
+ position: absolute;
+}
+
+.I-CSCF-class-content-input1  {
+  right: 17.5vw;
+ position: absolute;
+}
+
 .private-memory,
 .shared-memory {
   height: 3.7vh;
@@ -715,6 +724,8 @@ input[type="text"] {
   color: #83a79a;
   font-size: 1.66vh;
   font-family: "FiraGO", sans-serif;
+  left: 1.31vw;
+  position: absolute;
 }
 
 .PCRF-IP-Address-boxes {
@@ -778,6 +789,7 @@ input#Rx-configuration-field3 {
 }
 
 .I-CSCF-class {
+  /* width: 36.35vw; */
   width: 36.35vw;
   height: 6.94vh;
   right: 2.083vw;
@@ -1393,7 +1405,8 @@ button {
   right: 14.58vw;
   top: 5.21vh;
   position: fixed;
-  z-index: 1;
+  z-index: 1;  
+  display: none;
 }
 
 .sound-triangle {
@@ -1414,11 +1427,14 @@ button {
   bottom: 0vh;
   position: absolute;
   background-color: #374775;
-  color: white;
-  font-size: 1.11vh;
-  font-family: "FiraGO", sans-serif;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.sound-content span {
+  color: white;
+  font-size: 1.11vh;
+  font-family: "FiraGO", sans-serif;
 }
