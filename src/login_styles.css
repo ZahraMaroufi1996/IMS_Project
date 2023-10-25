@@ -1,22 +1,21 @@
 .Pre-Login-body {
   background-image: url("../images/Pre-Login\ Page.svg");
   object-fit: fill;
-  /* position: relative; */
 }
 
 .Login-body {
   background-image: url("../images/Login\ Page\ –\ Language\ Toggle.svg");
 }
 
- .After-Login-body {
+.After-Login-body {
   background-image: url("../images/After_Login_Page.svg");
-}  
+}
 
 .saleh-photo {
   width: 6.25vw;
   height: 11.11vh;
   position: absolute;
-  top : 42.5vh;
+  top: 42.5vh;
   right: 46.87vw;
   display: block;
 }
@@ -179,8 +178,6 @@ button.submit-button {
   left: 0;
   right: 0;
   bottom: 0;
-  /* -webkit-transition: .4s;
-  transition: .4s; */
 }
 
 span.slider {
@@ -202,8 +199,6 @@ span.slider {
   color: black;
   font-size: 1.29vh;
   font-family: "Iranian Sans", sans-serif;
-  /* -webkit-transition: .4s;
-  transition: .4s; */
 }
 
 input:checked + .slider:before {

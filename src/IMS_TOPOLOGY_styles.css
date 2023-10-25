@@ -1,8 +1,3 @@
-/* @font-face {
-    font-family: myFirstFont;
-    src: url(../Font_folder/firago_5.0.7/ttf/firago-latin-400-normal.ttf);
-} */
-
 .IMS-TOPOLOGY-body {
   background-color: rgba(0, 0, 0, 0.04);
 }
@@ -72,16 +67,13 @@
   border-bottom: 0.092vh solid rgba(255, 255, 255, 0.25);
 }
 
-
-.Account-info  img {
+.Account-info img {
   width: 3.33vw;
   height: 5.93vh;
   right: 1.97vw;
-  top:0;
+  top: 0;
   position: absolute;
 }
-
-
 
 .Account-name {
   width: 4.79vw;
@@ -426,7 +418,6 @@
 
 .modal-content {
   position: absolute;
-  /* z-index: 1;      */
   width: 21.56vw;
   height: 19.44vh;
   right: 12.91vw;
@@ -666,7 +657,7 @@ input[type="text"] {
   top: 0vh;
   border: solid;
   position: absolute;
-  background-color: #A6D4C4;
+  background-color: #a6d4c4;
   color: white;
   font-size: 1.66vh;
   font-family: "FiraGO", sans-serif;
@@ -914,8 +905,6 @@ input[type="text"] {
   font-family: "FiraGO", sans-serif;
 }
 
-
-
 .exit {
   display: none;
   width: 20.31vw;
@@ -934,7 +923,6 @@ input[type="text"] {
   position: absolute;
   background-color: #374775;
   border-radius: 1.38vh;
-  /* opacity: 90%; */
 }
 
 .exit-buttons {
@@ -947,20 +935,20 @@ input[type="text"] {
   justify-content: space-between;
 }
 
-.exit-button  , 
+.exit-button,
 .exit-cancel-button {
   width: 6.77vw;
   height: 3.15vh;
   border-radius: 0.65vh;
-  background-color: #C65161;
+  background-color: #c65161;
   border: none;
   color: white;
   font-size: 1.48vh;
   font-family: "FiraGO", sans-serif;
 }
 .exit-cancel-button {
-    background-color: #313F68;
-    opacity: 100%;
+  background-color: #313f68;
+  opacity: 100%;
 }
 
 .exit-staying {
@@ -983,7 +971,6 @@ input[type="text"] {
   margin-bottom: 0;
 }
 
-
 .log-out {
   display: none;
   width: 20.31vw;
@@ -994,9 +981,8 @@ input[type="text"] {
   z-index: 1;
 }
 
-
-.log-out-triangle , 
-.exit-triangle ,
+.log-out-triangle,
+.exit-triangle,
 .profile-triangle {
   width: 0;
   height: 0;
@@ -1010,7 +996,7 @@ input[type="text"] {
 }
 
 .profile-triangle {
-  right: 6.60vw;
+  right: 6.6vw;
 }
 
 .log-out-content {
@@ -1034,20 +1020,20 @@ input[type="text"] {
   justify-content: space-between;
 }
 
-.log-out-button  , 
+.log-out-button,
 .log-out-cancel-button {
   width: 6.77vw;
   height: 3.15vh;
   border-radius: 0.65vh;
-  background-color: #FF8946;
+  background-color: #ff8946;
   border: none;
   color: white;
   font-size: 1.48vh;
   font-family: "FiraGO", sans-serif;
 }
 .log-out-cancel-button {
-    background-color: #313F68;
-    opacity: 100%;
+  background-color: #313f68;
+  opacity: 100%;
 }
 
 .log-out-title {
@@ -1119,33 +1105,32 @@ input[type="text"] {
 }
 
 .saleh {
-  color:  white;
+  color: white;
   font-size: 1.66vh;
   font-family: "FiraGO", sans-serif;
   left: 1.48vw;
-  top: 0.93vh ;
+  top: 0.93vh;
   position: absolute;
   margin-top: 5px;
 }
 
-.saleh  span {
-    margin-left: 12px;
+.saleh span {
+  margin-left: 12px;
 }
 
 .saleh img {
-    float: left;
+  float: left;
 }
 
 .user {
   left: 3.021vw;
   bottom: 38.61vh;
   position: absolute;
-  color:  #58CC87;
+  color: #58cc87;
   font-size: 1.66vh;
   font-family: "FiraGO", sans-serif;
   margin-bottom: 0;
 }
-
 
 .made {
   left: 3.021vw;
@@ -1156,7 +1141,6 @@ input[type="text"] {
   font-family: "FiraGO", sans-serif;
   margin-bottom: 0;
 }
-
 
 .last {
   left: 3.021vw;
@@ -1179,21 +1163,9 @@ input[type="text"] {
   right: 14.58vw;
   top: 5.21vh;
   position: fixed;
-  z-index: 1;  
+  z-index: 1;
   display: none;
 }
-/* /* div {
-    transition: opacity 1s ease-out;
-    opacity: 0;
-    height: 0;
-    overflow: hidden;
-}
-
-.sound.active {
-    opacity: 1;
-    height: auto;
-} 
-  */
 
 .sound-triangle {
   width: 0;
@@ -1202,7 +1174,6 @@ input[type="text"] {
   border-top: 0;
   border-bottom: 0.93vh solid #374775;
   top: 0vh;
-  /* right: 2.79vw; */
   right: 2.9vw;
   position: absolute;
 }
@@ -1222,7 +1193,7 @@ input[type="text"] {
   align-items: center;
 }
 
- .chb {
+.chb {
   visibility: hidden;
 }
 
@@ -1234,14 +1205,14 @@ input[type="text"] {
 .chb-1-circle + label::before {
   position: absolute;
   width: 0.91vw;
-  height: 1.75vh; 
-  background-color: #E9E9E9;
+  height: 1.75vh;
+  background-color: #e9e9e9;
   border-radius: 50%;
   content: "";
-  border : 0.093vh solid  #707070 ;
+  border: 0.093vh solid #707070;
   left: -25px;
 }
 
-.chb-1-circle:checked + label::before  {
-  background-color: #68D5B0;
+.chb-1-circle:checked + label::before {
+  background-color: #68d5b0;
 }
