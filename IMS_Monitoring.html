@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <title>IMS Monitoring Page</title>
+    <meta charset="UTF-8" />
+    <link href="src/IMS_Monitoring.css" rel="stylesheet" />
+    <!-- <link href="src/IMS_General_Styles.css" rel="stylesheet" /> -->
+    <link
+      href="https://free.bboxtype.com/embedfonts/?family=FiraGO:400"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script> -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+</html>
+<body class="IMS-body d-flex">
+  <div class="sidebar">
+    <div class="sidebar-account-info">
+      <img class="sidebar-account-info-image" src="images/img1.svg" />
+      <div class="sidebar-account-info-name">
+        <span class="sidebar-account-info-Saleh-username">Saleh Zekavati</span>
+        <span class="sidebar-account-info-username">username</span>
+      </div>
+    </div>
+
+    <button class="sidebar-button">Save & Restart</button>
+
+    <div class="sidebar-icons">
+      <div class="sidebar-topology-icon">
+        <div class="sidebar-selected-icon"></div>
+        <a href="IMS_Topology.html" class="sidebar-topology-icon-content">
+          <img class="sidebar-image" src="images/Menu Icon _ Topology.svg" />
+          <span>TOPOLOGY</span>
+        </a>
+      </div>
+
+      <div class="sidebar-configuration-icon">
+        <a
+          href="IMS_Configuration.html"
+          class="sidebar-configuration-icon-content"
+        >
+          <img
+            class="sidebar-configuration-icon-image"
+            src="images/Menu Icon _ Config.svg"
+          />
+          <span>CONFIGURATION</span>
+        </a>
+      </div>
+
+      <div class="sidebar-monitoring-icon">
+        <a class="sidebar-monitoring-icon-content">
+          <img class="sidebar-image" src="images/Group 8329.svg" />
+          <span>MONITORING</span>
+        </a>
+      </div>
+
+      <div class="sidebar-troubleshooting-icon">
+        <a
+          href="IMS_Troubleshooting.html"
+          class="sidebar-troubleshooting-icon-content"
+        >
+          <img class="sidebar-image" src="images/Group 8332.svg" />
+          <span>TROUBLESHOOTING</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="sidebar-logo">
+      <img src="images/IMS_TOPOLOGY_images/Group 8498.svg" />
+    </div>
+  </div>
+
+  <div class="main-body">
+    <!-- <div class="toolbar-class"> -->
+    <nav class="toolbar-class">
+      <div class="toolbar-nav-content">
+        <a href="#">
+          <img src="images/IMS_TOPOLOGY_images/Title Bar Icon _ About.svg" />
+        </a>
+        <a href="#">
+          <img src="images/IMS_TOPOLOGY_images/Title Bar Icon _ Help.svg" />
+        </a>
+        <a href="#">
+          <img src="images/IMS_TOPOLOGY_images/Title Bar Icon _ Message.svg" />
+        </a>
+        <a href="#" id="sound-icon">
+          <img src="images/IMS_TOPOLOGY_images/Title Bar Icon _ Sound.svg" />
+        </a>
+        <a href="#">
+          <img src="images/IMS_TOPOLOGY_images/Title Bar Icon _ Lock.svg" />
+        </a>
+        <a href="#" id="profile-icon">
+          <img src="images/IMS_TOPOLOGY_images/Title Bar Icon _ Profile.svg" />
+        </a>
+        <a href="#" id="log-out-icon">
+          <img src="images/IMS_TOPOLOGY_images/Title Bar Icon _ Log Out.svg" />
+        </a>
+        <a href="#" id="exit-icon">
+          <img src="images/IMS_TOPOLOGY_images/Title Bar Icon _ Exit.svg" />
+        </a>
+      </div>
+    </nav>
+    <!-- </div> -->
+    <div class="content">
+      <div
+        class="main-content d-flex align-items-center justify-content-center"
+      >
+        <div
+          class="monitoring-content d-flex flex-column justify-content-center"
+        >
+          <img />
+          <p class="text-center">
+            Click the button below to display the graphs
+          </p>
+          <button class="monitoring-button block m-auto">
+            Start Monitoring
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div id="time-box">
+        <div id="time-content">
+          <span>Server Time</span>
+          <span id="local-time">21.04.17</span>
+          <span id="global-time"> 18:42:23</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="exit">
+    <div class="triangle"></div>
+    <div class="exit-content">
+      <p class="exit-staying">Close or Staying</p>
+      <p class="exit-question">Do You want to close?</p>
+      <div class="toolbar-buttons">
+        <button
+          class="toolbar-button toolbar-cancel-button"
+          id="exit-cancel-button"
+        >
+          CANCEL
+        </button>
+        <button class="toolbar-button" id="exit-confirm-button">YES</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="log-out">
+    <div class="triangle"></div>
+    <div class="log-out-content">
+      <p class="log-out-title">loging out</p>
+      <p class="log-out-question">Are You sure about loging out?</p>
+      <div class="toolbar-buttons">
+        <button
+          class="toolbar-button toolbar-cancel-button"
+          id="log-out-cancel-button"
+        >
+          CANCEL
+        </button>
+        <button class="toolbar-button" id="log-out-confirm-button">YES</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="profile">
+    <div class="triangle profile-triangle"></div>
+    <div class="profile-content">
+      <p class="saleh">
+        <span>Saleh Zekavati</span>
+        <img src="images/Path 6240.svg" />
+      </p>
+      <p class="user">Username</p>
+      <p class="made">Made 2020.05.12 at 12:02:35</p>
+      <p class="last">Last login 2021.11.12 at 08:02:56</p>
+
+      <div class="profile-content-images">
+        <img class="img-list" id="img1" src="images/img1.svg" />
+        <img class="img-list" id="img2" src="images/img2.svg" />
+        <img class="img-list" id="img3" src="images/img3.svg" />
+        <img class="img-list" id="img4" src="images/img4.svg" />
+        <img class="img-list" id="img5" src="images/img5.svg" />
+        <img class="img-list" id="img6" src="images/img6.svg" />
+        <img class="img-list" id="img7" src="images/img7.svg" />
+        <img class="img-list" id="img8" src="images/img8.svg" />
+        <img class="img-list" id="img9" src="images/img9.svg" />
+      </div>
+
+      <div class="profile-footer">
+        <img id="image-close" src="images/Group 1470.svg" />
+        <img id="image-tick" src="images/Group 1471.svg" />
+      </div>
+    </div>
+  </div>
+
+  <div class="sound">
+    <div class="sound-triangle"></div>
+    <div class="sound-content">
+      <span class="sound-text">System has muted!</span>
+    </div>
+  </div>
+
+  <div class="show-error">
+    <div class="modal-header">
+      <span class="error-close-icon">&times;</span>
+    </div>
+    <div id="error-content">
+      <img src="images/success Icon.svg" class="error-logo" />
+      <p id="erroe-message">successfull message!</p>
+    </div>
+  </div>
+</body>

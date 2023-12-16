@@ -4,20 +4,27 @@
     <title>IMS Configuration Page</title>
     <meta charset="UTF-8" />
     <link href="src/IMS_Configuration.css" rel="stylesheet" />
+    <link href="src/IMS_General_Styles.css" rel="stylesheet" />
     <link
       href="https://free.bboxtype.com/embedfonts/?family=FiraGO:400"
       rel="stylesheet"
     />
-    <script
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
       crossorigin="anonymous"
-    ></script>
+    ></script> -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
 
-  <body class="IMS-TOPOLOGY-body">
+  <body class="IMS-body">
     <div class="toolbar-class">
       <nav class="toolbar-nav">
         <div class="toolbar-nav-content">
@@ -197,7 +204,7 @@
       </div>
     </div>
 
-    <div class="total-information-body-class">
+    <div class="main-body-class">
       <form id="total-form">
         <div class="General-class">
           <div class="General-class-content">
@@ -355,25 +362,29 @@
                 <input
                   type="text"
                   name="PCRF_IP_Address_box4"
-                  class="PCRF-IP-Address-box1"
+                  class="ipfield1 ipfield top-0"
+                  id="PCRF-IP-Address-box1"
                   disabled
                 />
                 <input
                   type="text"
                   name="PCRF_IP_Address_box3"
-                  class="PCRF-IP-Address-box2"
+                  class="ipfield2 ipfield top-0"
+                  id="PCRF-IP-Address-box2"
                   disabled
                 />
                 <input
                   type="text"
                   name="PCRF_IP_Address_box2"
-                  class="PCRF-IP-Address-box3"
+                  class="ipfield3 ipfield top-0"
+                  id="PCRF-IP-Address-box3"
                   disabled
                 />
                 <input
                   type="text"
                   name="PCRF_IP_Address-box1"
-                  class="PCRF-IP-Address-box4"
+                  class="ipfield4 ipfield top-0"
+                  id="PCRF-IP-Address-box4"
                   disabled
                 />
               </div>

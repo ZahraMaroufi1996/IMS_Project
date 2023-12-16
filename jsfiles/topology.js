@@ -30,36 +30,40 @@ function load_page() {
       node_type[2] = Node_Info.filter((q) => q.type === "core");
 
       for (let i = 0; i < 4; i++) {
-        Subnetmask[i] = document.querySelector(`.subnetmask-box${4 - i}`);
+        Subnetmask[i] = document.getElementById(
+          `network-definition-subnetmask-octet${4 - i}`
+        );
         Subnetmask[i].setAttribute(
           "value",
           `${network_Info.subnetMask.split(".")[i]}`
         );
 
-        Gateway[i] = document.querySelector(`.gateway-box${4 - i}`);
+        Gateway[i] = document.getElementById(
+          `network-definition-gateway-octet${4 - i}`
+        );
         Gateway[i].setAttribute(
           "value",
           `${network_Info.gateway.split(".")[i]}`
         );
 
-        Database_Virtual_I[i] = document.querySelector(
-          `.Virtual-IPs-Database-box${4 - i}`
+        Database_Virtual_I[i] = document.getElementById(
+          `virtual-ips-database-octet${4 - i}`
         );
         Database_Virtual_I[i].setAttribute(
           "value",
           `${network_Info.databaseVirtualIp.split(".")[i]}`
         );
 
-        DNS_Server_Virtual_IP[i] = document.querySelector(
-          `.Virtual-IPs-DNSserver-box${4 - i}`
+        DNS_Server_Virtual_IP[i] = document.getElementById(
+          `virtual-ips-dns-server-octet${4 - i}`
         );
         DNS_Server_Virtual_IP[i].setAttribute(
           "value",
           `${network_Info.dnsVirtualIp.split(".")[i]}`
         );
 
-        Homer_Virtual_IP[i] = document.querySelector(
-          `.Virtual-IPs-Homer-box${4 - i}`
+        Homer_Virtual_IP[i] = document.getElementById(
+          `virtual-ips-homer-octet${4 - i}`
         );
         Homer_Virtual_IP[i].setAttribute(
           "value",
@@ -81,7 +85,9 @@ async function init() {
 
 init();
 
-let Network_Definition_form = document.getElementById("NetworkDefinition-form");
+let Network_Definition_form = document.getElementById(
+  "network-definition-form"
+);
 Network_Definition_form.addEventListener("submit", function (e) {
   e.preventDefault();
   const formData = Object.fromEntries(new FormData(e.target));
@@ -138,8 +144,7 @@ Network_Definition_form.addEventListener("submit", function (e) {
     });
 });
 
-
-let Virtual_IPs_form = document.getElementById("Virtual-IPs-form");
+let Virtual_IPs_form = document.getElementById("virtual-ips-form");
 Virtual_IPs_form.addEventListener("submit", function (e) {
   e.preventDefault();
   const formData = Object.fromEntries(new FormData(e.target));
@@ -344,7 +349,6 @@ add_node_form.addEventListener("submit", function (e) {
     });
 });
 
-
 let modal = document.getElementById("modal");
 let default_node = "pcscf";
 let itemWillDeleteData = null;
@@ -445,7 +449,6 @@ node_table.addEventListener("click", function (e) {
     });
   }
 });
-
 
 modal_close.addEventListener("click", function (e) {
   e.preventDefault();
@@ -569,7 +572,7 @@ function getTime() {
 //   getTime();
 //   setInterval(getTime, 60 * 1000 * 15);
 
-let error_close = document.querySelector(".error-close");
+let error_close = document.querySelector(".error-close-icon");
 let show_error = document.querySelector(".show-error");
 
 error_close.addEventListener("click", function (e) {
@@ -577,21 +580,19 @@ error_close.addEventListener("click", function (e) {
   show_error.style.display = "none";
 });
 
-
-
 ///////////////////////////////// toolbar icons///////////////////
 
 let exit_show = document.querySelector(".exit");
 let exit_icon = document.getElementById("exit-icon");
-let exit_button = document.querySelector(".exit-button");
-let exit_cancel_button = document.querySelector(".exit-cancel-button");
+let exit_confirm_button = document.getElementById("exit-confirm-button");
+let exit_cancel_button = document.getElementById("exit-cancel-button");
 
 exit_icon.addEventListener("click", function (e) {
   e.preventDefault();
   exit_show.style.display = "block";
 });
 
-exit_button.addEventListener("click", function (e) {
+exit_confirm_button.addEventListener("click", function (e) {
   "use strict";
   e.preventDefault();
   var confirm_result = confirm("Are you sure you want to quit?");
@@ -607,15 +608,15 @@ exit_cancel_button.addEventListener("click", function (e) {
 
 let log_out_show = document.querySelector(".log-out");
 let log_out_icon = document.getElementById("log-out-icon");
-let log_out_button = document.querySelector(".log-out-button");
-let log_out_cancel_button = document.querySelector(".log-out-cancel-button");
+let log_out_confirm_button = document.getElementById("log-out-confirm-button");
+let log_out_cancel_button = document.getElementById("log-out-cancel-button");
 
 log_out_icon.addEventListener("click", function (e) {
   e.preventDefault();
   log_out_show.style.display = "block";
 });
 
-log_out_button.addEventListener("click", function (e) {
+log_out_confirm_button.addEventListener("click", function (e) {
   e.preventDefault();
   localStorage.removeItem("token");
   $("head").append(
@@ -628,13 +629,12 @@ log_out_cancel_button.addEventListener("click", function (e) {
   log_out_show.style.display = "none";
 });
 
-
 let profile_show = document.querySelector(".profile");
 let profile_icon = document.getElementById("profile-icon");
 let image_close_icon = document.getElementById("image-close");
 let image_tick_icon = document.getElementById("image-tick");
 let profile_content_images = document.querySelector(".profile-content-images");
-let Account_info_img = document.querySelector(".Account-info-img");
+let Account_info_img = document.querySelector(".sidebar-account-info-image");
 
 profile_icon.addEventListener("click", function (e) {
   e.preventDefault();

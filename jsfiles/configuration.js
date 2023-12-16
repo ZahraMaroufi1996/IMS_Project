@@ -127,8 +127,8 @@ function load_page() {
       }
 
       for (let i = 0; i < 4; i++) {
-        PCRF_IP_Address[i] = document.querySelector(
-          `.PCRF-IP-Address-box${4 - i}`
+        PCRF_IP_Address[i] = document.getElementById(
+          `PCRF-IP-Address-box${4 - i}`
         );
         PCRF_IP_Address[i].setAttribute(
           "value",
@@ -267,7 +267,6 @@ async function init() {
 
 init();
 
-
 /////////////////////////////////////// edit -icon /////////////////////////////////////
 
 let edit_btn = document.querySelector(".information-edit-button");
@@ -279,7 +278,6 @@ edit_btn.addEventListener("click", function (e) {
   }
 });
 
-
 ///////////////////////////////////////// error show /////////////////////////
 
 let error_close = document.querySelector(".error-close");
@@ -289,8 +287,6 @@ error_close.addEventListener("click", function (e) {
   e.preventDefault();
   show_error.style.display = "none";
 });
-
-
 
 ////////////////////////////////// save icon ////////////////////////////////////
 
@@ -440,7 +436,6 @@ log_out_cancel_button.addEventListener("click", function (e) {
   log_out_show.style.display = "none";
 });
 
-
 let profile_show = document.querySelector(".profile");
 let profile_icon = document.getElementById("profile-icon");
 let image_close_icon = document.getElementById("image-close");
@@ -507,4 +502,3 @@ sound_icon.addEventListener("click", function (e) {
     sound_show.style.display = "none";
   }, 2000);
 });
-

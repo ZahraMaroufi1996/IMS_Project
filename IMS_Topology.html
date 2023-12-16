@@ -4,15 +4,22 @@
     <title>IMS Topology Page</title>
     <meta charset="UTF-8" />
     <link href="src/IMS_TOPOLOGY_styles.css" rel="stylesheet" />
+    <link href="src/IMS_General_Styles.css" rel="stylesheet" />
     <link
       href="https://free.bboxtype.com/embedfonts/?family=FiraGO:400"
       rel="stylesheet"
     />
-    <script
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
       crossorigin="anonymous"
-    ></script>
+    ></script> -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
@@ -56,31 +63,43 @@
     </div>
 
     <div class="exit">
-      <div class="exit-triangle"></div>
+      <div class="triangle"></div>
       <div class="exit-content">
         <p class="exit-staying">Close or Staying</p>
         <p class="exit-question">Do You want to close?</p>
-        <div class="exit-buttons">
-          <button class="exit-cancel-button">CANCEL</button>
-          <button class="exit-button">YES</button>
+        <div class="toolbar-buttons">
+          <button
+            class="toolbar-button toolbar-cancel-button"
+            id="exit-cancel-button"
+          >
+            CANCEL
+          </button>
+          <button class="toolbar-button" id="exit-confirm-button">YES</button>
         </div>
       </div>
     </div>
 
     <div class="log-out">
-      <div class="log-out-triangle"></div>
+      <div class="triangle"></div>
       <div class="log-out-content">
         <p class="log-out-title">loging out</p>
         <p class="log-out-question">Are You sure about loging out?</p>
-        <div class="log-out-buttons">
-          <button class="log-out-cancel-button">CANCEL</button>
-          <button class="log-out-button">YES</button>
+        <div class="toolbar-buttons">
+          <button
+            class="toolbar-button toolbar-cancel-button"
+            id="log-out-cancel-button"
+          >
+            CANCEL
+          </button>
+          <button class="toolbar-button" id="log-out-confirm-button">
+            YES
+          </button>
         </div>
       </div>
     </div>
 
     <div class="profile">
-      <div class="profile-triangle"></div>
+      <div class="triangle profile-triangle"></div>
       <div class="profile-content">
         <p class="saleh">
           <span>Saleh Zekavati</span>
@@ -118,7 +137,7 @@
 
     <div class="show-error">
       <div class="modal-header">
-        <span class="error-close">&times;</span>
+        <span class="error-close-icon">&times;</span>
       </div>
       <div id="error-content">
         <img src="images/success Icon.svg" class="error-logo" />
@@ -127,57 +146,53 @@
     </div>
 
     <div class="sidebar">
-      <div class="Account-info">
-        <img class="Account-info-img" src="images/img1.svg" />
-        <div class="Account-name">
-          <span class="Saleh-username">Saleh Zekavati</span>
-          <span class="username">username</span>
+      <div class="sidebar-account-info">
+        <img class="sidebar-account-info-image" src="images/img1.svg" />
+        <div class="sidebar-account-info-name">
+          <span class="sidebar-account-info-Saleh-username"
+            >Saleh Zekavati</span
+          >
+          <span class="sidebar-account-info-username">username</span>
         </div>
       </div>
 
       <button class="sidebar-button">Save & Restart</button>
 
-      <div class="Selection-Box-in-Menu">
-        <div class="topology-in-menu">
-          <div class="selected-menu"></div>
-          <a href="IMS_Topology.html" class="topology-in-menu-content">
-            <img
-              class="topology-in-menu-image"
-              src="images/Menu Icon _ Topology.svg"
-            />
+      <div class="sidebar-icons">
+        <div class="sidebar-topology-icon">
+          <div class="sidebar-selected-icon"></div>
+          <a href="IMS_Topology.html" class="sidebar-topology-icon-content">
+            <img class="sidebar-image" src="images/Menu Icon _ Topology.svg" />
             <span>TOPOLOGY</span>
           </a>
         </div>
 
-        <div class="configuration-in-menu">
+        <div class="sidebar-configuration-icon">
           <a
             href="IMS_Configuration.html"
-            class="configuration-in-menu-content"
+            class="sidebar-configuration-icon-content"
           >
             <img
-              class="configuration-in-menu-image"
+              class="sidebar-configuration-icon-image"
               src="images/Menu Icon _ Config.svg"
             />
             <span>CONFIGURATION</span>
           </a>
         </div>
 
-        <div class="monitoring-in-menu">
-          <a class="monitoring-in-menu-content">
-            <img class="monitoring-in-menu-image" src="images/Group 8329.svg" />
+        <div class="sidebar-monitoring-icon">
+          <a class="sidebar-monitoring-icon-content">
+            <img class="sidebar-image" src="images/Group 8329.svg" />
             <span>MONITORING</span>
           </a>
         </div>
 
-        <div class="troubleshooting-in-menu">
+        <div class="sidebar-troubleshooting-icon">
           <a
             href="IMS_Troubleshooting.html"
-            class="troubleshooting-in-menu-content"
+            class="sidebar-troubleshooting-icon-content"
           >
-            <img
-              class="troubleshooting-in-menu-image"
-              src="images/Group 8332.svg"
-            />
+            <img class="sidebar-image" src="images/Group 8332.svg" />
             <span>TROUBLESHOOTING</span>
           </a>
         </div>
@@ -189,50 +204,81 @@
     </div>
 
     <div class="network-class">
-      <form id="NetworkDefinition-form">
+      <form id="network-definition-form">
         <div class="network-definition">
           <span class="title-span">Network Definition</span>
           <div class="network-definition-subnetmask">
             <span>Subnet Mask</span>
-            <div class="subnetmask-boxes">
+            <div class="network-definition-subnetmask-boxes">
+              <!-- <input
+                type="text"
+                name="subnetmask_field4"
+                class="subnetmask-box1 ipfield"
+              /> -->
               <input
                 type="text"
                 name="subnetmask_field4"
-                class="subnetmask-box1"
+                class="ip-octet1 ip-octet"
+                id="network-definition-subnetmask-octet1"
               />
+
               <input
                 type="text"
                 name="subnetmask_field3"
-                class="subnetmask-box2"
+                class="ip-octet2 ip-octet"
+                id="network-definition-subnetmask-octet2"
               />
+
               <input
                 type="text"
                 name="subnetmask_field2"
-                class="subnetmask-box3"
+                class="ip-octet3 ip-octet"
+                id="network-definition-subnetmask-octet3"
               />
               <input
                 type="text"
                 name="subnetmask_field1"
-                class="subnetmask-box4"
+                class="ip-octet4 ip-octet"
+                id="network-definition-subnetmask-octet4"
               />
             </div>
           </div>
 
           <div class="network-definition-gateway">
             <span>Gateway</span>
-            <div class="gateway-boxes">
-              <input type="text" name="gateway_field4" class="gateway-box1" />
-              <input type="text" name="gateway_field3" class="gateway-box2" />
-              <input type="text" name="gateway_field2" class="gateway-box3" />
-              <input type="text" name="gateway_field1" class="gateway-box4" />
+            <div class="network-definition-gateway-boxes">
+              <input
+                type="text"
+                name="gateway_field4"
+                class="ip-octet1 ip-octet"
+                id="network-definition-gateway-octet1"
+              />
+              <input
+                type="text"
+                name="gateway_field3"
+                class="ip-octet2 ip-octet"
+                id="network-definition-gateway-octet2"
+              />
+              <input
+                type="text"
+                name="gateway_field2"
+                class="ip-octet3 ip-octet"
+                id="network-definition-gateway-octet3"
+              />
+              <input
+                type="text"
+                name="gateway_field1"
+                class="ip-octet4 ip-octet"
+                id="network-definition-gateway-octet4"
+              />
             </div>
           </div>
         </div>
-        <button type="submit" class="network-button">Set</button>
+        <button type="submit" class="network-definition-button">Set</button>
       </form>
     </div>
 
-    <div class="node-class">
+    <div class="node">
       <form id="add-node-form">
         <div class="node-properties">
           <span class="title-span">Nodes IP Addresses</span>
@@ -244,17 +290,37 @@
           <div class="node-ip">
             <span>IP Address</span>
             <div class="node-boxes">
-              <input type="text" name="IP_Address_field4" class="node-box1" />
-              <input type="text" name="IP_Address_field3" class="node-box2" />
-              <input type="text" name="IP_Address_field2" class="node-box3" />
-              <input type="text" name="IP_Address_field1" class="node-box4" />
+              <input
+                type="text"
+                name="IP_Address_field4"
+                class="ip-octet1 ip-octet"
+                id="node-ip-octet1"
+              />
+              <input
+                type="text"
+                name="IP_Address_field3"
+                class="ip-octet2 ip-octet"
+                id="node-ip-octet2"
+              />
+              <input
+                type="text"
+                name="IP_Address_field2"
+                class="ip-octet3 ip-octet"
+                id="node-ip-octet3"
+              />
+              <input
+                type="text"
+                name="IP_Address_field1"
+                class="ip-octet4 ip-octet"
+                id="node-ip-octet4"
+              />
             </div>
           </div>
 
           <div class="node-type">
             <span>Node Types :</span>
             <div class="node-type-checkboxes">
-              <div class="node-type-checkboxe1">
+              <div class="node-type-core-checkbox">
                 <input
                   class="chb chb-1-circle"
                   type="radio"
@@ -264,7 +330,7 @@
                 />
                 <label for="node-type-1">Core</label>
               </div>
-              <div class="node-type-checkboxe2">
+              <div class="node-type-rtp-proxy-checkbox">
                 <input
                   class="chb chb-1-circle"
                   type="radio"
@@ -274,7 +340,7 @@
                 />
                 <label for="node-type-2">RTP Proxy</label>
               </div>
-              <div class="node-type-checkboxe3">
+              <div class="node-type-pcscf-checkbox">
                 <input
                   class="chb chb-1-circle"
                   type="radio"
@@ -292,9 +358,15 @@
 
       <div class="node-table">
         <div class="node-table-titles">
-          <div class="node-table-title1"><p>P-CSCF Nodes</p></div>
-          <div class="node-table-title2"><p>RTP Proxy Nodes</p></div>
-          <div class="node-table-title3"><p>Core Nodes</p></div>
+          <div class="node-table-pcscf-title node-table-title">
+            <p>P-CSCF Nodes</p>
+          </div>
+          <div class="node-table-rtp-proxy-title node-table-title">
+            <p>RTP Proxy Nodes</p>
+          </div>
+          <div class="node-table-core-title node-table-title">
+            <p>Core Nodes</p>
+          </div>
         </div>
 
         <div class="node-table-content-title">
@@ -305,8 +377,7 @@
           </div>
         </div>
 
-        <div id="node-table-contents">
-        </div>
+        <div id="node-table-contents"></div>
       </div>
 
       <button class="save-node-button">Save</button>
@@ -329,96 +400,106 @@
       </div>
     </div>
 
-    <div class="Virtual-IPs-class">
-      <form id="Virtual-IPs-form">
-        <div class="Virtual-IPs-class-title">
-          Virtual IPs for Load Balancers
-        </div>
-        <div class="Virtual-IPs-Database">
-          <div class="Virtual-IPs-up-text">Database Virtual IP*</div>
-          <div class="Virtual-IPs-Database-boxes">
+    <div class="virtual-ips">
+      <form id="virtual-ips-form">
+        <div class="virtual-ips-title">Virtual IPs for Load Balancers</div>
+        <div class="virtual-ips-database">
+          <div class="virtual-ips-main-text">Database Virtual IP*</div>
+          <div class="virtual-ips-database-boxes">
             <input
               type="text"
               name="Virtual_IPs_Database_field4"
-              class="Virtual-IPs-Database-box1"
+              class="ip-octet1 ip-octet"
+              id="virtual-ips-database-octet1"
             />
             <input
               type="text"
               name="Virtual_IPs_Database_field3"
-              class="Virtual-IPs-Database-box2"
+              class="ip-octet2 ip-octet"
+              id="virtual-ips-database-octet2"
             />
             <input
               type="text"
               name="Virtual_IPs_Database_field2"
-              class="Virtual-IPs-Database-box3"
+              class="ip-octet3 ip-octet"
+              id="virtual-ips-database-octet3"
             />
             <input
               type="text"
               name="Virtual_IPs_Database_field1"
-              class="Virtual-IPs-Database-box4"
+              class="ip-octet4 ip-octet"
+              id="virtual-ips-database-octet4"
             />
           </div>
-          <div class="Virtual-IPs-down-text">
+          <div class="virtual-ips-down-text">
             Main database used by IMS services
           </div>
         </div>
 
-        <div class="Virtual-IPs-DNSserver">
-          <div class="Virtual-IPs-up-text">DNS Server Virtual IP*</div>
-          <div class="Virtual-IPs-DNSserver-boxes">
+        <div class="virtual-ips-dns-server">
+          <div class="virtual-ips-main-text">DNS Server Virtual IP*</div>
+          <div class="virtual-ips-dns-server-boxes">
             <input
               type="text"
               name="Virtual_IPs_DNSserver_field4"
-              class="Virtual-IPs-DNSserver-box1"
+              class="ip-octet1 ip-octet"
+              id="virtual-ips-dns-server-octet1"
             />
             <input
               type="text"
               name="Virtual_IPs_DNSserver_field3"
-              class="Virtual-IPs-DNSserver-box2"
+              class="ip-octet2 ip-octet"
+              id="virtual-ips-dns-server-octet2"
             />
             <input
               type="text"
               name="Virtual_IPs_DNSserver_field2"
-              class="Virtual-IPs-DNSserver-box3"
+              class="ip-octet3 ip-octet"
+              id="virtual-ips-dns-server-octet3"
             />
             <input
               type="text"
               name="Virtual_IPs_DNSserver_field1"
-              class="Virtual-IPs-DNSserver-box4"
+              class="ip-octet4 ip-octet"
+              id="virtual-ips-dns-server-octet4"
             />
           </div>
-          <div class="Virtual-IPs-down-text">
+          <div class="virtual-ips-down-text">
             Internal DNS server used by IMS services
           </div>
         </div>
 
-        <div class="Virtual-IPs-Homer">
-          <div class="Virtual-IPs-up-text">Homer Virtual IP*</div>
-          <div class="Virtual-IPs-Homer-boxes">
+        <div class="virtual-ips-homer">
+          <div class="virtual-ips-main-text">Homer Virtual IP*</div>
+          <div class="virtual-ips-homer-boxes">
             <input
               type="text"
               name="Virtual_IPs_Homer_field4"
-              class="Virtual-IPs-Homer-box1"
+              class="ip-octet1 ip-octet"
+              id="virtual-ips-homer-octet1"
             />
             <input
               type="text"
               name="Virtual_IPs_Homer_field3"
-              class="Virtual-IPs-Homer-box2"
+              class="ip-octet2 ip-octet"
+              id="virtual-ips-homer-octet2"
             />
             <input
               type="text"
               name="Virtual_IPs_Homer_field2"
-              class="Virtual-IPs-Homer-box3"
+              class="ip-octet3 ip-octet"
+              id="virtual-ips-homer-octet3"
             />
             <input
               type="text"
               name="Virtual_IPs_Homer_field1"
-              class="Virtual-IPs-Homer-box4"
+              class="ip-octet4 ip-octet"
+              id="virtual-ips-homer-octet4"
             />
           </div>
-          <div class="Virtual-IPs-down-text">Used for monitoring SIP flows</div>
+          <div class="virtual-ips-down-text">Used for monitoring SIP flows</div>
         </div>
-        <button type="submit" class="Virtual-IPs-save-button">Save</button>
+        <button type="submit" class="virtual-ips-save-button">Save</button>
       </form>
     </div>
 
@@ -432,6 +513,21 @@
       </div>
     </div>
 
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
     <script src="jsfiles/topology.js"></script>
   </body>
 </html>
