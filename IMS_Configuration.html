@@ -63,31 +63,43 @@
     </div>
 
     <div class="exit">
-      <div class="exit-triangle"></div>
+      <div class="triangle"></div>
       <div class="exit-content">
         <p class="exit-staying">Close or Staying</p>
         <p class="exit-question">Do You want to close?</p>
-        <div class="exit-buttons">
-          <button class="exit-cancel-button">CANCEL</button>
-          <button class="exit-button">YES</button>
+        <div class="toolbar-buttons">
+          <button
+            class="toolbar-button toolbar-cancel-button"
+            id="exit-cancel-button"
+          >
+            CANCEL
+          </button>
+          <button class="toolbar-button" id="exit-confirm-button">YES</button>
         </div>
       </div>
     </div>
 
     <div class="log-out">
-      <div class="log-out-triangle"></div>
+      <div class="triangle"></div>
       <div class="log-out-content">
         <p class="log-out-title">loging out</p>
         <p class="log-out-question">Are You sure about loging out?</p>
-        <div class="log-out-buttons">
-          <button class="log-out-cancel-button">CANCEL</button>
-          <button class="log-out-button">YES</button>
+        <div class="toolbar-buttons">
+          <button
+            class="toolbar-button toolbar-cancel-button"
+            id="log-out-cancel-button"
+          >
+            CANCEL
+          </button>
+          <button class="toolbar-button" id="log-out-confirm-button">
+            YES
+          </button>
         </div>
       </div>
     </div>
 
     <div class="profile">
-      <div class="profile-triangle"></div>
+      <div class="triangle profile-triangle"></div>
       <div class="profile-content">
         <p class="saleh">
           <span>Saleh Zekavati</span>
@@ -123,67 +135,64 @@
       </div>
     </div>
 
+    <div class="show-error">
+      <div class="modal-header">
+        <span class="error-close-icon">&times;</span>
+      </div>
+      <div id="error-content">
+        <img src="images/success Icon.svg" class="error-logo" />
+        <p id="erroe-message">successfull message!</p>
+      </div>
+    </div>
+
     <div class="sidebar">
-      <div class="Account-info">
-        <img class="Account-info-img" src="images/img1.svg" />
-        <div class="Account-name">
-          <span class="Saleh-username">Saleh Zekavati</span>
-          <span class="username">username</span>
+      <div class="sidebar-account-info">
+        <img class="sidebar-account-info-image" src="images/img1.svg" />
+        <div class="sidebar-account-info-name">
+          <span class="sidebar-account-info-Saleh-username"
+            >Saleh Zekavati</span
+          >
+          <span class="sidebar-account-info-username">username</span>
         </div>
       </div>
 
       <button class="sidebar-button">Save & Restart</button>
 
-      <div class="Selection-Box-in-Menu">
-        <div class="topology-in-menu">
-          <a href="IMS_Topology.html" class="topology-in-menu-content">
-            <img
-              class="topology-in-menu-image"
-              src="images/Menu Icon _ Topology.svg"
-            />
+      <div class="sidebar-icons">
+        <div class="sidebar-topology-icon">
+          <div class="sidebar-selected-icon"></div>
+          <a href="IMS_Topology.html" class="sidebar-topology-icon-content">
+            <img class="sidebar-image" src="images/Menu Icon _ Topology.svg" />
             <span>TOPOLOGY</span>
           </a>
         </div>
 
-        <div class="configuration-in-menu">
-          <div class="selected-menu"></div>
+        <div class="sidebar-configuration-icon">
           <a
             href="IMS_Configuration.html"
-            class="configuration-in-menu-content"
+            class="sidebar-configuration-icon-content"
           >
             <img
-              class="configuration-in-menu-image"
+              class="sidebar-configuration-icon-image"
               src="images/Menu Icon _ Config.svg"
             />
             <span>CONFIGURATION</span>
           </a>
         </div>
 
-        <div class="monitoring-in-menu">
-          <a
-            href="IMS_Monitoring.html"
-            class="monitoring-in-menu-content"
-            target="_blank"
-          >
-            <img
-              class="monitoring-in-menu-image"
-              target="_blank"
-              src="images/Group 8329.svg"
-            />
+        <div class="sidebar-monitoring-icon">
+          <a class="sidebar-monitoring-icon-content">
+            <img class="sidebar-image" src="images/Group 8329.svg" />
             <span>MONITORING</span>
           </a>
         </div>
 
-        <div class="troubleshooting-in-menu">
+        <div class="sidebar-troubleshooting-icon">
           <a
             href="IMS_Troubleshooting.html"
-            target="_blank"
-            class="troubleshooting-in-menu-content"
+            class="sidebar-troubleshooting-icon-content"
           >
-            <img
-              class="troubleshooting-in-menu-image"
-              src="images/Group 8332.svg"
-            />
+            <img class="sidebar-image" src="images/Group 8332.svg" />
             <span>TROUBLESHOOTING</span>
           </a>
         </div>
@@ -191,16 +200,6 @@
 
       <div class="sidebar-logo">
         <img src="images/IMS_TOPOLOGY_images/Group 8498.svg" />
-      </div>
-    </div>
-
-    <div class="show-error">
-      <div class="modal-header">
-        <span class="error-close">&times;</span>
-      </div>
-      <div id="error-content">
-        <img src="images/success Icon.svg" class="error-logo" />
-        <p id="erroe-message">successfull message!</p>
       </div>
     </div>
 

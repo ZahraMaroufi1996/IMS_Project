@@ -42,24 +42,19 @@
 
 /* ////////////////////////////////////////////////////toolbar styles ///////////////////////////////////////////////////*/
 
-.toolbar-class {
-  /* width: 84.89vw; */
+.toolbar {
   height: 5.92vh;
   width: 100%;
-  background-color: green;
-  /* right: 0px;
-  top: 0px;
-  position: absolute; */
+  background-color: white;
 }
 
 .toolbar-nav-content {
   width: 23.62vw;
   height: 2.77vh;
-  background-color: red;
+  /* background-color: red; */
   /* margin-left: 4.66vw; */
-  margin-right: 0;
+  margin-left: 57vw;
   margin-top: 1.57vh;
-  /* position: absolute; */
   display: flex;
   justify-content: space-between;
 }
@@ -362,34 +357,25 @@
   width: 15.1vw;
   height: 100%;
   background-color: #1a4348;
-  /* left: 0px;
-  top: 0px;
-  position: absolute; */
 }
 
 .sidebar-account-info {
   width: 6.977vw;
   height: 12.96vh;
-  top: 8.33vh;
-  left: 4.088vw;
-  position: absolute;
+  margin-top: 8.33vh;
+  margin-left: 4.088vw;
+  /* background-color: red; */
   border-bottom: 0.092vh solid rgba(255, 255, 255, 0.25);
 }
 
 .sidebar-account-info-image {
   width: 3.33vw;
   height: 5.93vh;
-  right: 1.97vw;
-  top: 0;
-  position: absolute;
 }
 
 .sidebar-account-info-name {
   width: 4.79vw;
   height: 3.79vh;
-  top: 8.15vh;
-  left: 1.093vw;
-  position: absolute;
 }
 
 .sidebar-account-info-name span {
@@ -403,19 +389,12 @@
   text-align: right;
   width: 3.23vw;
   height: 1.76vh;
-  bottom: 0vh;
-  left: 0.78vw;
-  position: absolute;
-  text-align: start;
 }
 
 .sidebar-account-info-Saleh-username {
   color: #ffffff;
   width: 4.79vw;
   height: 1.76vh;
-  top: 0vh;
-  left: 0vw;
-  position: absolute;
 }
 
 .sidebar-logo {
@@ -435,9 +414,9 @@
   background-color: #68d5b0;
   width: 9.58vw;
   height: 3.7vh;
-  bottom: 27.13vh;
-  left: 3.64vw;
-  position: absolute;
+  margin-top: 6vh;
+  margin-left: 3.64vw;
+  /* position: absolute; */
   color: white;
   font-size: 1.66vh;
   border-radius: 7px;
@@ -445,11 +424,11 @@
 }
 
 .sidebar-topology-icon {
-  width: 15.1vw;
+  background-color: white;
+  /* width: 15.1vw; */
+  width: 100%;
   height: 7.13vh;
-  bottom: 69.54vh;
-  left: 0;
-  position: absolute;
+  margin-top: 9.81vh;
 }
 .sidebar-selected-icon {
   height: 7.13vh;
@@ -463,69 +442,43 @@
 .sidebar-topology-icon-content {
   width: 6.38vw;
   height: 2.77vh;
-  bottom: 2.14vh;
-  left: 3.71vw;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  /* background-color: red; */
 }
 
 .sidebar-configuration-icon {
-  width: 15.1vw;
+  background-color: white;
+  width: 100%;
   height: 7.13vh;
-  top: 34.44vh;
-  left: 0;
-  position: absolute;
+  margin-top: 20px;
 }
 
 .sidebar-configuration-icon-content {
   width: 8.88vw;
   height: 4.12vh;
-  bottom: 1.48vh;
-  left: 3.31vw;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .sidebar-monitoring-icon {
-  width: 15.1vw;
+  background-color: white;
+  width: 100%;
   height: 7.13vh;
-  bottom: 47.22vh;
-  left: 0;
-  position: absolute;
+  margin-top: 20px;
 }
 
 .sidebar-monitoring-icon-content {
   width: 7.18vw;
   height: 2.77vh;
-  bottom: 2.175vh;
-  left: 3.71vw;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .sidebar-troubleshooting-icon {
-  width: 15.1vw;
+  background-color: white;
+  width: 100%;
   height: 7.13vh;
-  bottom: 36.85vh;
-  left: 0;
-  position: absolute;
+  margin-top: 20px;
 }
 
 .sidebar-troubleshooting-icon-content {
   width: 9.89vw;
   height: 2.77vh;
-  bottom: 2.19vh;
-  left: 3.71vw;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .sidebar-icons span {
@@ -539,20 +492,17 @@
 .sidebar-configuration-icon-image {
   width: 2.31vw;
   height: 4.12vh;
-  left: 0;
+  /* left: 0;
   top: 0;
-  position: absolute;
+  position: absolute; */
 }
 
 .sidebar-image {
   height: 2.77vh;
   width: 1.56vw;
-  left: 0;
-  top: 0;
-  position: absolute;
 }
 
-.sidebar-icons a {
+.sidebar a {
   text-decoration: none;
 }
 
@@ -609,29 +559,25 @@
 .footer {
   background-color: white;
   width: 100%;
-  /* width: 84.89vw; */
   height: 4.63vh;
-  /* right: 0; */
-  /* bottom: 0; */
-  /* position: absolute; */
 }
 
 #time-box {
   width: 13.32vw;
   height: 3vh;
-  /* right: 4.7vw; */
-  /* top: 0.78vh; */
-  /* position: absolute; */
+  /* margin-right: 4.7vw; */
+  margin-left: 67vw;
+  margin-top: 0.78vh;
   border-left: 0.046vh solid #83a79a;
   border-right: 0.046vh solid #83a79a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #time-content {
   width: 10.46vw;
   height: 1.76vh;
-  /* left: 1.41vw; */
-  /* top: 0.46vh; */
-  /* position: absolute; */
   display: flex;
   justify-content: space-between;
   align-items: center;

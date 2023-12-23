@@ -212,7 +212,7 @@ let node_type_name = ["pcscf", "rtpProxy", "core"];
 let cur_node_type;
 let node_table_title = [];
 for (let i = 0; i < 3; i++) {
-  node_table_title[i] = document.querySelector(`.node-table-title${i + 1}`);
+  node_table_title[i] = document.getElementById(`node-table-title${i + 1}`);
   node_table_title[i].addEventListener("click", function (e) {
     e.preventDefault();
 
