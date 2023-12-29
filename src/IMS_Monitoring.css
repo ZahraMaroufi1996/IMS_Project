@@ -29,7 +29,7 @@
 }
 
 /*/////////////////////////////////// main body //////////////////////////////////////// */
-
+/* 
 .main-body-class {
   width: 78.75vw;
   height: 84.26vh;
@@ -38,7 +38,7 @@
   position: absolute;
   background-color: white;
   border-radius: 1.85vh;
-}
+} */
 
 /* ////////////////////////////////////////////////////toolbar styles ///////////////////////////////////////////////////*/
 
@@ -492,9 +492,6 @@
 .sidebar-configuration-icon-image {
   width: 2.31vw;
   height: 4.12vh;
-  /* left: 0;
-  top: 0;
-  position: absolute; */
 }
 
 .sidebar-image {

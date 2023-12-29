@@ -3,8 +3,254 @@
   height: 100vh;
 }
 
-/*/////////////////////////////////// main body //////////////////////////////////////// */
+.main-body {
+  height: 100%;
+  flex: 1;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+}
 
+
+.content {
+  background-color: #f9f9f9;
+  flex: 1;
+}
+
+/* ////////////////////////////////////////////////////toolbar styles ///////////////////////////////////////////////////*/
+
+.toolbar {
+  height: 5.92vh;
+  width: 100%;
+  background-color: white;
+}
+
+.toolbar-nav-content {
+  width: 23.62vw;
+  height: 2.77vh;
+  /* background-color: red; */
+  /* margin-left: 4.66vw; */
+  margin-left: 57vw;
+  margin-top: 1.57vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.toolbar-nav-content img {
+  width: 1.56vw;
+  height: 2.77vh;
+}
+
+
+/*/////////////////////////////////// sidebar styles////////////////////////////////////////////////////////////// */
+
+.sidebar {
+  width: 15.1vw;
+  height: 100%;
+  background-color: #1a4348;
+}
+
+.sidebar-account-info {
+  width: 6.977vw;
+  height: 12.96vh;
+  margin-top: 8.33vh;
+  margin-left: 4.088vw;
+  /* background-color: red; */
+  border-bottom: 0.092vh solid rgba(255, 255, 255, 0.25);
+}
+
+.sidebar-account-info-image {
+  width: 3.33vw;
+  height: 5.93vh;
+}
+
+.sidebar-account-info-name {
+  width: 4.79vw;
+  height: 3.79vh;
+}
+
+.sidebar-account-info-name span {
+  font-size: 1.296vh;
+  font-family: "FiraGO", sans-serif;
+  line-height: 1.76vh;
+}
+
+.sidebar-account-info-username {
+  color: #a6d4c4;
+  text-align: right;
+  width: 3.23vw;
+  height: 1.76vh;
+}
+
+.sidebar-account-info-Saleh-username {
+  color: #ffffff;
+  width: 4.79vw;
+  height: 1.76vh;
+}
+
+.sidebar-logo {
+  width: 6.98vw;
+  height: 8.24vh;
+  bottom: 6.48vh;
+  left: 4.06vw;
+  position: absolute;
+}
+
+.sidebar-logo img {
+  width: 100%;
+  height: 100%;
+}
+
+.sidebar-button {
+  background-color: #68d5b0;
+  width: 9.58vw;
+  height: 3.7vh;
+  margin-top: 6vh;
+  margin-left: 3.64vw;
+  /* position: absolute; */
+  color: white;
+  font-size: 1.66vh;
+  border-radius: 7px;
+  border: none;
+}
+
+.sidebar-topology-icon {
+  background-color: white;
+  /* width: 15.1vw; */
+  width: 100%;
+  height: 7.13vh;
+  margin-top: 9.81vh;
+}
+.sidebar-selected-icon {
+  height: 7.13vh;
+  width: 0.625vw;
+  left: 0;
+  top: 0;
+  position: absolute;
+  background-color: #68d5b0;
+}
+
+.sidebar-topology-icon-content {
+  width: 6.38vw;
+  height: 2.77vh;
+  /* background-color: red; */
+}
+
+.sidebar-configuration-icon {
+  background-color: white;
+  width: 100%;
+  height: 7.13vh;
+  margin-top: 20px;
+}
+
+.sidebar-configuration-icon-content {
+  width: 8.88vw;
+  height: 4.12vh;
+}
+
+.sidebar-monitoring-icon {
+  background-color: white;
+  width: 100%;
+  height: 7.13vh;
+  margin-top: 20px;
+}
+
+.sidebar-monitoring-icon-content {
+  width: 7.18vw;
+  height: 2.77vh;
+}
+
+.sidebar-troubleshooting-icon {
+  background-color: white;
+  width: 100%;
+  height: 7.13vh;
+  margin-top: 20px;
+}
+
+.sidebar-troubleshooting-icon-content {
+  width: 9.89vw;
+  height: 2.77vh;
+}
+
+.sidebar-icons span {
+  color: white;
+  font-size: 1.48vh;
+  padding-left: 12px;
+  font-family: "FiraGO", sans-serif;
+  text-align: center;
+}
+
+.sidebar-configuration-icon-image {
+  width: 2.31vw;
+  height: 4.12vh;
+}
+
+.sidebar-image {
+  height: 2.77vh;
+  width: 1.56vw;
+}
+
+.sidebar a {
+  text-decoration: none;
+}
+
+
+
+/* ////////////////////////////////////// footer styles /////////////////////////////////////////////////////*/
+.footer {
+  background-color: white;
+  width: 100%;
+  height: 4.63vh;
+}
+
+#time-box {
+  width: 13.32vw;
+  height: 3vh;
+  /* margin-right: 4.7vw; */
+  margin-left: 67vw;
+  margin-top: 0.78vh;
+  border-left: 0.046vh solid #83a79a;
+  border-right: 0.046vh solid #83a79a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#time-content {
+  width: 10.46vw;
+  height: 1.76vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#time-content span {
+  color: #83a79a;
+  font-size: 1.58vh;
+  font-family: "FiraGO", sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* /////////////////////////// previous styles /////////////////////////////////////*/
+
+/* 
+.IMS-body {
+  background-color: rgba(0, 0, 0, 0.04);
+  height: 100vh;
+} */
+
+/*/////////////////////////////////// main body //////////////////////////////////////// */
+/* 
 .main-body-class {
   width: 78.75vw;
   height: 84.26vh;
@@ -13,20 +259,20 @@
   position: absolute;
   background-color: white;
   border-radius: 1.85vh;
-}
+} */
 
 /* ////////////////////////////////////////////////////toolbar styles ///////////////////////////////////////////////////*/
 
-.toolbar-class {
+/* .toolbar-class {
   width: 84.89vw;
   height: 5.92vh;
   background-color: white;
   right: 0px;
   top: 0px;
   position: absolute;
-}
+} */
 
-.toolbar-nav-content {
+/* .toolbar-nav-content {
   width: 23.62vw;
   height: 2.77vh;
   right: 4.66vw;
@@ -115,16 +361,15 @@
   top: 5.37vh;
   position: fixed;
   z-index: 1;
-}
+} */
 
-.triangle {
+/* .triangle {
   width: 0;
   height: 0;
   border: 0.49vw solid transparent;
   border-top: 0;
   border-bottom: 1.32vh solid #374775;
   top: 0vh;
-  /* right: 2.79vw; */
   right: 4.125vw;
   position: absolute;
 }
@@ -141,8 +386,7 @@
   position: absolute;
   background-color: #374775;
   border-radius: 1.38vh;
-  /* opacity: 90%; */
-}
+} */
 
 /* .log-out-buttons {
   width: 15.73vw;
@@ -171,7 +415,7 @@
   opacity: 100%;
 } */
 
-.log-out-title {
+/* .log-out-title {
   color: white;
   font-size: 1.29vh;
   font-family: "FiraGO", sans-serif;
@@ -326,11 +570,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
 /*/////////////////////////////////// sidebar styles////////////////////////////////////////////////////////////// */
 
-.sidebar {
+/* .sidebar {
   width: 15.1vw;
   height: 100%;
   background-color: #1a4348;
@@ -526,11 +770,11 @@
 
 .sidebar-icons a {
   text-decoration: none;
-}
+} */
 
 /* /////////////////////////////////////////////////////// error styles///////////////////////////////////////////// */
 
-.show-error {
+/* .show-error {
   z-index: 1;
   width: 20.83vw;
   height: 9.26vh;
@@ -575,10 +819,10 @@
 .error-logo {
   width: 1.042vw;
   height: 1.85vh;
-}
+} */
 
 /* ////////////////////////////////////// footer styles /////////////////////////////////////////////////////*/
-.footer {
+/* .footer {
   background-color: white;
   width: 84.89vw;
   height: 4.63vh;
@@ -612,10 +856,10 @@
   color: #83a79a;
   font-size: 1.58vh;
   font-family: "FiraGO", sans-serif;
-}
+} */
 
 /* ////////////////////////////////////////General checkboxes styles////////////////////////////////// */
-.chb {
+/* .chb {
   visibility: hidden;
 }
 
@@ -649,25 +893,25 @@
 .chb-1:checked + label::before,
 .chb-1-circle:checked + label::before {
   background-color: #68d5b0;
-}
+} */
 
 /* ///////////////////////////////////////// slider styles///////////////////////////////////// */
-.switch {
+/* .switch {
   position: relative;
   display: inline-block;
   width: 1.77vw;
   height: 1.66vh;
-}
+} */
 
 /* Hide default HTML checkbox */
-.switch input {
+/* .switch input {
   opacity: 0;
   width: 0px;
   height: 0px;
-}
+} */
 
 /* The slider */
-.slider {
+/* .slider {
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -675,9 +919,9 @@
   right: 0;
   bottom: 0;
   background-color: #68d5b0;
-}
+} */
 
-.slider:before {
+/* .slider:before {
   position: absolute;
   content: "";
   height: 0.972vh;
@@ -715,29 +959,29 @@ input:checked + .slider:before {
   color: #1a4348;
   font-size: 1.48vh;
   font-family: "FiraGO", sans-serif;
-}
+} */
 
 /*/////////////////////////// General Network Configs////////////////////////////////// */
-.ip-octet {
+ .ip-octet {
   width: 2.604vw;
   height: 3.7vh;
-  position: absolute;
+  /* position: absolute; */
   border-radius: 0.65vh;
   background-color: #eef5f2;
 }
 
-.ip-octet1 {
-  right: 0vw;
+/* .ip-octet1 {
+  margin-right: 0vw;
 }
 
 .ip-octet2 {
-  right: 3.125vw;
+  margin-right: 3.125vw;
 }
 
 .ip-octet3 {
-  right: 6.25vw;
+ margin-right: 6.25vw;
 }
 
 .ip-octet4 {
-  right: 9.43vw;
-}
+  margin-right: 9.43vw;
+}  */

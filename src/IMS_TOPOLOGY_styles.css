@@ -1,16 +1,173 @@
-.IMS-TOPOLOGY-body {
+.network-class {
+  background-color: red;
+  width: 78.75vw;
+  height: 9.35vh;
+  /* right: 4.69vw; */
+  margin-left: 1.45vw;
+  margin-top: 2.6vh;
+  /* position: absolute; */
+  border-radius: 20px;
+}
+
+
+/* /////////////////////////////////////////// */
+.node {
+  background-color: red;
+  margin-left: 1.45vw;
+  margin-top: 2.6vh;
+  width: 47.39vw;
+  height: 72.31vh;
+  /* right: 36.04vw;
+  top: 20.46vh;
+  position: absolute; */
+  border-radius: 1.85vh;
+}
+
+
+.virtual-ips {
+  background-color: red;
+  width: 29.89vw;
+  height: 72.31vh;
+  margin-left: 1.45vw;
+  margin-top: 2.6vh;
+  /* right: 4.68vw;
+  top: 20.46vh;
+  position: absolute; */
+  border-radius: 20px;
+}
+
+
+.network-definition {
+  background-color: white;
+  width: 48.91vw;
+  height: 3.7vh;
+  margin-left: 1.19vw;
+  /* margin-top: 2.82vh; */
+  margin-bottom: 0;
+  padding-bottom: 0;
+ 
+}
+
+
+.network-definition-subnetmask {
+  background-color: blueviolet;
+  width: 17.81vw;
+  height: 3.7vh;
+}
+
+.network-definition-gateway {
+   background-color: blueviolet;
+  width: 16.2vw;
+  height: 3.7vh;
+}
+
+.network-definition span {
+  color: #83a79a;
+  font-size: 1.66vh;
+  text-align: center;
+} 
+
+
+label,
+.node span,
+.network-class span {
+  color: #1a4348;
+  font-size: 1.48vh;
+  font-family: "FiraGO", sans-serif;
+}
+
+
+
+ .network-definition-button {
+  width: 7.29vw;
+  height: 3.7vh;
+  margin-left: 19.9vw;
+  margin-top: 2.87vh;
+  border-style: none;
+  border-radius: 0.65vh;
+  background-color: #1f666e;
+  color: white;
+}
+
+.virtual-ips-title {
+  background-color: #1f666e;
+  width: 11.98vw;
+  height: 2.22vh;
+  margin-top: 3.7vh;
+  margin-left:1.35vw;
+  /* left: 1.35vw;
+  top: 3.7vh; */
+  /* position: absolute; */
+  color: #83a79a;
+  font-size: 1.66vh;
+  font-family: "FiraGO", sans-serif;
+} 
+
+.virtual-ips-content {
+  background-color: green;
+  width: 27.083vw;
+  height: 6.29vh;
+  margin-left: 1.46vw;
+  margin-top: 2.22vh;
+  border-radius: 0.65vh;
+}
+
+
+.virtual-ips-main-text {
+  background-color: aqua;
+  color: #1a4348;
+  font-size: 1.66vh;
+  font-family: "FiraGO", sans-serif;
+  margin-left: 0vw;
+  margin-top: 0.64vh;
+  /* position: absolute; */
+}
+
+.virtual-ips-down-text {
+  background-color: aqua;
+  color: #1f666e;
+  font-size: 1.48vh;
+  font-family: "FiraGO", sans-serif;
+  margin-left: 0vw;
+  margin-bottom: 0vh;
+  /* position: absolute; */
+}
+
+
+.virtual-ips-boxes{
+  background-color: black;
+  margin-right: 0vw;
+  margin-top: 0vh;
+  width: 12.03vw;
+  height: 3.70vh;
+} 
+
+.virtual-ips-save-button {
+  width: 7.29vw;
+  height: 3.7vh;
+  margin-top: 33.88vh;
+  margin-left: 21.15vw;
+  border-style: none;
+  border-radius: 0.65vh;
+  background-color: #1f666e;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .IMS-TOPOLOGY-body {
   background-color: rgba(0, 0, 0, 0.04);
 }
 
-.network-class {
-  background-color: white;
-  width: 78.75vw;
-  height: 9.35vh;
-  right: 4.69vw;
-  top: 8.52vh;
-  position: absolute;
-  border-radius: 20px;
-}
 
 .network-definition {
   width: 48.91vw;
@@ -43,7 +200,7 @@
   text-align: center;
   top: 0.55vh;
   position: absolute;
-}
+} */
 
 /* .subnetmask-boxes,
 .gateway-boxes,
@@ -53,7 +210,7 @@
  display: flex; 
 } */
 
-.network-definition-button {
+/* .network-definition-button {
   width: 7.29vw;
   height: 3.7vh;
   right: 1.45vw;
@@ -517,4 +674,4 @@ input[type="text"] {
   color: #83a79a;
   font-size: 1.66vh;
   font-family: "FiraGO", sans-serif;
-}
+} */
