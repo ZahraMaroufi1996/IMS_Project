@@ -31,7 +31,7 @@ function load_page() {
 
       for (let i = 0; i < 4; i++) {
         Subnetmask[i] = document.getElementById(
-          `network-definition-subnetmask-octet${4 - i}`
+          `network-definition-subnetmask-octet${i}`
         );
         Subnetmask[i].setAttribute(
           "value",
@@ -39,7 +39,7 @@ function load_page() {
         );
 
         Gateway[i] = document.getElementById(
-          `network-definition-gateway-octet${4 - i}`
+          `network-definition-gateway-octet${i}`
         );
         Gateway[i].setAttribute(
           "value",
@@ -109,6 +109,8 @@ Network_Definition_form.addEventListener("submit", function (e) {
     Gateway: gateway.join("."),
   };
   hasMessage = false;
+  console.log(final_formdata);
+
   result = fetch(`${url}/api/topology/networkDefinition`, {
     method: "POST",
     headers: {

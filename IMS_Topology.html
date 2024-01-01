@@ -156,6 +156,7 @@
         class="sidebar-monitoring-icon d-flex justify-content-center align-items-center"
       >
         <a
+          href="IMS_Monitoring.html"
           class="sidebar-monitoring-icon-content d-flex justify-content-center align-items-center"
         >
           <img class="sidebar-image" src="images/Group 8329.svg" />
@@ -217,120 +218,128 @@
       </nav>
 
       <div class="content">
-        <div class="network-class">
-        <form id="network-definition-form" class="d-flex flex-row align-items-center">
-        <div class="network-definition d-flex flex-row justify-content-between align-items-center">
-          <span class="title-span">Network Definition</span>
-          <div class="network-definition-subnetmask d-flex flex-row justify-content-between align-items-center">
-            <span>Subnet Mask</span>
-            <!-- <div class="network-definition-subnetmask-boxes"> -->
-              <input
-                type="text"
-                name="subnetmask_field4"
-                class="ip-octet"
-                id="network-definition-subnetmask-octet1"
-              />
+        <div class="network">
+          <form
+            id="network-definition-form"
+            class="d-flex flex-row align-items-center"
+          >
+            <div
+              class="network-definition d-flex flex-row justify-content-between align-items-center"
+            >
+              <span class="title-span">Network Definition</span>
+              <div
+                class="network-definition-subnetmask d-flex flex-row justify-content-between align-items-center"
+              >
+                <span>Subnet Mask</span>
 
-              <input
-                type="text"
-                name="subnetmask_field3"
-                class="ip-octet"
-                id="network-definition-subnetmask-octet2"
-              />
+                <input
+                  type="text"
+                  name="subnetmask_field1"
+                  class="ip-octet"
+                  id="network-definition-subnetmask-octet1"
+                />
 
-              <input
-                type="text"
-                name="subnetmask_field2"
-                class="ip-octet"
-                id="network-definition-subnetmask-octet3"
-              />
-              <input
-                type="text"
-                name="subnetmask_field1"
-                class="ip-octet"
-                id="network-definition-subnetmask-octet4"
-              />
-            <!-- </div> -->
-          </div>
+                <input
+                  type="text"
+                  name="subnetmask_field2"
+                  class="ip-octet"
+                  id="network-definition-subnetmask-octet2"
+                />
 
-          <div class="network-definition-gateway d-flex flex-row justify-content-between align-items-center">
-            <span>Gateway</span>
-            <!-- <div class="network-definition-gateway-boxes"> -->
-              <input
-                type="text"
-                name="gateway_field4"
-                class="ip-octet"
-                id="network-definition-gateway-octet1"
-              />
-              <input
-                type="text"
-                name="gateway_field3"
-                class="ip-octet"
-                id="network-definition-gateway-octet2"
-              />
-              <input
-                type="text"
-                name="gateway_field2"
-                class="ip-octet"
-                id="network-definition-gateway-octet3"
-              />
-              <input
-                type="text"
-                name="gateway_field1"
-                class="ip-octet"
-                id="network-definition-gateway-octet4"
-              />
-            <!-- </div> -->
-          </div> 
+                <input
+                  type="text"
+                  name="subnetmask_field3"
+                  class="ip-octet"
+                  id="network-definition-subnetmask-octet3"
+                />
+                <input
+                  type="text"
+                  name="subnetmask_field4"
+                  class="ip-octet"
+                  id="network-definition-subnetmask-octet4"
+                />
+              </div>
+
+              <div
+                class="network-definition-gateway d-flex flex-row justify-content-between align-items-center"
+              >
+                <span>Gateway</span>
+                <input
+                  type="text"
+                  name="gateway_field1"
+                  class="ip-octet"
+                  id="network-definition-gateway-octet1"
+                />
+                <input
+                  type="text"
+                  name="gateway_field2"
+                  class="ip-octet"
+                  id="network-definition-gateway-octet2"
+                />
+                <input
+                  type="text"
+                  name="gateway_field3"
+                  class="ip-octet"
+                  id="network-definition-gateway-octet3"
+                />
+                <input
+                  type="text"
+                  name="gateway_field4"
+                  class="ip-octet"
+                  id="network-definition-gateway-octet4"
+                />
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              class="network-definition-button topology-buttton"
+            >
+              Set
+            </button>
+          </form>
         </div>
 
-        
-        <button type="submit" class="network-definition-button">Set</button>
-       </form>
-      </div>
-
-
-
-        <div class="node d-inline-block">
-          <!-- <form id="add-node-form">
-            <div class="node-properties">
-              <span class="title-span">Nodes IP Addresses</span>
-              <div class="node-name">
+        <div class="d-flex flex-row">
+          <div class="node d-flex flex-column">
+            <form id="add-node-form" class="node-properties">
+              <span class="add-node-title">Nodes IP Addresses</span>
+              <div class="node-name d-flex flex-row justify-content-between align-items-center">
                 <span>Name</span>
                 <input type="text" name="node_name" class="node-name-box" />
               </div>
 
-              <div class="node-ip">
+              <div class="node-ip d-flex flex-row justify-content-between align-items-center">
                 <span>IP Address</span>
-                <div class="node-boxes">
                   <input
                     type="text"
                     name="IP_Address_field4"
-                    class="ip-octet1 ip-octet"
+                    class="ip-octet"
                     id="node-ip-octet1"
                   />
                   <input
                     type="text"
                     name="IP_Address_field3"
-                    class="ip-octet2 ip-octet"
+                    class="ip-octet"
                     id="node-ip-octet2"
                   />
                   <input
                     type="text"
                     name="IP_Address_field2"
-                    class="ip-octet3 ip-octet"
+                    class="ip-octet"
                     id="node-ip-octet3"
                   />
                   <input
                     type="text"
                     name="IP_Address_field1"
-                    class="ip-octet4 ip-octet"
+                    class="ip-octet"
                     id="node-ip-octet4"
                   />
-                </div>
-              </div>
+                  </div> 
 
-              <div class="node-type">
+
+
+               <!-- <div class="node-type"> 
                 <span>Node Types :</span>
                 <div class="node-type-checkboxes">
                   <div class="node-type-core-checkbox">
@@ -363,49 +372,102 @@
                     />
                     <label for="node-type-3">P-CSCF</label>
                   </div>
-                </div>
-              </div>
-              <button type="submit" class="add-node-button">Add Node</button>
-            </div>
-          </form> -->
+                < /div>
+              </div>  -->
+              <!-- <button type="submit" class="add-node-button">Add Node</button>  -->
+              </form>
 
-          <!-- <div class="node-table">
-            <div class="node-table-titles">
-              <div
-                class="node-table-pcscf-title node-table-title"
-                id="node-table-title1"
-              >
-                <p>P-CSCF Nodes</p>
-              </div>
-              <div
-                class="node-table-rtp-proxy-title node-table-title"
-                id="node-table-title2"
-              >
-                <p>RTP Proxy Nodes</p>
-              </div>
-              <div
-                class="node-table-core-title node-table-title"
-                id="node-table-title3"
-              >
-                <p>Core Nodes</p>
-              </div>
-            </div>
+            <table class="node-table">
+              <tr class="d-flex flex-row justify-content-around">
+                <th
+                  class="node-table-title d-flex justify-content-center align-items-center"
+                >
+                  P-CSCF Nodes
+                </th>
+                <th
+                  class="node-table-title d-flex justify-content-center align-items-center"
+                >
+                  RTP Proxy Nodes
+                </th>
+                <th
+                  class="node-table-title d-flex justify-content-center align-items-center"
+                >
+                  Core Nodes
+                </th>
+              </tr>
 
-            <div class="node-table-content-title">
-              <div class="node-table-content-title-description">
-                <span>Node Name</span>
-                <span>IP Address</span>
-                <span>Status</span>
-              </div>
-            </div>
+              <tr class="d-flex flex-row justify-content-center">
+                <th class="node-table-title d-flex flex-row align-items-center">
+                  <span> Node Name </span>
+                </th>
+                <th class="node-table-title d-flex flex-row align-items-center">
+                  <span> IP Address </span>
+                </th>
+                <th class="node-table-title d-flex flex-row align-items-center">
+                  <span> Status </span>
+                </th>
+              </tr>
 
-            <div id="node-table-contents"></div>
-          </div> -->
+              <tr id="node-table-contents">
+                <td>
+                  <div class="node-table-content">
+                    <form
+                      id="1edit-form"
+                      class="d-flex flex-row justify-content-between align-items-center"
+                    >
+                      <input
+                        type="text"
+                        id="pname"
+                        class="node-table-content-name"
+                        value="aaaa"
+                        disabled
+                      />
+                      <input
+                        type="text"
+                        id="pip"
+                        class="node-table-content-ip"
+                        value="bbbb"
+                        disabled
+                      />
+                      <input
+                        type="text"
+                        id="pstatus"
+                        class="node-table-content-status"
+                        value="cccc"
+                        disabled
+                      />
+                      <div class="node-table-content-icon d-flex flex-row">
+                        <img
+                          class="pencil p-1"
+                          id="${q.id}p"
+                          src="images/IMS_TOPOLOGY_images/pencil.svg"
+                        />
+                        <img
+                          class="trash p-1"
+                          id="${q.id}"
+                          src="images/IMS_TOPOLOGY_images/trash-simple.svg"
+                        />
+                        <img
+                          class="tick p-1"
+                          id="${q.id}pt"
+                          src="images/IMS_TOPOLOGY_images/tick.svg"
+                        />
+                        <img
+                          class="close"
+                          id="${q.id}pc"
+                          src="images/IMS_TOPOLOGY_images/close.svg"
+                        />
+                      </div>
+                    </form>
+                  </div>
+                </td>
+              </tr>
+            </table>
 
-          <!-- <button class="save-node-button">Save</button> -->
-        </div>
+            <button class="save-node-button topology-buttton">Save</button>
+          </div>
 
-        <!-- <div id="modal">
+          <!-- <div id="modal">
           <div class="modal-content">
             <div class="modal-header">
               <span class="modal-close">&times;</span>
@@ -422,115 +484,144 @@
           </div>
         </div> -->
 
-        <div class="virtual-ips d-inline-block">
-          <form id="virtual-ips-form">
-            <div class="virtual-ips-title">Virtual IPs for Load Balancers</div>
-
-            <div class="virtual-ips-database virtual-ips-content">
-              <span class="virtual-ips-main-text">Database Virtual IP*</span>
-              <div class="virtual-ips-boxes d-inline-block">
-                <input
-                  type="text"
-                  name="Virtual_IPs_Database_field4"
-                  class="ip-octet1 ip-octet"
-                  id="virtual-ips-database-octet1"
-                />
-                <input
-                  type="text"
-                  name="Virtual_IPs_Database_field3"
-                  class="ip-octet2 ip-octet"
-                  id="virtual-ips-database-octet2"
-                />
-                <input
-                  type="text"
-                  name="Virtual_IPs_Database_field2"
-                  class="ip-octet3 ip-octet"
-                  id="virtual-ips-database-octet3"
-                />
-                <input
-                  type="text"
-                  name="Virtual_IPs_Database_field1"
-                  class="ip-octet4 ip-octet"
-                  id="virtual-ips-database-octet4"
-                />
+          <div class="virtual-ips">
+            <form id="virtual-ips-form">
+              <div class="virtual-ips-title">
+                Virtual IPs for Load Balancers
               </div>
-              <div class="virtual-ips-down-text">
-                Main database used by IMS services
+
+              <div class="virtual-ips-database virtual-ips-content">
+                <div
+                  class="d-flex flex-row justify-content-between align-items-center"
+                >
+                  <span class="virtual-ips-main-text"
+                    >Database Virtual IP*</span
+                  >
+                  <div
+                    class="virtual-ips-boxes d-flex flex-row justify-content-between align-items-center"
+                  >
+                    <input
+                      type="text"
+                      name="Virtual_IPs_Database_field4"
+                      class="ip-octet1 ip-octet"
+                      id="virtual-ips-database-octet1"
+                    />
+                    <input
+                      type="text"
+                      name="Virtual_IPs_Database_field3"
+                      class="ip-octet2 ip-octet"
+                      id="virtual-ips-database-octet2"
+                    />
+                    <input
+                      type="text"
+                      name="Virtual_IPs_Database_field2"
+                      class="ip-octet3 ip-octet"
+                      id="virtual-ips-database-octet3"
+                    />
+                    <input
+                      type="text"
+                      name="Virtual_IPs_Database_field1"
+                      class="ip-octet4 ip-octet"
+                      id="virtual-ips-database-octet4"
+                    />
+                  </div>
+                </div>
+
+                <div class="virtual-ips-down-text">
+                  Main database used by IMS services
+                </div>
               </div>
-            </div>
 
+              <div class="virtual-ips-dns-server virtual-ips-content">
+                <div
+                  class="d-flex flex-row justify-content-between align-items-center"
+                >
+                  <span class="virtual-ips-main-text"
+                    >DNS Server Virtual IP*</span
+                  >
 
-            <div class="virtual-ips-dns-server virtual-ips-content">
-              <span class="virtual-ips-main-text">DNS Server Virtual IP*</span>
-              <div class="virtual-ips-boxes d-inline-block">
-                <input
-                  type="text"
-                  name="Virtual_IPs_DNSserver_field4"
-                  class="ip-octet1 ip-octet"
-                  id="virtual-ips-dns-server-octet1"
-                />
-                <input
-                  type="text"
-                  name="Virtual_IPs_DNSserver_field3"
-                  class="ip-octet2 ip-octet"
-                  id="virtual-ips-dns-server-octet2"
-                />
-                <input
-                  type="text"
-                  name="Virtual_IPs_DNSserver_field2"
-                  class="ip-octet3 ip-octet"
-                  id="virtual-ips-dns-server-octet3"
-                />
-                <input
-                  type="text"
-                  name="Virtual_IPs_DNSserver_field1"
-                  class="ip-octet4 ip-octet"
-                  id="virtual-ips-dns-server-octet4"
-                />
+                  <div
+                    class="virtual-ips-boxes d-flex flex-row justify-content-between align-items-center"
+                  >
+                    <input
+                      type="text"
+                      name="Virtual_IPs_DNSserver_field4"
+                      class="ip-octet1 ip-octet"
+                      id="virtual-ips-dns-server-octet1"
+                    />
+                    <input
+                      type="text"
+                      name="Virtual_IPs_DNSserver_field3"
+                      class="ip-octet2 ip-octet"
+                      id="virtual-ips-dns-server-octet2"
+                    />
+                    <input
+                      type="text"
+                      name="Virtual_IPs_DNSserver_field2"
+                      class="ip-octet3 ip-octet"
+                      id="virtual-ips-dns-server-octet3"
+                    />
+                    <input
+                      type="text"
+                      name="Virtual_IPs_DNSserver_field1"
+                      class="ip-octet4 ip-octet"
+                      id="virtual-ips-dns-server-octet4"
+                    />
+                  </div>
+                </div>
+
+                <div class="virtual-ips-down-text">
+                  Internal DNS server used by IMS services
+                </div>
               </div>
-              <div class="virtual-ips-down-text">
-                Internal DNS server used by IMS services
+
+              <div class="virtual-ips-homer virtual-ips-content">
+                <div
+                  class="d-flex flex-row justify-content-between align-items-center"
+                >
+                  <span class="virtual-ips-main-text">Homer Virtual IP*</span>
+                  <div
+                    class="virtual-ips-boxes d-flex flex-row justify-content-between align-items-center"
+                  >
+                    <input
+                      type="text"
+                      name="Virtual_IPs_Homer_field4"
+                      class="ip-octet1 ip-octet"
+                      id="virtual-ips-homer-octet1"
+                    />
+                    <input
+                      type="text"
+                      name="Virtual_IPs_Homer_field3"
+                      class="ip-octet2 ip-octet"
+                      id="virtual-ips-homer-octet2"
+                    />
+                    <input
+                      type="text"
+                      name="Virtual_IPs_Homer_field2"
+                      class="ip-octet3 ip-octet"
+                      id="virtual-ips-homer-octet3"
+                    />
+                    <input
+                      type="text"
+                      name="Virtual_IPs_Homer_field1"
+                      class="ip-octet4 ip-octet"
+                      id="virtual-ips-homer-octet4"
+                    />
+                  </div>
+                </div>
+                <div class="virtual-ips-down-text">
+                  Used for monitoring SIP flows
+                </div>
               </div>
-            </div>
 
-
-
-
-            <div class="virtual-ips-homer virtual-ips-content">
-              <span class="virtual-ips-main-text">Homer Virtual IP*</span>
-              <div class="virtual-ips-boxes d-inline-block">
-                <input
-                  type="text"
-                  name="Virtual_IPs_Homer_field4"
-                  class="ip-octet1 ip-octet"
-                  id="virtual-ips-homer-octet1"
-                />
-                <input
-                  type="text"
-                  name="Virtual_IPs_Homer_field3"
-                  class="ip-octet2 ip-octet"
-                  id="virtual-ips-homer-octet2"
-                />
-                <input
-                  type="text"
-                  name="Virtual_IPs_Homer_field2"
-                  class="ip-octet3 ip-octet"
-                  id="virtual-ips-homer-octet3"
-                />
-                <input
-                  type="text"
-                  name="Virtual_IPs_Homer_field1"
-                  class="ip-octet4 ip-octet"
-                  id="virtual-ips-homer-octet4"
-                />
-              </div>
-              <div class="virtual-ips-down-text">
-                Used for monitoring SIP flows
-              </div>
-            </div>
-
-            <button type="submit" class="virtual-ips-save-button">Save</button>
-          </form>
+              <button
+                type="submit"
+                class="virtual-ips-save-button topology-buttton"
+              >
+                Save
+              </button>
+            </form>
+          </div>
         </div>
       </div>
 
@@ -545,77 +636,7 @@
       </div>
     </div>
 
-    <!-- <div class="network-class">
-      <form id="network-definition-form">
-        <div class="network-definition">
-          <span class="title-span">Network Definition</span>
-          <div class="network-definition-subnetmask">
-            <span>Subnet Mask</span>
-            <div class="network-definition-subnetmask-boxes">
-              <input
-                type="text"
-                name="subnetmask_field4"
-                class="ip-octet1 ip-octet"
-                id="network-definition-subnetmask-octet1"
-              />
-
-              <input
-                type="text"
-                name="subnetmask_field3"
-                class="ip-octet2 ip-octet"
-                id="network-definition-subnetmask-octet2"
-              />
-
-              <input
-                type="text"
-                name="subnetmask_field2"
-                class="ip-octet3 ip-octet"
-                id="network-definition-subnetmask-octet3"
-              />
-              <input
-                type="text"
-                name="subnetmask_field1"
-                class="ip-octet4 ip-octet"
-                id="network-definition-subnetmask-octet4"
-              />
-            </div>
-          </div>
-
-          <div class="network-definition-gateway">
-            <span>Gateway</span>
-            <div class="network-definition-gateway-boxes">
-              <input
-                type="text"
-                name="gateway_field4"
-                class="ip-octet1 ip-octet"
-                id="network-definition-gateway-octet1"
-              />
-              <input
-                type="text"
-                name="gateway_field3"
-                class="ip-octet2 ip-octet"
-                id="network-definition-gateway-octet2"
-              />
-              <input
-                type="text"
-                name="gateway_field2"
-                class="ip-octet3 ip-octet"
-                id="network-definition-gateway-octet3"
-              />
-              <input
-                type="text"
-                name="gateway_field1"
-                class="ip-octet4 ip-octet"
-                id="network-definition-gateway-octet4"
-              />
-            </div>
-          </div>
-        </div>
-        <button type="submit" class="network-definition-button">Set</button>
-      </form>
-    </div>
-
-    <div class="node">
+    <!--<div class="node">
       <form id="add-node-form">
         <div class="node-properties">
           <span class="title-span">Nodes IP Addresses</span>
@@ -745,109 +766,6 @@
         </div>
       </div>
     </div>
-
-    <div class="virtual-ips">
-      <form id="virtual-ips-form">
-        <div class="virtual-ips-title">Virtual IPs for Load Balancers</div>
-        <div class="virtual-ips-database">
-          <div class="virtual-ips-main-text">Database Virtual IP*</div>
-          <div class="virtual-ips-database-boxes">
-            <input
-              type="text"
-              name="Virtual_IPs_Database_field4"
-              class="ip-octet1 ip-octet"
-              id="virtual-ips-database-octet1"
-            />
-            <input
-              type="text"
-              name="Virtual_IPs_Database_field3"
-              class="ip-octet2 ip-octet"
-              id="virtual-ips-database-octet2"
-            />
-            <input
-              type="text"
-              name="Virtual_IPs_Database_field2"
-              class="ip-octet3 ip-octet"
-              id="virtual-ips-database-octet3"
-            />
-            <input
-              type="text"
-              name="Virtual_IPs_Database_field1"
-              class="ip-octet4 ip-octet"
-              id="virtual-ips-database-octet4"
-            />
-          </div>
-          <div class="virtual-ips-down-text">
-            Main database used by IMS services
-          </div>
-        </div>
-
-        <div class="virtual-ips-dns-server">
-          <div class="virtual-ips-main-text">DNS Server Virtual IP*</div>
-          <div class="virtual-ips-dns-server-boxes">
-            <input
-              type="text"
-              name="Virtual_IPs_DNSserver_field4"
-              class="ip-octet1 ip-octet"
-              id="virtual-ips-dns-server-octet1"
-            />
-            <input
-              type="text"
-              name="Virtual_IPs_DNSserver_field3"
-              class="ip-octet2 ip-octet"
-              id="virtual-ips-dns-server-octet2"
-            />
-            <input
-              type="text"
-              name="Virtual_IPs_DNSserver_field2"
-              class="ip-octet3 ip-octet"
-              id="virtual-ips-dns-server-octet3"
-            />
-            <input
-              type="text"
-              name="Virtual_IPs_DNSserver_field1"
-              class="ip-octet4 ip-octet"
-              id="virtual-ips-dns-server-octet4"
-            />
-          </div>
-          <div class="virtual-ips-down-text">
-            Internal DNS server used by IMS services
-          </div>
-        </div>
-
-        <div class="virtual-ips-homer">
-          <div class="virtual-ips-main-text">Homer Virtual IP*</div>
-          <div class="virtual-ips-homer-boxes">
-            <input
-              type="text"
-              name="Virtual_IPs_Homer_field4"
-              class="ip-octet1 ip-octet"
-              id="virtual-ips-homer-octet1"
-            />
-            <input
-              type="text"
-              name="Virtual_IPs_Homer_field3"
-              class="ip-octet2 ip-octet"
-              id="virtual-ips-homer-octet2"
-            />
-            <input
-              type="text"
-              name="Virtual_IPs_Homer_field2"
-              class="ip-octet3 ip-octet"
-              id="virtual-ips-homer-octet3"
-            />
-            <input
-              type="text"
-              name="Virtual_IPs_Homer_field1"
-              class="ip-octet4 ip-octet"
-              id="virtual-ips-homer-octet4"
-            />
-          </div>
-          <div class="virtual-ips-down-text">Used for monitoring SIP flows</div>
-        </div>
-        <button type="submit" class="virtual-ips-save-button">Save</button>
-      </form>
-    </div> -->
 
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

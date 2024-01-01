@@ -12,6 +12,13 @@
   background-image: url("../images/After_Login_Page.svg");
 }
 
+.content {
+  background-color: black;
+  height: 100%;
+  width: 17.71vw;
+  margin: 0 auto;
+}
+
 .saleh-photo {
   width: 6.25vw;
   height: 11.11vh;
@@ -41,8 +48,6 @@
 }
 
 .Login-container {
-  /* position: absolute; */
-  /* background-color: red; */
   width: 17.71vw;
   height: 40.83vh;
   margin: auto auto;
@@ -93,32 +98,21 @@ input::placeholder {
 
 .username-icon,
 .password-icon {
-  /* right: 0.72vw;*/
-  /* padding: 3px; */
-  /*top: 0.78vh; */
   width: 1.87vw;
   height: 3.7vh;
-  /* position: absolute; */
 }
 
 .Login-Avatar {
   border: 1px solid white;
   border-radius: 50%;
-  /* position: absolute; */
   width: 4.16vw;
   height: 7.41vh;
-  /* top: 0vh;
-  right: 6.77vw; */
   margin: 0 auto;
 }
 
 form.d-flex {
   gap: 3.7vh;
 }
-
-/* .Login-form {
-  background-color: white;
-} */
 
 .Login-Avatar img {
   margin: auto auto;
@@ -144,9 +138,7 @@ button.submit-button {
   display: block;
   width: 10.42vw;
   height: 6.018vh;
-  bottom: 11.61vh;
-  right: 44.8vw;
-  position: absolute;
+  margin: 8px auto;
 }
 
 .Login-Logo-text {
@@ -154,21 +146,20 @@ button.submit-button {
   color: white;
   font-size: 1.48vh;
   font-weight: thin;
-  right: 44.4vw;
+  /* right: 44.4vw;
   position: absolute;
-  bottom: 7vh;
+  bottom: 7vh; */
   font-family: "FiraGO", sans-serif;
   width: 10.83vw;
   height: 1.94vh;
+  margin: 0 auto;
+  margin-bottom: 8vh;
 }
 
 .Login-Language {
-  /* position: absolute; */
   width: 3.85vw;
   height: 3.15vh;
   margin: 0 auto;
-  /* right: 6.87vw;
-  bottom: 0; */
 }
 
 .switch {

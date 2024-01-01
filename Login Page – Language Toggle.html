@@ -32,53 +32,48 @@
   </head>
 
   <body class="Login-body d-flex">
-    <div class="Login-container d-flex flex-column justify-content-between">
-      <div class="Login-Avatar">
-        <img src="images/Avatar.svg" class="Avatar-image" />
-      </div>
-      <form
-        class="Login-form d-flex flex-column justify-content-between"
-        id="login-form"
-      >
-        <div class="username-container d-flex flex-row justify-content-around">
-          <input
-            class="username-btn"
-            type="text"
-            name="username"
-            placeholder="نام کاربری"
-          />
-          <img src="images/Group 8492.svg" class="username-icon" />
+    <div class="content d-flex flex-column">
+      <div class="Login-container d-flex flex-column justify-content-between">
+        <div class="Login-Avatar">
+          <img src="images/Avatar.svg" class="Avatar-image" />
         </div>
+        <form
+          class="Login-form d-flex flex-column justify-content-between"
+          id="login-form"
+        >
+          <div
+            class="username-container d-flex flex-row justify-content-around"
+          >
+            <input
+              class="username-btn"
+              type="text"
+              name="username"
+              placeholder="نام کاربری"
+            />
+            <img src="images/Group 8492.svg" class="username-icon" />
+          </div>
 
-        <div class="password-container d-flex flex-row justify-content-around">
-          <input
-            class="password-btn"
-            type="password"
-            name="password"
-            placeholder="رمز عبور"
-          />
-          <img src="images/Group 8493.svg" class="password-icon" />
-        </div>
-        <!-- <div class="submit-container"> -->
-        <button type="submit" class="submit-button">وارد شوید</button>
-        <!-- </div> -->
-        <!-- <div class="Login-Language">
+          <div
+            class="password-container d-flex flex-row justify-content-around"
+          >
+            <input
+              class="password-btn"
+              type="password"
+              name="password"
+              placeholder="رمز عبور"
+            />
+            <img src="images/Group 8493.svg" class="password-icon" />
+          </div>
+          <button type="submit" class="submit-button">وارد شوید</button>
+        </form>
+
+        <div class="Login-Language">
           <label class="switch">
             <input type="checkbox" name="language" id="language" />
             <span class="slider round"> EN </span>
           </label>
-        </div> -->
-      </form>
-
-      <div class="Login-Language">
-        <label class="switch">
-          <input type="checkbox" name="language" id="language" />
-          <span class="slider round"> EN </span>
-        </label>
+        </div>
       </div>
-    </div>
-
-    <div class="Login-Logo">
       <img src="images/Login_Logo.svg" class="Login-Logo-image" />
       <p class="Login-Logo-text">Sina NMS Client Version 2.7.4</p>
     </div>

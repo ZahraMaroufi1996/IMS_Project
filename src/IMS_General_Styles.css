@@ -11,7 +11,6 @@
   flex-direction: column;
 }
 
-
 .content {
   background-color: #f9f9f9;
   flex: 1;
@@ -40,7 +39,6 @@
   width: 1.56vw;
   height: 2.77vh;
 }
-
 
 /*/////////////////////////////////// sidebar styles////////////////////////////////////////////////////////////// */
 
@@ -91,9 +89,8 @@
 .sidebar-logo {
   width: 6.98vw;
   height: 8.24vh;
-  bottom: 6.48vh;
-  left: 4.06vw;
-  position: absolute;
+  margin-left: 4.06vw;
+  margin-top: 12vh;
 }
 
 .sidebar-logo img {
@@ -194,8 +191,6 @@
   text-decoration: none;
 }
 
-
-
 /* ////////////////////////////////////// footer styles /////////////////////////////////////////////////////*/
 .footer {
   background-color: white;
@@ -229,17 +224,6 @@
   font-size: 1.58vh;
   font-family: "FiraGO", sans-serif;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 /* /////////////////////////// previous styles /////////////////////////////////////*/
 
@@ -962,7 +946,7 @@ input:checked + .slider:before {
 } */
 
 /*/////////////////////////// General Network Configs////////////////////////////////// */
- .ip-octet {
+.ip-octet {
   width: 2.604vw;
   height: 3.7vh;
   /* position: absolute; */

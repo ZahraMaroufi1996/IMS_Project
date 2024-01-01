@@ -1,18 +1,16 @@
-.network-class {
-  background-color: red;
+.network {
+  background-color: white;
   width: 78.75vw;
   height: 9.35vh;
-  /* right: 4.69vw; */
   margin-left: 1.45vw;
   margin-top: 2.6vh;
-  /* position: absolute; */
   border-radius: 20px;
+  border: 1px solid red;
 }
-
 
 /* /////////////////////////////////////////// */
 .node {
-  background-color: red;
+  background-color: white;
   margin-left: 1.45vw;
   margin-top: 2.6vh;
   width: 47.39vw;
@@ -21,42 +19,36 @@
   top: 20.46vh;
   position: absolute; */
   border-radius: 1.85vh;
+  border: 1px solid red;
 }
 
-
 .virtual-ips {
-  background-color: red;
+  background-color: white;
   width: 29.89vw;
   height: 72.31vh;
   margin-left: 1.45vw;
   margin-top: 2.6vh;
-  /* right: 4.68vw;
-  top: 20.46vh;
-  position: absolute; */
   border-radius: 20px;
+  /* border: 1px solid red; */
 }
-
 
 .network-definition {
   background-color: white;
   width: 48.91vw;
   height: 3.7vh;
   margin-left: 1.19vw;
-  /* margin-top: 2.82vh; */
-  margin-bottom: 0;
-  padding-bottom: 0;
- 
+  /* border: 1px solid red; */
 }
 
-
+#network-definition-form {
+  height: 100%;
+}
 .network-definition-subnetmask {
-  background-color: blueviolet;
   width: 17.81vw;
   height: 3.7vh;
 }
 
 .network-definition-gateway {
-   background-color: blueviolet;
   width: 16.2vw;
   height: 3.7vh;
 }
@@ -65,104 +57,249 @@
   color: #83a79a;
   font-size: 1.66vh;
   text-align: center;
-} 
-
+}
 
 label,
-.node span,
-.network-class span {
+.network span {
   color: #1a4348;
   font-size: 1.48vh;
   font-family: "FiraGO", sans-serif;
 }
 
+.network-definition-button {
+  margin-left: 19.9vw;
+}
 
+.virtual-ips-title {
+  width: 11.98vw;
+  height: 2.22vh;
+  margin-top: 3.7vh;
+  margin-left: 1.35vw;
+  color: #83a79a;
+  font-size: 1.66vh;
+  font-family: "FiraGO", sans-serif;
+}
 
- .network-definition-button {
+.virtual-ips-content {
+  width: 27.083vw;
+  height: 6.29vh;
+  margin-left: 1.46vw;
+  margin-top: 2.22vh;
+  border-radius: 0.65vh;
+  /* border: 1px solid red; */
+}
+
+.virtual-ips-main-text {
+  color: #1a4348;
+  font-size: 1.66vh;
+  font-family: "FiraGO", sans-serif;
+  margin-left: 0vw;
+  margin-top: 0.64vh;
+}
+
+.virtual-ips-down-text {
+  color: #1f666e;
+  font-size: 1.48vh;
+  font-family: "FiraGO", sans-serif;
+  margin-left: 0vw;
+  margin-bottom: 0vh;
+}
+
+.virtual-ips-boxes {
+  width: 12.03vw;
+  height: 3.7vh;
+}
+
+.virtual-ips-save-button {
+  margin-top: 33.88vh;
+  margin-left: 21.15vw;
+}
+
+.topology-buttton {
   width: 7.29vw;
   height: 3.7vh;
-  margin-left: 19.9vw;
-  margin-top: 2.87vh;
   border-style: none;
   border-radius: 0.65vh;
   background-color: #1f666e;
   color: white;
 }
 
-.virtual-ips-title {
-  background-color: #1f666e;
-  width: 11.98vw;
-  height: 2.22vh;
-  margin-top: 3.7vh;
-  margin-left:1.35vw;
-  /* left: 1.35vw;
-  top: 3.7vh; */
-  /* position: absolute; */
+.node-properties {
+  width: 44.61vw;
+  height: 9.91vh;
+  border: 1px solid red;
+  margin-left: 1.2vw;
+  margin-top: 3.15vh;
+  display: flex;
+}
+
+.add-node-title {
   color: #83a79a;
   font-size: 1.66vh;
   font-family: "FiraGO", sans-serif;
-} 
-
-.virtual-ips-content {
-  background-color: green;
-  width: 27.083vw;
-  height: 6.29vh;
-  margin-left: 1.46vw;
-  margin-top: 2.22vh;
-  border-radius: 0.65vh;
+  margin-top: 0.5vh;
 }
 
+.node-name {
+  width: 13.65vw;
+  height: 3.7vh;
+  margin-left: 3.63vw;
+  border: 1px solid red;
+  margin-right: 0;
+}
 
-.virtual-ips-main-text {
-  background-color: aqua;
-  color: #1a4348;
+.node-name-box {
+  width: 10.42vw;
+  height: 3.7vh;
+  border-radius: 0.65vh;
+  background-color: #eef5f2;
+}
+
+.node-ip {
+  border: 1px solid red;
+  width: 16.921vw;
+  height: 3.7vh;
+  margin-left: 2.23vw;
+  margin-right: 0;
+}
+
+.node-type {
+  display: block;
+  width: 23.1vw;
+  height: 2.04vh;
+  /* right: 9.67vw; */
+  margin-top: 3.24vh;
+  border: 1px solid red;
+  /* position: absolute; */
+}
+
+/* .node-type-checkboxes {
+  display: flex;
+  right: 0vw;
+  top: 0vh;
+  position: absolute;
+}
+
+.node-type-core-checkbox {
+  width: 3.19vw;
+  height: 2.04vh;
+  right: 0vw;
+  top: 0vh;
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+
+.node-type-rtp-proxy-checkbox {
+  width: 5.12vw;
+  height: 2.04vh;
+  right: 5.36vw;
+  top: 0vh;
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+
+.node-type-pcscf-checkbox {
+  width: 4.13vw;
+  height: 2.04vh;
+  right: 12.49vw;
+  top: 0vh;
+  position: absolute;
+  display: flex;
+  align-items: center;
+} */
+
+/* .node-ip span {
+  margin-top: 0.9vh;
+} */
+
+.node-table {
+  border: 1px solid red;
+  width: 42.99vw;
+  height: 20.51vh;
+  margin-top: 8.56vh;
+  margin-left: 2.81vw;
+}
+.node-table-title {
+  width: 14.24vw;
+  height: 4.25vh;
+  border: solid;
+  background-color: #1f666e;
+  color: white;
   font-size: 1.66vh;
   font-family: "FiraGO", sans-serif;
-  margin-left: 0vw;
-  margin-top: 0.64vh;
-  /* position: absolute; */
+  cursor: pointer;
 }
 
-.virtual-ips-down-text {
-  background-color: aqua;
-  color: #1f666e;
-  font-size: 1.48vh;
+.node-table-title span {
+  font-size: 1.29vh;
   font-family: "FiraGO", sans-serif;
-  margin-left: 0vw;
-  margin-bottom: 0vh;
-  /* position: absolute; */
+  color: white;
+  margin-left: 2.4vw;
 }
 
-
-.virtual-ips-boxes{
-  background-color: black;
-  margin-right: 0vw;
-  margin-top: 0vh;
-  width: 12.03vw;
-  height: 3.70vh;
-} 
-
-.virtual-ips-save-button {
-  width: 7.29vw;
-  height: 3.7vh;
-  margin-top: 33.88vh;
-  margin-left: 21.15vw;
-  border-style: none;
-  border-radius: 0.65vh;
-  background-color: #1f666e;
+#node-table-contents {
+  /* border-color: white;
+  background-color: red; */
+  border: 1px solid green;
+  height: 2.77vh;
 }
 
+.node-table-content {
+  /* background-color: green; */
+  border: 1px solid green;
+  width: 42.66vw;
+  height: 2.77vh;
+  /* border-bottom: 0.046vh solid #dfdfdf; */
+}
 
+.node-table-content-name {
+  width: 3.64vw;
+  height: 1.85vh;
+  margin-left: 2.32vw;
+  color: #1a4348;
+  font-size: 1.2vh;
+  font-family: "FiraGO", sans-serif;
+  border-radius: 0.277vh;
+}
 
+.node-table-content-ip {
+  width: 4.68vw;
+  height: 1.85vh;
+  margin-left: 6.61vw;
+  color: #1a4348;
+  font-size: 1.2vh;
+  font-family: "FiraGO", sans-serif;
+  border-radius: 0.277vh;
+}
 
+.node-table-content-status {
+  width: 4.37vw;
+  height: 1.57vh;
+  margin-left: 6.61vw;
+  font-size: 1.2vh;
+  font-family: "FiraGO", sans-serif;
+}
 
+input[type="text"] {
+  text-align: center;
+  color: #2fbc8c;
+  border: none;
+}
 
+.save-node-button {
+  margin-left: 38.54vw;
+  margin-top: 23.24vh;
+}
 
-
-
-
-
-
+/*.tick {
+  right: 2.67vw;
+  top: 0.64vh;
+  position: absolute;
+  border: none;
+  display: none;
+} */
 
 /* .IMS-TOPOLOGY-body {
   background-color: rgba(0, 0, 0, 0.04);
