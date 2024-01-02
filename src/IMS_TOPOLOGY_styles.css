@@ -5,7 +5,6 @@
   margin-left: 1.45vw;
   margin-top: 2.6vh;
   border-radius: 20px;
-  border: 1px solid red;
 }
 
 /* /////////////////////////////////////////// */
@@ -15,9 +14,6 @@
   margin-top: 2.6vh;
   width: 47.39vw;
   height: 72.31vh;
-  /* right: 36.04vw;
-  top: 20.46vh;
-  position: absolute; */
   border-radius: 1.85vh;
   border: 1px solid red;
 }
@@ -29,7 +25,6 @@
   margin-left: 1.45vw;
   margin-top: 2.6vh;
   border-radius: 20px;
-  /* border: 1px solid red; */
 }
 
 .network-definition {
@@ -37,7 +32,6 @@
   width: 48.91vw;
   height: 3.7vh;
   margin-left: 1.19vw;
-  /* border: 1px solid red; */
 }
 
 #network-definition-form {
@@ -159,18 +153,28 @@ label,
   border: 1px solid red;
   width: 16.921vw;
   height: 3.7vh;
-  margin-left: 2.23vw;
-  margin-right: 0;
+  /* margin-left: 2.23vw; */
+  margin-left: 3.23vw;
 }
 
 .node-type {
-  display: block;
+  /* display: block; */
   width: 23.1vw;
   height: 2.04vh;
-  /* right: 9.67vw; */
+  margin-left: 11.82vw;
   margin-top: 3.24vh;
-  border: 1px solid red;
+  border: 1px solid black;
   /* position: absolute; */
+}
+
+.add-node-button {
+  width: 5.73vw;
+  height: 3.7vh;
+  /* margin-left: 3.96vw; */
+  margin-top: 2.5vh;
+  border-radius: 0.65vh;
+  background-color: #68d5b0;
+  border-style: none;
 }
 
 /* .node-type-checkboxes {
@@ -178,37 +182,22 @@ label,
   right: 0vw;
   top: 0vh;
   position: absolute;
-}
+} */
 
 .node-type-core-checkbox {
   width: 3.19vw;
   height: 2.04vh;
-  right: 0vw;
-  top: 0vh;
-  position: absolute;
-  display: flex;
-  align-items: center;
 }
 
 .node-type-rtp-proxy-checkbox {
   width: 5.12vw;
   height: 2.04vh;
-  right: 5.36vw;
-  top: 0vh;
-  position: absolute;
-  display: flex;
-  align-items: center;
 }
 
 .node-type-pcscf-checkbox {
   width: 4.13vw;
   height: 2.04vh;
-  right: 12.49vw;
-  top: 0vh;
-  position: absolute;
-  display: flex;
-  align-items: center;
-} */
+}
 
 /* .node-ip span {
   margin-top: 0.9vh;

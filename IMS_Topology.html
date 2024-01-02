@@ -302,80 +302,82 @@
 
         <div class="d-flex flex-row">
           <div class="node d-flex flex-column">
-            <form id="add-node-form" class="node-properties">
+            <form id="add-node-form" class="node-properties d-flex flex-wrap">
               <span class="add-node-title">Nodes IP Addresses</span>
-              <div class="node-name d-flex flex-row justify-content-between align-items-center">
+              <div
+                class="node-name d-flex flex-row justify-content-between align-items-center"
+              >
                 <span>Name</span>
                 <input type="text" name="node_name" class="node-name-box" />
               </div>
 
-              <div class="node-ip d-flex flex-row justify-content-between align-items-center">
+              <div
+                class="node-ip d-flex flex-row justify-content-between align-items-center"
+              >
                 <span>IP Address</span>
-                  <input
-                    type="text"
-                    name="IP_Address_field4"
-                    class="ip-octet"
-                    id="node-ip-octet1"
-                  />
-                  <input
-                    type="text"
-                    name="IP_Address_field3"
-                    class="ip-octet"
-                    id="node-ip-octet2"
-                  />
-                  <input
-                    type="text"
-                    name="IP_Address_field2"
-                    class="ip-octet"
-                    id="node-ip-octet3"
-                  />
-                  <input
-                    type="text"
-                    name="IP_Address_field1"
-                    class="ip-octet"
-                    id="node-ip-octet4"
-                  />
-                  </div> 
-
-
-
-               <!-- <div class="node-type"> 
+                <input
+                  type="text"
+                  name="IP_Address_field4"
+                  class="ip-octet"
+                  id="node-ip-octet1"
+                />
+                <input
+                  type="text"
+                  name="IP_Address_field3"
+                  class="ip-octet"
+                  id="node-ip-octet2"
+                />
+                <input
+                  type="text"
+                  name="IP_Address_field2"
+                  class="ip-octet"
+                  id="node-ip-octet3"
+                />
+                <input
+                  type="text"
+                  name="IP_Address_field1"
+                  class="ip-octet"
+                  id="node-ip-octet4"
+                />
+              </div>
+              <div
+                class="node-type d-flex flex-row justify-content-between align-items-center"
+              >
                 <span>Node Types :</span>
-                <div class="node-type-checkboxes">
-                  <div class="node-type-core-checkbox">
-                    <input
-                      class="chb chb-1-circle"
-                      type="radio"
-                      id="node-type-1"
-                      name="node_type_icon"
-                      value="core"
-                    />
-                    <label for="node-type-1">Core</label>
-                  </div>
-                  <div class="node-type-rtp-proxy-checkbox">
-                    <input
-                      class="chb chb-1-circle"
-                      type="radio"
-                      id="node-type-2"
-                      name="node_type_icon"
-                      value="rtpProxy"
-                    />
-                    <label for="node-type-2">RTP Proxy</label>
-                  </div>
-                  <div class="node-type-pcscf-checkbox">
-                    <input
-                      class="chb chb-1-circle"
-                      type="radio"
-                      id="node-type-3"
-                      name="node_type_icon"
-                      value="pcscf"
-                    />
-                    <label for="node-type-3">P-CSCF</label>
-                  </div>
-                < /div>
-              </div>  -->
-              <!-- <button type="submit" class="add-node-button">Add Node</button>  -->
-              </form>
+                <div class="node-type-core-checkbox d-flex flex-row">
+                  <input
+                    class="chb chb-1-circle"
+                    type="radio"
+                    id="node-type-1"
+                    name="node_type_icon"
+                    value="core"
+                  />
+                  <label for="node-type-1">Core</label>
+                </div>
+                <div class="node-type-rtp-proxy-checkbox d-flex flex-row">
+                  <input
+                    class="chb chb-1-circle"
+                    type="radio"
+                    id="node-type-2"
+                    name="node_type_icon"
+                    value="rtpProxy"
+                  />
+                  <label for="node-type-2">RTP Proxy</label>
+                </div>
+                <div class="node-type-pcscf-checkbox d-flex flex-row">
+                  <input
+                    class="chb chb-1-circle"
+                    type="radio"
+                    id="node-type-3"
+                    name="node_type_icon"
+                    value="pcscf"
+                  />
+                  <label for="node-type-3">P-CSCF</label>
+                </div>
+              </div>
+
+              <button type="submit" class="add-node-button">Add Node</button>
+            </form>
 
             <table class="node-table">
               <tr class="d-flex flex-row justify-content-around">
@@ -765,7 +767,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div>-->
 
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

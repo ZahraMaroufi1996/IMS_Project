@@ -212,469 +212,515 @@
         </div>
       </nav>
 
-      <div class="content">
-        <!-- <form id="total-form">
-        <div class="General-class">
-          <div class="General-class-content">
-            <div class="General-class-content-title">General</div>
-            <div class="General-class-content-field1">
-              <label for="test">IMS Domain*</label>
-              <input
-                class="General-class-content-field1-box"
-                id="test"
-                type="text"
-                name="IMS_Domain"
-                disabled
-              />
-            </div>
-
-            <div class="General-class-content-field2">
-              <span>Enable Homer In :</span>
-              <div class="General-class-content-field2-checkboxes">
-                <div class="General-class-content-field2-checkbox1">
-                  <input
-                    class="chb chb-1"
-                    type="checkbox"
-                    id="General-type-1"
-                    name="General-type-icon1"
-                    value="p_cscf"
-                    disabled
-                  />
-                  <label for="General-type-1">P-CSCF</label>
-                </div>
-                <div class="General-class-content-field2-checkbox2">
-                  <input
-                    class="chb chb-1"
-                    type="checkbox"
-                    id="General-type-2"
-                    name="General-type-icon2"
-                    value="s_cscf"
-                    disabled
-                  />
-                  <label for="General-type-2">S-CSCF</label>
-                </div>
-                <div class="General-class-content-field2-checkbox3">
-                  <input
-                    class="chb chb-1"
-                    type="checkbox"
-                    id="General-type-3"
-                    name="General-type-icon3"
-                    value="i_cscf"
-                    disabled
-                  />
-                  <label for="General-type-3">I-CSCF</label>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="P-CSCF-class">
-          <div class="P-CSCF-class-content">
-            <div class="P-CSCF-class-content-title">P-CSCF</div>
-            <div class="P-CSCF-class-content-field1">
-              <span>Enable IPsec :</span>
-              <label class="switch">
-                <input
-                  type="checkbox"
-                  name="Enable-IPsec"
-                  id="ipsec"
-                  disabled
-                />
-                <span class="slider round"></span>
-              </label>
-            </div>
-
-            <div class="P-CSCF-class-content-field2">
-              <p>Supported IPsec Encryption Algorithms :</p>
-              <div class="P-CSCF-class-content-field2-checkboxes">
-                <div class="P-CSCF-class-content-field2-checkbox1">
-                  <input
-                    class="chb chb-1"
-                    type="checkbox"
-                    id="Encryption-Algorithm-type-1"
-                    name="Encryption-Algorithm-type-icon1"
-                    value="AES_CBC"
-                    disabled
-                  />
-                  <label for="Encryption-Algorithm-type-1">AES-CBC</label>
-                </div>
-                <div class="P-CSCF-class-content-field2-checkbox2">
-                  <input
-                    class="chb chb-1"
-                    type="checkbox"
-                    id="Encryption-Algorithm-type-2"
-                    name="Encryption-Algorithm-type-icon2"
-                    value="DES_EDE3_CBC"
-                    disabled
-                  />
-                  <label for="Encryption-Algorithm-type-2">DES-EDE3-CBC</label>
-                </div>
-                <div class="P-CSCF-class-content-field2-checkbox3">
-                  <input
-                    class="chb chb-1"
-                    type="checkbox"
-                    id="Encryption-Algorithm-type-3"
-                    name="Encryption-Algorithm-type-icon3"
-                    value="Plain"
-                    disabled
-                  />
-                  <label for="Encryption-Algorithm-type-3"
-                    >Plain (No encryption)</label
+      <div class="content d-flex align-items-center justify-content-center">
+        <div class="test-content">
+          <form id="total-form">
+            <div class="general-class">
+              <div class="general-class-content">
+                <div
+                  class="d-flex flex-row justify-content-between align-items-center"
+                >
+                  <div class="general-class-content-title">General</div>
+                  <div
+                    class="general-class-content-field1 d-flex justify-content-between align-items-center"
                   >
-                </div>
-              </div>
-            </div>
-
-            <div class="P-CSCF-class-content-field3">
-              <span>Enable TLS</span>
-              <label class="switch">
-                <input type="checkbox" name="Enable-TLS" id="tls" disabled />
-                <span class="slider round"></span>
-              </label>
-            </div>
-
-            <div class="P-CSCF-class-content-field4">
-              <div class="P-CSCF-class-content-field4-input1">
-                <label for="shared-memory">Shared Memory*</label>
-                <input
-                  type="text"
-                  id="pcscf-shared-memory"
-                  name="p_shared_memory"
-                  class="shared-memory"
-                  disabled
-                />
-                <span>MB</span>
-              </div>
-              <div class="P-CSCF-class-content-field4-input2">
-                <label for="private-memory">Private Memory*</label>
-                <input
-                  type="text"
-                  id="pcscf-private-memory"
-                  name="p_private_memory"
-                  class="private-memory"
-                  disabled
-                />
-                <span>MB</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="P-CSCF-class-Rx-configuration">
-            <div class="P-CSCF-class-Rx-configuration-title">
-              Rx Configuration
-            </div>
-            <div class="P-CSCF-class-Rx-configuration-field1">
-              <span>PCRF IP Address*</span>
-              <div class="PCRF-IP-Address-boxes">
-                <input
-                  type="text"
-                  name="PCRF_IP_Address_box4"
-                  class="ipfield1 ipfield top-0"
-                  id="PCRF-IP-Address-box1"
-                  disabled
-                />
-                <input
-                  type="text"
-                  name="PCRF_IP_Address_box3"
-                  class="ipfield2 ipfield top-0"
-                  id="PCRF-IP-Address-box2"
-                  disabled
-                />
-                <input
-                  type="text"
-                  name="PCRF_IP_Address_box2"
-                  class="ipfield3 ipfield top-0"
-                  id="PCRF-IP-Address-box3"
-                  disabled
-                />
-                <input
-                  type="text"
-                  name="PCRF_IP_Address-box1"
-                  class="ipfield4 ipfield top-0"
-                  id="PCRF-IP-Address-box4"
-                  disabled
-                />
-              </div>
-            </div>
-
-            <div class="P-CSCF-class-Rx-configuration-field2">
-              <label for="Rx-configuration-field2">PCRF FQDN*</label>
-              <input type="text" id="Rx-configuration-field2" />
-            </div>
-
-            <div class="P-CSCF-class-Rx-configuration-field3">
-              <label for="Rx-configuration-field3">PCRF Realm*</label>
-              <input type="text" id="Rx-configuration-field3" disabled />
-            </div>
-
-            <div class="P-CSCF-class-Rx-configuration-field4">
-              <span>Transport Protocol</span>
-              <div class="Transport-Protocol-class1">
-                <input
-                  class="chb chb-1-circle"
-                  type="radio"
-                  id="Transport-Protocol-type-1"
-                  name="Transport_Protocol"
-                  value="SCTP"
-                  disabled
-                />
-                <label for="Transport-Protocol-type-1">SCTP</label>
-              </div>
-
-              <div class="Transport-Protocol-class2">
-                <input
-                  class="chb chb-1-circle"
-                  type="radio"
-                  id="Transport-Protocol-type-2"
-                  name="Transport_Protocol"
-                  value="TCP"
-                  disabled
-                />
-                <label for="Transport-Protocol-type-2">TCP</label>
-              </div>
-            </div>
-
-            <div class="P-CSCF-class-Rx-configuration-field5">
-              <span>Rx Source Port</span>
-              <label class="switch">
-                <input
-                  type="checkbox"
-                  id="Enable-Rx-Source-Port"
-                  name="Enable-Rx-Source-Port"
-                  disabled
-                />
-                <span class="slider round"></span>
-              </label>
-              <input
-                type="text"
-                id="Rx-Source-Port"
-                name="Rx_Source_Port"
-                disabled
-              />
-            </div>
-          </div>
-        </div>
-
-        <div class="I-CSCF-class">
-          <span class="I-CSCF-class-content-title">I-CSCF</span>
-          <div class="I-CSCF-class-content-input1">
-            <label for="shared-memory">Shared Memory*</label>
-            <input
-              type="text"
-              id="icscf-shared-memory"
-              name="i_shared_memory"
-              class="shared-memory"
-              disabled
-            />
-            <span>MB</span>
-          </div>
-          <div class="I-CSCF-class-content-input2">
-            <label for="private-memory">Private Memory*</label>
-            <input
-              type="text"
-              id="icscf-private-memory"
-              name="i_private_memory"
-              class="private-memory"
-              disabled
-            />
-            <span>MB</span>
-          </div>
-        </div>
-
-        <div class="S-CSCF-class">
-          <div class="S-CSCF-class-content">
-            <span class="S-CSCF-class-content-title">S-CSCF</span>
-            <div class="S-CSCF-class-content-inputs">
-              <div class="S-CSCF-class-content-input1">
-                <label for="Minimum-Register-Time">Minimum Register Time</label>
-                <input
-                  type="text"
-                  id="Minimum-Register-Time"
-                  name="Minimum_Register_Time"
-                  disabled
-                />
-                <span>S</span>
-              </div>
-              <div class="S-CSCF-class-content-input2">
-                <label for="Maximum-Register-Time">Maximum Register Time</label>
-                <input
-                  type="text"
-                  id="Maximum-Register-Time"
-                  name="Maximum_Register_Time"
-                  disabled
-                />
-                <span>S</span>
-              </div>
-              <div class="S-CSCF-class-content-input3">
-                <label for="shared-memory">Shared Memory*</label>
-                <input
-                  type="text"
-                  id="scscf-shared-memory"
-                  name="s_shared_memory"
-                  class="shared-memory"
-                  disabled
-                />
-                <span>MB</span>
-              </div>
-              <div class="S-CSCF-class-content-input4">
-                <label for="private-memory">Private Memory*</label>
-                <input
-                  type="text"
-                  id="scscf-private-memory"
-                  name="s_private_memory"
-                  class="private-memory"
-                  disabled
-                />
-                <span>MB</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="RTP-Proxy-class">
-          <div class="RTP-Proxy-class-content">
-            <span class="RTP-Proxy-class-content-title">RTP Proxy</span>
-            <div class="RTP-Proxy-class-content-inputs">
-              <div class="RTP-Proxy-class-content-input1">
-                <span>Supported HD Codecs :</span>
-                <div class="RTP-Proxy-class-content-input1-checkboxes">
-                  <div class="RTP-Proxy-class-content-input1-checkbox1">
+                    <label for="test">IMS Domain*</label>
                     <input
-                      class="chb chb-1"
-                      type="checkbox"
-                      id="Supported-HD-Codecs-type-1"
-                      name="Supported-HD-Codecs-type-icon1"
-                      value="G.722"
+                      class="general-class-content-field1-box"
+                      id="test"
+                      type="text"
+                      name="IMS_Domain"
                       disabled
                     />
-                    <label for="Supported-HD-Codecs-type-1">G.722</label>
                   </div>
-                  <div class="RTP-Proxy-class-content-input1-checkbox2">
-                    <input
-                      class="chb chb-1"
-                      type="checkbox"
-                      id="Supported-HD-Codecs-type-2"
-                      name="Supported-HD-Codecs-type-icon2"
-                      value="AMR_WB"
-                      disabled
-                    />
-                    <label for="Supported-HD-Codecs-type-2">AMR-WB</label>
+                </div>
+
+                <div
+                  class="general-class-content-field2 d-flex flex-row align-items-center justify-content-between"
+                >
+                  <span>Enable Homer In :</span>
+                  <div
+                    class="general-class-content-field2-checkboxes d-flex flex-row align-items-center justify-content-around"
+                  >
+                    <div
+                      class="general-class-content-field2-checkbox d-flex align-items-center justify-content-around"
+                    >
+                      <input
+                        class="chb chb-1"
+                        type="checkbox"
+                        id="General-type-1"
+                        name="General-type-icon1"
+                        value="p_cscf"
+                        disabled
+                      />
+                      <label for="General-type-1">P-CSCF</label>
+                    </div>
+                    <div
+                      class="general-class-content-field2-checkbox d-flex align-items-center justify-content-around"
+                    >
+                      <input
+                        class="chb chb-1"
+                        type="checkbox"
+                        id="General-type-2"
+                        name="General-type-icon2"
+                        value="s_cscf"
+                        disabled
+                      />
+                      <label for="General-type-2">S-CSCF</label>
+                    </div>
+                    <div
+                      class="general-class-content-field2-checkbox d-flex align-items-center justify-content-around"
+                    >
+                      <input
+                        class="chb chb-1"
+                        type="checkbox"
+                        id="General-type-3"
+                        name="General-type-icon3"
+                        value="i_cscf"
+                        disabled
+                      />
+                      <label for="General-type-3">I-CSCF</label>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="RTP-Proxy-class-content-input2">
-                <span>Enable SRTP</span>
-                <div class="slider-div">
+            </div>
+
+            <div class="P-CSCF-class">
+              <div
+                class="P-CSCF-class-content d-flex flex-column justify-content-between"
+              >
+                <!-- <div class="P-CSCF-class-content-title">P-CSCF</div> -->
+                <div
+                  class="P-CSCF-class-content-field1 d-flex justify-content-between"
+                >
+                  <span>Enable IPsec</span>
                   <label class="switch">
                     <input
                       type="checkbox"
-                      id="srtp"
-                      name="Enable-SRTP"
+                      name="Enable-IPsec"
+                      id="ipsec"
                       disabled
                     />
                     <span class="slider round"></span>
                   </label>
                 </div>
+
+                <div
+                  class="P-CSCF-class-content-field2 d-flex flex-column justify-content-between"
+                >
+                  <p>Supported IPsec Encryption Algorithms :</p>
+                  <div
+                    class="P-CSCF-class-content-field2-checkboxes d-flex flex-row justify-content-between"
+                  >
+                    <div
+                      class="P-CSCF-class-content-field2-checkbox1 d-flex align-items-center"
+                    >
+                      <input
+                        class="chb chb-1"
+                        type="checkbox"
+                        id="Encryption-Algorithm-type-1"
+                        name="Encryption-Algorithm-type-icon1"
+                        value="AES_CBC"
+                        disabled
+                      />
+                      <label for="Encryption-Algorithm-type-1">AES-CBC</label>
+                    </div>
+                    <div
+                      class="P-CSCF-class-content-field2-checkbox2 d-flex align-items-center"
+                    >
+                      <input
+                        class="chb chb-1"
+                        type="checkbox"
+                        id="Encryption-Algorithm-type-2"
+                        name="Encryption-Algorithm-type-icon2"
+                        value="DES_EDE3_CBC"
+                        disabled
+                      />
+                      <label for="Encryption-Algorithm-type-2"
+                        >DES-EDE3-CBC</label
+                      >
+                    </div>
+                    <div
+                      class="P-CSCF-class-content-field2-checkbox3 d-flex align-items-center"
+                    >
+                      <input
+                        class="chb chb-1"
+                        type="checkbox"
+                        id="Encryption-Algorithm-type-3"
+                        name="Encryption-Algorithm-type-icon3"
+                        value="Plain"
+                        disabled
+                      />
+                      <label for="Encryption-Algorithm-type-3"
+                        >Plain (No encryption)</label
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="P-CSCF-class-content-field3 d-flex justify-content-between"
+                >
+                  <span>Enable TLS</span>
+                  <label class="switch">
+                    <input
+                      type="checkbox"
+                      name="Enable-TLS"
+                      id="tls"
+                      disabled
+                    />
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+
+                <div class="P-CSCF-class-content-field4">
+                  <!-- <div class="P-CSCF-class-content-field4-input1">
+                    <label for="shared-memory">Shared Memory*</label>
+                    <input
+                      type="text"
+                      id="pcscf-shared-memory"
+                      name="p_shared_memory"
+                      class="shared-memory"
+                      disabled
+                    />
+                    <span>MB</span>
+                  </div>
+                  <div class="P-CSCF-class-content-field4-input2">
+                    <label for="private-memory">Private Memory*</label>
+                    <input
+                      type="text"
+                      id="pcscf-private-memory"
+                      name="p_private_memory"
+                      class="private-memory"
+                      disabled
+                    />
+                    <span>MB</span>
+                  </div>
+                </div> -->
+                </div>
               </div>
 
-              <div class="RTP-Proxy-class-content-input3">
-                <div class="RTP-Proxy-Ports-title">
-                  <span>Outbound RTP Proxy Port Range :</span>
-                </div>
-                <div class="RTP-Proxy-Ports">
-                  <div class="RTP-Proxy-Inbound-Port-Minimum">
-                    <label for="Inbound-Port-Minimum">Port Minimum*</label>
-                    <input
-                      type="text"
-                      id="Inbound-Port-Minimum"
-                      class="port"
-                      name="Inbound_Port_Minimum"
-                      disabled
-                    />
-                  </div>
-                  <div class="RTP-Proxy-Inbound-Port-Maximum">
-                    <label for="Inbound-Port-Maximum">Port Maximum*</label>
-                    <input
-                      type="text"
-                      id="Inbound-Port-Maximum"
-                      class="port"
-                      name="Inbound_Port_Maximum"
-                      disabled
-                    />
-                  </div>
+              <!-- <div class="P-CSCF-class-Rx-configuration">
+               <div class="P-CSCF-class-Rx-configuration-title">
+                Rx Configuration
+              </div>
+              <div class="P-CSCF-class-Rx-configuration-field1">
+                <span>PCRF IP Address*</span>
+                <div class="PCRF-IP-Address-boxes">
+                  <input
+                    type="text"
+                    name="PCRF_IP_Address_box4"
+                    class="ipfield1 ipfield top-0"
+                    id="PCRF-IP-Address-box1"
+                    disabled
+                  />
+                  <input
+                    type="text"
+                    name="PCRF_IP_Address_box3"
+                    class="ipfield2 ipfield top-0"
+                    id="PCRF-IP-Address-box2"
+                    disabled
+                  />
+                  <input
+                    type="text"
+                    name="PCRF_IP_Address_box2"
+                    class="ipfield3 ipfield top-0"
+                    id="PCRF-IP-Address-box3"
+                    disabled
+                  />
+                  <input
+                    type="text"
+                    name="PCRF_IP_Address-box1"
+                    class="ipfield4 ipfield top-0"
+                    id="PCRF-IP-Address-box4"
+                    disabled
+                  />
                 </div>
               </div>
 
-              <div class="RTP-Proxy-class-content-input4">
-                <div class="RTP-Proxy-Ports-title">
-                  <span>Outbound RTP Proxy Port Range :</span>
+              <div class="P-CSCF-class-Rx-configuration-field2">
+                <label for="Rx-configuration-field2">PCRF FQDN*</label>
+                <input type="text" id="Rx-configuration-field2" />
+              </div>
+
+              <div class="P-CSCF-class-Rx-configuration-field3">
+                <label for="Rx-configuration-field3">PCRF Realm*</label>
+                <input type="text" id="Rx-configuration-field3" disabled />
+              </div>
+
+              <div class="P-CSCF-class-Rx-configuration-field4">
+                <span>Transport Protocol</span>
+                <div class="Transport-Protocol-class1">
+                  <input
+                    class="chb chb-1-circle"
+                    type="radio"
+                    id="Transport-Protocol-type-1"
+                    name="Transport_Protocol"
+                    value="SCTP"
+                    disabled
+                  />
+                  <label for="Transport-Protocol-type-1">SCTP</label>
                 </div>
-                <div class="RTP-Proxy-Ports">
-                  <div class="RTP-Proxy-Outbound-Port-Minimum">
-                    <label for="Outbound-Port-Minimum">Port Minimum*</label>
-                    <input
-                      type="text"
-                      id="Outbound-Port-Minimum"
-                      class="port"
-                      name="Outbound_Port_Minimum"
-                      disabled
-                    />
-                  </div>
-                  <div class="RTP-Proxy-Outbound-Port-Maximum">
-                    <label for="Outbound-Port-Maximum">Port Maximum*</label>
-                    <input
-                      type="text"
-                      id="Outbound-Port-Maximum"
-                      class="port"
-                      name="Outbound_Port_Maximum"
-                      disabled
-                    />
-                  </div>
+
+                <div class="Transport-Protocol-class2">
+                  <input
+                    class="chb chb-1-circle"
+                    type="radio"
+                    id="Transport-Protocol-type-2"
+                    name="Transport_Protocol"
+                    value="TCP"
+                    disabled
+                  />
+                  <label for="Transport-Protocol-type-2">TCP</label>
                 </div>
               </div>
 
-              <div class="RTP-Proxy-class-content-input5">
-                <span>Enable Maximum Call Duration :</span>
+              <div class="P-CSCF-class-Rx-configuration-field5">
+                <span>Rx Source Port</span>
                 <label class="switch">
                   <input
                     type="checkbox"
-                    id="Enable-Call-Duration"
-                    name="Enable-Maximum-Call-Duration"
+                    id="Enable-Rx-Source-Port"
+                    name="Enable-Rx-Source-Port"
                     disabled
                   />
                   <span class="slider round"></span>
                 </label>
+                <input
+                  type="text"
+                  id="Rx-Source-Port"
+                  name="Rx_Source_Port"
+                  disabled
+                />
+              </div> 
+            </div> -->
+            </div>
 
-                <div>
+            <!-- <div class="I-CSCF-class">
+            <span class="I-CSCF-class-content-title">I-CSCF</span>
+            <div class="I-CSCF-class-content-input1">
+              <label for="shared-memory">Shared Memory*</label>
+              <input
+                type="text"
+                id="icscf-shared-memory"
+                name="i_shared_memory"
+                class="shared-memory"
+                disabled
+              />
+              <span>MB</span>
+            </div>
+            <div class="I-CSCF-class-content-input2">
+              <label for="private-memory">Private Memory*</label>
+              <input
+                type="text"
+                id="icscf-private-memory"
+                name="i_private_memory"
+                class="private-memory"
+                disabled
+              />
+              <span>MB</span>
+            </div>
+          </div>
+
+          <div class="S-CSCF-class">
+            <div class="S-CSCF-class-content">
+              <span class="S-CSCF-class-content-title">S-CSCF</span>
+              <div class="S-CSCF-class-content-inputs">
+                <div class="S-CSCF-class-content-input1">
+                  <label for="Minimum-Register-Time"
+                    >Minimum Register Time</label
+                  >
                   <input
                     type="text"
-                    id="Call-Duration"
-                    name="Call_Duration"
+                    id="Minimum-Register-Time"
+                    name="Minimum_Register_Time"
                     disabled
                   />
-                  <span>Second</span>
+                  <span>S</span>
                 </div>
-              </div>
-              <div class="RTP-Proxy-class-content-input6">
-                <label for="RTP-Loss-Timeout">RTP Loss Timeout :</label>
-                <div>
+                <div class="S-CSCF-class-content-input2">
+                  <label for="Maximum-Register-Time"
+                    >Maximum Register Time</label
+                  >
                   <input
                     type="text"
-                    id="RTP-Loss-Timeout"
-                    name="RTP_Loss_Timeout"
+                    id="Maximum-Register-Time"
+                    name="Maximum_Register_Time"
                     disabled
                   />
-                  <span>Second</span>
+                  <span>S</span>
+                </div>
+                <div class="S-CSCF-class-content-input3">
+                  <label for="shared-memory">Shared Memory*</label>
+                  <input
+                    type="text"
+                    id="scscf-shared-memory"
+                    name="s_shared_memory"
+                    class="shared-memory"
+                    disabled
+                  />
+                  <span>MB</span>
+                </div>
+                <div class="S-CSCF-class-content-input4">
+                  <label for="private-memory">Private Memory*</label>
+                  <input
+                    type="text"
+                    id="scscf-private-memory"
+                    name="s_private_memory"
+                    class="private-memory"
+                    disabled
+                  />
+                  <span>MB</span>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <button type="submit" class="information-save-button">Save</button>
-        <button class="information-edit-button">Edit</button>
-      </form> -->
+          <div class="RTP-Proxy-class">
+            <div class="RTP-Proxy-class-content">
+              <span class="RTP-Proxy-class-content-title">RTP Proxy</span>
+              <div class="RTP-Proxy-class-content-inputs">
+                <div class="RTP-Proxy-class-content-input1">
+                  <span>Supported HD Codecs :</span>
+                  <div class="RTP-Proxy-class-content-input1-checkboxes">
+                    <div class="RTP-Proxy-class-content-input1-checkbox1">
+                      <input
+                        class="chb chb-1"
+                        type="checkbox"
+                        id="Supported-HD-Codecs-type-1"
+                        name="Supported-HD-Codecs-type-icon1"
+                        value="G.722"
+                        disabled
+                      />
+                      <label for="Supported-HD-Codecs-type-1">G.722</label>
+                    </div>
+                    <div class="RTP-Proxy-class-content-input1-checkbox2">
+                      <input
+                        class="chb chb-1"
+                        type="checkbox"
+                        id="Supported-HD-Codecs-type-2"
+                        name="Supported-HD-Codecs-type-icon2"
+                        value="AMR_WB"
+                        disabled
+                      />
+                      <label for="Supported-HD-Codecs-type-2">AMR-WB</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="RTP-Proxy-class-content-input2">
+                  <span>Enable SRTP</span>
+                  <div class="slider-div">
+                    <label class="switch">
+                      <input
+                        type="checkbox"
+                        id="srtp"
+                        name="Enable-SRTP"
+                        disabled
+                      />
+                      <span class="slider round"></span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="RTP-Proxy-class-content-input3">
+                  <div class="RTP-Proxy-Ports-title">
+                    <span>Outbound RTP Proxy Port Range :</span>
+                  </div>
+                  <div class="RTP-Proxy-Ports">
+                    <div class="RTP-Proxy-Inbound-Port-Minimum">
+                      <label for="Inbound-Port-Minimum">Port Minimum*</label>
+                      <input
+                        type="text"
+                        id="Inbound-Port-Minimum"
+                        class="port"
+                        name="Inbound_Port_Minimum"
+                        disabled
+                      />
+                    </div>
+                    <div class="RTP-Proxy-Inbound-Port-Maximum">
+                      <label for="Inbound-Port-Maximum">Port Maximum*</label>
+                      <input
+                        type="text"
+                        id="Inbound-Port-Maximum"
+                        class="port"
+                        name="Inbound_Port_Maximum"
+                        disabled
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="RTP-Proxy-class-content-input4">
+                  <div class="RTP-Proxy-Ports-title">
+                    <span>Outbound RTP Proxy Port Range :</span>
+                  </div>
+                  <div class="RTP-Proxy-Ports">
+                    <div class="RTP-Proxy-Outbound-Port-Minimum">
+                      <label for="Outbound-Port-Minimum">Port Minimum*</label>
+                      <input
+                        type="text"
+                        id="Outbound-Port-Minimum"
+                        class="port"
+                        name="Outbound_Port_Minimum"
+                        disabled
+                      />
+                    </div>
+                    <div class="RTP-Proxy-Outbound-Port-Maximum">
+                      <label for="Outbound-Port-Maximum">Port Maximum*</label>
+                      <input
+                        type="text"
+                        id="Outbound-Port-Maximum"
+                        class="port"
+                        name="Outbound_Port_Maximum"
+                        disabled
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="RTP-Proxy-class-content-input5">
+                  <span>Enable Maximum Call Duration :</span>
+                  <label class="switch">
+                    <input
+                      type="checkbox"
+                      id="Enable-Call-Duration"
+                      name="Enable-Maximum-Call-Duration"
+                      disabled
+                    />
+                    <span class="slider round"></span>
+                  </label>
+
+                  <div>
+                    <input
+                      type="text"
+                      id="Call-Duration"
+                      name="Call_Duration"
+                      disabled
+                    />
+                    <span>Second</span>
+                  </div>
+                </div>
+                <div class="RTP-Proxy-class-content-input6">
+                  <label for="RTP-Loss-Timeout">RTP Loss Timeout :</label>
+                  <div>
+                    <input
+                      type="text"
+                      id="RTP-Loss-Timeout"
+                      name="RTP_Loss_Timeout"
+                      disabled
+                    />
+                    <span>Second</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="information-save-button">Save</button>
+          <button class="information-edit-button">Edit</button> -->
+          </form>
+        </div>
       </div>
 
       <div class="footer">

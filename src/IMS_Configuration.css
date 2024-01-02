@@ -8,56 +8,61 @@
   border-radius: 1.85vh;
 } */
 
-.General-class {
+.test-content {
+  width: 78.75vw;
+  height: 84.25vh;
+  border: 1px solid blue;
+  background-color: white;
+}
+
+.general-class {
   width: 36.82vw;
   height: 12.68vh;
-  left: 2.083vw;
-  top: 3.7vh;
+  margin-left: 2.083vw;
+  margin-top: 3.7vh;
   border: 0.092vh solid #d5e8e1;
-  position: absolute;
+  /* position: absolute; */
   border-radius: 0.83vh;
 }
 
-.General-class-content {
+.general-class-content {
+  border: 0.092vh solid red;
   width: 34.48vw;
   height: 8.42vh;
-  right: 1.021vw;
-  top: 1.75vh;
-  position: absolute;
+  margin-left: 1.3vw;
+  margin-top: 1.75vh;
   border-radius: 0.83vh;
 }
 
-.General-class-content-field1 {
+.general-class-content-field1 {
+  border: 0.092vh solid red;
   width: 29.06vw;
   height: 3.7vh;
-  right: 0vw;
-  top: 0vh;
-  position: absolute;
-  display: flex;
+  margin-left: 3.88vw;
+  /* display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; */
 }
 
-.General-class-content-title {
-  top: 0.98vh;
-  left: 0;
+.general-class-content-title {
+  margin-top: 0.98vh;
+  margin-left: 0;
   width: 3.17vw;
   height: 2.22vh;
   text-align: center;
   color: #83a79a;
   font-size: 1.66vh;
   font-family: "FiraGO", sans-serif;
-  position: absolute;
+  /* position: absolute; */
 }
 
-.General-class-content-field1-box {
-  width: 23.125vw;
+.general-class-content-field1-box {
+  width: 21.125vw;
   height: 3.7vh;
-  right: 0vw;
-  top: 0vh;
+  /* right: 0vw;
+  top: 0vh; */
   background-color: #eef5f2;
   border-radius: 0.64vh;
-  position: absolute;
 }
 
 label,
@@ -68,7 +73,7 @@ p {
   font-family: "FiraGO", sans-serif;
 }
 
-input.General-class-content-field1-box {
+input.general-class-content-field1-box {
   border: none;
 }
 
@@ -78,61 +83,53 @@ input[type="text"] {
   border: none;
 }
 
-.General-class-content-field2 {
-  width: 28.92vw;
+.general-class-content-field2 {
+  /* width: 28.92vw; */
+  /* width: 29.06vw; */
   height: 2.037vh;
-  right: 0vw;
-  bottom: 0vh;
-  position: absolute;
-  display: flex;
+  border: 1px solid red;
+  margin-top: 2.66vh;
+  margin-left: 5.57vw;
 }
 
-.General-class-content-field2-checkbox1 {
+.general-class-content-field2-checkbox {
   height: 2.04vh;
   width: 4vw;
-  right: 0vw;
-  top: 0vh;
-  position: absolute;
-  display: flex;
-  align-items: center;
+  border: 1px solid black;
+  /* margin-left: 10px; */
 }
 
-.General-class-content-field2-checkbox2 {
+/* .general-class-content-field2-checkbox2 {
   width: 4.082vw;
   height: 2.04vh;
-  right: 7.91vw;
-  top: 0vh;
-  position: absolute;
-  display: flex;
-  align-items: center;
+  border: 1px solid black;
 }
 
-.General-class-content-field2-checkbox3 {
+.general-class-content-field2-checkbox3 {
   width: 4.082vw;
   height: 2.04vh;
-  right: 16.039vw;
-  top: 0vh;
-  position: absolute;
-  display: flex;
-  align-items: center;
-}
+  border: 1px solid black;
+} */
 
 .P-CSCF-class {
   width: 36.82vw;
   height: 61.57vh;
-  left: 2.083vw;
-  bottom: 3.7vh;
-  border: 0.092vh solid #d5e8e1;
-  position: absolute;
+  margin-left: 2.083vw;
+  margin-top: 2.6vh;
+  /* bottom: 3.7vh; */
+  /* border: 0.092vh solid #d5e8e1; */
+  border: 0.092vh solid red;
+  /* position: absolute; */
   border-radius: 0.83vh;
 }
 
 .P-CSCF-class-content {
+  border: 0.092vh solid red;
   width: 34.41vw;
   height: 21.57vh;
-  left: 1.31vw;
-  top: 2.41vh;
-  position: absolute;
+  margin-left: 1.31vw;
+  margin-top: 2.41vh;
+  /* position: absolute; */
   border-radius: 0.83vh;
 }
 
@@ -144,43 +141,30 @@ input[type="text"] {
   color: #83a79a;
 }
 
-.P-CSCF-class-content-field1 {
+.P-CSCF-class-content-field1,
+.P-CSCF-class-content-field3 {
   width: 7.62vw;
   height: 1.94vh;
-  left: 5.61vw;
-  top: 0vh;
-  position: absolute;
+  margin-left: 5.51vw;
+  border: 1px solid red;
   border-radius: 0.83vh;
-  display: flex;
-  justify-content: space-between;
 }
 
 .P-CSCF-class-content-field2 {
+  border: 1px solid red;
   width: 28.82vw;
   height: 5.69vh;
-  left: 5.51vw;
-  bottom: 11.11vh;
-  position: absolute;
+  margin-left: 5.51vw;
   border-radius: 0.83vh;
-}
-
-.P-CSCF-class-content-field3 {
-  width: 7.048vw;
-  height: 1.94vh;
-  left: 5.51vw;
-  bottom: 6.53vh;
-  position: absolute;
-  border-radius: 0.83vh;
-  display: flex;
-  justify-content: space-between;
 }
 
 .P-CSCF-class-content-field4 {
+  border: 1px solid red;
   width: 28.95vw;
   height: 3.7vh;
-  left: 5.51vw;
-  bottom: 0vh;
-  position: absolute;
+  margin-left: 5.51vw;
+  /* bottom: 0vh;
+  position: absolute; */
   border-radius: 0.83vh;
   display: flex;
   justify-content: space-between;
@@ -343,55 +327,51 @@ input[type="text"] {
   margin-top: 0;
 }
 
-.P-CSCF-class-content-field2-checkboxes {
+/* .P-CSCF-class-content-field2-checkboxes {
   display: flex;
   justify-content: space-between;
-}
+} */
 
 .P-CSCF-class-content-field2-checkboxes input,
-.General-class-content-field2-checkboxes input,
+.general-class-content-field2-checkboxes input,
 .RTP-Proxy-class-content-input1-checkboxes input {
   width: 1.042vw;
   height: 1.85vh;
+  border: 1px solid red;
+}
+
+.general-class-content-field2-checkboxes {
+  height: 2.037vh;
+  width: 22.45vw;
+  border: 1px solid red;
+  margin-left: 5px;
 }
 
 .P-CSCF-class-content-field2-checkbox1 {
+  border: 1px solid red;
   width: 4.68vw;
-  left: 0vw;
-  bottom: 0vh;
   height: 2.037vh;
-  position: absolute;
   color: #1a4348;
   font-size: 1.48vh;
   font-family: "FiraGO", sans-serif;
-  display: flex;
-  align-items: center;
 }
 
 .P-CSCF-class-content-field2-checkbox2 {
+  border: 1px solid red;
   width: 6.94vw;
-  left: 8.85vw;
-  bottom: 0vh;
   height: 2.037vh;
-  position: absolute;
   color: #1a4348;
   font-size: 1.48vh;
   font-family: "FiraGO", sans-serif;
-  display: flex;
-  align-items: center;
 }
 
 .P-CSCF-class-content-field2-checkbox3 {
+  border: 1px solid red;
   width: 8.92vw;
-  right: 0vw;
-  bottom: 0vh;
   height: 2.037vh;
-  position: absolute;
   color: #1a4348;
   font-size: 1.48vh;
   font-family: "FiraGO", sans-serif;
-  display: flex;
-  align-items: center;
 }
 
 .I-CSCF-class-content-title {

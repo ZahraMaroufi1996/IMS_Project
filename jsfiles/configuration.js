@@ -34,7 +34,7 @@ function load_page() {
       console.log(data);
       network_Info = data;
 
-      ims_Domain = document.querySelector(`.General-class-content-field1-box`);
+      ims_Domain = document.querySelector(`.general-class-content-field1-box`);
       ims_Domain.setAttribute("value", `${network_Info.domain}`);
 
       let Enable_Homer_In1 = [];
