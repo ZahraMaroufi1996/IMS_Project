@@ -146,7 +146,7 @@ input[type="text"] {
   width: 7.62vw;
   height: 1.94vh;
   margin-left: 5.51vw;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   border-radius: 0.83vh;
 }
 
@@ -163,12 +163,7 @@ input[type="text"] {
   width: 28.95vw;
   height: 3.7vh;
   margin-left: 5.51vw;
-  /* bottom: 0vh;
-  position: absolute; */
   border-radius: 0.83vh;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .P-CSCF-class-content-field4-input1,
@@ -179,20 +174,27 @@ input[type="text"] {
 .S-CSCF-class-content-input4 {
   height: 3.7vh;
   width: 11.61vw;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
-.I-CSCF-class-content-input2 {
+
+.S-CSCF-class-content-input3,
+.S-CSCF-class-content-input4 {
+  margin-top: 2.41vh;
+}
+
+
+
+
+
+/* .I-CSCF-class-content-input2 {
   right: 13px;
   position: absolute;
-}
+} */
 
-.I-CSCF-class-content-input1 {
+/* .I-CSCF-class-content-input1 {
   right: 17.5vw;
   position: absolute;
-}
+} */
 
 .private-memory,
 .shared-memory {
@@ -203,8 +205,7 @@ input[type="text"] {
   border-radius: 0.64vh;
 }
 
-#Minimum-Register-Time,
-#Maximum-Register-Time {
+.register-time {
   height: 3.7vh;
   width: 2.6vw;
   border: none;
@@ -215,11 +216,11 @@ input[type="text"] {
 .P-CSCF-class-Rx-configuration {
   width: 29.01vw;
   height: 32.59vh;
-  right: 1.09vw;
-  bottom: 2.037vh;
-  position: absolute;
+  margin-left: 6.72vw;
+  margin-top: 2.96vh;
   border-radius: 0.83vh;
-  border: 0.092vh solid #d5e8e1;
+  /* border: 0.092vh solid #d5e8e1; */
+  border: 0.092vh solid red;
 }
 
 .P-CSCF-class-Rx-configuration-title {
@@ -235,89 +236,56 @@ input[type="text"] {
 }
 
 .P-CSCF-class-Rx-configuration-field1 {
+  /* border: 0.092vh solid red; */
   width: 19.43vw;
   height: 3.7vh;
-  right: 0.88vw;
-  top: 1.75vh;
-  position: absolute;
+  margin-left: 8.49vw;
   border-radius: 0.83vh;
-  display: flex;
-  align-items: center;
 }
 
 .P-CSCF-class-Rx-configuration-field2 {
+  /* border: 0.092vh solid red; */
   width: 19.63vw;
   height: 3.7vh;
-  right: 0.88vw;
-  top: 8.79vh;
-  position: absolute;
+  margin-left: 8.49vw;
   border-radius: 0.83vh;
-  display: flex;
-  align-items: center;
 }
 
 .P-CSCF-class-Rx-configuration-field3 {
+  /* border: 0.092vh solid red; */
   width: 19.43vw;
   height: 3.7vh;
-  right: 0.88vw;
-  top: 15.83vh;
-  position: absolute;
+  margin-left: 8.49vw;
   border-radius: 0.83vh;
-  display: flex;
-  align-items: center;
 }
 
 .P-CSCF-class-Rx-configuration-field4 {
+  /* border: 0.092vh solid red; */
+  margin-left: 8.49vw;
   width: 19.32vw;
-  right: 0.83vw;
-  top: 22.68vh;
   height: 2.037vh;
-  position: absolute;
   border-radius: 0.83vh;
-  display: flex;
-  justify-content: space-between;
 }
 
-.Transport-Protocol-class2 {
+.transport-protocol {
   width: 3.3vw;
-  top: 0vh;
-  right: 0vh;
   height: 2.037vh;
-  position: absolute;
   border-radius: 0.83vh;
-  display: flex;
-  align-items: center;
+  background-color: red;
 }
 
-.Transport-Protocol-class1 {
-  width: 3.3vw;
-  top: 0vh;
-  left: 18.7vh;
-  height: 2.037vh;
-  position: absolute;
-  border-radius: 0.83vh;
-  display: flex;
-  align-items: center;
-}
 
 .P-CSCF-class-Rx-configuration-field5 {
+  /* border: 0.092vh solid red; */
+  margin-left: 8.49vw;
   width: 19.27vw;
-  right: 1.11vw;
-  bottom: 1.29vh;
   height: 3.7vh;
-  position: absolute;
   border-radius: 0.83vh;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 #Rx-Source-Port {
   width: 8.48vw;
-  right: 0vw;
-  top: 0vh;
   height: 3.7vh;
-  position: absolute;
   background-color: #f9f9f9;
   border-radius: 0.64vh;
   border: none;
@@ -327,18 +295,22 @@ input[type="text"] {
   margin-top: 0;
 }
 
-/* .P-CSCF-class-content-field2-checkboxes {
-  display: flex;
-  justify-content: space-between;
-} */
 
-.P-CSCF-class-content-field2-checkboxes input,
+
+/* .P-CSCF-class-content-field2-checkboxes input,
 .general-class-content-field2-checkboxes input,
 .RTP-Proxy-class-content-input1-checkboxes input {
   width: 1.042vw;
   height: 1.85vh;
   border: 1px solid red;
-}
+} */
+
+
+/* .RTP-Proxy-class-content-input1-checkbox input {
+  width: 1.042vw;
+  height: 1.85vh;
+  border: 1px solid red;
+}  */
 
 .general-class-content-field2-checkboxes {
   height: 2.037vh;
@@ -378,106 +350,73 @@ input[type="text"] {
   color: #83a79a;
   font-size: 1.66vh;
   font-family: "FiraGO", sans-serif;
-  left: 1.31vw;
-  position: absolute;
+  /* left: 1.31vw;
+  position: absolute; */
 }
 
-.PCRF-IP-Address-boxes {
+/* .PCRF-IP-Address-boxes {
   display: flex;
-}
+} */
 
-input#Rx-configuration-field2,
-input#Rx-configuration-field3 {
+
+.rx-configuration-box {
   width: 12.03vw;
   height: 3.7vh;
-  right: 0vw;
-  position: absolute;
   border-radius: 0.65vh;
   background-color: #eef5f2;
-  top: 0vh;
   border: none;
 }
+
 
 .I-CSCF-class {
   width: 36.35vw;
   height: 6.94vh;
-  right: 2.083vw;
-  top: 3.7vh;
-  border: 0.092vh solid #d5e8e1;
-  position: absolute;
+  /* right: 2.083vw; */
+  margin-top: 3.7vh;
+  margin-left: 1.41vw;
+  /* border: 0.092vh solid #d5e8e1; */
+  border: 0.092vh solid red;
+  /* position: absolute; */
   border-radius: 0.83vh;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
 }
 
 .S-CSCF-class {
   width: 36.35vw;
   height: 13.33vh;
-  right: 2.083vw;
-  top: 13.24vh;
-  border: 0.092vh solid #d5e8e1;
-  position: absolute;
+  /* right: 2.083vw;*/
+  margin-top: 2.59vh;
+  margin-left: 1.41vw;
+  /* border: 0.092vh solid #d5e8e1; */
+  border: 0.092vh solid red;
+  /* position: absolute; */
   border-radius: 0.83vh;
 }
 
 .S-CSCF-class-content {
   width: 34.46vw;
   height: 9.81vh;
-  left: 1.31vw;
+  /* left: 1.31vw;
   top: 1.75vh;
-  position: absolute;
+  position: absolute; */
   border-radius: 0.83vh;
+  border: 1px solid red;
 }
 
-.S-CSCF-class-content-input1 {
-  width: 12.71vw;
-  height: 3.7vh;
-  left: 5.62vw;
-  top: 0vh;
-  position: absolute;
-  border-radius: 0.83vh;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.S-CSCF-class-content-input2 {
+.S-CSCF-class-content-input1 , .S-CSCF-class-content-input2 {
   width: 12.81vw;
   height: 3.7vh;
-  right: 0vw;
-  top: 0vh;
-  position: absolute;
   border-radius: 0.83vh;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  border: 1px solid red;
 }
 
-.S-CSCF-class-content-input3 {
-  left: 5.62vw;
-  bottom: 0vh;
-  position: absolute;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.S-CSCF-class-content-input4 {
-  right: 0vw;
-  bottom: 0vh;
-  position: absolute;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
 
 .RTP-Proxy-class-content {
   width: 35.04vw;
   height: 40.55vh;
-  right: 0vw;
+  border: 1px solid red;
+  /* right: 0vw;
   top: 2.4vh;
-  position: absolute;
+  position: absolute; */
 }
 
 .RTP-Proxy-class-content-title {
@@ -488,95 +427,57 @@ input#Rx-configuration-field3 {
 .RTP-Proxy-class-content-input1 {
   width: 29.5vw;
   height: 2.037vh;
-  right: 0vw;
-  top: 0vh;
-  position: absolute;
+  border: 1px solid red;
+  margin-left: 5.31vw;
 }
 
-.RTP-Proxy-class-content-input1,
-.RTP-Proxy-class-content-input1-checkboxes {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
-.RTP-Proxy-class-content-input1-checkbox1 {
+.RTP-Proxy-class-content-input1-checkbox {
   width: 4.81vw;
   height: 2.037vh;
-  right: 0vw;
-  top: 0vh;
-  position: absolute;
-  display: flex;
-  align-items: center;
+  border: 1px solid red;
 }
 
-.RTP-Proxy-class-content-input1-checkbox2 {
-  width: 4.81vw;
-  height: 2.037vh;
-  right: 9.87vw;
-  top: 0vh;
-  position: absolute;
-  display: flex;
-  align-items: center;
-}
 
 .RTP-Proxy-class-content-input2 {
   width: 7.57vw;
   height: 1.94vh;
-  left: 5.56vw;
-  top: 3.88vh;
-  position: absolute;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  /* border: 1px solid red; */
+  margin-left: 5.31vw;
 }
 
 .RTP-Proxy-class-content-input3 {
   width: 29.63vw;
   height: 6.2vh;
-  right: 0vw;
-  top: 10.37vh;
-  position: absolute;
+  margin-left: 5.31vw;
+  /* border: 1px solid red; */
 }
 
 .RTP-Proxy-class-content-input4 {
   width: 29.63vw;
   height: 6.2vh;
-  right: 0vw;
-  top: 20.46vh;
-  position: absolute;
+  /* border: 1px solid red; */
+  margin-left: 5.31vw;
 }
 
 .RTP-Proxy-class-content-input5 {
   width: 29.53vw;
   height: 3.7vh;
-  right: 0vw;
-  bottom: 6.75vh;
-  position: absolute;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  margin-left: 5.31vw;
+  /* border: 1px solid red; */
 }
 
-.RTP-Proxy-class-content-input5 .switch {
+/* .RTP-Proxy-class-content-input5 .switch {
   left: 11.55vw;
   position: absolute;
-}
+} */
 
-.P-CSCF-class-Rx-configuration-field5 .switch {
-  left: 6.55vw;
-  position: absolute;
-}
 
 .RTP-Proxy-class-content-input6 {
   width: 29.53vw;
   height: 3.7vh;
-  right: 0vw;
-  bottom: 0vh;
-  position: absolute;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  /* border: 1px solid red; */
+  margin-left: 5.31vw;
 }
 
 #RTP-Loss-Timeout,
@@ -589,32 +490,35 @@ input#Rx-configuration-field3 {
   border-radius: 0.65vh;
 }
 
-.RTP-Proxy-Ports-title span {
+.call-duration-label {
+margin-left: 15px;
+}
+
+
+.RTP-Proxy-Ports-title{
   width: 11.61vw;
   height: 1.94vh;
-  left: 0vw;
-  top: 0vh;
-  position: absolute;
+  margin-bottom: 5px;
 }
 
 .RTP-Proxy-Ports {
   width: 29.63vw;
   height: 3.7vh;
-  left: 0vw;
-  bottom: 0vh;
-  position: absolute;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+}
+
+.RTP-Proxy-Ports input {
+  margin-left: 7px;
 }
 
 .RTP-Proxy-class {
   width: 36.35vw;
   height: 45.09vh;
-  right: 2.083vw;
-  top: 29.166vh;
+  /* right: 2.083vw;
+  top: 29.166vh; */
+  margin-top: 2.59vh;
+  margin-left: 1.41vw;
   border: 0.092vh solid #d5e8e1;
-  position: absolute;
+  /* position: absolute; */
   border-radius: 0.83vh;
 }
 

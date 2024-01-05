@@ -860,7 +860,7 @@
   border-radius: 0.37vh;
   content: "";
   border: 0.093vh solid #707070;
-  left: -25px;
+  left: -20px;
 }
 
 .chb-1-circle + label::before {
@@ -871,7 +871,7 @@
   border-radius: 50%;
   content: "";
   border: 0.093vh solid #707070;
-  left: -25px;
+  left: -20px;
 }
 
 .chb-1:checked + label::before,
@@ -939,11 +939,11 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-.slider-div {
+/* .slider-div {
   color: #1a4348;
   font-size: 1.48vh;
   font-family: "FiraGO", sans-serif;
-}
+} */
 
 /*/////////////////////////// General Network Configs////////////////////////////////// */
 .ip-octet {
