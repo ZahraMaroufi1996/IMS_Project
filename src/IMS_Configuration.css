@@ -158,7 +158,8 @@ input[type="text"] {
   border-radius: 0.83vh;
 }
 
-.P-CSCF-class-content-field4 {
+.P-CSCF-class-content-field4,
+.S-CSCF-class-content-input34 {
   border: 1px solid red;
   width: 28.95vw;
   height: 3.7vh;
@@ -166,8 +167,7 @@ input[type="text"] {
   border-radius: 0.83vh;
 }
 
-.P-CSCF-class-content-field4-input1,
-.P-CSCF-class-content-field4-input2,
+.P-CSCF-class-content-field4-input,
 .I-CSCF-class-content-input1,
 .I-CSCF-class-content-input2,
 .S-CSCF-class-content-input3,
@@ -176,23 +176,7 @@ input[type="text"] {
   width: 11.61vw;
 }
 
-.S-CSCF-class-content-input3,
-.S-CSCF-class-content-input4 {
-  margin-top: 2.41vh;
-}
-
-/* .I-CSCF-class-content-input2 {
-  right: 13px;
-  position: absolute;
-} */
-
-/* .I-CSCF-class-content-input1 {
-  right: 17.5vw;
-  position: absolute;
-} */
-
-.private-memory,
-.shared-memory {
+.memory {
   height: 3.7vh;
   width: 3.125vw;
   border: none;
@@ -238,24 +222,15 @@ input[type="text"] {
   border-radius: 0.83vh;
 }
 
-.P-CSCF-class-Rx-configuration-field2 {
-  /* border: 0.092vh solid red; */
+.P-CSCF-class-Rx-configuration-field2,
+.P-CSCF-class-Rx-configuration-field3 {
   width: 19.63vw;
   height: 3.7vh;
   margin-left: 8.49vw;
   border-radius: 0.83vh;
 }
 
-.P-CSCF-class-Rx-configuration-field3 {
-  /* border: 0.092vh solid red; */
-  width: 19.43vw;
-  height: 3.7vh;
-  margin-left: 8.49vw;
-  border-radius: 0.83vh;
-}
-
 .P-CSCF-class-Rx-configuration-field4 {
-  /* border: 0.092vh solid red; */
   margin-left: 8.49vw;
   width: 19.32vw;
   height: 2.037vh;
@@ -270,7 +245,6 @@ input[type="text"] {
 }
 
 .P-CSCF-class-Rx-configuration-field5 {
-  /* border: 0.092vh solid red; */
   margin-left: 8.49vw;
   width: 19.27vw;
   height: 3.7vh;
@@ -327,13 +301,7 @@ input[type="text"] {
   color: #83a79a;
   font-size: 1.66vh;
   font-family: "FiraGO", sans-serif;
-  /* left: 1.31vw;
-  position: absolute; */
 }
-
-/* .PCRF-IP-Address-boxes {
-  display: flex;
-} */
 
 .rx-configuration-box {
   width: 12.03vw;
@@ -346,12 +314,10 @@ input[type="text"] {
 .I-CSCF-class {
   width: 36.35vw;
   height: 6.94vh;
-  /* right: 2.083vw; */
   margin-top: 3.7vh;
   margin-left: 1.41vw;
   /* border: 0.092vh solid #d5e8e1; */
   border: 0.092vh solid red;
-  /* position: absolute; */
   border-radius: 0.83vh;
 }
 
@@ -370,9 +336,6 @@ input[type="text"] {
 .S-CSCF-class-content {
   width: 34.46vw;
   height: 9.81vh;
-  /* left: 1.31vw;
-  top: 1.75vh;
-  position: absolute; */
   border-radius: 0.83vh;
   border: 1px solid red;
 }

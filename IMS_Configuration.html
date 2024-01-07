@@ -377,24 +377,24 @@
                 <div
                   class="P-CSCF-class-content-field4 d-flex align-items-center justify-content-between"
                 >
-                  <div class="P-CSCF-class-content-field4-input1">
-                    <label for="shared-memory">Shared Memory*</label>
+                  <div class="P-CSCF-class-content-field4-input">
+                    <label for="pcscf-shared-memory">Shared Memory*</label>
                     <input
                       type="text"
                       id="pcscf-shared-memory"
                       name="p_shared_memory"
-                      class="shared-memory"
+                      class="memory"
                       disabled
                     />
                     <span>MB</span>
                   </div>
-                  <div class="P-CSCF-class-content-field4-input2">
-                    <label for="private-memory">Private Memory*</label>
+                  <div class="P-CSCF-class-content-field4-input">
+                    <label for="pcscf-private-memory">Private Memory*</label>
                     <input
                       type="text"
                       id="pcscf-private-memory"
                       name="p_private_memory"
-                      class="private-memory"
+                      class="memory"
                       disabled
                     />
                     <span>MB</span>
@@ -532,12 +532,12 @@
               <div
                 class="I-CSCF-class-content-input1 d-flex justify-content-between align-items-center"
               >
-                <label for="shared-memory">Shared Memory*</label>
+                <label for="icscf-shared-memory">Shared Memory*</label>
                 <input
                   type="text"
                   id="icscf-shared-memory"
                   name="i_shared_memory"
-                  class="shared-memory"
+                  class="memory"
                   disabled
                 />
                 <span>MB</span>
@@ -545,12 +545,12 @@
               <div
                 class="I-CSCF-class-content-input2 d-flex justify-content-between align-items-center"
               >
-                <label for="private-memory">Private Memory*</label>
+                <label for="icscf-private-memory">Private Memory*</label>
                 <input
                   type="text"
                   id="icscf-private-memory"
                   name="i_private_memory"
-                  class="private-memory"
+                  class="memory"
                   disabled
                 />
                 <span>MB</span>
@@ -560,7 +560,9 @@
             <div
               class="S-CSCF-class d-flex justify-content-center align-items-center"
             >
-              <div class="S-CSCF-class-content">
+              <div
+                class="S-CSCF-class-content d-flex flex-column justify-content-between"
+              >
                 <div class="d-flex justify-content-between">
                   <span class="S-CSCF-class-content-title">S-CSCF</span>
 
@@ -596,29 +598,31 @@
                   </div>
                 </div>
 
-                <div class="d-flex justify-content-center">
+                <div
+                  class="S-CSCF-class-content-input34 d-flex justify-content-between"
+                >
                   <div
-                    class="S-CSCF-class-content-input3 d-flex justify-content-around align-items-center"
+                    class="S-CSCF-class-content-input3 d-flex justify-content-between align-items-center"
                   >
-                    <label for="shared-memory">Shared Memory*</label>
+                    <label for="scscf-shared-memory">Shared Memory*</label>
                     <input
                       type="text"
                       id="scscf-shared-memory"
                       name="s_shared_memory"
-                      class="shared-memory"
+                      class="memory"
                       disabled
                     />
                     <span>MB</span>
                   </div>
                   <div
-                    class="S-CSCF-class-content-input4 d-flex justify-content-around align-items-center"
+                    class="S-CSCF-class-content-input4 d-flex justify-content-between align-items-center"
                   >
-                    <label for="private-memory">Private Memory*</label>
+                    <label for="scscf-private-memory">Private Memory*</label>
                     <input
                       type="text"
                       id="scscf-private-memory"
                       name="s_private_memory"
-                      class="private-memory"
+                      class="memory"
                       disabled
                     />
                     <span>MB</span>
