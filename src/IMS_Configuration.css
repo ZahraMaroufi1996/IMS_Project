@@ -8,7 +8,7 @@
   border-radius: 1.85vh;
 } */
 
-.test-content {
+.main-content {
   width: 78.75vw;
   height: 84.25vh;
   border: 1px solid blue;
@@ -176,15 +176,10 @@ input[type="text"] {
   width: 11.61vw;
 }
 
-
 .S-CSCF-class-content-input3,
 .S-CSCF-class-content-input4 {
   margin-top: 2.41vh;
 }
-
-
-
-
 
 /* .I-CSCF-class-content-input2 {
   right: 13px;
@@ -274,7 +269,6 @@ input[type="text"] {
   background-color: red;
 }
 
-
 .P-CSCF-class-Rx-configuration-field5 {
   /* border: 0.092vh solid red; */
   margin-left: 8.49vw;
@@ -294,23 +288,6 @@ input[type="text"] {
 .P-CSCF-class-content-field2 p {
   margin-top: 0;
 }
-
-
-
-/* .P-CSCF-class-content-field2-checkboxes input,
-.general-class-content-field2-checkboxes input,
-.RTP-Proxy-class-content-input1-checkboxes input {
-  width: 1.042vw;
-  height: 1.85vh;
-  border: 1px solid red;
-} */
-
-
-/* .RTP-Proxy-class-content-input1-checkbox input {
-  width: 1.042vw;
-  height: 1.85vh;
-  border: 1px solid red;
-}  */
 
 .general-class-content-field2-checkboxes {
   height: 2.037vh;
@@ -358,7 +335,6 @@ input[type="text"] {
   display: flex;
 } */
 
-
 .rx-configuration-box {
   width: 12.03vw;
   height: 3.7vh;
@@ -366,7 +342,6 @@ input[type="text"] {
   background-color: #eef5f2;
   border: none;
 }
-
 
 .I-CSCF-class {
   width: 36.35vw;
@@ -402,13 +377,13 @@ input[type="text"] {
   border: 1px solid red;
 }
 
-.S-CSCF-class-content-input1 , .S-CSCF-class-content-input2 {
+.S-CSCF-class-content-input1,
+.S-CSCF-class-content-input2 {
   width: 12.81vw;
   height: 3.7vh;
   border-radius: 0.83vh;
   border: 1px solid red;
 }
-
 
 .RTP-Proxy-class-content {
   width: 35.04vw;
@@ -431,13 +406,11 @@ input[type="text"] {
   margin-left: 5.31vw;
 }
 
-
 .RTP-Proxy-class-content-input1-checkbox {
   width: 4.81vw;
   height: 2.037vh;
   border: 1px solid red;
 }
-
 
 .RTP-Proxy-class-content-input2 {
   width: 7.57vw;
@@ -472,7 +445,6 @@ input[type="text"] {
   position: absolute;
 } */
 
-
 .RTP-Proxy-class-content-input6 {
   width: 29.53vw;
   height: 3.7vh;
@@ -491,11 +463,10 @@ input[type="text"] {
 }
 
 .call-duration-label {
-margin-left: 15px;
+  margin-left: 15px;
 }
 
-
-.RTP-Proxy-Ports-title{
+.RTP-Proxy-Ports-title {
   width: 11.61vw;
   height: 1.94vh;
   margin-bottom: 5px;
