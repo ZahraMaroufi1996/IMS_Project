@@ -352,9 +352,6 @@ input[type="text"] {
   width: 35.04vw;
   height: 40.55vh;
   border: 1px solid red;
-  /* right: 0vw;
-  top: 2.4vh;
-  position: absolute; */
 }
 
 .RTP-Proxy-class-content-title {
@@ -378,40 +375,20 @@ input[type="text"] {
 .RTP-Proxy-class-content-input2 {
   width: 7.57vw;
   height: 1.94vh;
-  /* border: 1px solid red; */
   margin-left: 5.31vw;
 }
 
-.RTP-Proxy-class-content-input3 {
-  width: 29.63vw;
-  height: 6.2vh;
-  margin-left: 5.31vw;
-  /* border: 1px solid red; */
-}
-
+.RTP-Proxy-class-content-input3,
 .RTP-Proxy-class-content-input4 {
   width: 29.63vw;
   height: 6.2vh;
-  /* border: 1px solid red; */
   margin-left: 5.31vw;
 }
 
-.RTP-Proxy-class-content-input5 {
-  width: 29.53vw;
-  height: 3.7vh;
-  margin-left: 5.31vw;
-  /* border: 1px solid red; */
-}
-
-/* .RTP-Proxy-class-content-input5 .switch {
-  left: 11.55vw;
-  position: absolute;
-} */
-
+.RTP-Proxy-class-content-input5,
 .RTP-Proxy-class-content-input6 {
   width: 29.53vw;
   height: 3.7vh;
-  /* border: 1px solid red; */
   margin-left: 5.31vw;
 }
 
@@ -447,21 +424,17 @@ input[type="text"] {
 .RTP-Proxy-class {
   width: 36.35vw;
   height: 45.09vh;
-  /* right: 2.083vw;
-  top: 29.166vh; */
   margin-top: 2.59vh;
   margin-left: 1.41vw;
   border: 0.092vh solid #d5e8e1;
-  /* position: absolute; */
   border-radius: 0.83vh;
 }
 
 .information-save-button {
   width: 7.29vw;
   height: 3.7vh;
-  right: 1.46vw;
-  bottom: 3.24vh;
-  position: absolute;
+  margin-top: 3.05vh;
+  margin-left: 22.86vw;
   border-style: none;
   border-radius: 0.65vh;
   background-color: #1f666e;
@@ -470,9 +443,8 @@ input[type="text"] {
 .information-edit-button {
   width: 7.29vw;
   height: 3.7vh;
-  right: 9.68vw;
-  bottom: 3.24vh;
-  position: absolute;
+  margin-top: 3.05vh;
+  margin-left: 0.94vw;
   border-style: none;
   border-radius: 0.65vh;
   background-color: #1f666e;
