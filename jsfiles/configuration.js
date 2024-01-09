@@ -247,13 +247,13 @@ function load_page() {
       PCRF_FQDN = document.getElementById("Rx-configuration-field2");
       PCRF_FQDN.setAttribute(
         "value",
-        `${network_Info.pcscf.rxConfiguration.sourcePort}`
+        `${network_Info.pcscf.rxConfiguration.fqdn}`
       );
 
       PCRF_Realm = document.getElementById("Rx-configuration-field3");
       PCRF_Realm.setAttribute(
         "value",
-        `${network_Info.pcscf.rxConfiguration.sourcePort}`
+        `${network_Info.pcscf.rxConfiguration.realm}`
       );
     })
     .catch((error) => {
