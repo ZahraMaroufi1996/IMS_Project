@@ -1,0 +1,113 @@
+.main-content {
+  background-color: white;
+  width: 38.64vw;
+  height: 84.26vh;
+  margin-top: 2.59vh;
+  margin-left: 1.46vw;
+  border-radius: 1.85vh;
+}
+
+.main-content-left-side {
+  border: 1px solid blue;
+  width: 35.52vw;
+  height: 77.64vh;
+}
+
+.right-side-content-title {
+  margin-top: 3.38vh;
+  margin-left: 2.18vw;
+}
+
+.ip-address {
+  border: 1px solid red;
+  width: 16.921vw;
+  height: 3.7vh;
+  margin-top: 4.81vh;
+}
+
+input {
+  border: none;
+}
+
+.node {
+  border: 1px solid red;
+  width: 16.41vw;
+  /* height: 25.6vh; */
+  height: 3.7vh;
+  margin-top: 4.81vh;
+}
+
+.run-button {
+  margin-top: 2.59vh;
+}
+
+.command-result {
+  /* border: 1px solid black; */
+  background-color: red;
+  width: 35.52vw;
+  height: 60.37vh;
+  margin-top: 2.55vh;
+}
+
+.command-result-title {
+  margin-left: 0.52vw;
+  margin-top: 2.22vh;
+}
+
+.command-result-content {
+  border: 1px solid yellow;
+  width: 33.75vw;
+  height: 51.94vh;
+  margin-left: 0.52vw;
+  margin-top: 1.48vh;
+}
+
+/* .node-name-box {
+  width: 10.42vw;
+  height: 3.7vh;
+  border-radius: 0.65vh;
+  background-color: #eef5f2;
+} */
+
+.node2 {
+  width: 16.61vw;
+  height: 3.7vh;
+  margin-top: 2.59vh;
+  margin-left: 2.18vw;
+  border: 1px solid red;
+}
+
+.ip-address2 {
+  width: 15.26vw;
+  height: 3.7vh;
+  margin-top: 2.59vh;
+  margin-left: 2.34vw;
+  border: 1px solid red;
+}
+
+.option {
+  width: 26.04vw;
+  height: 3.7vh;
+  margin-top: 2.59vh;
+  margin-left: 2.18vw;
+  border: 1px solid red;
+}
+
+.start-button {
+  margin-top: 2.59vh;
+  margin-left: 0.94vw;
+}
+
+.node-option-box {
+  width: 22.39vw;
+  height: 3.7vh;
+  border-radius: 0.65vh;
+  background-color: #eef5f2;
+}
+
+select option {
+  color: red;
+  text-align: center;
+  /* margin-top: 5px;
+  margin-left: 15px; */
+}
