@@ -8,10 +8,18 @@
 }
 
 .main-content-left-side {
-  border: 1px solid blue;
   width: 35.52vw;
   height: 77.64vh;
 }
+
+.left-side-content-title ,
+.right-side-content-title ,
+.command-result-title{
+  color: #83A79A;
+  font-size: 1.66vh;
+  font-family: "FiraGO", sans-serif;
+}
+
 
 .right-side-content-title {
   margin-top: 3.38vh;
@@ -19,10 +27,9 @@
 }
 
 .ip-address {
-  border: 1px solid red;
   width: 16.921vw;
   height: 3.7vh;
-  margin-top: 4.81vh;
+  margin-top: 2.59vh;
 }
 
 input {
@@ -30,11 +37,9 @@ input {
 }
 
 .node {
-  border: 1px solid red;
   width: 16.41vw;
-  /* height: 25.6vh; */
   height: 3.7vh;
-  margin-top: 4.81vh;
+  margin-top: 2.59vh;
 }
 
 .run-button {
@@ -42,8 +47,8 @@ input {
 }
 
 .command-result {
-  /* border: 1px solid black; */
-  background-color: red;
+  border: 1px solid #D5E8E1;
+  border-radius: 7px;
   width: 35.52vw;
   height: 60.37vh;
   margin-top: 2.55vh;
@@ -55,26 +60,18 @@ input {
 }
 
 .command-result-content {
-  border: 1px solid yellow;
+  border: 1px solid red;
   width: 33.75vw;
   height: 51.94vh;
   margin-left: 0.52vw;
   margin-top: 1.48vh;
 }
 
-/* .node-name-box {
-  width: 10.42vw;
-  height: 3.7vh;
-  border-radius: 0.65vh;
-  background-color: #eef5f2;
-} */
-
 .node2 {
   width: 16.61vw;
   height: 3.7vh;
   margin-top: 2.59vh;
   margin-left: 2.18vw;
-  border: 1px solid red;
 }
 
 .ip-address2 {
@@ -82,7 +79,6 @@ input {
   height: 3.7vh;
   margin-top: 2.59vh;
   margin-left: 2.34vw;
-  border: 1px solid red;
 }
 
 .option {
@@ -90,7 +86,6 @@ input {
   height: 3.7vh;
   margin-top: 2.59vh;
   margin-left: 2.18vw;
-  border: 1px solid red;
 }
 
 .start-button {
@@ -105,9 +100,19 @@ input {
   background-color: #eef5f2;
 }
 
+select{
+margin-left: 10px !important;
+}
+
 select option {
   color: red;
   text-align: center;
   /* margin-top: 5px;
   margin-left: 15px; */
+}
+
+label , span , option{
+  color: #1A4348;
+  font-size: 1.48vh;
+  font-family: "FiraGO", sans-serif;
 }
