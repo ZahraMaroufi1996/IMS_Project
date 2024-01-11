@@ -104,7 +104,6 @@
   height: 3.7vh;
   margin-top: 6vh;
   margin-left: 3.64vw;
-  /* position: absolute; */
   color: white;
   font-size: 1.66vh;
   border-radius: 7px;
@@ -112,75 +111,74 @@
 }
 
 .sidebar-topology-icon {
-  background-color: white;
-  /* width: 15.1vw; */
   width: 100%;
   height: 7.13vh;
   margin-top: 9.81vh;
 }
-.sidebar-selected-icon {
+
+/* .sidebar-selected-icon {
   height: 7.13vh;
   width: 0.625vw;
   left: 0;
   top: 0;
   position: absolute;
   background-color: #68d5b0;
-}
+} */
 
 .sidebar-topology-icon-content {
   width: 6.38vw;
   height: 2.77vh;
-  /* background-color: red; */
-}
-
-.sidebar-configuration-icon {
-  background-color: white;
-  width: 100%;
-  height: 7.13vh;
-  margin-top: 20px;
+  margin-left: 3.72vw;
 }
 
 .sidebar-configuration-icon-content {
   width: 8.88vw;
   height: 4.12vh;
-}
-
-.sidebar-monitoring-icon {
-  background-color: white;
-  width: 100%;
-  height: 7.13vh;
-  margin-top: 20px;
+  margin-left: 3.28vw;
 }
 
 .sidebar-monitoring-icon-content {
   width: 7.18vw;
   height: 2.77vh;
+ margin-left: 3.72vw;
 }
 
-.sidebar-troubleshooting-icon {
-  background-color: white;
+.sidebar-icons {
+  /* background-color: red; */
   width: 100%;
   height: 7.13vh;
   margin-top: 20px;
+  font-size: 1.66vh;
+  font-family: "FiraGO", sans-serif;
+  color: white;
 }
 
 .sidebar-troubleshooting-icon-content {
   width: 9.89vw;
   height: 2.77vh;
+  margin-left: 3.42vw;
 }
 
 .sidebar-icons span {
   color: white;
   font-size: 1.48vh;
-  padding-left: 12px;
+  padding-left: 5px;
   font-family: "FiraGO", sans-serif;
   text-align: center;
 }
+
+
 
 .sidebar-configuration-icon-image {
   width: 2.31vw;
   height: 4.12vh;
 }
+
+.sidebar-configuration-icon-image + span {
+  padding-left: 1px;
+}
+
+
 
 .sidebar-image {
   height: 2.77vh;
@@ -805,42 +803,6 @@
   height: 1.85vh;
 } */
 
-/* ////////////////////////////////////// footer styles /////////////////////////////////////////////////////*/
-/* .footer {
-  background-color: white;
-  width: 84.89vw;
-  height: 4.63vh;
-  right: 0;
-  bottom: 0;
-  position: absolute;
-}
-
-#time-box {
-  width: 13.32vw;
-  height: 3vh;
-  right: 4.7vw;
-  top: 0.78vh;
-  position: absolute;
-  border-left: 0.046vh solid #83a79a;
-  border-right: 0.046vh solid #83a79a;
-}
-
-#time-content {
-  width: 10.46vw;
-  height: 1.76vh;
-  left: 1.41vw;
-  top: 0.46vh;
-  position: absolute;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-#time-content span {
-  color: #83a79a;
-  font-size: 1.58vh;
-  font-family: "FiraGO", sans-serif;
-} */
 
 /* ////////////////////////////////////////General checkboxes styles////////////////////////////////// */
 .chb {
@@ -977,6 +939,9 @@ input:checked + .slider:before {
   border-radius: 0.65vh;
   background-color: #1f666e;
   color: white;
+  text-align: center;
+  font-size: 1.66vh;
+  font-family: "FiraGO", sans-serif;
 }
 
 .node-name-box {

@@ -35,17 +35,13 @@
 }
 
 .general-class-content-field1 {
-  border: 0.092vh solid red;
   width: 29.06vw;
   height: 3.7vh;
-  margin-left: 3.88vw;
-  /* display: flex;
-  justify-content: space-between;
-  align-items: center; */
+  margin-left: 2.5vw;
 }
 
 .general-class-content-title {
-  margin-top: 0.98vh;
+  /* margin-top: 0.98vh; */
   margin-left: 0;
   width: 3.17vw;
   height: 2.22vh;
@@ -53,14 +49,11 @@
   color: #83a79a;
   font-size: 1.66vh;
   font-family: "FiraGO", sans-serif;
-  /* position: absolute; */
 }
 
 .general-class-content-field1-box {
   width: 21.125vw;
   height: 3.7vh;
-  /* right: 0vw;
-  top: 0vh; */
   background-color: #eef5f2;
   border-radius: 0.64vh;
 }
@@ -85,9 +78,7 @@ input[type="text"] {
 
 .general-class-content-field2 {
   /* width: 28.92vw; */
-  /* width: 29.06vw; */
   height: 2.037vh;
-  border: 1px solid red;
   margin-top: 2.66vh;
   margin-left: 5.57vw;
 }
@@ -96,30 +87,15 @@ input[type="text"] {
   height: 2.04vh;
   width: 4vw;
   border: 1px solid black;
-  /* margin-left: 10px; */
 }
-
-/* .general-class-content-field2-checkbox2 {
-  width: 4.082vw;
-  height: 2.04vh;
-  border: 1px solid black;
-}
-
-.general-class-content-field2-checkbox3 {
-  width: 4.082vw;
-  height: 2.04vh;
-  border: 1px solid black;
-} */
 
 .P-CSCF-class {
   width: 36.82vw;
   height: 61.57vh;
   margin-left: 2.083vw;
   margin-top: 2.6vh;
-  /* bottom: 3.7vh; */
   /* border: 0.092vh solid #d5e8e1; */
   border: 0.092vh solid red;
-  /* position: absolute; */
   border-radius: 0.83vh;
 }
 
@@ -135,11 +111,20 @@ input[type="text"] {
 
 .P-CSCF-class-content-title,
 .S-CSCF-class-content-title,
-.RTP-Proxy-class-content-title {
+.RTP-Proxy-class-content-title ,
+.I-CSCF-class-content-title{
   font-size: 1.66vh;
   font-family: "FiraGO", sans-serif;
   color: #83a79a;
 }
+
+.RTP-Proxy-class-content-title{
+  border: 1px solid red;
+  width: 4.06vw;
+  height: 2.22vh;
+  margin-left: 0vw;
+}
+
 
 .P-CSCF-class-content-field1,
 .P-CSCF-class-content-field3 {
@@ -159,13 +144,23 @@ input[type="text"] {
 }
 
 .P-CSCF-class-content-field4,
-.S-CSCF-class-content-input34 {
-  border: 1px solid red;
+.S-CSCF-class-content-input34 ,
+.I-CSCF-class-content-input12{
+  border: 1px solid black;
   width: 28.95vw;
   height: 3.7vh;
-  margin-left: 5.51vw;
   border-radius: 0.83vh;
 }
+
+.P-CSCF-class-content-field4,
+.S-CSCF-class-content-input34{
+  margin-left: 5.51vw;
+}
+
+.I-CSCF-class-content-input12{
+  margin-left: 2.8vw;
+}
+
 
 .P-CSCF-class-content-field4-input,
 .I-CSCF-class-content-input1,
@@ -260,18 +255,24 @@ input[type="text"] {
 }
 
 .P-CSCF-class-content-field2 p {
-  margin-top: 0;
+  margin: 0;
 }
 
-.general-class-content-field2-checkboxes {
+.enable-homer-title{
   height: 2.037vh;
-  width: 22.45vw;
-  border: 1px solid red;
-  margin-left: 5px;
+  width: 6.51vw;
 }
+
+
+.P-CSCF-class-content-field2-checkboxes {
+  width: 28.82vw;
+  height: 2.037vh;
+  /* margin-left: 10px; */
+}
+
 
 .P-CSCF-class-content-field2-checkbox1 {
-  border: 1px solid red;
+  /* background-color: red; */
   width: 4.68vw;
   height: 2.037vh;
   color: #1a4348;
@@ -280,7 +281,7 @@ input[type="text"] {
 }
 
 .P-CSCF-class-content-field2-checkbox2 {
-  border: 1px solid red;
+  /* background-color: red; */
   width: 6.94vw;
   height: 2.037vh;
   color: #1a4348;
@@ -289,7 +290,7 @@ input[type="text"] {
 }
 
 .P-CSCF-class-content-field2-checkbox3 {
-  border: 1px solid red;
+  /* background-color: red; */
   width: 8.92vw;
   height: 2.037vh;
   color: #1a4348;
@@ -298,9 +299,10 @@ input[type="text"] {
 }
 
 .I-CSCF-class-content-title {
-  color: #83a79a;
-  font-size: 1.66vh;
-  font-family: "FiraGO", sans-serif;
+  /* border: 1px solid red; */
+  width: 2.76vw;
+  height: 2.22vh;
+  margin-left: 1vw;
 }
 
 .rx-configuration-box {
@@ -362,8 +364,8 @@ input[type="text"] {
 .RTP-Proxy-class-content-input1 {
   width: 29.5vw;
   height: 2.037vh;
-  border: 1px solid red;
-  margin-left: 5.31vw;
+  border: 1px solid black;
+  margin-left: 1.35vw;
 }
 
 .RTP-Proxy-class-content-input1-checkbox {
@@ -431,27 +433,17 @@ input[type="text"] {
 }
 
 .information-save-button {
-  width: 7.29vw;
-  height: 3.7vh;
   margin-top: 3.05vh;
   margin-left: 22.86vw;
-  border-style: none;
-  border-radius: 0.65vh;
-  background-color: #1f666e;
 }
 
 .information-edit-button {
-  width: 7.29vw;
-  height: 3.7vh;
   margin-top: 3.05vh;
   margin-left: 0.94vw;
-  border-style: none;
-  border-radius: 0.65vh;
-  background-color: #1f666e;
 }
 
-button {
+/* button {
   color: white;
   font-size: 1.66vh;
   font-family: "FiraGO", sans-serif;
-}
+} */

@@ -121,20 +121,18 @@
       </div>
 
       <div
-        class="sidebar-topology-icon d-flex justify-content-center align-items-center"
+        class="sidebar-topology-icon sidebar-icons d-flex align-items-center"
       >
         <a
           href="IMS_Topology.html"
-          class="sidebar-topology-icon-content d-flex flex-row justify-content-center align-items-center"
+          class="sidebar-topology-icon-content d-flex justify-content-center align-items-center"
         >
           <img class="sidebar-image" src="images/Menu Icon _ Topology.svg" />
           <span>TOPOLOGY</span>
         </a>
       </div>
 
-      <div
-        class="sidebar-configuration-icon d-flex justify-content-center align-items-center"
-      >
+      <div class="sidebar-icons d-flex align-items-center">
         <a
           href="IMS_Configuration.html"
           class="sidebar-configuration-icon-content d-flex justify-content-center align-items-center"
@@ -147,9 +145,7 @@
         </a>
       </div>
 
-      <div
-        class="sidebar-monitoring-icon d-flex justify-content-center align-items-center"
-      >
+      <div class="sidebar-icons d-flex align-items-center">
         <a
           href="IMS_Monitoring.html"
           class="sidebar-monitoring-icon-content d-flex justify-content-center align-items-center"
@@ -159,9 +155,7 @@
         </a>
       </div>
 
-      <div
-        class="sidebar-troubleshooting-icon d-flex justify-content-center align-items-center"
-      >
+      <div class="sidebar-icons d-flex align-items-center">
         <a
           href="IMS_Troubleshooting.html"
           class="sidebar-troubleshooting-icon-content d-flex justify-content-center align-items-center"
@@ -220,7 +214,7 @@
                 <div
                   class="d-flex flex-row justify-content-between align-items-center"
                 >
-                  <div class="general-class-content-title">General</div>
+                  <span class="general-class-content-title">General</span>
                   <div
                     class="general-class-content-field1 d-flex justify-content-between align-items-center"
                   >
@@ -238,10 +232,10 @@
                 <div
                   class="general-class-content-field2 d-flex flex-row align-items-center justify-content-between"
                 >
-                  <span>Enable Homer In :</span>
-                  <div
-                    class="general-class-content-field2-checkboxes d-flex flex-row align-items-center justify-content-around"
-                  >
+                  <span class="enable-homer-title" >Enable Homer In :</span>
+                  <!-- <div
+                    class="general-class-content-field2-checkboxes d-flex flex-row align-items-center justify-content-between"
+                  > -->
                     <div
                       class="general-class-content-field2-checkbox d-flex align-items-center justify-content-around"
                     >
@@ -281,7 +275,7 @@
                       />
                       <label for="General-type-3">I-CSCF</label>
                     </div>
-                  </div>
+                  <!-- </div> -->
                 </div>
               </div>
             </div>
@@ -311,10 +305,10 @@
                 >
                   <p>Supported IPsec Encryption Algorithms :</p>
                   <div
-                    class="P-CSCF-class-content-field2-checkboxes d-flex flex-row justify-content-between"
+                    class="P-CSCF-class-content-field2-checkboxes d-flex  justify-content-between align-items-center"
                   >
                     <div
-                      class="P-CSCF-class-content-field2-checkbox1 d-flex align-items-center"
+                      class="P-CSCF-class-content-field2-checkbox1 d-flex  justify-content-between"
                     >
                       <input
                         class="chb chb-1"
@@ -327,7 +321,7 @@
                       <label for="Encryption-Algorithm-type-1">AES-CBC</label>
                     </div>
                     <div
-                      class="P-CSCF-class-content-field2-checkbox2 d-flex align-items-center"
+                      class="P-CSCF-class-content-field2-checkbox2 d-flex  justify-content-between"
                     >
                       <input
                         class="chb chb-1"
@@ -342,7 +336,7 @@
                       >
                     </div>
                     <div
-                      class="P-CSCF-class-content-field2-checkbox3 d-flex align-items-center"
+                      class="P-CSCF-class-content-field2-checkbox3 d-flex justify-content-between"
                     >
                       <input
                         class="chb chb-1"
@@ -377,7 +371,7 @@
                 <div
                   class="P-CSCF-class-content-field4 d-flex align-items-center justify-content-between"
                 >
-                  <div class="P-CSCF-class-content-field4-input">
+                  <div class="P-CSCF-class-content-field4-input d-flex justify-content-between align-items-center">
                     <label for="pcscf-shared-memory">Shared Memory*</label>
                     <input
                       type="text"
@@ -388,7 +382,7 @@
                     />
                     <span>MB</span>
                   </div>
-                  <div class="P-CSCF-class-content-field4-input">
+                  <div class="P-CSCF-class-content-field4-input d-flex justify-content-between align-items-center">
                     <label for="pcscf-private-memory">Private Memory*</label>
                     <input
                       type="text"
@@ -525,35 +519,37 @@
           </div>
 
           <div class="d-flex flex-column">
-            <div
-              class="I-CSCF-class d-flex justify-content-around align-items-center"
-            >
+            <div class="I-CSCF-class d-flex align-items-center">
               <span class="I-CSCF-class-content-title">I-CSCF</span>
               <div
-                class="I-CSCF-class-content-input1 d-flex justify-content-between align-items-center"
+                class="I-CSCF-class-content-input12 d-flex justify-content-between align-items-center"
               >
-                <label for="icscf-shared-memory">Shared Memory*</label>
-                <input
-                  type="text"
-                  id="icscf-shared-memory"
-                  name="i_shared_memory"
-                  class="memory"
-                  disabled
-                />
-                <span>MB</span>
-              </div>
-              <div
-                class="I-CSCF-class-content-input2 d-flex justify-content-between align-items-center"
-              >
-                <label for="icscf-private-memory">Private Memory*</label>
-                <input
-                  type="text"
-                  id="icscf-private-memory"
-                  name="i_private_memory"
-                  class="memory"
-                  disabled
-                />
-                <span>MB</span>
+                <div
+                  class="I-CSCF-class-content-input1 d-flex justify-content-between align-items-center"
+                >
+                  <label for="icscf-shared-memory">Shared Memory*</label>
+                  <input
+                    type="text"
+                    id="icscf-shared-memory"
+                    name="i_shared_memory"
+                    class="memory"
+                    disabled
+                  />
+                  <span>MB</span>
+                </div>
+                <div
+                  class="I-CSCF-class-content-input2 d-flex justify-content-between align-items-center"
+                >
+                  <label for="icscf-private-memory">Private Memory*</label>
+                  <input
+                    type="text"
+                    id="icscf-private-memory"
+                    name="i_private_memory"
+                    class="memory"
+                    disabled
+                  />
+                  <span>MB</span>
+                </div>
               </div>
             </div>
 
@@ -637,33 +633,34 @@
               <div
                 class="RTP-Proxy-class-content d-flex flex-column justify-content-between"
               >
-                <!-- <span class="RTP-Proxy-class-content-title">RTP Proxy</span> -->
-
-                <div
-                  class="RTP-Proxy-class-content-input1 d-flex justify-content-between align-items-center"
-                >
-                  <span>Supported HD Codecs :</span>
-                  <div class="RTP-Proxy-class-content-input1-checkbox">
-                    <input
-                      class="chb chb-1"
-                      type="checkbox"
-                      id="Supported-HD-Codecs-type-1"
-                      name="Supported-HD-Codecs-type-icon1"
-                      value="G.722"
-                      disabled
-                    />
-                    <label for="Supported-HD-Codecs-type-1">G.722</label>
-                  </div>
-                  <div class="RTP-Proxy-class-content-input1-checkbox">
-                    <input
-                      class="chb chb-1"
-                      type="checkbox"
-                      id="Supported-HD-Codecs-type-2"
-                      name="Supported-HD-Codecs-type-icon2"
-                      value="AMR_WB"
-                      disabled
-                    />
-                    <label for="Supported-HD-Codecs-type-2">AMR-WB</label>
+                <div  class="d-flex justify-content-between">
+                  <span class="RTP-Proxy-class-content-title">RTP Proxy</span>
+                  <div
+                    class="RTP-Proxy-class-content-input1 d-flex justify-content-between align-items-center"
+                  >
+                    <span>Supported HD Codecs :</span>
+                    <div class="RTP-Proxy-class-content-input1-checkbox">
+                      <input
+                        class="chb chb-1"
+                        type="checkbox"
+                        id="Supported-HD-Codecs-type-1"
+                        name="Supported-HD-Codecs-type-icon1"
+                        value="G.722"
+                        disabled
+                      />
+                      <label for="Supported-HD-Codecs-type-1">G.722</label>
+                    </div>
+                    <div class="RTP-Proxy-class-content-input1-checkbox">
+                      <input
+                        class="chb chb-1"
+                        type="checkbox"
+                        id="Supported-HD-Codecs-type-2"
+                        name="Supported-HD-Codecs-type-icon2"
+                        value="AMR_WB"
+                        disabled
+                      />
+                      <label for="Supported-HD-Codecs-type-2">AMR-WB</label>
+                    </div>
                   </div>
                 </div>
 
@@ -798,10 +795,10 @@
               </div>
             </div>
             <div class="d-flex">
-              <button type="submit" class="information-save-button">
+              <button type="submit" class="information-save-button ims-button">
                 Save
               </button>
-              <button class="information-edit-button">Edit</button>
+              <button class="information-edit-button ims-button">Edit</button>
             </div>
           </div>
         </form>
