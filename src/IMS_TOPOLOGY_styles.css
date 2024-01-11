@@ -119,6 +119,8 @@ label,
 }
 
 .add-node-title {
+  width: 9.17vw;
+  height: 2.22vh;
   color: #83a79a;
   font-size: 1.66vh;
   font-family: "FiraGO", sans-serif;
@@ -129,51 +131,40 @@ label,
   width: 13.65vw;
   height: 3.7vh;
   margin-left: 3.63vw;
-  border: 1px solid red;
   margin-right: 0;
 }
 
-/* .node-name-box {
-  width: 10.42vw;
-  height: 3.7vh;
-  border-radius: 0.65vh;
-  background-color: #eef5f2;
-} */
-
 .node-ip {
-  border: 1px solid red;
   width: 16.921vw;
   height: 3.7vh;
-  /* margin-left: 2.23vw; */
   margin-left: 3.23vw;
 }
 
+.node-name span , .node-ip span ,.node-type span {
+  color: #1A4348;
+  font-size: 1.48vh;
+  font-family: "FiraGO", sans-serif;
+}
+
 .node-type {
-  /* display: block; */
   width: 23.1vw;
   height: 2.04vh;
-  margin-left: 11.82vw;
+  margin-left: 12.2vw;
   margin-top: 3.24vh;
-  border: 1px solid black;
-  /* position: absolute; */
 }
 
 .add-node-button {
   width: 5.73vw;
   height: 3.7vh;
-  /* margin-left: 3.96vw; */
+  margin-left: 3.96vw;
   margin-top: 2.5vh;
   border-radius: 0.65vh;
   background-color: #68d5b0;
   border-style: none;
+  color: white;
+  font-size: 1.48vh;
+  font-family: "FiraGO", sans-serif;
 }
-
-/* .node-type-checkboxes {
-  display: flex;
-  right: 0vw;
-  top: 0vh;
-  position: absolute;
-} */
 
 .node-type-core-checkbox {
   width: 3.19vw;

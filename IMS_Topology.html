@@ -297,45 +297,48 @@
 
         <div class="d-flex flex-row">
           <div class="node d-flex flex-column">
-            <form id="add-node-form" class="node-properties d-flex flex-wrap">
-              <span class="add-node-title">Nodes IP Addresses</span>
-              <div
-                class="node-name d-flex flex-row justify-content-between align-items-center"
-              >
-                <span>Name</span>
-                <input type="text" name="node_name" class="node-name-box" />
+            <form id="add-node-form" class="node-properties d-flex flex-column">
+              <div class="d-flex">
+                <span class="add-node-title">Nodes IP Addresses</span>
+                <div
+                  class="node-name d-flex flex-row justify-content-between align-items-center"
+                >
+                  <span>Name</span>
+                  <input type="text" name="node_name" class="node-name-box" />
+                </div>
+                <div
+                  class="node-ip d-flex flex-row justify-content-between align-items-center"
+                >
+                  <span>IP Address</span>
+                  <input
+                    type="text"
+                    name="IP_Address_field4"
+                    class="ip-octet"
+                    id="node-ip-octet1"
+                  />
+                  <input
+                    type="text"
+                    name="IP_Address_field3"
+                    class="ip-octet"
+                    id="node-ip-octet2"
+                  />
+                  <input
+                    type="text"
+                    name="IP_Address_field2"
+                    class="ip-octet"
+                    id="node-ip-octet3"
+                  />
+                  <input
+                    type="text"
+                    name="IP_Address_field1"
+                    class="ip-octet"
+                    id="node-ip-octet4"
+                  />
+                </div>
               </div>
-
-              <div
-                class="node-ip d-flex flex-row justify-content-between align-items-center"
-              >
-                <span>IP Address</span>
-                <input
-                  type="text"
-                  name="IP_Address_field4"
-                  class="ip-octet"
-                  id="node-ip-octet1"
-                />
-                <input
-                  type="text"
-                  name="IP_Address_field3"
-                  class="ip-octet"
-                  id="node-ip-octet2"
-                />
-                <input
-                  type="text"
-                  name="IP_Address_field2"
-                  class="ip-octet"
-                  id="node-ip-octet3"
-                />
-                <input
-                  type="text"
-                  name="IP_Address_field1"
-                  class="ip-octet"
-                  id="node-ip-octet4"
-                />
-              </div>
-              <div
+         
+              <div class="d-flex">
+                <div
                 class="node-type d-flex flex-row justify-content-between align-items-center"
               >
                 <span>Node Types :</span>
@@ -372,6 +375,9 @@
               </div>
 
               <button type="submit" class="add-node-button">Add Node</button>
+              </div>
+
+      
             </form>
 
             <table class="node-table">

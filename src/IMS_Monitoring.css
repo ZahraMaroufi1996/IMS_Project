@@ -1,7 +1,20 @@
 .monitoring-content {
-  width: 18.33vw;
-  height: 11.76vh;
+  /* width: 18.33vw;
+  height: 11.76vh; */
   background-color: brown;
+}
+
+.monitoring-content p{
+  width: 100%;
+  height: 2.22vh;
+  color: #83A79A;
+  font-size: 1.66vh;
+  font-family: "FiraGO", sans-serif;
+}
+
+.monitoring-content img{
+  width: 2.34vw;
+  height: 3.99vh;
 }
 
 .monitoring-button {
@@ -13,6 +26,7 @@
   background-color: #1f666e;
   border: none;
   border-radius: 7px;
+  text-align: center;
 }
 
 .main-content {
