@@ -140,7 +140,7 @@
 .sidebar-monitoring-icon-content {
   width: 7.18vw;
   height: 2.77vh;
- margin-left: 3.72vw;
+  margin-left: 3.72vw;
 }
 
 .sidebar-icons {
@@ -167,8 +167,6 @@
   text-align: center;
 }
 
-
-
 .sidebar-configuration-icon-image {
   width: 2.31vw;
   height: 4.12vh;
@@ -177,8 +175,6 @@
 .sidebar-configuration-icon-image + span {
   padding-left: 1px;
 }
-
-
 
 .sidebar-image {
   height: 2.77vh;
@@ -802,7 +798,6 @@
   width: 1.042vw;
   height: 1.85vh;
 } */
-
 
 /* ////////////////////////////////////////General checkboxes styles////////////////////////////////// */
 .chb {

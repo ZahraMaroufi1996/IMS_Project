@@ -12,14 +12,13 @@
   height: 77.64vh;
 }
 
-.left-side-content-title ,
-.right-side-content-title ,
-.command-result-title{
-  color: #83A79A;
+.left-side-content-title,
+.right-side-content-title,
+.command-result-title {
+  color: #83a79a;
   font-size: 1.66vh;
   font-family: "FiraGO", sans-serif;
 }
-
 
 .right-side-content-title {
   margin-top: 3.38vh;
@@ -47,7 +46,7 @@ input {
 }
 
 .command-result {
-  border: 1px solid #D5E8E1;
+  border: 1px solid #d5e8e1;
   border-radius: 7px;
   width: 35.52vw;
   height: 60.37vh;
@@ -74,7 +73,7 @@ input {
   margin-left: 2.18vw;
 }
 
-.ip-address2 {
+.interface {
   width: 15.26vw;
   height: 3.7vh;
   margin-top: 2.59vh;
@@ -100,8 +99,8 @@ input {
   background-color: #eef5f2;
 }
 
-select{
-margin-left: 10px !important;
+select {
+  margin-left: 10px !important;
 }
 
 select option {
@@ -111,8 +110,10 @@ select option {
   margin-left: 15px; */
 }
 
-label , span , option{
-  color: #1A4348;
+label,
+span,
+option {
+  color: #1a4348;
   font-size: 1.48vh;
   font-family: "FiraGO", sans-serif;
 }
