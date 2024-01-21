@@ -140,8 +140,10 @@ label,
   margin-left: 3.23vw;
 }
 
-.node-name span , .node-ip span ,.node-type span {
-  color: #1A4348;
+.node-name span,
+.node-ip span,
+.node-type span {
+  color: #1a4348;
   font-size: 1.48vh;
   font-family: "FiraGO", sans-serif;
 }
@@ -211,10 +213,11 @@ label,
 }
 
 #node-table-contents {
-  /* border-color: white;
-  background-color: red; */
+  /* border-color: white;*/
+  /* background-color: red; */
   border: 1px solid green;
   height: 2.77vh;
+  width: 42.66vw;
 }
 
 .node-table-content {
@@ -263,6 +266,101 @@ input[type="text"] {
   margin-left: 38.54vw;
   margin-top: 23.24vh;
 }
+
+/* //////////////////////// modal styles /////////////////////////////////////////*/
+
+#modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  width: 47.39vw;
+  height: 72.31vh;
+  right: 36.04vw;
+  top: 20.46vh;
+  border-radius: 1.85vh;
+  overflow: auto;
+  background-color: rgba(31, 102, 110, 0.22);
+  color: white;
+}
+
+.my-modal-content {
+  width: 21.56vw;
+  height: 19.44vh;
+  border-radius: 1.85vh;
+  background-color: #1a4348;
+  opacity: 80%;
+}
+
+.modal-buttons {
+  /* position: absolute; */
+  width: 12.5vw;
+  height: 3.148vh;
+  /* right: 4.53vw;
+  top: 12.41vh; */
+  /* display: flex;
+  justify-content: space-between;
+  align-items: center; */
+}
+
+/* #modal-cancel-button,
+#modal-delete-button {
+  width: 5vw;
+  height: 3.148vh;
+  top: 0vh;
+  font-size: 1.48vh;
+  font-family: "FiraGO", sans-serif;
+  color: white;
+  background-color: #ff8888;
+  border-radius: 0.92vh;
+  border: none;
+} */
+
+.modal-button {
+  width: 5vw;
+  height: 3.148vh;
+  top: 0vh;
+  font-size: 1.48vh;
+  font-family: "FiraGO", sans-serif;
+  color: white;
+  background-color: #ff8888;
+  border-radius: 0.92vh;
+  border: none;
+}
+
+#modal-cancel-button {
+  background-color: #1a4348;
+}
+
+.modal-header p {
+  font-size: 1.29vh;
+  font-family: "FiraGO", sans-serif;
+  /* position: absolute;
+  top: 2.96vh; */
+  text-align: center;
+  /* right: 8.38vw; */
+  /* margin-top: 0; */
+  width: 100%;
+}
+
+.modal-body p {
+  font-size: 1.66vh;
+  font-family: "FiraGO", sans-serif;
+  position: absolute;
+  top: 7.41vh;
+  text-align: center;
+  right: 3.42vw;
+  margin-top: 0;
+}
+
+.modal-close {
+  color: #a6d4c4;
+  float: right;
+  font-size: 28px;
+  margin-right: 1.32vw;
+  margin-top: 1.3vh;
+}
+
+/* ///////////////////////////////////////// */
 
 /*.tick {
   right: 2.67vw;

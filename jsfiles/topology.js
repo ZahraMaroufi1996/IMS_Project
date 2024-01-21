@@ -10,7 +10,7 @@ let DNS_Server_Virtual_IP = [];
 let Homer_Virtual_IP = [];
 let node_type = [];
 
-const url = "https://88d188a7-0705-4aa4-b0f9-0d2781378c89.mock.pstmn.io";
+const url = "https://c6059f0c-d4f4-45f8-9187-a1d3da3b8645.mock.pstmn.io";
 let my_token = localStorage.getItem("token");
 
 function load_page() {
@@ -31,15 +31,16 @@ function load_page() {
 
       for (let i = 0; i < 4; i++) {
         Subnetmask[i] = document.getElementById(
-          `network-definition-subnetmask-octet${i}`
+          `network-definition-subnetmask-octet${i + 1}`
         );
         Subnetmask[i].setAttribute(
           "value",
           `${network_Info.subnetMask.split(".")[i]}`
         );
 
+        console.log(network_Info.subnetMask.split(".")[i]);
         Gateway[i] = document.getElementById(
-          `network-definition-gateway-octet${i}`
+          `network-definition-gateway-octet${i + 1}`
         );
         Gateway[i].setAttribute(
           "value",
@@ -47,7 +48,7 @@ function load_page() {
         );
 
         Database_Virtual_I[i] = document.getElementById(
-          `virtual-ips-database-octet${4 - i}`
+          `virtual-ips-database-octet${i + 1}`
         );
         Database_Virtual_I[i].setAttribute(
           "value",
@@ -55,7 +56,7 @@ function load_page() {
         );
 
         DNS_Server_Virtual_IP[i] = document.getElementById(
-          `virtual-ips-dns-server-octet${4 - i}`
+          `virtual-ips-dns-server-octet${i + 1}`
         );
         DNS_Server_Virtual_IP[i].setAttribute(
           "value",
@@ -63,16 +64,15 @@ function load_page() {
         );
 
         Homer_Virtual_IP[i] = document.getElementById(
-          `virtual-ips-homer-octet${4 - i}`
+          `virtual-ips-homer-octet${i + 1}`
         );
         Homer_Virtual_IP[i].setAttribute(
           "value",
           `${network_Info.homerVirtualIp.split(".")[i]}`
         );
-
-        render(0);
-        default_node = "pcscf";
       }
+      render(0);
+      default_node = "pcscf";
     })
     .catch((error) => {
       console.log("error");
@@ -225,20 +225,73 @@ for (let i = 0; i < 3; i++) {
     node_table_title[i].style.backgroundColor = "#A6D4C4";
 
     const render_table_type = node_type[i].map((q) => {
-      return `
-                <div class="node-table-content">
-                    <form id="${q.id}edit-form">
-                    <input type="text" id="${q.id}pname" class="node-table-content-name" value = "${q.name}"  disabled />
-                    <input type="text" id="${q.id}pip" class="node-table-content-ip" value= "${q.ip}"  disabled />
-                    <input type="text" id="${q.id}pstatus" class="node-table-content-status" value= "${q.status}"  disabled />
-                    <div class="node-table-content-icon">
-                        <img class="pencil" id="${q.id}p" src="images/IMS_TOPOLOGY_images/pencil.svg" />
-                        <img class="trash" id="${q.id}" src="images/IMS_TOPOLOGY_images/trash-simple.svg" />
-                        <img class ="tick" id="${q.id}pt"src="images/IMS_TOPOLOGY_images/tick.svg" />
-                        <img class ="close"  id="${q.id}pc" src="images/IMS_TOPOLOGY_images/close.svg" />
-                    </div>
+      // return `
+      //           <div class="node-table-content">
+      //               <form id="${q.id}edit-form">
+      //               <input type="text" id="${q.id}pname" class="node-table-content-name" value = "${q.name}"  disabled />
+      //               <input type="text" id="${q.id}pip" class="node-table-content-ip" value= "${q.ip}"  disabled />
+      //               <input type="text" id="${q.id}pstatus" class="node-table-content-status" value= "${q.status}"  disabled />
+      //               <div class="node-table-content-icon">
+      //                   <img class="pencil" id="${q.id}p" src="images/IMS_TOPOLOGY_images/pencil.svg" />
+      //                   <img class="trash" id="${q.id}" src="images/IMS_TOPOLOGY_images/trash-simple.svg" />
+      //                   <img class ="tick" id="${q.id}pt"src="images/IMS_TOPOLOGY_images/tick.svg" />
+      //                   <img class ="close"  id="${q.id}pc" src="images/IMS_TOPOLOGY_images/close.svg" />
+      //               </div>
+      //               </form>
+      //           </div>`;
+
+      return `<td class="d-block">
+                  <div class="node-table-content">
+                    <form
+                     id="${q.id}edit-form"
+                      class="d-flex  justify-content-between align-items-center"
+                    >
+                      <input
+                        type="text"
+                        id="${q.id}pname"
+                        class="node-table-content-name"
+                         value = "${q.name}"
+                        disabled
+                      />
+                      <input
+                        type="text"
+                        id="${q.id}pip"
+                        class="node-table-content-ip"
+                        value= "${q.ip}"
+                        disabled
+                      />
+                      <input
+                        type="text"
+                        id="${q.id}pstatus"
+                        class="node-table-content-status"
+                        value= "${q.status}"
+                        disabled
+                      />
+                      <div class="node-table-content-icon d-flex flex-row">
+                        <img
+                          class="close"
+                          id="${q.id}pc"
+                          src="images/IMS_TOPOLOGY_images/close.svg"
+                        />
+                        <img
+                          class="tick p-1"
+                          id="${q.id}pt"
+                          src="images/IMS_TOPOLOGY_images/tick.svg"
+                        />
+                        <img
+                          class="pencil p-1"
+                          id="${q.id}p"
+                          src="images/IMS_TOPOLOGY_images/pencil.svg"
+                        />
+                        <img
+                          class="trash p-1"
+                          id="${q.id}"
+                          src="images/IMS_TOPOLOGY_images/trash-simple.svg"
+                        />
+                      </div>
                     </form>
-                </div>`;
+                  </div>
+                </td>`;
     });
     let node_list = $("#node-table-contents");
     node_list.html(render_table_type.join(""));
@@ -248,20 +301,58 @@ for (let i = 0; i < 3; i++) {
 
 function render(type_index) {
   const render_table_type = node_type[type_index].map((q) => {
-    return `
-                <div class="node-table-content">
-                    <form id="${q.id}edit-form">
-                    <input type="text" id="${q.id}pname" class="node-table-content-name" value = "${q.name}"  disabled />
-                    <input type="text" id="${q.id}pip" class="node-table-content-ip" value= "${q.ip}"  disabled />
-                    <input type="text" id="${q.id}pstatus" class="node-table-content-status" value= "${q.status}"  disabled />
-                    <div class="node-table-content-icon">
-                        <img class="pencil" id="${q.id}p" src="images/IMS_TOPOLOGY_images/pencil.svg" />
-                        <img class="trash" id="${q.id}" src="images/IMS_TOPOLOGY_images/trash-simple.svg" />
-                        <img class ="tick" id="${q.id}pt"src="images/IMS_TOPOLOGY_images/tick.svg" />
-                        <img class="close" id="${q.id}pc" src="images/IMS_TOPOLOGY_images/close.svg" />
-                    </div>
+    return `<td class="d-block">
+                  <div class="node-table-content">
+                    <form
+                     id="${q.id}edit-form"
+                      class="d-flex  justify-content-between align-items-center"
+                    >
+                      <input
+                        type="text"
+                        id="${q.id}pname"
+                        class="node-table-content-name"
+                         value = "${q.name}"
+                        disabled
+                      />
+                      <input
+                        type="text"
+                        id="${q.id}pip"
+                        class="node-table-content-ip"
+                        value= "${q.ip}"
+                        disabled
+                      />
+                      <input
+                        type="text"
+                        id="${q.id}pstatus"
+                        class="node-table-content-status"
+                        value= "${q.status}"
+                        disabled
+                      />
+                      <div class="node-table-content-icon d-flex flex-row">
+                        <img
+                          class="close"
+                          id="${q.id}pc"
+                          src="images/IMS_TOPOLOGY_images/close.svg"
+                        />
+                        <img
+                          class="tick p-1"
+                          id="${q.id}pt"
+                          src="images/IMS_TOPOLOGY_images/tick.svg"
+                        />
+                        <img
+                          class="pencil p-1"
+                          id="${q.id}p"
+                          src="images/IMS_TOPOLOGY_images/pencil.svg"
+                        />
+                        <img
+                          class="trash p-1"
+                          id="${q.id}"
+                          src="images/IMS_TOPOLOGY_images/trash-simple.svg"
+                        />
+                      </div>
                     </form>
-                </div>`;
+                  </div>
+                </td>`;
   });
 
   let node_list = $("#node-table-contents");

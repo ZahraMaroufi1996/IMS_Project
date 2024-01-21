@@ -378,16 +378,19 @@
               <tr class="d-flex flex-row justify-content-around">
                 <th
                   class="node-table-title d-flex justify-content-center align-items-center"
+                  id="node-table-title1"
                 >
                   P-CSCF Nodes
                 </th>
                 <th
                   class="node-table-title d-flex justify-content-center align-items-center"
+                  id="node-table-title2"
                 >
                   RTP Proxy Nodes
                 </th>
                 <th
                   class="node-table-title d-flex justify-content-center align-items-center"
+                  id="node-table-title3"
                 >
                   Core Nodes
                 </th>
@@ -406,7 +409,7 @@
               </tr>
 
               <tr id="node-table-contents">
-                <td>
+                <td class="d-block">
                   <div class="node-table-content">
                     <form
                       id="1edit-form"
@@ -435,6 +438,16 @@
                       />
                       <div class="node-table-content-icon d-flex flex-row">
                         <img
+                          class="close"
+                          id="${q.id}pc"
+                          src="images/IMS_TOPOLOGY_images/close.svg"
+                        />
+                        <img
+                          class="tick p-1"
+                          id="${q.id}pt"
+                          src="images/IMS_TOPOLOGY_images/tick.svg"
+                        />
+                        <img
                           class="pencil p-1"
                           id="${q.id}p"
                           src="images/IMS_TOPOLOGY_images/pencil.svg"
@@ -443,16 +456,6 @@
                           class="trash p-1"
                           id="${q.id}"
                           src="images/IMS_TOPOLOGY_images/trash-simple.svg"
-                        />
-                        <img
-                          class="tick p-1"
-                          id="${q.id}pt"
-                          src="images/IMS_TOPOLOGY_images/tick.svg"
-                        />
-                        <img
-                          class="close"
-                          id="${q.id}pc"
-                          src="images/IMS_TOPOLOGY_images/close.svg"
                         />
                       </div>
                     </form>
@@ -464,22 +467,42 @@
             <button class="save-node-button ims-button">Save</button>
           </div>
 
-          <!-- <div id="modal">
-          <div class="modal-content">
-            <div class="modal-header">
-              <span class="modal-close">&times;</span>
-              <p>Confirm Delete</p>
-            </div>
+          <div
+            id="modal"
+            class="d-flex justify-content-center align-items-center"
+          >
+            <div
+              class="my-modal-content d-flex flex-column justify-content-around align-items-center"
+            >
+              <!-- <div class="modal-header d-flex flex-column">
+                <span class="modal-close">&times;</span>
+                <p>Confirm Delete</p>
+              </div> -->
 
-            <div class="modal-body">
-              <p>Do you want to remove the selected Item?</p>
-              <div class="modal-buttons">
-                <button id="modal-delete-button">Delete</button>
-                <button id="modal-cancel-button">Cancel</button>
+              <!--<div class="modal-body">
+                <p>Do you want to remove the selected Item?</p>
+                <div class="modal-buttons">
+                  <button id="modal-delete-button">Delete</button>
+                  <button id="modal-cancel-button">Cancel</button>
+                </div>
+              </div> -->
+              <p class="modal-title">Confirm Delete</p>
+
+              <p class="modal-question">
+                Do you want to remove the selected Item?
+              </p>
+              <div
+                class="modal-buttons d-flex justify-content-between align-items-center"
+              >
+                <button id="modal-delete-button" class="modal-button">
+                  Delete
+                </button>
+                <button id="modal-cancel-button" class="modal-button">
+                  Cancel
+                </button>
               </div>
             </div>
           </div>
-        </div> -->
 
           <div class="virtual-ips">
             <form id="virtual-ips-form">
@@ -499,26 +522,26 @@
                   >
                     <input
                       type="text"
-                      name="Virtual_IPs_Database_field4"
-                      class="ip-octet1 ip-octet"
+                      name="Virtual_IPs_Database_field1"
+                      class="ip-octet"
                       id="virtual-ips-database-octet1"
                     />
                     <input
                       type="text"
-                      name="Virtual_IPs_Database_field3"
-                      class="ip-octet2 ip-octet"
+                      name="Virtual_IPs_Database_field2"
+                      class="ip-octet"
                       id="virtual-ips-database-octet2"
                     />
                     <input
                       type="text"
-                      name="Virtual_IPs_Database_field2"
-                      class="ip-octet3 ip-octet"
+                      name="Virtual_IPs_Database_field3"
+                      class="ip-octet"
                       id="virtual-ips-database-octet3"
                     />
                     <input
                       type="text"
-                      name="Virtual_IPs_Database_field1"
-                      class="ip-octet4 ip-octet"
+                      name="Virtual_IPs_Database_field4"
+                      class="ip-octet"
                       id="virtual-ips-database-octet4"
                     />
                   </div>
@@ -542,26 +565,26 @@
                   >
                     <input
                       type="text"
-                      name="Virtual_IPs_DNSserver_field4"
-                      class="ip-octet1 ip-octet"
+                      name="Virtual_IPs_DNSserver_field1"
+                      class="ip-octet"
                       id="virtual-ips-dns-server-octet1"
                     />
                     <input
                       type="text"
-                      name="Virtual_IPs_DNSserver_field3"
-                      class="ip-octet2 ip-octet"
+                      name="Virtual_IPs_DNSserver_field2"
+                      class="ip-octet"
                       id="virtual-ips-dns-server-octet2"
                     />
                     <input
                       type="text"
-                      name="Virtual_IPs_DNSserver_field2"
-                      class="ip-octet3 ip-octet"
+                      name="Virtual_IPs_DNSserver_field3"
+                      class="ip-octet"
                       id="virtual-ips-dns-server-octet3"
                     />
                     <input
                       type="text"
-                      name="Virtual_IPs_DNSserver_field1"
-                      class="ip-octet4 ip-octet"
+                      name="Virtual_IPs_DNSserver_field4"
+                      class="ip-octet"
                       id="virtual-ips-dns-server-octet4"
                     />
                   </div>
@@ -582,26 +605,26 @@
                   >
                     <input
                       type="text"
-                      name="Virtual_IPs_Homer_field4"
-                      class="ip-octet1 ip-octet"
+                      name="Virtual_IPs_Homer_field1"
+                      class="ip-octet"
                       id="virtual-ips-homer-octet1"
                     />
                     <input
                       type="text"
-                      name="Virtual_IPs_Homer_field3"
-                      class="ip-octet2 ip-octet"
+                      name="Virtual_IPs_Homer_field2"
+                      class="ip-octet"
                       id="virtual-ips-homer-octet2"
                     />
                     <input
                       type="text"
-                      name="Virtual_IPs_Homer_field2"
-                      class="ip-octet3 ip-octet"
+                      name="Virtual_IPs_Homer_field3"
+                      class="ip-octet"
                       id="virtual-ips-homer-octet3"
                     />
                     <input
                       type="text"
-                      name="Virtual_IPs_Homer_field1"
-                      class="ip-octet4 ip-octet"
+                      name="Virtual_IPs_Homer_field4"
+                      class="ip-octet"
                       id="virtual-ips-homer-octet4"
                     />
                   </div>
