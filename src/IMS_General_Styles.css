@@ -752,7 +752,7 @@
 
 /* /////////////////////////////////////////////////////// error styles///////////////////////////////////////////// */
 
-/* .show-error {
+.show-error {
   z-index: 1;
   width: 20.83vw;
   height: 9.26vh;
@@ -762,25 +762,28 @@
   position: fixed;
   background-color: rgba(198, 81, 97);
   border-radius: 0.65vh;
-  display: none;
+  /* display: none; */
 }
 
 .error-close-icon {
   color: white;
   font-size: 24px;
-  right: 0.5vw;
+  width: 100%;
+  text-align: end;
+  margin-right: 20px;
+  /* right: 0.5vw;
   top: 0.23vh;
-  position: absolute;
+  position: absolute; */
 }
 
-#error-content {
+/* #error-content {
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 1.85vh;
+  /* top: 1.85vh;
   left: 1.042vw;
-  position: absolute;
-}
+  position: absolute; 
+} */
 
 #erroe-message {
   color: white;
@@ -790,14 +793,14 @@
   padding-left: 3px;
 }
 
-#erroe-message:first-letter {
+/*#erroe-message:first-letter {
   text-transform: uppercase;
-}
+}*/
 
 .error-logo {
   width: 1.042vw;
   height: 1.85vh;
-} */
+}
 
 /* ////////////////////////////////////////General checkboxes styles////////////////////////////////// */
 .chb {
