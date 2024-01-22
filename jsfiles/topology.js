@@ -38,7 +38,6 @@ function load_page() {
           `${network_Info.subnetMask.split(".")[i]}`
         );
 
-        console.log(network_Info.subnetMask.split(".")[i]);
         Gateway[i] = document.getElementById(
           `network-definition-gateway-octet${i + 1}`
         );
@@ -77,6 +76,28 @@ function load_page() {
     .catch((error) => {
       console.log("error");
     });
+}
+
+function showError(response) {
+  if (response.status !== 200) {
+    hasMessage = true;
+    show_error.style.display = "block";
+    show_error.style.backgroundColor = "#c65161";
+    const error_msg = document.getElementById("error-content");
+    error_msg.innerHTML = `<img  src="images/error-logo.svg" class="error-logo"/>
+            <p id="erroe-message">
+            Your request was failed (status code : ${response.status})
+            </p>`;
+  } else {
+    hasMessage = false;
+    show_error.style.display = "block";
+    show_error.style.backgroundColor = "#58cc87";
+    const success_msg = document.getElementById("error-content");
+    success_msg.innerHTML = `<img  src="images/success Icon.svg" class="error-logo"/>
+            <p id="erroe-message">
+            Your request was done successfully!
+            </p>`;
+  }
 }
 
 async function init() {
@@ -121,32 +142,14 @@ Network_Definition_form.addEventListener("submit", function (e) {
   })
     .then((response) => {
       console.log(response);
-      if (response.status !== 200) {
-        hasMessage = true;
-        show_error.style.display = "block";
-        show_error.style.backgroundColor = "#c65161";
-        let error_msg = document.getElementById("error-content");
-        error_msg.innerHTML = `<img  src="images/error-logo.svg" class="error-logo"/>
-                <p id="erroe-message">
-                Your request was failed (status code : ${response.status})
-                </p>`;
-      } else {
-        hasMessage = false;
-        show_error.style.display = "block";
-        show_error.style.backgroundColor = "#58cc87";
-        let success_msg = document.getElementById("error-content");
-        success_msg.innerHTML = `<img  src="images/success Icon.svg" class="error-logo"/>
-                <p id="erroe-message">
-                Your request was done successfully!
-                </p>`;
-      }
+      showError(response);
     })
     .catch((error) => {
       console.log(error);
     });
 });
 
-let Virtual_IPs_form = document.getElementById("virtual-ips-form");
+const Virtual_IPs_form = document.getElementById("virtual-ips-form");
 Virtual_IPs_form.addEventListener("submit", function (e) {
   e.preventDefault();
   const formData = Object.fromEntries(new FormData(e.target));
@@ -169,7 +172,7 @@ Virtual_IPs_form.addEventListener("submit", function (e) {
   HomerVirtualIP[2] = formData.Virtual_IPs_Homer_field3;
   HomerVirtualIP[3] = formData.Virtual_IPs_Homer_field4;
 
-  let final_formdata = {
+  const final_formdata = {
     databaseVirtualIp: DatabaseVirtualIP.join("."),
     dnsVirtualIp: DNSServerVirtualIP.join("."),
     homerVirtualIp: HomerVirtualIP.join("."),
@@ -185,32 +188,14 @@ Virtual_IPs_form.addEventListener("submit", function (e) {
   })
     .then((response) => {
       console.log(response);
-      if (response.status !== 200) {
-        hasMessage = true;
-        show_error.style.display = "block";
-        show_error.style.backgroundColor = "#c65161";
-        let error_msg = document.getElementById("error-content");
-        error_msg.innerHTML = `<img  src="images/error-logo.svg" class="error-logo"/>
-                <p id="erroe-message">
-                Your request was failed (status code : ${response.status})
-                </p>`;
-      } else {
-        hasMessage = false;
-        show_error.style.display = "block";
-        show_error.style.backgroundColor = "#58cc87";
-        let success_msg = document.getElementById("error-content");
-        success_msg.innerHTML = `<img  src="images/success Icon.svg" class="error-logo"/>
-                <p id="erroe-message">
-                Your request was done successfully!
-                </p>`;
-      }
+      showError(response);
     })
     .catch((error) => {
       console.log(error);
     });
 });
 
-let node_type_name = ["pcscf", "rtpProxy", "core"];
+const node_type_name = ["pcscf", "rtpProxy", "core"];
 let cur_node_type;
 let node_table_title = [];
 for (let i = 0; i < 3; i++) {
@@ -225,21 +210,6 @@ for (let i = 0; i < 3; i++) {
     node_table_title[i].style.backgroundColor = "#A6D4C4";
 
     const render_table_type = node_type[i].map((q) => {
-      // return `
-      //           <div class="node-table-content">
-      //               <form id="${q.id}edit-form">
-      //               <input type="text" id="${q.id}pname" class="node-table-content-name" value = "${q.name}"  disabled />
-      //               <input type="text" id="${q.id}pip" class="node-table-content-ip" value= "${q.ip}"  disabled />
-      //               <input type="text" id="${q.id}pstatus" class="node-table-content-status" value= "${q.status}"  disabled />
-      //               <div class="node-table-content-icon">
-      //                   <img class="pencil" id="${q.id}p" src="images/IMS_TOPOLOGY_images/pencil.svg" />
-      //                   <img class="trash" id="${q.id}" src="images/IMS_TOPOLOGY_images/trash-simple.svg" />
-      //                   <img class ="tick" id="${q.id}pt"src="images/IMS_TOPOLOGY_images/tick.svg" />
-      //                   <img class ="close"  id="${q.id}pc" src="images/IMS_TOPOLOGY_images/close.svg" />
-      //               </div>
-      //               </form>
-      //           </div>`;
-
       return `<td class="d-block">
                   <div class="node-table-content">
                     <form
@@ -293,7 +263,7 @@ for (let i = 0; i < 3; i++) {
                   </div>
                 </td>`;
     });
-    let node_list = $("#node-table-contents");
+    const node_list = $("#node-table-contents");
     node_list.html(render_table_type.join(""));
     cur_node_type = node_type_name[i];
   });
@@ -355,13 +325,13 @@ function render(type_index) {
                 </td>`;
   });
 
-  let node_list = $("#node-table-contents");
+  const node_list = $("#node-table-contents");
   node_list.html(render_table_type.join(""));
   cur_node_type = node_type_name[type_index];
 }
 
 let new_Node;
-let add_node_form = document.getElementById("add-node-form");
+const add_node_form = document.getElementById("add-node-form");
 add_node_form.addEventListener("submit", function (e) {
   e.preventDefault();
   const formData = Object.fromEntries(new FormData(e.target));
@@ -393,66 +363,30 @@ add_node_form.addEventListener("submit", function (e) {
   })
     .then((response) => {
       console.log(response);
-      if (response.status !== 200) {
-        hasMessage = true;
-        show_error.style.display = "block";
-        show_error.style.backgroundColor = "#c65161";
-        let error_msg = document.getElementById("error-content");
-        error_msg.innerHTML = `<img  src="images/error-logo.svg" class="error-logo"/>
-                <p id="erroe-message">
-                Your request was failed (status code : ${response.status})
-                </p>`;
-      } else {
-        hasMessage = false;
-        show_error.style.display = "block";
-        show_error.style.backgroundColor = "#58cc87";
-        let success_msg = document.getElementById("error-content");
-        success_msg.innerHTML = `<img  src="images/success Icon.svg" class="error-logo"/>
-                <p id="erroe-message">
-                Your request was done successfully!
-                </p>`;
-      }
-
+      // showError(response);
       return response.json();
     })
     .then((data) => {
       new_Node = data;
-
-      switch (new_Node.type) {
-        case "pcscf":
-          node_type[0].push(new_Node);
-          render(0);
-          break;
-
-        case "rtpProxy":
-          node_type[1].push(new_Node);
-          render(1);
-          break;
-
-        case "core":
-          node_type[2].push(new_Node);
-          render(2);
-          break;
-        default:
-          console.log(" some problems!");
-      }
+      node_type[node_type_name.indexOf(new_Node.type)].push(new_Node);
+      render(node_type_name.indexOf(new_Node.type));
     })
     .catch((error) => {
       console.log(error);
     });
 });
 
-let modal = document.getElementById("modal");
+const modal = document.getElementById("modal");
 let default_node = "pcscf";
 let itemWillDeleteData = null;
 
 let editable_data_before = {};
 let editable_data_next = {};
 let editable_form_number;
-let modal_close = document.querySelector(".modal-close");
-let modal_delete_button = document.getElementById("modal-delete-button");
-let modal_cancel_button = document.getElementById("modal-cancel-button");
-let node_table = document.querySelector(".node-table");
+const modal_close = document.querySelector(".modal-close");
+const modal_delete_button = document.getElementById("modal-delete-button");
+const modal_cancel_button = document.getElementById("modal-cancel-button");
+const node_table = document.querySelector(".node-table");
 
 node_table.addEventListener("click", function (e) {
   e.preventDefault();
@@ -464,8 +398,8 @@ node_table.addEventListener("click", function (e) {
     modal.style.display = "block";
     itemWillDeleteData = data;
   } else if (target.classList.contains("pencil")) {
-    let close_icon = document.getElementById(`${target.id}c`);
-    let tick_icon = document.getElementById(`${target.id}t`);
+    const close_icon = document.getElementById(`${target.id}c`);
+    const tick_icon = document.getElementById(`${target.id}t`);
     close_icon.style.display = "block";
     tick_icon.style.display = "block";
     editable_data_before = Node_Info.find((item) => {
@@ -477,7 +411,7 @@ node_table.addEventListener("click", function (e) {
     document.getElementById(`${target.id}status`).disabled = false;
     editable_row_number = target.id.substring(0, target.id.length - 1);
 
-    let current_tick = document.getElementById(`${target.id}t`);
+    const current_tick = document.getElementById(`${target.id}t`);
     current_tick.addEventListener("click", function (e) {
       let edit_content_name =
         e.target.parentElement.parentElement.children[0].value;
@@ -486,7 +420,7 @@ node_table.addEventListener("click", function (e) {
       let edit_content_status =
         e.target.parentElement.parentElement.children[2].value;
 
-      let final_formdata = {
+      const final_formdata = {
         name: edit_content_name,
         ip: edit_content_ip,
         type: cur_node_type,
@@ -536,7 +470,7 @@ node_table.addEventListener("click", function (e) {
       });
     });
 
-    let current_close = document.getElementById(`${target.id}c`);
+    const current_close = document.getElementById(`${target.id}c`);
     current_close.addEventListener("click", function (e) {
       render(node_type_name.indexOf(cur_node_type));
     });
@@ -558,7 +492,7 @@ modal_delete_button.addEventListener("click", function (e) {
   modal.style.display = "none";
 
   let hasMessage = false;
-  let final_formdata = {
+  const final_formdata = {
     name: itemWillDeleteData.name,
     ip: itemWillDeleteData.ip,
     type: itemWillDeleteData.type,
@@ -576,7 +510,7 @@ modal_delete_button.addEventListener("click", function (e) {
       if (response.status !== 200) {
         show_error.style.display = "block";
         show_error.style.backgroundColor = "#c65161";
-        let error_msg = document.getElementById("error-content");
+        const error_msg = document.getElementById("error-content");
         error_msg.innerHTML = `<img  src="images/error-logo.svg" class="error-logo"/>
               <p id="erroe-message">
               Your request was failed (status code : ${response.status})
@@ -584,7 +518,7 @@ modal_delete_button.addEventListener("click", function (e) {
       } else {
         show_error.style.display = "block";
         show_error.style.backgroundColor = "#58cc87";
-        let success_msg = document.getElementById("error-content");
+        const success_msg = document.getElementById("error-content");
         success_msg.innerHTML = `<img  src="images/success Icon.svg" class="error-logo"/>
                 <p id="erroe-message">
                 Your request was done successfully!
@@ -613,9 +547,9 @@ function getTime() {
     .then((response) => response.json())
     .then((data) => {
       time_Info = data;
-      let my_global_hour = time_Info.timeHour;
-      let my_global_min = time_Info.timeMin;
-      let my_global_sec = time_Info.timeSec;
+      const my_global_hour = time_Info.timeHour;
+      const my_global_min = time_Info.timeMin;
+      const my_global_sec = time_Info.timeSec;
 
       let my_local_hour;
       let my_local_min;
@@ -651,8 +585,8 @@ function getTime() {
         my_global_sec = `0${my_global_sec}`;
       }
 
-      let local_time = document.getElementById("local-time");
-      let global_time = document.getElementById("global-time");
+      const local_time = document.getElementById("local-time");
+      const global_time = document.getElementById("global-time");
 
       local_time.innerHTML = `${my_local_hour}:${my_local_min}:${my_local_sec}`;
       global_time.innerHTML = `${my_global_hour}:${my_global_min}:${my_global_sec}`;
@@ -665,8 +599,8 @@ function getTime() {
 //   getTime();
 //   setInterval(getTime, 60 * 1000 * 15);
 
-let error_close = document.querySelector(".error-close-icon");
-let show_error = document.querySelector(".show-error");
+const error_close = document.querySelector(".error-close-icon");
+const show_error = document.querySelector(".show-error");
 
 error_close.addEventListener("click", function (e) {
   e.preventDefault();
@@ -675,10 +609,10 @@ error_close.addEventListener("click", function (e) {
 
 ///////////////////////////////// toolbar icons///////////////////
 
-let exit_show = document.querySelector(".exit");
-let exit_icon = document.getElementById("exit-icon");
-let exit_confirm_button = document.getElementById("exit-confirm-button");
-let exit_cancel_button = document.getElementById("exit-cancel-button");
+const exit_show = document.querySelector(".exit");
+const exit_icon = document.getElementById("exit-icon");
+const exit_confirm_button = document.getElementById("exit-confirm-button");
+const exit_cancel_button = document.getElementById("exit-cancel-button");
 
 exit_icon.addEventListener("click", function (e) {
   e.preventDefault();
@@ -699,10 +633,12 @@ exit_cancel_button.addEventListener("click", function (e) {
   exit_show.style.display = "none";
 });
 
-let log_out_show = document.querySelector(".log-out");
-let log_out_icon = document.getElementById("log-out-icon");
-let log_out_confirm_button = document.getElementById("log-out-confirm-button");
-let log_out_cancel_button = document.getElementById("log-out-cancel-button");
+const log_out_show = document.querySelector(".log-out");
+const log_out_icon = document.getElementById("log-out-icon");
+const log_out_confirm_button = document.getElementById(
+  "log-out-confirm-button"
+);
+const log_out_cancel_button = document.getElementById("log-out-cancel-button");
 
 log_out_icon.addEventListener("click", function (e) {
   e.preventDefault();
@@ -722,12 +658,14 @@ log_out_cancel_button.addEventListener("click", function (e) {
   log_out_show.style.display = "none";
 });
 
-let profile_show = document.querySelector(".profile");
-let profile_icon = document.getElementById("profile-icon");
-let image_close_icon = document.getElementById("image-close");
-let image_tick_icon = document.getElementById("image-tick");
-let profile_content_images = document.querySelector(".profile-content-images");
-let Account_info_img = document.querySelector(".sidebar-account-info-image");
+const profile_show = document.querySelector(".profile");
+const profile_icon = document.getElementById("profile-icon");
+const image_close_icon = document.getElementById("image-close");
+const image_tick_icon = document.getElementById("image-tick");
+const profile_content_images = document.querySelector(
+  ".profile-content-images"
+);
+const Account_info_img = document.querySelector(".sidebar-account-info-image");
 
 profile_icon.addEventListener("click", function (e) {
   e.preventDefault();
@@ -760,10 +698,10 @@ image_close_icon.addEventListener("click", function (e) {
   profile_show.style.display = "none";
 });
 
-let sound_show = document.querySelector(".sound");
-let sound_icon = document.getElementById("sound-icon");
-let sound_text = document.querySelector(".sound-text");
-let sound_img = sound_icon.children[0];
+const sound_show = document.querySelector(".sound");
+const sound_icon = document.getElementById("sound-icon");
+const sound_text = document.querySelector(".sound-text");
+const sound_img = sound_icon.children[0];
 
 let sound_enable = true;
 

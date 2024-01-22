@@ -308,25 +308,25 @@
                   <span>IP Address</span>
                   <input
                     type="text"
-                    name="IP_Address_field4"
+                    name="IP_Address_field1"
                     class="ip-octet"
                     id="node-ip-octet1"
                   />
                   <input
                     type="text"
-                    name="IP_Address_field3"
+                    name="IP_Address_field2"
                     class="ip-octet"
                     id="node-ip-octet2"
                   />
                   <input
                     type="text"
-                    name="IP_Address_field2"
+                    name="IP_Address_field3"
                     class="ip-octet"
                     id="node-ip-octet3"
                   />
                   <input
                     type="text"
-                    name="IP_Address_field1"
+                    name="IP_Address_field4"
                     class="ip-octet"
                     id="node-ip-octet4"
                   />
@@ -344,9 +344,9 @@
                       type="radio"
                       id="node-type-1"
                       name="node_type_icon"
-                      value="core"
+                      value="pcscf"
                     />
-                    <label for="node-type-1">Core</label>
+                    <label for="node-type-1">P-CSCF</label>
                   </div>
                   <div class="node-type-rtp-proxy-checkbox d-flex flex-row">
                     <input
@@ -364,9 +364,9 @@
                       type="radio"
                       id="node-type-3"
                       name="node_type_icon"
-                      value="pcscf"
+                      value="core"
                     />
-                    <label for="node-type-3">P-CSCF</label>
+                    <label for="node-type-3">Core</label>
                   </div>
                 </div>
 
@@ -443,17 +443,17 @@
                           src="images/IMS_TOPOLOGY_images/close.svg"
                         />
                         <img
-                          class="tick p-1"
+                          class="tick"
                           id="${q.id}pt"
                           src="images/IMS_TOPOLOGY_images/tick.svg"
                         />
                         <img
-                          class="pencil p-1"
+                          class="pencil"
                           id="${q.id}p"
                           src="images/IMS_TOPOLOGY_images/pencil.svg"
                         />
                         <img
-                          class="trash p-1"
+                          class="trash"
                           id="${q.id}"
                           src="images/IMS_TOPOLOGY_images/trash-simple.svg"
                         />
@@ -467,39 +467,30 @@
             <button class="save-node-button ims-button">Save</button>
           </div>
 
-          <div
-            id="modal"
-            class="d-flex justify-content-center align-items-center"
-          >
+          <div id="modal">
             <div
-              class="my-modal-content d-flex flex-column justify-content-around align-items-center"
+              class="h-100 w-100 d-flex justify-content-center align-items-center"
             >
-              <!-- <div class="modal-header d-flex flex-column">
-                <span class="modal-close">&times;</span>
-                <p>Confirm Delete</p>
-              </div> -->
-
-              <!--<div class="modal-body">
-                <p>Do you want to remove the selected Item?</p>
-                <div class="modal-buttons">
-                  <button id="modal-delete-button">Delete</button>
-                  <button id="modal-cancel-button">Cancel</button>
-                </div>
-              </div> -->
-              <p class="modal-title">Confirm Delete</p>
-
-              <p class="modal-question">
-                Do you want to remove the selected Item?
-              </p>
               <div
-                class="modal-buttons d-flex justify-content-between align-items-center"
+                class="my-modal-content d-flex flex-column justify-content-between align-items-center"
               >
-                <button id="modal-delete-button" class="modal-button">
-                  Delete
-                </button>
-                <button id="modal-cancel-button" class="modal-button">
-                  Cancel
-                </button>
+                <p class="modal-close">&times;</p>
+
+                <p class="modal-title">Confirm Delete</p>
+
+                <p class="modal-question">
+                  Do you want to remove the selected Item?
+                </p>
+                <div
+                  class="modal-buttons d-flex justify-content-between align-items-center"
+                >
+                  <button id="modal-delete-button" class="modal-button">
+                    Delete
+                  </button>
+                  <button id="modal-cancel-button" class="modal-button">
+                    Cancel
+                  </button>
+                </div>
               </div>
             </div>
           </div>

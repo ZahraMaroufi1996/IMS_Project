@@ -267,6 +267,11 @@ input[type="text"] {
   margin-top: 23.24vh;
 }
 
+.tick,
+.close {
+  display: none;
+}
+
 /* //////////////////////// modal styles /////////////////////////////////////////*/
 
 #modal {
@@ -292,28 +297,10 @@ input[type="text"] {
 }
 
 .modal-buttons {
-  /* position: absolute; */
   width: 12.5vw;
   height: 3.148vh;
-  /* right: 4.53vw;
-  top: 12.41vh; */
-  /* display: flex;
-  justify-content: space-between;
-  align-items: center; */
+  margin-bottom: 3.88vh;
 }
-
-/* #modal-cancel-button,
-#modal-delete-button {
-  width: 5vw;
-  height: 3.148vh;
-  top: 0vh;
-  font-size: 1.48vh;
-  font-family: "FiraGO", sans-serif;
-  color: white;
-  background-color: #ff8888;
-  border-radius: 0.92vh;
-  border: none;
-} */
 
 .modal-button {
   width: 5vw;
@@ -328,36 +315,32 @@ input[type="text"] {
 }
 
 #modal-cancel-button {
-  background-color: #1a4348;
+  /* background-color: #1a4348; */
+  background-color: black;
 }
 
-.modal-header p {
+.modal-title {
   font-size: 1.29vh;
   font-family: "FiraGO", sans-serif;
-  /* position: absolute;
-  top: 2.96vh; */
   text-align: center;
-  /* right: 8.38vw; */
-  /* margin-top: 0; */
   width: 100%;
 }
 
-.modal-body p {
+.modal-question {
   font-size: 1.66vh;
   font-family: "FiraGO", sans-serif;
-  position: absolute;
-  top: 7.41vh;
   text-align: center;
-  right: 3.42vw;
-  margin-top: 0;
 }
 
 .modal-close {
   color: #a6d4c4;
-  float: right;
   font-size: 28px;
+  text-align: end;
+  width: 100%;
   margin-right: 1.32vw;
-  margin-top: 1.3vh;
+  margin-bottom: 0;
+  height: 1.27vh;
+  cursor: pointer;
 }
 
 /* ///////////////////////////////////////// */
