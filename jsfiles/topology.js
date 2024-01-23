@@ -436,7 +436,7 @@ node_table.addEventListener("click", function (e) {
           show_error.style.display = "block";
           show_error.style.backgroundColor = "#c65161";
           let error_msg = document.getElementById("error-content");
-          error_msg.innerHTML = `<img  src="images/error-logo.svg" class="error-logo"/>
+          error_msg.innerHTML = `<img  src="images/error-logo.svg" class="error-icon"/>
                         <p id="erroe-message">
                         Your request was failed (status code : ${response.status})
                         </p>`;
@@ -445,8 +445,8 @@ node_table.addEventListener("click", function (e) {
           show_error.style.display = "block";
           show_error.style.backgroundColor = "#58cc87";
           let success_msg = document.getElementById("error-content");
-          success_msg.innerHTML = `<img  src="images/success Icon.svg" class="error-logo"/>
-                        <p id="erroe-message">
+          success_msg.innerHTML = `<img  src="images/success Icon.svg" class="error-icon"/>
+                        <p id="error-message">
                         Your request was done successfully!
                         </p>`;
 
