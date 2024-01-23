@@ -80,24 +80,139 @@ function load_page() {
 
 function showError(response) {
   if (response.status !== 200) {
-    hasMessage = true;
+    // hasMessage = true;
     show_error.style.display = "block";
     show_error.style.backgroundColor = "#c65161";
     const error_msg = document.getElementById("error-content");
-    error_msg.innerHTML = `<img  src="images/error-logo.svg" class="error-logo"/>
-            <p id="erroe-message">
-            Your request was failed (status code : ${response.status})
+    error_msg.innerHTML = `<img  src="images/error-logo.svg" class="error-icon"/>
+            <p id="error-message">
+            Your request was failed !! (status code : ${response.status})
             </p>`;
   } else {
-    hasMessage = false;
+    // hasMessage = false;
     show_error.style.display = "block";
     show_error.style.backgroundColor = "#58cc87";
     const success_msg = document.getElementById("error-content");
-    success_msg.innerHTML = `<img  src="images/success Icon.svg" class="error-logo"/>
-            <p id="erroe-message">
-            Your request was done successfully!
+    success_msg.innerHTML = `<img  src="images/success Icon.svg" class="error-icon"/>
+            <p id="error-message">
+            Your request was done successfully !!
             </p>`;
   }
+}
+
+function render(type_index) {
+  const render_table_type = node_type[type_index].map((q) => {
+    return `<td class="d-block">
+                  <div class="node-table-content">
+                    <form
+                     id="${q.id}edit-form"
+                      class="d-flex  justify-content-between align-items-center"
+                    >
+                      <input
+                        type="text"
+                        id="${q.id}pname"
+                        class="node-table-content-name"
+                         value = "${q.name}"
+                        disabled
+                      />
+                      <input
+                        type="text"
+                        id="${q.id}pip"
+                        class="node-table-content-ip"
+                        value= "${q.ip}"
+                        disabled
+                      />
+                      <input
+                        type="text"
+                        id="${q.id}pstatus"
+                        class="node-table-content-status"
+                        value= "${q.status}"
+                        disabled
+                      />
+                      <div class="node-table-content-icon d-flex flex-row">
+                        <img
+                          class="close"
+                          id="${q.id}pc"
+                          src="images/IMS_TOPOLOGY_images/close.svg"
+                        />
+                        <img
+                          class="tick p-1"
+                          id="${q.id}pt"
+                          src="images/IMS_TOPOLOGY_images/tick.svg"
+                        />
+                        <img
+                          class="pencil p-1"
+                          id="${q.id}p"
+                          src="images/IMS_TOPOLOGY_images/pencil.svg"
+                        />
+                        <img
+                          class="trash p-1"
+                          id="${q.id}"
+                          src="images/IMS_TOPOLOGY_images/trash-simple.svg"
+                        />
+                      </div>
+                    </form>
+                  </div>
+                </td>`;
+  });
+
+  const node_list = $("#node-table-contents");
+  node_list.html(render_table_type.join(""));
+  cur_node_type = node_type_name[type_index];
+}
+
+function getTime() {
+  fetch(`${url}/api/general`)
+    .then((response) => response.json())
+    .then((data) => {
+      time_Info = data;
+      const my_global_hour = time_Info.timeHour;
+      const my_global_min = time_Info.timeMin;
+      const my_global_sec = time_Info.timeSec;
+
+      let my_local_hour;
+      let my_local_min;
+      let my_local_sec;
+
+      if (time_Info.timeZone === "Iran") {
+        my_local_hour = time_Info.timeHour + 3;
+        my_local_min = time_Info.timeMin + 30;
+        my_local_sec = time_Info.timeSec;
+      }
+
+      if (my_local_hour < 10) {
+        my_local_hour = `0${my_local_hour}`;
+      }
+
+      if (my_local_min < 10) {
+        my_local_min = `0${my_local_min}`;
+      }
+
+      if (my_local_sec < 10) {
+        my_local_sec = `0${my_local_sec}`;
+      }
+
+      if (my_global_hour < 10) {
+        my_global_hour = `0${my_global_hour}`;
+      }
+
+      if (my_global_min < 10) {
+        my_global_min = `0${my_global_min}`;
+      }
+
+      if (my_global_sec < 10) {
+        my_global_sec = `0${my_global_sec}`;
+      }
+
+      const local_time = document.getElementById("local-time");
+      const global_time = document.getElementById("global-time");
+
+      local_time.innerHTML = `${my_local_hour}:${my_local_min}:${my_local_sec}`;
+      global_time.innerHTML = `${my_global_hour}:${my_global_min}:${my_global_sec}`;
+    })
+    .catch((error) => {
+      console.log("error");
+    });
 }
 
 async function init() {
@@ -106,7 +221,7 @@ async function init() {
 
 init();
 
-let Network_Definition_form = document.getElementById(
+const Network_Definition_form = document.getElementById(
   "network-definition-form"
 );
 Network_Definition_form.addEventListener("submit", function (e) {
@@ -125,11 +240,11 @@ Network_Definition_form.addEventListener("submit", function (e) {
   subnetmak[2] = formData.subnetmask_field3;
   subnetmak[3] = formData.subnetmask_field4;
 
-  let final_formdata = {
+  const final_formdata = {
     SubnetMask: subnetmak.join("."),
     Gateway: gateway.join("."),
   };
-  hasMessage = false;
+  // hasMessage = false;
   console.log(final_formdata);
 
   result = fetch(`${url}/api/topology/networkDefinition`, {
@@ -197,137 +312,19 @@ Virtual_IPs_form.addEventListener("submit", function (e) {
 
 const node_type_name = ["pcscf", "rtpProxy", "core"];
 let cur_node_type;
-let node_table_title = [];
-for (let i = 0; i < 3; i++) {
+const node_table_title = [];
+for (let i = 0; i < node_type_name.length; i++) {
   node_table_title[i] = document.getElementById(`node-table-title${i + 1}`);
   node_table_title[i].addEventListener("click", function (e) {
     e.preventDefault();
 
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < node_type_name.length; i++) {
       node_table_title[i].style.backgroundColor = "#1F666E";
     }
 
     node_table_title[i].style.backgroundColor = "#A6D4C4";
-
-    const render_table_type = node_type[i].map((q) => {
-      return `<td class="d-block">
-                  <div class="node-table-content">
-                    <form
-                     id="${q.id}edit-form"
-                      class="d-flex  justify-content-between align-items-center"
-                    >
-                      <input
-                        type="text"
-                        id="${q.id}pname"
-                        class="node-table-content-name"
-                         value = "${q.name}"
-                        disabled
-                      />
-                      <input
-                        type="text"
-                        id="${q.id}pip"
-                        class="node-table-content-ip"
-                        value= "${q.ip}"
-                        disabled
-                      />
-                      <input
-                        type="text"
-                        id="${q.id}pstatus"
-                        class="node-table-content-status"
-                        value= "${q.status}"
-                        disabled
-                      />
-                      <div class="node-table-content-icon d-flex flex-row">
-                        <img
-                          class="close"
-                          id="${q.id}pc"
-                          src="images/IMS_TOPOLOGY_images/close.svg"
-                        />
-                        <img
-                          class="tick p-1"
-                          id="${q.id}pt"
-                          src="images/IMS_TOPOLOGY_images/tick.svg"
-                        />
-                        <img
-                          class="pencil p-1"
-                          id="${q.id}p"
-                          src="images/IMS_TOPOLOGY_images/pencil.svg"
-                        />
-                        <img
-                          class="trash p-1"
-                          id="${q.id}"
-                          src="images/IMS_TOPOLOGY_images/trash-simple.svg"
-                        />
-                      </div>
-                    </form>
-                  </div>
-                </td>`;
-    });
-    const node_list = $("#node-table-contents");
-    node_list.html(render_table_type.join(""));
-    cur_node_type = node_type_name[i];
+    render(i);
   });
-}
-
-function render(type_index) {
-  const render_table_type = node_type[type_index].map((q) => {
-    return `<td class="d-block">
-                  <div class="node-table-content">
-                    <form
-                     id="${q.id}edit-form"
-                      class="d-flex  justify-content-between align-items-center"
-                    >
-                      <input
-                        type="text"
-                        id="${q.id}pname"
-                        class="node-table-content-name"
-                         value = "${q.name}"
-                        disabled
-                      />
-                      <input
-                        type="text"
-                        id="${q.id}pip"
-                        class="node-table-content-ip"
-                        value= "${q.ip}"
-                        disabled
-                      />
-                      <input
-                        type="text"
-                        id="${q.id}pstatus"
-                        class="node-table-content-status"
-                        value= "${q.status}"
-                        disabled
-                      />
-                      <div class="node-table-content-icon d-flex flex-row">
-                        <img
-                          class="close"
-                          id="${q.id}pc"
-                          src="images/IMS_TOPOLOGY_images/close.svg"
-                        />
-                        <img
-                          class="tick p-1"
-                          id="${q.id}pt"
-                          src="images/IMS_TOPOLOGY_images/tick.svg"
-                        />
-                        <img
-                          class="pencil p-1"
-                          id="${q.id}p"
-                          src="images/IMS_TOPOLOGY_images/pencil.svg"
-                        />
-                        <img
-                          class="trash p-1"
-                          id="${q.id}"
-                          src="images/IMS_TOPOLOGY_images/trash-simple.svg"
-                        />
-                      </div>
-                    </form>
-                  </div>
-                </td>`;
-  });
-
-  const node_list = $("#node-table-contents");
-  node_list.html(render_table_type.join(""));
-  cur_node_type = node_type_name[type_index];
 }
 
 let new_Node;
@@ -348,7 +345,7 @@ add_node_form.addEventListener("submit", function (e) {
   node_ip[2] = formData.IP_Address_field3;
   node_ip[3] = formData.IP_Address_field4;
 
-  let final_formdata = {
+  const final_formdata = {
     name: node_name,
     ip: node_ip.join("."),
     type: current_node_type,
@@ -363,7 +360,7 @@ add_node_form.addEventListener("submit", function (e) {
   })
     .then((response) => {
       console.log(response);
-      // showError(response);
+      showError(response);
       return response.json();
     })
     .then((data) => {
@@ -541,60 +538,6 @@ modal_delete_button.addEventListener("click", function (e) {
       console.log(error);
     });
 });
-
-function getTime() {
-  fetch(`${url}/api/general`)
-    .then((response) => response.json())
-    .then((data) => {
-      time_Info = data;
-      const my_global_hour = time_Info.timeHour;
-      const my_global_min = time_Info.timeMin;
-      const my_global_sec = time_Info.timeSec;
-
-      let my_local_hour;
-      let my_local_min;
-      let my_local_sec;
-
-      if (time_Info.timeZone === "Iran") {
-        my_local_hour = time_Info.timeHour + 3;
-        my_local_min = time_Info.timeMin + 30;
-        my_local_sec = time_Info.timeSec;
-      }
-
-      if (my_local_hour < 10) {
-        my_local_hour = `0${my_local_hour}`;
-      }
-
-      if (my_local_min < 10) {
-        my_local_min = `0${my_local_min}`;
-      }
-
-      if (my_local_sec < 10) {
-        my_local_sec = `0${my_local_sec}`;
-      }
-
-      if (my_global_hour < 10) {
-        my_global_hour = `0${my_global_hour}`;
-      }
-
-      if (my_global_min < 10) {
-        my_global_min = `0${my_global_min}`;
-      }
-
-      if (my_global_sec < 10) {
-        my_global_sec = `0${my_global_sec}`;
-      }
-
-      const local_time = document.getElementById("local-time");
-      const global_time = document.getElementById("global-time");
-
-      local_time.innerHTML = `${my_local_hour}:${my_local_min}:${my_local_sec}`;
-      global_time.innerHTML = `${my_global_hour}:${my_global_min}:${my_global_sec}`;
-    })
-    .catch((error) => {
-      console.log("error");
-    });
-}
 
 //   getTime();
 //   setInterval(getTime, 60 * 1000 * 15);
