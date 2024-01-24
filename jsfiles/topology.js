@@ -407,14 +407,17 @@ node_table.addEventListener("click", function (e) {
     document.getElementById(`${target.id}ip`).disabled = false;
     document.getElementById(`${target.id}status`).disabled = false;
     editable_row_number = target.id.substring(0, target.id.length - 1);
+    // console.log("hiiiiiiiiiiiiiiiiiiii");
+    // console.log(editable_row_number);
+    // console.log(node_type[0]);
 
     const current_tick = document.getElementById(`${target.id}t`);
     current_tick.addEventListener("click", function (e) {
-      let edit_content_name =
+      const edit_content_name =
         e.target.parentElement.parentElement.children[0].value;
-      let edit_content_ip =
+      const edit_content_ip =
         e.target.parentElement.parentElement.children[1].value;
-      let edit_content_status =
+      const edit_content_status =
         e.target.parentElement.parentElement.children[2].value;
 
       const final_formdata = {
@@ -435,24 +438,27 @@ node_table.addEventListener("click", function (e) {
         if (response.status !== 200) {
           show_error.style.display = "block";
           show_error.style.backgroundColor = "#c65161";
-          let error_msg = document.getElementById("error-content");
+          const error_msg = document.getElementById("error-content");
           error_msg.innerHTML = `<img  src="images/error-logo.svg" class="error-icon"/>
-                        <p id="erroe-message">
+                        <p id="error-message">
                         Your request was failed (status code : ${response.status})
                         </p>`;
           render(node_type_name.indexOf(cur_node_type));
         } else {
           show_error.style.display = "block";
           show_error.style.backgroundColor = "#58cc87";
-          let success_msg = document.getElementById("error-content");
+          const success_msg = document.getElementById("error-content");
           success_msg.innerHTML = `<img  src="images/success Icon.svg" class="error-icon"/>
                         <p id="error-message">
                         Your request was done successfully!
                         </p>`;
 
-          let desired_row = node_type[0].findIndex(
-            (q) => q.id == editable_row_number
-          );
+          let desired_row = node_type[
+            node_type_name.indexOf(cur_node_type)
+          ].findIndex((q) => q.id == editable_row_number);
+
+          // console.log("hiiiiiiiiiiiiiiiiiiii");
+          // console.log(desired_row);
           node_type[node_type_name.indexOf(cur_node_type)][desired_row].name =
             edit_content_name;
           node_type[node_type_name.indexOf(cur_node_type)][desired_row].ip =
@@ -508,16 +514,16 @@ modal_delete_button.addEventListener("click", function (e) {
         show_error.style.display = "block";
         show_error.style.backgroundColor = "#c65161";
         const error_msg = document.getElementById("error-content");
-        error_msg.innerHTML = `<img  src="images/error-logo.svg" class="error-logo"/>
-              <p id="erroe-message">
+        error_msg.innerHTML = `<img  src="images/error-logo.svg" class="error-icon"/>
+              <p id="error-message">
               Your request was failed (status code : ${response.status})
               </p>`;
       } else {
         show_error.style.display = "block";
         show_error.style.backgroundColor = "#58cc87";
         const success_msg = document.getElementById("error-content");
-        success_msg.innerHTML = `<img  src="images/success Icon.svg" class="error-logo"/>
-                <p id="erroe-message">
+        success_msg.innerHTML = `<img  src="images/success Icon.svg" class="error-icon"/>
+                <p id="error-message">
                 Your request was done successfully!
                 </p>`;
         let index = node_type_name.findIndex(
