@@ -230,15 +230,15 @@ Network_Definition_form.addEventListener("submit", function (e) {
   const subnetmak = [];
   const gateway = [];
 
-  gateway[0] = formData.gateway_field1;
-  gateway[1] = formData.gateway_field2;
-  gateway[2] = formData.gateway_field3;
-  gateway[3] = formData.gateway_field4;
+  gateway[0] = formData.gateway_octet1;
+  gateway[1] = formData.gateway_octet2;
+  gateway[2] = formData.gateway_octet3;
+  gateway[3] = formData.gateway_octet4;
 
-  subnetmak[0] = formData.subnetmask_field1;
-  subnetmak[1] = formData.subnetmask_field2;
-  subnetmak[2] = formData.subnetmask_field3;
-  subnetmak[3] = formData.subnetmask_field4;
+  subnetmak[0] = formData.subnetmask_octet1;
+  subnetmak[1] = formData.subnetmask_octet2;
+  subnetmak[2] = formData.subnetmask_octet3;
+  subnetmak[3] = formData.subnetmask_octet4;
 
   const final_formdata = {
     SubnetMask: subnetmak.join("."),
@@ -272,20 +272,20 @@ Virtual_IPs_form.addEventListener("submit", function (e) {
   const DNSServerVirtualIP = [];
   const HomerVirtualIP = [];
 
-  DatabaseVirtualIP[0] = formData.Virtual_IPs_Database_field1;
-  DatabaseVirtualIP[1] = formData.Virtual_IPs_Database_field2;
-  DatabaseVirtualIP[2] = formData.Virtual_IPs_Database_field3;
-  DatabaseVirtualIP[3] = formData.Virtual_IPs_Database_field4;
+  DatabaseVirtualIP[0] = formData.virtual_ips_database_octet1;
+  DatabaseVirtualIP[1] = formData.virtual_ips_database_octet2;
+  DatabaseVirtualIP[2] = formData.virtual_ips_database_octet3;
+  DatabaseVirtualIP[3] = formData.virtual_ips_database_octet4;
 
-  DNSServerVirtualIP[0] = formData.Virtual_IPs_DNSserver_field1;
-  DNSServerVirtualIP[1] = formData.Virtual_IPs_DNSserver_field2;
-  DNSServerVirtualIP[2] = formData.Virtual_IPs_DNSserver_field3;
-  DNSServerVirtualIP[3] = formData.Virtual_IPs_DNSserver_field4;
+  DNSServerVirtualIP[0] = formData.virtual_ips_dns_server_octet1;
+  DNSServerVirtualIP[1] = formData.virtual_ips_dns_server_octet2;
+  DNSServerVirtualIP[2] = formData.virtual_ips_dns_server_octet3;
+  DNSServerVirtualIP[3] = formData.virtual_ips_dns_server_octet4;
 
-  HomerVirtualIP[0] = formData.Virtual_IPs_Homer_field1;
-  HomerVirtualIP[1] = formData.Virtual_IPs_Homer_field2;
-  HomerVirtualIP[2] = formData.Virtual_IPs_Homer_field3;
-  HomerVirtualIP[3] = formData.Virtual_IPs_Homer_field4;
+  HomerVirtualIP[0] = formData.virtual_ips_homer_octet1;
+  HomerVirtualIP[1] = formData.virtual_ips_homer_octet2;
+  HomerVirtualIP[2] = formData.virtual_ips_homer_octet3;
+  HomerVirtualIP[3] = formData.virtual_ips_homer_octet4;
 
   const final_formdata = {
     databaseVirtualIp: DatabaseVirtualIP.join("."),
@@ -340,10 +340,10 @@ add_node_form.addEventListener("submit", function (e) {
   node_name = formData.node_name;
   current_node_type = formData.node_type_icon;
 
-  node_ip[0] = formData.IP_Address_field1;
-  node_ip[1] = formData.IP_Address_field2;
-  node_ip[2] = formData.IP_Address_field3;
-  node_ip[3] = formData.IP_Address_field4;
+  node_ip[0] = formData.node_ip_octet1;
+  node_ip[1] = formData.node_ip_octet2;
+  node_ip[2] = formData.node_ip_octet3;
+  node_ip[3] = formData.node_ip_octet4;
 
   const final_formdata = {
     name: node_name,
@@ -373,16 +373,16 @@ add_node_form.addEventListener("submit", function (e) {
     });
 });
 
-const modal = document.getElementById("modal");
+const modal = document.getElementById("node-modal");
 let default_node = "pcscf";
 let itemWillDeleteData = null;
 
 let editable_data_before = {};
 let editable_data_next = {};
 let editable_form_number;
-const modal_close = document.querySelector(".modal-close");
-const modal_delete_button = document.getElementById("modal-delete-button");
-const modal_cancel_button = document.getElementById("modal-cancel-button");
+const modal_close = document.querySelector(".node-modal-close");
+const modal_delete_button = document.getElementById("node-modal-delete-button");
+const modal_cancel_button = document.getElementById("node-modal-cancel-button");
 const node_table = document.querySelector(".node-table");
 
 node_table.addEventListener("click", function (e) {

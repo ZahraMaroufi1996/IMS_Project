@@ -83,7 +83,7 @@ label,
   /* border: 1px solid red; */
 }
 
-.virtual-ips-main-text {
+.virtual-ips-main-title {
   color: #1a4348;
   font-size: 1.66vh;
   font-family: "FiraGO", sans-serif;
@@ -91,7 +91,7 @@ label,
   margin-top: 0.64vh;
 }
 
-.virtual-ips-down-text {
+.virtual-ips-sub-title {
   color: #1f666e;
   font-size: 1.48vh;
   font-family: "FiraGO", sans-serif;
@@ -274,7 +274,7 @@ input[type="text"] {
 
 /* //////////////////////// modal styles /////////////////////////////////////////*/
 
-#modal {
+#node-modal {
   display: none;
   position: fixed;
   z-index: 1;
@@ -288,7 +288,7 @@ input[type="text"] {
   color: white;
 }
 
-.my-modal-content {
+.node-modal-content {
   width: 21.56vw;
   height: 19.44vh;
   border-radius: 1.85vh;
@@ -296,13 +296,13 @@ input[type="text"] {
   opacity: 80%;
 }
 
-.modal-buttons {
+.node-modal-buttons {
   width: 12.5vw;
   height: 3.148vh;
   margin-bottom: 3.88vh;
 }
 
-.modal-button {
+.node-modal-button {
   width: 5vw;
   height: 3.148vh;
   top: 0vh;
@@ -314,25 +314,25 @@ input[type="text"] {
   border: none;
 }
 
-#modal-cancel-button {
+#node-modal-cancel-button {
   /* background-color: #1a4348; */
   background-color: black;
 }
 
-.modal-title {
+.node-modal-title {
   font-size: 1.29vh;
   font-family: "FiraGO", sans-serif;
   text-align: center;
   width: 100%;
 }
 
-.modal-question {
+.node-modal-question {
   font-size: 1.66vh;
   font-family: "FiraGO", sans-serif;
   text-align: center;
 }
 
-.modal-close {
+.node-modal-close {
   color: #a6d4c4;
   font-size: 28px;
   text-align: end;
