@@ -75,12 +75,6 @@ const packetCaptureForm = document.getElementById("packet-capture-form");
 packetCaptureForm.addEventListener("submit", function (e) {
   e.preventDefault();
   const formData = Object.fromEntries(new FormData(e.target));
-  //   const pingNodeIp = [];
-  //   const formData = {
-  //     ping_node_type: data.ping_node_type,
-  //     ping_node_ip: pingNodeIp.join("."),
-  //   };
-
   console.log(JSON.stringify(formData));
 
   fetch(`${url}/api/troubleshooting/packetCapture`, {

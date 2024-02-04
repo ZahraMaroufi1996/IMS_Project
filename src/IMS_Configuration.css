@@ -111,28 +111,37 @@ input[type="text"] {
 
 .P-CSCF-class-content-title,
 .S-CSCF-class-content-title,
-.RTP-Proxy-class-content-title ,
-.I-CSCF-class-content-title{
+.RTP-Proxy-class-content-title,
+.I-CSCF-class-content-title {
   font-size: 1.66vh;
   font-family: "FiraGO", sans-serif;
   color: #83a79a;
 }
 
-.RTP-Proxy-class-content-title{
-  border: 1px solid red;
+.S-CSCF-class-content-title {
+  width: 3.5vw;
+  height: 2.22vh;
+}
+
+.RTP-Proxy-class-content-title {
   width: 4.06vw;
   height: 2.22vh;
   margin-left: 0vw;
 }
 
-
 .P-CSCF-class-content-field1,
 .P-CSCF-class-content-field3 {
   width: 7.62vw;
   height: 1.94vh;
-  margin-left: 5.51vw;
-  /* border: 1px solid red; */
   border-radius: 0.83vh;
+}
+
+.P-CSCF-class-content-field1{
+  margin-left: 3.12vw;
+}
+
+.P-CSCF-class-content-field3{
+  margin-left: 5.51vw;
 }
 
 .P-CSCF-class-content-field2 {
@@ -144,23 +153,26 @@ input[type="text"] {
 }
 
 .P-CSCF-class-content-field4,
-.S-CSCF-class-content-input34 ,
-.I-CSCF-class-content-input12{
-  border: 1px solid black;
+.S-CSCF-class-content-input12 
+.S-CSCF-class-content-input34,
+.I-CSCF-class-content-input12 {
+  /* border: 1px solid black; */
   width: 28.95vw;
   height: 3.7vh;
   border-radius: 0.83vh;
 }
 
 .P-CSCF-class-content-field4,
-.S-CSCF-class-content-input34{
+.S-CSCF-class-content-input34 {
   margin-left: 5.51vw;
 }
 
-.I-CSCF-class-content-input12{
+.S-CSCF-class-content-input12 {
+  margin-left: 1.91vw;
+}
+.I-CSCF-class-content-input12 {
   margin-left: 2.8vw;
 }
-
 
 .P-CSCF-class-content-field4-input,
 .I-CSCF-class-content-input1,
@@ -236,7 +248,7 @@ input[type="text"] {
   width: 3.3vw;
   height: 2.037vh;
   border-radius: 0.83vh;
-  background-color: red;
+  /* background-color: red; */
 }
 
 .P-CSCF-class-Rx-configuration-field5 {
@@ -258,18 +270,16 @@ input[type="text"] {
   margin: 0;
 }
 
-.enable-homer-title{
+.enable-homer-title {
   height: 2.037vh;
   width: 6.51vw;
 }
-
 
 .P-CSCF-class-content-field2-checkboxes {
   width: 28.82vw;
   height: 2.037vh;
   /* margin-left: 10px; */
 }
-
 
 .P-CSCF-class-content-field2-checkbox1 {
   /* background-color: red; */
@@ -326,12 +336,10 @@ input[type="text"] {
 .S-CSCF-class {
   width: 36.35vw;
   height: 13.33vh;
-  /* right: 2.083vw;*/
   margin-top: 2.59vh;
   margin-left: 1.41vw;
   /* border: 0.092vh solid #d5e8e1; */
   border: 0.092vh solid red;
-  /* position: absolute; */
   border-radius: 0.83vh;
 }
 
