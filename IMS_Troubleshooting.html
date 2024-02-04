@@ -20,6 +20,21 @@
   </head>
 </html>
 <body class="ims-body d-flex">
+  <div class="show-error">
+    <div
+      class="h-100 w-100 d-flex flex-column justify-content-start align-items-center"
+    >
+      <span class="error-close-icon">&times;</span>
+
+      <div
+        id="error-content"
+        class="d-flex justify-content-start align-items-center"
+      >
+        <img src="images/success Icon.svg" class="error-icon" />
+        <p id="error-message">successfull message!</p>
+      </div>
+    </div>
+  </div>
   <div class="sidebar">
     <div
       class="sidebar-account-info d-flex flex-column justify-content-around align-items-center"
@@ -176,7 +191,9 @@
             </form>
             <div class="command-result d-flex flex-column">
               <span class="command-result-title">Command result</span>
-              <div class="command-result-content"></div>
+              <div class="command-result-content">
+                <p class="scrollable-text" id="command-result"></p>
+              </div>
             </div>
           </div>
         </div>
@@ -184,45 +201,50 @@
 
       <div class="main-content d-flex flex-column">
         <span class="right-side-content-title">Packet Capture : tcpdump</span>
-        <div class="d-flex">
-          <div class="packet-node d-flex align-items-center">
-            <label for="packet-node-id">Node</label>
-            <select
-              name="packet_node_type"
-              id="packet-node-id"
-              class="node-name-box"
+        <form id="packet-capture-form">
+          <div class="d-flex">
+            <div class="packet-node d-flex align-items-center">
+              <label for="packet-node-id">Node</label>
+              <select
+                name="packet_node_type"
+                id="packet-node-id"
+                class="node-name-box"
+              >
+                <option value="folan">Folan</option>
+                <option value="bisar">Bisar</option>
+                <option value="bahman">Bahman</option>
+              </select>
+            </div>
+            <div
+              class="interface d-flex justify-content-between align-items-center"
             >
-              <option value="folan">Folan</option>
-              <option value="bisar">Bisar</option>
-              <option value="bahman">Bahman</option>
-            </select>
+              <label for="packet-interface-id">Interface</label>
+              <select
+                name="packet_interface_type"
+                id="packet-interface-id"
+                class="node-name-box"
+              >
+                <option value="folan">Folan</option>
+                <option value="bisar">Bisar</option>
+                <option value="bahman">Bahman</option>
+              </select>
+            </div>
           </div>
-          <div
-            class="interface d-flex justify-content-between align-items-center"
-          >
-            <label for="packet-interface-id">Interface</label>
-            <select
-              name="packet_interface_type"
-              id="packet-interface-id"
-              class="node-name-box"
+          <div class="d-flex">
+            <div
+              class="option d-flex justify-content-between align-items-center"
             >
-              <option value="folan">Folan</option>
-              <option value="bisar">Bisar</option>
-              <option value="bahman">Bahman</option>
-            </select>
+              <label class="">Options</label>
+              <input
+                type="text"
+                name="packet_option"
+                id="packet-option"
+                class="node-option-box"
+              />
+            </div>
+            <button class="start-button ims-button">start</button>
           </div>
-        </div>
-        <div class="d-flex">
-          <div class="option d-flex justify-content-between align-items-center">
-            <span class="">Options</span>
-            <input
-              type="text"
-              name="trou_option_name"
-              class="node-option-box"
-            />
-          </div>
-          <button class="start-button ims-button">start</button>
-        </div>
+        </form>
       </div>
     </div>
 

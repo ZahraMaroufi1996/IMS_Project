@@ -59,13 +59,21 @@ input {
 }
 
 .command-result-content {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   width: 33.75vw;
   height: 51.94vh;
   margin-left: 0.52vw;
   margin-top: 1.48vh;
+  overflow: auto;
 }
 
+.scrollable-text {
+  margin: 0;
+  padding: 10px;
+  color: #1f666e;
+  font-size: 1.48vh;
+  font-family: "FiraGO", sans-serif;
+}
 .packet-node {
   width: 16.61vw;
   height: 3.7vh;

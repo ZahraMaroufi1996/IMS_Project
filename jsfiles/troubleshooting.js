@@ -1,6 +1,13 @@
 const url = "https://cdfb4ab4-65e8-498e-890c-570e0ade6a15.mock.pstmn.io";
 const my_token = localStorage.getItem("token");
 const pingNodeForm = document.getElementById("ping-node-form");
+const error_close = document.querySelector(".error-close-icon");
+const show_error = document.querySelector(".show-error");
+
+error_close.addEventListener("click", function (e) {
+  e.preventDefault();
+  show_error.style.display = "none";
+});
 
 function showError(response) {
   if (response.status !== 200) {
@@ -42,6 +49,41 @@ pingNodeForm.addEventListener("submit", function (e) {
   console.log(JSON.stringify(formData));
 
   fetch(`${url}/api/troubleshooting/ping`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${my_token}`,
+    },
+    body: JSON.stringify(formData),
+  })
+    .then((response) => {
+      console.log(response);
+      showError(response);
+      return response.json();
+    })
+    .then((data) => {
+      const commandResult = $("#command-result");
+      commandResult.html(data.commandResult);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+});
+
+const packetCaptureForm = document.getElementById("packet-capture-form");
+
+packetCaptureForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+  const formData = Object.fromEntries(new FormData(e.target));
+  //   const pingNodeIp = [];
+  //   const formData = {
+  //     ping_node_type: data.ping_node_type,
+  //     ping_node_ip: pingNodeIp.join("."),
+  //   };
+
+  console.log(JSON.stringify(formData));
+
+  fetch(`${url}/api/troubleshooting/packetCapture`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
