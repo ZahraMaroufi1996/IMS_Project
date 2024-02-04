@@ -11,7 +11,7 @@ let Homer_Virtual_IP = [];
 let node_type = [];
 
 const url = "https://c6059f0c-d4f4-45f8-9187-a1d3da3b8645.mock.pstmn.io";
-let my_token = localStorage.getItem("token");
+const my_token = localStorage.getItem("token");
 
 function load_page() {
   fetch(`${url}/api/topology`, {

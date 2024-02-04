@@ -35,7 +35,7 @@ input {
   border: none;
 }
 
-.node {
+.ping-node {
   width: 16.41vw;
   height: 3.7vh;
   margin-top: 2.59vh;
@@ -66,7 +66,7 @@ input {
   margin-top: 1.48vh;
 }
 
-.node2 {
+.packet-node {
   width: 16.61vw;
   height: 3.7vh;
   margin-top: 2.59vh;

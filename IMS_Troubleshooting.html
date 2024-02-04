@@ -124,18 +124,18 @@
           <span class="left-side-content-title">Ping</span>
 
           <div class="d-flex flex-column">
-            <div class="d-flex justify-content-between align-items-start">
-              <div class="node d-flex align-items-center">
-                <!-- <span class="">Node</span>
-                <input
-                  type="text"
-                  name="trou_node_name2"
+            <form
+              class="d-flex justify-content-between align-items-start"
+              id="ping-node-form"
+            >
+              <div class="ping-node d-flex align-items-center">
+                <label for="ping-node-id">Node</label>
+                <select
+                  name="ping_node_type"
+                  id="ping-node-id"
                   class="node-name-box"
-                /> -->
-
-                <label for="cars">Node</label>
-                <select name="cars" id="cars" class="node-name-box">
-                  <option class="test" value="folan">Folan</option>
+                >
+                  <option value="folan">Folan</option>
                   <option value="bisar">Bisar</option>
                   <option value="bahman">Bahman</option>
                 </select>
@@ -147,33 +147,33 @@
                   <span>IP Address</span>
                   <input
                     type="text"
-                    name="IP_Address_field4"
+                    name="ping_node_ip_octet1"
                     class="ip-octet"
-                    id="node-ip-octet1"
+                    id="ping-node-ip-octet1"
                   />
                   <input
                     type="text"
-                    name="IP_Address_field3"
+                    name="ping_node_ip_octet2"
                     class="ip-octet"
-                    id="node-ip-octet2"
+                    id="ping-node-ip-octet2"
                   />
                   <input
                     type="text"
-                    name="IP_Address_field2"
+                    name="ping_node_ip_octet3"
                     class="ip-octet"
-                    id="node-ip-octet3"
+                    id="ping-node-ip-octet3"
                   />
                   <input
                     type="text"
-                    name="IP_Address_field1"
+                    name="ping_node_ip_octet4"
                     class="ip-octet"
-                    id="node-ip-octet4"
+                    id="ping-node-ip-octet4"
                   />
                 </div>
 
                 <button class="ims-button run-button">Run</button>
               </div>
-            </div>
+            </form>
             <div class="command-result d-flex flex-column">
               <span class="command-result-title">Command result</span>
               <div class="command-result-content"></div>
@@ -185,19 +185,31 @@
       <div class="main-content d-flex flex-column">
         <span class="right-side-content-title">Packet Capture : tcpdump</span>
         <div class="d-flex">
-          <div class="node2 d-flex align-items-center">
-            <span class="">Node</span>
-            <input type="text" name="trou_node_name2" class="node-name-box" />
+          <div class="packet-node d-flex align-items-center">
+            <label for="packet-node-id">Node</label>
+            <select
+              name="packet_node_type"
+              id="packet-node-id"
+              class="node-name-box"
+            >
+              <option value="folan">Folan</option>
+              <option value="bisar">Bisar</option>
+              <option value="bahman">Bahman</option>
+            </select>
           </div>
           <div
             class="interface d-flex justify-content-between align-items-center"
           >
-            <span class="">Interface</span>
-            <input
-              type="text"
-              name="trou_interface_name"
+            <label for="packet-interface-id">Interface</label>
+            <select
+              name="packet_interface_type"
+              id="packet-interface-id"
               class="node-name-box"
-            />
+            >
+              <option value="folan">Folan</option>
+              <option value="bisar">Bisar</option>
+              <option value="bahman">Bahman</option>
+            </select>
           </div>
         </div>
         <div class="d-flex">
@@ -305,4 +317,5 @@
       <p id="erroe-message">successfull message!</p>
     </div>
   </div> -->
+  <script src="jsfiles/troubleshooting.js"></script>
 </body>
