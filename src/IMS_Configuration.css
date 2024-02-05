@@ -21,12 +21,10 @@
   margin-left: 2.083vw;
   margin-top: 3.7vh;
   border: 0.092vh solid #d5e8e1;
-  /* position: absolute; */
   border-radius: 0.83vh;
 }
 
 .general-class-content {
-  border: 0.092vh solid red;
   width: 34.48vw;
   height: 8.42vh;
   margin-left: 1.3vw;
@@ -41,7 +39,6 @@
 }
 
 .general-class-content-title {
-  /* margin-top: 0.98vh; */
   margin-left: 0;
   width: 3.17vw;
   height: 2.22vh;
@@ -77,7 +74,6 @@ input[type="text"] {
 }
 
 .general-class-content-field2 {
-  /* width: 28.92vw; */
   height: 2.037vh;
   margin-top: 2.66vh;
   margin-left: 5.57vw;
@@ -94,25 +90,23 @@ input[type="text"] {
   height: 61.57vh;
   margin-left: 2.083vw;
   margin-top: 2.6vh;
-  /* border: 0.092vh solid #d5e8e1; */
-  border: 0.092vh solid red;
+  border: 0.092vh solid #d5e8e1;
   border-radius: 0.83vh;
 }
 
 .P-CSCF-class-content {
-  border: 0.092vh solid red;
   width: 34.41vw;
   height: 21.57vh;
   margin-left: 1.31vw;
   margin-top: 2.41vh;
-  /* position: absolute; */
   border-radius: 0.83vh;
 }
 
 .P-CSCF-class-content-title,
 .S-CSCF-class-content-title,
 .RTP-Proxy-class-content-title,
-.I-CSCF-class-content-title {
+.I-CSCF-class-content-title,
+.P-CSCF-class-Rx-configuration-title {
   font-size: 1.66vh;
   font-family: "FiraGO", sans-serif;
   color: #83a79a;
@@ -136,11 +130,11 @@ input[type="text"] {
   border-radius: 0.83vh;
 }
 
-.P-CSCF-class-content-field1{
+.P-CSCF-class-content-field1 {
   margin-left: 3.12vw;
 }
 
-.P-CSCF-class-content-field3{
+.P-CSCF-class-content-field3 {
   margin-left: 5.51vw;
 }
 
@@ -153,8 +147,7 @@ input[type="text"] {
 }
 
 .P-CSCF-class-content-field4,
-.S-CSCF-class-content-input12 
-.S-CSCF-class-content-input34,
+.S-CSCF-class-content-input12 .S-CSCF-class-content-input34,
 .I-CSCF-class-content-input12 {
   /* border: 1px solid black; */
   width: 28.95vw;
@@ -205,28 +198,18 @@ input[type="text"] {
   margin-left: 6.72vw;
   margin-top: 2.96vh;
   border-radius: 0.83vh;
-  /* border: 0.092vh solid #d5e8e1; */
-  border: 0.092vh solid red;
+  border: 0.092vh solid #d5e8e1;
 }
 
 .P-CSCF-class-Rx-configuration-title {
   width: 6.14vw;
   height: 1.94vh;
-  left: 0.94vw;
-  top: 2.59vh;
-  position: absolute;
-  border-radius: 0.83vh;
-  color: #83a79a;
-  font-size: 1.66vh;
-  font-family: "FiraGO", sans-serif;
 }
 
 .P-CSCF-class-Rx-configuration-field1 {
-  /* border: 0.092vh solid red; */
   width: 19.43vw;
   height: 3.7vh;
-  margin-left: 8.49vw;
-  border-radius: 0.83vh;
+  margin-left: 2.12vw;
 }
 
 .P-CSCF-class-Rx-configuration-field2,
@@ -234,14 +217,12 @@ input[type="text"] {
   width: 19.63vw;
   height: 3.7vh;
   margin-left: 8.49vw;
-  border-radius: 0.83vh;
 }
 
 .P-CSCF-class-Rx-configuration-field4 {
   margin-left: 8.49vw;
   width: 19.32vw;
   height: 2.037vh;
-  border-radius: 0.83vh;
 }
 
 .transport-protocol {
@@ -255,7 +236,6 @@ input[type="text"] {
   margin-left: 8.49vw;
   width: 19.27vw;
   height: 3.7vh;
-  border-radius: 0.83vh;
 }
 
 #Rx-Source-Port {
@@ -328,8 +308,8 @@ input[type="text"] {
   height: 6.94vh;
   margin-top: 3.7vh;
   margin-left: 1.41vw;
-  /* border: 0.092vh solid #d5e8e1; */
-  border: 0.092vh solid red;
+  border: 0.092vh solid #d5e8e1;
+  /* border: 0.092vh solid red; */
   border-radius: 0.83vh;
 }
 
@@ -338,8 +318,7 @@ input[type="text"] {
   height: 13.33vh;
   margin-top: 2.59vh;
   margin-left: 1.41vw;
-  /* border: 0.092vh solid #d5e8e1; */
-  border: 0.092vh solid red;
+  border: 0.092vh solid #d5e8e1;
   border-radius: 0.83vh;
 }
 
@@ -347,7 +326,6 @@ input[type="text"] {
   width: 34.46vw;
   height: 9.81vh;
   border-radius: 0.83vh;
-  border: 1px solid red;
 }
 
 .S-CSCF-class-content-input1,
@@ -361,12 +339,6 @@ input[type="text"] {
 .RTP-Proxy-class-content {
   width: 35.04vw;
   height: 40.55vh;
-  border: 1px solid red;
-}
-
-.RTP-Proxy-class-content-title {
-  top: 0;
-  left: 0;
 }
 
 .RTP-Proxy-class-content-input1 {
