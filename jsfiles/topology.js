@@ -2,7 +2,6 @@ let network_Info = {};
 let Subnetmask = [];
 let Gateway = [];
 let Node_IP = [];
-let Node_Name;
 let Node_Info;
 let Node_Type;
 let Database_Virtual_I = [];
@@ -11,13 +10,13 @@ let Homer_Virtual_IP = [];
 let node_type = [];
 
 const url = "https://c6059f0c-d4f4-45f8-9187-a1d3da3b8645.mock.pstmn.io";
-const my_token = localStorage.getItem("token");
+const token = localStorage.getItem("token");
 
 function load_page() {
   fetch(`${url}/api/topology`, {
     method: "GET",
     headers: {
-      Authorization: `Bearer ${my_token}`,
+      Authorization: `Bearer ${token}`,
     },
   })
     .then((response) => response.json())
@@ -81,8 +80,8 @@ function load_page() {
 function showError(response) {
   if (response.status !== 200) {
     // hasMessage = true;
-    show_error.style.display = "block";
-    show_error.style.backgroundColor = "#c65161";
+    showError.style.display = "block";
+    showError.style.backgroundColor = "#c65161";
     const error_msg = document.getElementById("error-content");
     error_msg.innerHTML = `<img  src="images/error-logo.svg" class="error-icon"/>
             <p id="error-message">
@@ -90,8 +89,8 @@ function showError(response) {
             </p>`;
   } else {
     // hasMessage = false;
-    show_error.style.display = "block";
-    show_error.style.backgroundColor = "#58cc87";
+    showError.style.display = "block";
+    showError.style.backgroundColor = "#58cc87";
     const success_msg = document.getElementById("error-content");
     success_msg.innerHTML = `<img  src="images/success Icon.svg" class="error-icon"/>
             <p id="error-message">
@@ -158,60 +157,60 @@ function render(type_index) {
 
   const node_list = $("#node-table-contents");
   node_list.html(render_table_type.join(""));
-  cur_node_type = node_type_name[type_index];
+  curNodeType = nodeTypeName[type_index];
 }
 
 function getTime() {
   fetch(`${url}/api/general`)
     .then((response) => response.json())
     .then((data) => {
-      time_Info = data;
-      const my_global_hour = time_Info.timeHour;
-      const my_global_min = time_Info.timeMin;
-      const my_global_sec = time_Info.timeSec;
+      // time_Info = data;
+      const globalHour = data.timeHour;
+      const globalMin = data.timeMin;
+      const globalSec = data.timeSec;
 
-      let my_local_hour;
-      let my_local_min;
-      let my_local_sec;
+      let localHour;
+      let localMin;
+      let localSec;
 
-      if (time_Info.timeZone === "Iran") {
-        my_local_hour = time_Info.timeHour + 3;
-        my_local_min = time_Info.timeMin + 30;
-        my_local_sec = time_Info.timeSec;
+      if (data.timeZone === "Iran") {
+        localHour = data.timeHour + 3;
+        localMin = data.timeMin + 30;
+        localSec = data.timeSec;
       }
 
-      if (my_local_hour < 10) {
-        my_local_hour = `0${my_local_hour}`;
+      if (localHour < 10) {
+        localHour = `0${localHour}`;
       }
 
-      if (my_local_min < 10) {
-        my_local_min = `0${my_local_min}`;
+      if (localMin < 10) {
+        localMin = `0${localMin}`;
       }
 
-      if (my_local_sec < 10) {
-        my_local_sec = `0${my_local_sec}`;
+      if (localSec < 10) {
+        localSec = `0${localSec}`;
       }
 
-      if (my_global_hour < 10) {
-        my_global_hour = `0${my_global_hour}`;
+      if (globalHour < 10) {
+        globalHour = `0${globalHour}`;
       }
 
-      if (my_global_min < 10) {
-        my_global_min = `0${my_global_min}`;
+      if (globalMin < 10) {
+        globalMin = `0${globalMin}`;
       }
 
-      if (my_global_sec < 10) {
-        my_global_sec = `0${my_global_sec}`;
+      if (globalSec < 10) {
+        globalSec = `0${globalSec}`;
       }
 
-      const local_time = document.getElementById("local-time");
-      const global_time = document.getElementById("global-time");
+      const localTime = document.getElementById("local-time");
+      const globalTime = document.getElementById("global-time");
 
-      local_time.innerHTML = `${my_local_hour}:${my_local_min}:${my_local_sec}`;
-      global_time.innerHTML = `${my_global_hour}:${my_global_min}:${my_global_sec}`;
+      localTime.innerHTML = `${localHour}:${localMin}:${localSec}`;
+      globalTime.innerHTML = `${globalHour}:${globalMin}:${globalSec}`;
     })
     .catch((error) => {
-      console.log("error");
+      console.log(error);
     });
 }
 
@@ -221,39 +220,37 @@ async function init() {
 
 init();
 
-const Network_Definition_form = document.getElementById(
+const networkDefinitionForm = document.getElementById(
   "network-definition-form"
 );
-Network_Definition_form.addEventListener("submit", function (e) {
+networkDefinitionForm.addEventListener("submit", function (e) {
   e.preventDefault();
-  const formData = Object.fromEntries(new FormData(e.target));
-  const subnetmak = [];
+  const data = Object.fromEntries(new FormData(e.target));
+  const subnetmask = [];
   const gateway = [];
 
-  gateway[0] = formData.gateway_octet1;
-  gateway[1] = formData.gateway_octet2;
-  gateway[2] = formData.gateway_octet3;
-  gateway[3] = formData.gateway_octet4;
+  gateway[0] = data.gateway_octet1;
+  gateway[1] = data.gateway_octet2;
+  gateway[2] = data.gateway_octet3;
+  gateway[3] = data.gateway_octet4;
 
-  subnetmak[0] = formData.subnetmask_octet1;
-  subnetmak[1] = formData.subnetmask_octet2;
-  subnetmak[2] = formData.subnetmask_octet3;
-  subnetmak[3] = formData.subnetmask_octet4;
+  subnetmask[0] = data.subnetmask_octet1;
+  subnetmask[1] = data.subnetmask_octet2;
+  subnetmask[2] = data.subnetmask_octet3;
+  subnetmask[3] = data.subnetmask_octet4;
 
-  const final_formdata = {
-    SubnetMask: subnetmak.join("."),
+  const formData = {
+    SubnetMask: subnetmask.join("."),
     Gateway: gateway.join("."),
   };
-  // hasMessage = false;
-  console.log(final_formdata);
 
   result = fetch(`${url}/api/topology/networkDefinition`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${my_token}`,
+      Authorization: `Bearer ${token}`,
     },
-    body: JSON.stringify(final_formdata),
+    body: JSON.stringify(formData),
   })
     .then((response) => {
       console.log(response);
@@ -264,42 +261,42 @@ Network_Definition_form.addEventListener("submit", function (e) {
     });
 });
 
-const Virtual_IPs_form = document.getElementById("virtual-ips-form");
-Virtual_IPs_form.addEventListener("submit", function (e) {
+const virtualIPsForm = document.getElementById("virtual-ips-form");
+virtualIPsForm.addEventListener("submit", function (e) {
   e.preventDefault();
-  const formData = Object.fromEntries(new FormData(e.target));
-  const DatabaseVirtualIP = [];
-  const DNSServerVirtualIP = [];
-  const HomerVirtualIP = [];
+  const data = Object.fromEntries(new FormData(e.target));
+  const databaseVirtualIp = [];
+  const dnsServerVirtualIp = [];
+  const homerVirtualIp = [];
 
-  DatabaseVirtualIP[0] = formData.virtual_ips_database_octet1;
-  DatabaseVirtualIP[1] = formData.virtual_ips_database_octet2;
-  DatabaseVirtualIP[2] = formData.virtual_ips_database_octet3;
-  DatabaseVirtualIP[3] = formData.virtual_ips_database_octet4;
+  databaseVirtualIp[0] = data.virtual_ips_database_octet1;
+  databaseVirtualIp[1] = data.virtual_ips_database_octet2;
+  databaseVirtualIp[2] = data.virtual_ips_database_octet3;
+  databaseVirtualIp[3] = data.virtual_ips_database_octet4;
 
-  DNSServerVirtualIP[0] = formData.virtual_ips_dns_server_octet1;
-  DNSServerVirtualIP[1] = formData.virtual_ips_dns_server_octet2;
-  DNSServerVirtualIP[2] = formData.virtual_ips_dns_server_octet3;
-  DNSServerVirtualIP[3] = formData.virtual_ips_dns_server_octet4;
+  dnsServerVirtualIp[0] = data.virtual_ips_dns_server_octet1;
+  dnsServerVirtualIp[1] = data.virtual_ips_dns_server_octet2;
+  dnsServerVirtualIp[2] = data.virtual_ips_dns_server_octet3;
+  dnsServerVirtualIp[3] = data.virtual_ips_dns_server_octet4;
 
-  HomerVirtualIP[0] = formData.virtual_ips_homer_octet1;
-  HomerVirtualIP[1] = formData.virtual_ips_homer_octet2;
-  HomerVirtualIP[2] = formData.virtual_ips_homer_octet3;
-  HomerVirtualIP[3] = formData.virtual_ips_homer_octet4;
+  homerVirtualIp[0] = data.virtual_ips_homer_octet1;
+  homerVirtualIp[1] = data.virtual_ips_homer_octet2;
+  homerVirtualIp[2] = data.virtual_ips_homer_octet3;
+  homerVirtualIp[3] = data.virtual_ips_homer_octet4;
 
-  const final_formdata = {
-    databaseVirtualIp: DatabaseVirtualIP.join("."),
-    dnsVirtualIp: DNSServerVirtualIP.join("."),
-    homerVirtualIp: HomerVirtualIP.join("."),
+  const formData = {
+    databaseVirtualIp: databaseVirtualIp.join("."),
+    dnsVirtualIp: dnsServerVirtualIp.join("."),
+    homerVirtualIp: homerVirtualIp.join("."),
   };
 
   fetch(`${url}/api/topology/virtualIps`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${my_token}`,
+      Authorization: `Bearer ${token}`,
     },
-    body: JSON.stringify(final_formdata),
+    body: JSON.stringify(formData),
   })
     .then((response) => {
       console.log(response);
@@ -310,53 +307,78 @@ Virtual_IPs_form.addEventListener("submit", function (e) {
     });
 });
 
-const node_type_name = ["pcscf", "rtpProxy", "core"];
-let cur_node_type;
-const node_table_title = [];
-for (let i = 0; i < node_type_name.length; i++) {
-  node_table_title[i] = document.getElementById(`node-table-title${i + 1}`);
-  node_table_title[i].addEventListener("click", function (e) {
-    e.preventDefault();
+const nodeTypeName = ["pcscf", "rtpProxy", "core"];
+let curNodeType;
+// const nodeTable_title = [];
+// for (let i = 0; i < nodeTypeName.length; i++) {
+//   nodeTable_title[i] = document.getElementById(`node-table-title${i + 1}`);
+//   nodeTable_title[i].addEventListener("click", function (e) {
+//     e.preventDefault();
 
-    for (let i = 0; i < node_type_name.length; i++) {
-      node_table_title[i].style.backgroundColor = "#1F666E";
-    }
+//     for (let i = 0; i < nodeTypeName.length; i++) {
+//       nodeTable_title[i].style.backgroundColor = "#1F666E";
+//     }
 
-    node_table_title[i].style.backgroundColor = "#A6D4C4";
-    render(i);
-  });
-}
+//     nodeTable_title[i].style.backgroundColor = "#A6D4C4";
+//     render(i);
+//   });
+// }
 
-let new_Node;
-const add_node_form = document.getElementById("add-node-form");
-add_node_form.addEventListener("submit", function (e) {
+const nodeTableTitlePcscf = document.getElementById("node-table-title-pcscf");
+const nodeTableTitleRtpProxy = document.getElementById(
+  "node-table-title-rtp-proxy"
+);
+const nodeTableTitleCore = document.getElementById("node-table-title-core");
+
+nodeTableTitlePcscf.addEventListener("click", function (e) {
   e.preventDefault();
-  const formData = Object.fromEntries(new FormData(e.target));
+  nodeTableTitlePcscf.style.backgroundColor = "#A6D4C4";
+  nodeTableTitleRtpProxy.style.backgroundColor = "#1F666E";
+  nodeTableTitleCore.style.backgroundColor = "#1F666E";
+  render(nodeTypeName.indexOf("pcscf"));
+});
 
-  let node_ip = [];
-  let node_name;
-  let current_node_type;
+nodeTableTitleRtpProxy.addEventListener("click", function (e) {
+  e.preventDefault();
+  nodeTableTitleRtpProxy.style.backgroundColor = "#A6D4C4";
+  nodeTableTitlePcscf.style.backgroundColor = "#1F666E";
+  nodeTableTitleCore.style.backgroundColor = "#1F666E";
+  render(nodeTypeName.indexOf("rtpProxy"));
+});
 
-  node_name = formData.node_name;
-  current_node_type = formData.node_type_icon;
+nodeTableTitleCore.addEventListener("click", function (e) {
+  e.preventDefault();
+  nodeTableTitleCore.style.backgroundColor = "#A6D4C4";
+  nodeTableTitleRtpProxy.style.backgroundColor = "#1F666E";
+  nodeTableTitlePcscf.style.backgroundColor = "#1F666E";
+  render(nodeTypeName.indexOf("core"));
+});
 
-  node_ip[0] = formData.node_ip_octet1;
-  node_ip[1] = formData.node_ip_octet2;
-  node_ip[2] = formData.node_ip_octet3;
-  node_ip[3] = formData.node_ip_octet4;
+const addNodeForm = document.getElementById("add-node-form");
+addNodeForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+  const data = Object.fromEntries(new FormData(e.target));
+  const nodeIp = [];
+  nodeIp[0] = data.node_ip_octet1;
+  nodeIp[1] = data.node_ip_octet2;
+  nodeIp[2] = data.node_ip_octet3;
+  nodeIp[3] = data.node_ip_octet4;
 
-  const final_formdata = {
-    name: node_name,
-    ip: node_ip.join("."),
-    type: current_node_type,
+  const nodeName = data.node_name;
+  const currentNodeType = data.node_type_icon;
+
+  const formData = {
+    name: nodeName,
+    ip: nodeIp.join("."),
+    type: currentNodeType,
   };
   result = fetch(`${url}/api/topology/addNode`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${my_token}`,
+      Authorization: `Bearer ${token}`,
     },
-    body: JSON.stringify(final_formdata),
+    body: JSON.stringify(formData),
   })
     .then((response) => {
       console.log(response);
@@ -364,9 +386,8 @@ add_node_form.addEventListener("submit", function (e) {
       return response.json();
     })
     .then((data) => {
-      new_Node = data;
-      node_type[node_type_name.indexOf(new_Node.type)].push(new_Node);
-      render(node_type_name.indexOf(new_Node.type));
+      node_type[nodeTypeName.indexOf(data.type)].push(data);
+      render(nodeTypeName.indexOf(data.type));
     })
     .catch((error) => {
       console.log(error);
@@ -380,12 +401,12 @@ let itemWillDeleteData = null;
 let editable_data_before = {};
 let editable_data_next = {};
 let editable_form_number;
-const modal_close = document.querySelector(".node-modal-close");
-const modal_delete_button = document.getElementById("node-modal-delete-button");
-const modal_cancel_button = document.getElementById("node-modal-cancel-button");
-const node_table = document.querySelector(".node-table");
+const modalClose = document.querySelector(".node-modal-close");
+const modalDeleteButton = document.getElementById("node-modal-delete-button");
+const modalCancelButton = document.getElementById("node-modal-cancel-button");
+const nodeTable = document.querySelector(".node-table");
 
-node_table.addEventListener("click", function (e) {
+nodeTable.addEventListener("click", function (e) {
   e.preventDefault();
   const target = e.target;
   if (target.classList.contains("trash")) {
@@ -423,7 +444,7 @@ node_table.addEventListener("click", function (e) {
       const final_formdata = {
         name: edit_content_name,
         ip: edit_content_ip,
-        type: cur_node_type,
+        type: curNodeType,
       };
 
       hasMessage = false;
@@ -431,22 +452,22 @@ node_table.addEventListener("click", function (e) {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${my_token}`,
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(final_formdata),
       }).then((response) => {
         if (response.status !== 200) {
-          show_error.style.display = "block";
-          show_error.style.backgroundColor = "#c65161";
+          showError.style.display = "block";
+          showError.style.backgroundColor = "#c65161";
           const error_msg = document.getElementById("error-content");
           error_msg.innerHTML = `<img  src="images/error-logo.svg" class="error-icon"/>
                         <p id="error-message">
                         Your request was failed (status code : ${response.status})
                         </p>`;
-          render(node_type_name.indexOf(cur_node_type));
+          render(nodeTypeName.indexOf(curNodeType));
         } else {
-          show_error.style.display = "block";
-          show_error.style.backgroundColor = "#58cc87";
+          showError.style.display = "block";
+          showError.style.backgroundColor = "#58cc87";
           const success_msg = document.getElementById("error-content");
           success_msg.innerHTML = `<img  src="images/success Icon.svg" class="error-icon"/>
                         <p id="error-message">
@@ -454,48 +475,48 @@ node_table.addEventListener("click", function (e) {
                         </p>`;
 
           let desired_row = node_type[
-            node_type_name.indexOf(cur_node_type)
+            nodeTypeName.indexOf(curNodeType)
           ].findIndex((q) => q.id == editable_row_number);
 
           // console.log("hiiiiiiiiiiiiiiiiiiii");
           // console.log(desired_row);
-          node_type[node_type_name.indexOf(cur_node_type)][desired_row].name =
+          node_type[nodeTypeName.indexOf(curNodeType)][desired_row].name =
             edit_content_name;
-          node_type[node_type_name.indexOf(cur_node_type)][desired_row].ip =
+          node_type[nodeTypeName.indexOf(curNodeType)][desired_row].ip =
             edit_content_ip;
-          node_type[node_type_name.indexOf(cur_node_type)][desired_row].status =
+          node_type[nodeTypeName.indexOf(curNodeType)][desired_row].status =
             edit_content_status;
           e.target.parentElement.parentElement.children[0].disabled = true;
           e.target.parentElement.parentElement.children[1].disabled = true;
           e.target.parentElement.parentElement.children[2].disabled = true;
-          render(node_type_name.indexOf(cur_node_type));
+          render(nodeTypeName.indexOf(curNodeType));
         }
       });
     });
 
     const current_close = document.getElementById(`${target.id}c`);
     current_close.addEventListener("click", function (e) {
-      render(node_type_name.indexOf(cur_node_type));
+      render(nodeTypeName.indexOf(curNodeType));
     });
   }
 });
 
-modal_close.addEventListener("click", function (e) {
+modalClose.addEventListener("click", function (e) {
   e.preventDefault();
   modal.style.display = "none";
 });
 
-modal_cancel_button.addEventListener("click", function (e) {
+modalCancelButton.addEventListener("click", function (e) {
   e.preventDefault();
   modal.style.display = "none";
 });
 
-modal_delete_button.addEventListener("click", function (e) {
+modalDeleteButton.addEventListener("click", function (e) {
   e.preventDefault();
   modal.style.display = "none";
 
   let hasMessage = false;
-  const final_formdata = {
+  const formData = {
     name: itemWillDeleteData.name,
     ip: itemWillDeleteData.ip,
     type: itemWillDeleteData.type,
@@ -505,28 +526,28 @@ modal_delete_button.addEventListener("click", function (e) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${my_token}`,
+      Authorization: `Bearer ${token}`,
     },
-    body: JSON.stringify(final_formdata),
+    body: JSON.stringify(formData),
   })
     .then((response) => {
       if (response.status !== 200) {
-        show_error.style.display = "block";
-        show_error.style.backgroundColor = "#c65161";
+        showError.style.display = "block";
+        showError.style.backgroundColor = "#c65161";
         const error_msg = document.getElementById("error-content");
         error_msg.innerHTML = `<img  src="images/error-logo.svg" class="error-icon"/>
               <p id="error-message">
               Your request was failed (status code : ${response.status})
               </p>`;
       } else {
-        show_error.style.display = "block";
-        show_error.style.backgroundColor = "#58cc87";
+        showError.style.display = "block";
+        showError.style.backgroundColor = "#58cc87";
         const success_msg = document.getElementById("error-content");
         success_msg.innerHTML = `<img  src="images/success Icon.svg" class="error-icon"/>
                 <p id="error-message">
                 Your request was done successfully!
                 </p>`;
-        let index = node_type_name.findIndex(
+        let index = nodeTypeName.findIndex(
           (num) => num === itemWillDeleteData.type
         );
         node_type[index] = node_type[index].filter(
@@ -548,53 +569,51 @@ modal_delete_button.addEventListener("click", function (e) {
 //   getTime();
 //   setInterval(getTime, 60 * 1000 * 15);
 
-const error_close = document.querySelector(".error-close-icon");
-const show_error = document.querySelector(".show-error");
+const errorClose = document.querySelector(".error-close-icon");
+const showError = document.querySelector(".show-error");
 
-error_close.addEventListener("click", function (e) {
+errorClose.addEventListener("click", function (e) {
   e.preventDefault();
-  show_error.style.display = "none";
+  showError.style.display = "none";
 });
 
 ///////////////////////////////// toolbar icons///////////////////
 
-const exit_show = document.querySelector(".exit");
-const exit_icon = document.getElementById("exit-icon");
-const exit_confirm_button = document.getElementById("exit-confirm-button");
-const exit_cancel_button = document.getElementById("exit-cancel-button");
+const exitShow = document.querySelector(".exit");
+const exitIcon = document.getElementById("exit-icon");
+const exitConfirmButton = document.getElementById("exit-confirm-button");
+const exitCancelButton = document.getElementById("exit-cancel-button");
 
-exit_icon.addEventListener("click", function (e) {
+exitIcon.addEventListener("click", function (e) {
   e.preventDefault();
-  exit_show.style.display = "block";
+  exitShow.style.display = "block";
 });
 
-exit_confirm_button.addEventListener("click", function (e) {
+exitConfirmButton.addEventListener("click", function (e) {
   "use strict";
   e.preventDefault();
-  var confirm_result = confirm("Are you sure you want to quit?");
-  if (confirm_result == true) {
+  const confirmResult = confirm("Are you sure you want to quit?");
+  if (confirmResult == true) {
     window.close();
   }
 });
 
-exit_cancel_button.addEventListener("click", function (e) {
+exitCancelButton.addEventListener("click", function (e) {
   e.preventDefault();
-  exit_show.style.display = "none";
+  exitShow.style.display = "none";
 });
 
-const log_out_show = document.querySelector(".log-out");
-const log_out_icon = document.getElementById("log-out-icon");
-const log_out_confirm_button = document.getElementById(
-  "log-out-confirm-button"
-);
-const log_out_cancel_button = document.getElementById("log-out-cancel-button");
+const logOutShow = document.querySelector(".log-out");
+const logOutIcon = document.getElementById("log-out-icon");
+const logOutConfirmButton = document.getElementById("log-out-confirm-button");
+const logOutCancelButton = document.getElementById("log-out-cancel-button");
 
-log_out_icon.addEventListener("click", function (e) {
+logOutIcon.addEventListener("click", function (e) {
   e.preventDefault();
-  log_out_show.style.display = "block";
+  logOutShow.style.display = "block";
 });
 
-log_out_confirm_button.addEventListener("click", function (e) {
+logOutConfirmButton.addEventListener("click", function (e) {
   e.preventDefault();
   localStorage.removeItem("token");
   $("head").append(
@@ -602,76 +621,74 @@ log_out_confirm_button.addEventListener("click", function (e) {
   );
 });
 
-log_out_cancel_button.addEventListener("click", function (e) {
+logOutCancelButton.addEventListener("click", function (e) {
   e.preventDefault();
-  log_out_show.style.display = "none";
+  logOutShow.style.display = "none";
 });
 
-const profile_show = document.querySelector(".profile");
-const profile_icon = document.getElementById("profile-icon");
-const image_close_icon = document.getElementById("image-close");
-const image_tick_icon = document.getElementById("image-tick");
-const profile_content_images = document.querySelector(
-  ".profile-content-images"
-);
-const Account_info_img = document.querySelector(".sidebar-account-info-image");
+const profileShow = document.querySelector(".profile");
+const profileIcon = document.getElementById("profile-icon");
+const imageCloseIcon = document.getElementById("image-close");
+const imageTickIcon = document.getElementById("image-tick");
+const profileContentImages = document.querySelector(".profile-content-images");
+const accountInfoImg = document.querySelector(".sidebar-account-info-image");
 
-profile_icon.addEventListener("click", function (e) {
+profileIcon.addEventListener("click", function (e) {
   e.preventDefault();
-  profile_show.style.display = "block";
+  profileShow.style.display = "block";
 });
 
-profile_content_images.addEventListener("click", function (e) {
+profileContentImages.addEventListener("click", function (e) {
   e.preventDefault();
-  for (let i = 0; i < profile_content_images.children.length; i++) {
-    profile_content_images.children[i].style.backgroundColor = "#374775";
+  for (let i = 0; i < profileContentImages.children.length; i++) {
+    profileContentImages.children[i].style.backgroundColor = "#374775";
   }
 
   if (e.target.classList.contains("img-list")) {
     const id = e.target.id;
     e.target.style.backgroundColor = "white";
 
-    image_tick_icon.addEventListener("click", function (e) {
+    imageTickIcon.addEventListener("click", function (e) {
       e.preventDefault();
-      Account_info_img.setAttribute("src", `images/${id}.svg`);
+      accountInfoImg.setAttribute("src", `images/${id}.svg`);
     });
   }
 });
 
-image_close_icon.addEventListener("click", function (e) {
+imageCloseIcon.addEventListener("click", function (e) {
   e.preventDefault();
   for (let i = 0; i < 9; i++) {
-    profile_content_images.children[i].style.backgroundColor = "#374775";
+    profileContentImages.children[i].style.backgroundColor = "#374775";
   }
-  profile_content_images.style.backgroundColor = "#374775";
-  profile_show.style.display = "none";
+  profileContentImages.style.backgroundColor = "#374775";
+  profileShow.style.display = "none";
 });
 
-const sound_show = document.querySelector(".sound");
-const sound_icon = document.getElementById("sound-icon");
-const sound_text = document.querySelector(".sound-text");
-const sound_img = sound_icon.children[0];
+const soundShow = document.querySelector(".sound");
+const soundIcon = document.getElementById("sound-icon");
+const soundText = document.querySelector(".sound-text");
+const soundImg = soundIcon.children[0];
 
 let sound_enable = true;
 
-sound_icon.addEventListener("click", function (e) {
+soundIcon.addEventListener("click", function (e) {
   e.preventDefault();
-  sound_show.style.display = "block";
+  soundShow.style.display = "block";
 
   sound_enable = !sound_enable;
 
   if (sound_enable === true) {
-    sound_text.innerHTML = "System has unmuted!";
-    sound_img.setAttribute(
+    soundText.innerHTML = "System has unmuted!";
+    soundImg.setAttribute(
       "src",
       `images/IMS_TOPOLOGY_images/Title Bar Icon _ Sound.svg`
     );
   } else {
-    sound_text.innerHTML = "System has muted!";
-    sound_img.setAttribute("src", `images/Title Bar Icon _ Sound OFF.svg`);
+    soundText.innerHTML = "System has muted!";
+    soundImg.setAttribute("src", `images/Title Bar Icon _ Sound OFF.svg`);
   }
 
   setTimeout(() => {
-    sound_show.style.display = "none";
+    soundShow.style.display = "none";
   }, 2000);
 });
