@@ -235,30 +235,7 @@
 
 /* ////////////////////////////////////////////////////toolbar styles ///////////////////////////////////////////////////*/
 
-/* .toolbar-class {
-  width: 84.89vw;
-  height: 5.92vh;
-  background-color: white;
-  right: 0px;
-  top: 0px;
-  position: absolute;
-} */
-
-/* .toolbar-nav-content {
-  width: 23.62vw;
-  height: 2.77vh;
-  right: 4.66vw;
-  top: 1.57vh;
-  position: absolute;
-  display: flex;
-  justify-content: space-between;
-}
-
-.toolbar-nav-content img {
-  width: 1.56vw;
-  height: 2.77vh;
-}
-
+/* 
 .exit {
   display: none;
   width: 20.31vw;
@@ -544,206 +521,6 @@
   align-items: center;
 } */
 
-/*/////////////////////////////////// sidebar styles////////////////////////////////////////////////////////////// */
-
-/* .sidebar {
-  width: 15.1vw;
-  height: 100%;
-  background-color: #1a4348;
-  left: 0px;
-  top: 0px;
-  position: absolute;
-}
-
-.sidebar-account-info {
-  width: 6.977vw;
-  height: 12.96vh;
-  top: 8.33vh;
-  left: 4.088vw;
-  position: absolute;
-  border-bottom: 0.092vh solid rgba(255, 255, 255, 0.25);
-}
-
-.sidebar-account-info-image {
-  width: 3.33vw;
-  height: 5.93vh;
-  right: 1.97vw;
-  top: 0;
-  position: absolute;
-}
-
-.sidebar-account-info-name {
-  width: 4.79vw;
-  height: 3.79vh;
-  top: 8.15vh;
-  left: 1.093vw;
-  position: absolute;
-}
-
-.sidebar-account-info-name span {
-  font-size: 1.296vh;
-  font-family: "FiraGO", sans-serif;
-  line-height: 1.76vh;
-}
-
-.sidebar-account-info-username {
-  color: #a6d4c4;
-  text-align: right;
-  width: 3.23vw;
-  height: 1.76vh;
-  bottom: 0vh;
-  left: 0.78vw;
-  position: absolute;
-  text-align: start;
-}
-
-.sidebar-account-info-Saleh-username {
-  color: #ffffff;
-  width: 4.79vw;
-  height: 1.76vh;
-  top: 0vh;
-  left: 0vw;
-  position: absolute;
-}
-
-.sidebar-logo {
-  width: 6.98vw;
-  height: 8.24vh;
-  bottom: 6.48vh;
-  left: 4.06vw;
-  position: absolute;
-}
-
-.sidebar-logo img {
-  width: 100%;
-  height: 100%;
-}
-
-.sidebar-button {
-  background-color: #68d5b0;
-  width: 9.58vw;
-  height: 3.7vh;
-  bottom: 27.13vh;
-  left: 3.64vw;
-  position: absolute;
-  color: white;
-  font-size: 1.66vh;
-  border-radius: 7px;
-  border: none;
-}
-
-.sidebar-topology-icon {
-  width: 15.1vw;
-  height: 7.13vh;
-  bottom: 69.54vh;
-  left: 0;
-  position: absolute;
-}
-.sidebar-selected-icon {
-  height: 7.13vh;
-  width: 0.625vw;
-  left: 0;
-  top: 0;
-  position: absolute;
-  background-color: #68d5b0;
-}
-
-.sidebar-topology-icon-content {
-  width: 6.38vw;
-  height: 2.77vh;
-  bottom: 2.14vh;
-  left: 3.71vw;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.sidebar-configuration-icon {
-  width: 15.1vw;
-  height: 7.13vh;
-  top: 34.44vh;
-  left: 0;
-  position: absolute;
-}
-
-.sidebar-configuration-icon-content {
-  width: 8.88vw;
-  height: 4.12vh;
-  bottom: 1.48vh;
-  left: 3.31vw;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.sidebar-monitoring-icon {
-  width: 15.1vw;
-  height: 7.13vh;
-  bottom: 47.22vh;
-  left: 0;
-  position: absolute;
-}
-
-.sidebar-monitoring-icon-content {
-  width: 7.18vw;
-  height: 2.77vh;
-  bottom: 2.175vh;
-  left: 3.71vw;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.sidebar-troubleshooting-icon {
-  width: 15.1vw;
-  height: 7.13vh;
-  bottom: 36.85vh;
-  left: 0;
-  position: absolute;
-}
-
-.sidebar-troubleshooting-icon-content {
-  width: 9.89vw;
-  height: 2.77vh;
-  bottom: 2.19vh;
-  left: 3.71vw;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.sidebar-icons span {
-  color: white;
-  font-size: 1.48vh;
-  padding-left: 12px;
-  font-family: "FiraGO", sans-serif;
-  text-align: center;
-}
-
-.sidebar-configuration-icon-image {
-  width: 2.31vw;
-  height: 4.12vh;
-  left: 0;
-  top: 0;
-  position: absolute;
-}
-
-.sidebar-image {
-  height: 2.77vh;
-  width: 1.56vw;
-  left: 0;
-  top: 0;
-  position: absolute;
-}
-
-.sidebar-icons a {
-  text-decoration: none;
-} */
-
 /* /////////////////////////////////////////////////////// error styles///////////////////////////////////////////// */
 
 .show-error {
@@ -888,12 +665,6 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-/* .slider-div {
-  color: #1a4348;
-  font-size: 1.48vh;
-  font-family: "FiraGO", sans-serif;
-} */
-
 /*/////////////////////////// General Network Configs////////////////////////////////// */
 .ip-octet {
   width: 2.604vw;
@@ -902,22 +673,6 @@ input:checked + .slider:before {
   border-radius: 0.65vh;
   background-color: #eef5f2;
 }
-
-/* .ip-octet1 {
-  margin-right: 0vw;
-}
-
-.ip-octet2 {
-  margin-right: 3.125vw;
-}
-
-.ip-octet3 {
- margin-right: 6.25vw;
-}
-
-.ip-octet4 {
-  margin-right: 9.43vw;
-}  */
 
 .ims-button {
   width: 7.29vw;

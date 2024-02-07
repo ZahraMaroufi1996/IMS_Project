@@ -37,6 +37,14 @@
 #network-definition-form {
   height: 100%;
 }
+
+.network-definition-title {
+  color: #83a79a;
+  font-size: 1.66vh;
+  font-family: "FiraGO", sans-serif;
+  text-align: center;
+}
+
 .network-definition-subnetmask {
   width: 17.81vw;
   height: 3.7vh;
@@ -47,14 +55,8 @@
   height: 3.7vh;
 }
 
-.network-definition span {
-  color: #83a79a;
-  font-size: 1.66vh;
-  text-align: center;
-}
-
-label,
-.network span {
+.network-definition-subnetmask span,
+.network-definition-gateway span {
   color: #1a4348;
   font-size: 1.48vh;
   font-family: "FiraGO", sans-serif;
