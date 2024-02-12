@@ -62,7 +62,7 @@ function editNode(response, event, editData) {
 
 function deleteNode(response) {
   if (response.status == 200) {
-    let index = nodeTypeName.findIndex(
+    const index = nodeTypeName.findIndex(
       (num) => num === itemWillDeleteData.type
     );
     nodeType[index] = nodeType[index].filter(

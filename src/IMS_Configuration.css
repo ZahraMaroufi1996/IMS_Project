@@ -11,7 +11,6 @@
 .main-content {
   width: 78.75vw;
   height: 84.25vh;
-  border: 1px solid blue;
   background-color: white;
 }
 
@@ -82,7 +81,6 @@ input[type="text"] {
 .general-class-content-field2-checkbox {
   height: 2.04vh;
   width: 4vw;
-  border: 1px solid black;
 }
 
 .P-CSCF-class {
@@ -139,7 +137,6 @@ input[type="text"] {
 }
 
 .P-CSCF-class-content-field2 {
-  border: 1px solid red;
   width: 28.82vw;
   height: 5.69vh;
   margin-left: 5.51vw;
@@ -147,9 +144,9 @@ input[type="text"] {
 }
 
 .P-CSCF-class-content-field4,
-.S-CSCF-class-content-input12 .S-CSCF-class-content-input34,
+.S-CSCF-class-content-input12,
+.S-CSCF-class-content-input34,
 .I-CSCF-class-content-input12 {
-  /* border: 1px solid black; */
   width: 28.95vw;
   height: 3.7vh;
   border-radius: 0.83vh;
@@ -229,7 +226,6 @@ input[type="text"] {
   width: 3.3vw;
   height: 2.037vh;
   border-radius: 0.83vh;
-  /* background-color: red; */
 }
 
 .P-CSCF-class-Rx-configuration-field5 {
@@ -258,11 +254,11 @@ input[type="text"] {
 .P-CSCF-class-content-field2-checkboxes {
   width: 28.82vw;
   height: 2.037vh;
-  /* margin-left: 10px; */
+  margin-left: 0px;
 }
 
 .P-CSCF-class-content-field2-checkbox1 {
-  /* background-color: red; */
+  background-color: red;
   width: 4.68vw;
   height: 2.037vh;
   color: #1a4348;
@@ -271,7 +267,6 @@ input[type="text"] {
 }
 
 .P-CSCF-class-content-field2-checkbox2 {
-  /* background-color: red; */
   width: 6.94vw;
   height: 2.037vh;
   color: #1a4348;
@@ -280,7 +275,6 @@ input[type="text"] {
 }
 
 .P-CSCF-class-content-field2-checkbox3 {
-  /* background-color: red; */
   width: 8.92vw;
   height: 2.037vh;
   color: #1a4348;
@@ -289,7 +283,6 @@ input[type="text"] {
 }
 
 .I-CSCF-class-content-title {
-  /* border: 1px solid red; */
   width: 2.76vw;
   height: 2.22vh;
   margin-left: 1vw;
@@ -309,7 +302,6 @@ input[type="text"] {
   margin-top: 3.7vh;
   margin-left: 1.41vw;
   border: 0.092vh solid #d5e8e1;
-  /* border: 0.092vh solid red; */
   border-radius: 0.83vh;
 }
 
@@ -333,7 +325,6 @@ input[type="text"] {
   width: 12.81vw;
   height: 3.7vh;
   border-radius: 0.83vh;
-  border: 1px solid red;
 }
 
 .RTP-Proxy-class-content {
@@ -344,14 +335,12 @@ input[type="text"] {
 .RTP-Proxy-class-content-input1 {
   width: 29.5vw;
   height: 2.037vh;
-  border: 1px solid black;
   margin-left: 1.35vw;
 }
 
 .RTP-Proxy-class-content-input1-checkbox {
   width: 4.81vw;
   height: 2.037vh;
-  border: 1px solid red;
 }
 
 .RTP-Proxy-class-content-input2 {

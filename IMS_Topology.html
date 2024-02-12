@@ -354,7 +354,7 @@
                   class="node-type d-flex flex-row justify-content-between align-items-center"
                 >
                   <span>Node Types :</span>
-                  <div class="node-type-core-checkbox d-flex flex-row">
+                  <div class="node-type-pcscf-checkbox d-flex flex-row">
                     <input
                       class="chb chb-1-circle"
                       type="radio"
@@ -362,7 +362,9 @@
                       name="node_type_icon"
                       value="pcscf"
                     />
-                    <label for="node-type-pscf">P-CSCF</label>
+                    <label for="node-type-pscf" class="radio-label"
+                      >P-CSCF</label
+                    >
                   </div>
                   <div class="node-type-rtp-proxy-checkbox d-flex flex-row">
                     <input
@@ -372,9 +374,11 @@
                       name="node_type_icon"
                       value="rtpProxy"
                     />
-                    <label for="node-type-rtp-proxy">RTP Proxy</label>
+                    <label for="node-type-rtp-proxy" class="radio-label"
+                      >RTP Proxy</label
+                    >
                   </div>
-                  <div class="node-type-pcscf-checkbox d-flex flex-row">
+                  <div class="node-type-core-checkbox d-flex flex-row">
                     <input
                       class="chb chb-1-circle"
                       type="radio"
@@ -382,7 +386,7 @@
                       name="node_type_icon"
                       value="core"
                     />
-                    <label for="node-type-core">Core</label>
+                    <label for="node-type-core" class="radio-label">Core</label>
                   </div>
                 </div>
 
@@ -665,137 +669,6 @@
         </div>
       </footer>
     </div>
-
-    <!--<div class="node">
-      <form id="add-node-form">
-        <div class="node-properties">
-          <span class="title-span">Nodes IP Addresses</span>
-          <div class="node-name">
-            <span>Name</span>
-            <input type="text" name="node_name" class="node-name-box" />
-          </div>
-
-          <div class="node-ip">
-            <span>IP Address</span>
-            <div class="node-boxes">
-              <input
-                type="text"
-                name="IP_Address_field4"
-                class="ip-octet1 ip-octet"
-                id="node-ip-octet1"
-              />
-              <input
-                type="text"
-                name="IP_Address_field3"
-                class="ip-octet2 ip-octet"
-                id="node-ip-octet2"
-              />
-              <input
-                type="text"
-                name="IP_Address_field2"
-                class="ip-octet3 ip-octet"
-                id="node-ip-octet3"
-              />
-              <input
-                type="text"
-                name="IP_Address_field1"
-                class="ip-octet4 ip-octet"
-                id="node-ip-octet4"
-              />
-            </div>
-          </div>
-
-          <div class="node-type">
-            <span>Node Types :</span>
-            <div class="node-type-checkboxes">
-              <div class="node-type-core-checkbox">
-                <input
-                  class="chb chb-1-circle"
-                  type="radio"
-                  id="node-type-1"
-                  name="node_type_icon"
-                  value="core"
-                />
-                <label for="node-type-1">Core</label>
-              </div>
-              <div class="node-type-rtp-proxy-checkbox">
-                <input
-                  class="chb chb-1-circle"
-                  type="radio"
-                  id="node-type-2"
-                  name="node_type_icon"
-                  value="rtpProxy"
-                />
-                <label for="node-type-2">RTP Proxy</label>
-              </div>
-              <div class="node-type-pcscf-checkbox">
-                <input
-                  class="chb chb-1-circle"
-                  type="radio"
-                  id="node-type-3"
-                  name="node_type_icon"
-                  value="pcscf"
-                />
-                <label for="node-type-3">P-CSCF</label>
-              </div>
-            </div>
-          </div>
-          <button type="submit" class="add-node-button">Add Node</button>
-        </div>
-      </form>
-
-      <div class="node-table">
-        <div class="node-table-titles">
-          <div
-            class="node-table-pcscf-title node-table-title"
-            id="node-table-title1"
-          >
-            <p>P-CSCF Nodes</p>
-          </div>
-          <div
-            class="node-table-rtp-proxy-title node-table-title"
-            id="node-table-title2"
-          >
-            <p>RTP Proxy Nodes</p>
-          </div>
-          <div
-            class="node-table-core-title node-table-title"
-            id="node-table-title3"
-          >
-            <p>Core Nodes</p>
-          </div>
-        </div>
-
-        <div class="node-table-content-title">
-          <div class="node-table-content-title-description">
-            <span>Node Name</span>
-            <span>IP Address</span>
-            <span>Status</span>
-          </div>
-        </div>
-
-        <div id="node-table-contents"></div>
-      </div>
-
-      <button class="save-node-button">Save</button>
-    </div>
-
-    <div id="modal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <span class="modal-close">&times;</span>
-          <p>Confirm Delete</p>
-        </div>
-
-        <div class="modal-body">
-          <p>Do you want to remove the selected Item?</p>
-          <div class="modal-buttons">
-            <button id="modal-delete-button">Delete</button>
-            <button id="modal-cancel-button">Cancel</button>
-          </div>
-        </div>
-      </div>
-    </div>-->
 
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

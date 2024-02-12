@@ -7,7 +7,6 @@
   border-radius: 20px;
 }
 
-/* /////////////////////////////////////////// */
 .node {
   background-color: white;
   margin-left: 1.45vw;
@@ -15,7 +14,6 @@
   width: 47.39vw;
   height: 72.31vh;
   border-radius: 1.85vh;
-  border: 1px solid red;
 }
 
 .virtual-ips {
@@ -82,7 +80,6 @@
   margin-left: 1.46vw;
   margin-top: 2.22vh;
   border-radius: 0.65vh;
-  /* border: 1px solid red; */
 }
 
 .virtual-ips-main-title {
@@ -114,7 +111,6 @@
 .node-properties {
   width: 44.61vw;
   height: 9.91vh;
-  border: 1px solid red;
   margin-left: 1.2vw;
   margin-top: 3.15vh;
   display: flex;
@@ -185,17 +181,13 @@
   height: 2.04vh;
 }
 
-/* .node-ip span {
-  margin-top: 0.9vh;
-} */
-
 .node-table {
-  border: 1px solid red;
   width: 42.99vw;
   height: 20.51vh;
   margin-top: 8.56vh;
   margin-left: 2.81vw;
 }
+
 .node-table-title {
   width: 14.24vw;
   height: 4.25vh;
@@ -215,19 +207,14 @@
 }
 
 #node-table-contents {
-  /* border-color: white;*/
-  /* background-color: red; */
-  border: 1px solid green;
   height: 2.77vh;
   width: 42.66vw;
 }
 
 .node-table-content {
-  /* background-color: green; */
-  border: 1px solid green;
   width: 42.66vw;
   height: 2.77vh;
-  /* border-bottom: 0.046vh solid #dfdfdf; */
+  border-bottom: 0.046vh solid #dfdfdf;
 }
 
 .node-table-content-name {
@@ -317,7 +304,6 @@ input[type="text"] {
 }
 
 #node-modal-cancel-button {
-  /* background-color: #1a4348; */
   background-color: black;
 }
 
@@ -344,525 +330,3 @@ input[type="text"] {
   height: 1.27vh;
   cursor: pointer;
 }
-
-/* ///////////////////////////////////////// */
-
-/*.tick {
-  right: 2.67vw;
-  top: 0.64vh;
-  position: absolute;
-  border: none;
-  display: none;
-} */
-
-/* .IMS-TOPOLOGY-body {
-  background-color: rgba(0, 0, 0, 0.04);
-}
-
-
-.network-definition {
-  width: 48.91vw;
-  height: 3.7vh;
-  left: 1.19vw;
-  top: 2.82vh;
-  position: absolute;
-  display: flex;
-}
-
-.network-definition-subnetmask {
-  width: 17.81vw;
-  height: 3.7vh;
-  right: 19.68vw;
-  position: absolute;
-  display: flex;
-}
-
-.network-definition-gateway {
-  width: 16.2vw;
-  height: 3.7vh;
-  right: 0vw;
-  position: absolute;
-  display: flex;
-}
-
-.network-definition span {
-  color: #83a79a;
-  font-size: 1.66vh;
-  text-align: center;
-  top: 0.55vh;
-  position: absolute;
-} */
-
-/* .subnetmask-boxes,
-.gateway-boxes,
-.Virtual-IPs-Database-boxes,
-.Virtual-IPs-DNSserver-boxes,
-.Virtual-IPs-Homer-boxes {
- display: flex; 
-} */
-
-/* .network-definition-button {
-  width: 7.29vw;
-  height: 3.7vh;
-  right: 1.45vw;
-  top: 2.87vh;
-  position: absolute;
-  border-style: none;
-  border-radius: 0.65vh;
-  background-color: #1f666e;
-  color: white;
-}
-
-.node {
-  background-color: white;
-  width: 47.39vw;
-  height: 72.31vh;
-  right: 36.04vw;
-  top: 20.46vh;
-  position: absolute;
-  border-radius: 1.85vh;
-}
-
-#modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  width: 47.39vw;
-  height: 72.31vh;
-  right: 36.04vw;
-  top: 20.46vh;
-  border-radius: 1.85vh;
-  overflow: auto;
-  background-color: rgba(31, 102, 110, 0.22);
-  color: white;
-}
-
-.modal-content {
-  position: absolute;
-  width: 21.56vw;
-  height: 19.44vh;
-  right: 12.91vw;
-  top: 26.48vh;
-  margin: auto auto;
-  border-radius: 1.85vh;
-  background-color: #1a4348;
-  opacity: 80%;
-}
-
-.modal-buttons {
-  position: absolute;
-  width: 12.5vw;
-  height: 3.148vh;
-  right: 4.53vw;
-  top: 12.41vh;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-#modal-cancel-button,
-#modal-delete-button {
-  width: 5vw;
-  height: 3.148vh;
-  top: 0vh;
-  font-size: 1.48vh;
-  font-family: "FiraGO", sans-serif;
-  color: white;
-  background-color: #ff8888;
-  border-radius: 0.92vh;
-  border: none;
-}
-
-#modal-cancel-button {
-  background-color: #1a4348;
-}
-
-.modal-header p {
-  font-size: 1.29vh;
-  font-family: "FiraGO", sans-serif;
-  position: absolute;
-  top: 2.96vh;
-  text-align: center;
-  right: 8.38vw;
-  margin-top: 0;
-}
-
-.modal-body p {
-  font-size: 1.66vh;
-  font-family: "FiraGO", sans-serif;
-  position: absolute;
-  top: 7.41vh;
-  text-align: center;
-  right: 3.42vw;
-  margin-top: 0;
-}
-
-.modal-close {
-  color: #a6d4c4;
-  float: right;
-  font-size: 28px;
-  margin-right: 1.32vw;
-  margin-top: 1.3vh;
-}
-
-.node-properties {
-  width: 44.61vw;
-  height: 9.91vh;
-  right: 1.58vw;
-  top: 3.15vh;
-  position: absolute;
-  display: flex;
-}
-
-.node-ip {
-  width: 16.921vw;
-  height: 3.7vh;
-  right: 0vw;
-  top: 0vh;
-  position: absolute;
-  display: flex;
-}
-
-.node-ip span {
-  margin-top: 0.9vh;
-}
-
-.node-name {
-  width: 13.65vw;
-  height: 3.7vh;
-  right: 19.15vw;
-  top: 0vh;
-  position: absolute;
-  display: flex;
-  align-items: center;
-}
-
-.node-name-box {
-  width: 10.42vw;
-  height: 3.7vh;
-  right: 0vw;
-  top: 0vh;
-  position: absolute;
-  border-radius: 0.65vh;
-  background-color: #eef5f2;
-}
-
-.add-node-button {
-  width: 5.73vw;
-  height: 3.7vh;
-  right: 0vw;
-  bottom: 0vh;
-  position: absolute;
-  border-radius: 0.65vh;
-  background-color: #68d5b0;
-  border-style: none;
-}
-
-.node-type {
-  width: 23.1vw;
-  height: 2.04vh;
-  right: 9.67vw;
-  top: 6.94vh;
-  position: absolute;
-}
-
-.node-type-checkboxes {
-  display: flex;
-  right: 0vw;
-  top: 0vh;
-  position: absolute;
-}
-
-.node-type-core-checkbox {
-  width: 3.19vw;
-  height: 2.04vh;
-  right: 0vw;
-  top: 0vh;
-  position: absolute;
-  display: flex;
-  align-items: center;
-}
-
-.node-type-rtp-proxy-checkbox {
-  width: 5.12vw;
-  height: 2.04vh;
-  right: 5.36vw;
-  top: 0vh;
-  position: absolute;
-  display: flex;
-  align-items: center;
-}
-
-.node-type-pcscf-checkbox {
-  width: 4.13vw;
-  height: 2.04vh;
-  right: 12.49vw;
-  top: 0vh;
-  position: absolute;
-  display: flex;
-  align-items: center;
-}
-
-label,
-.node span,
-.network-class span {
-  color: #1a4348;
-  font-size: 1.48vh;
-  font-family: "FiraGO", sans-serif;
-}
-
-span.title-span {
-  color: #83a79a;
-  font-size: 1.66vh;
-  font-family: "FiraGO", sans-serif;
-}
-
-button {
-  color: white;
-  font-size: 1.66vh;
-  font-family: "FiraGO", sans-serif;
-}
-
-input[type="text"] {
-  text-align: center;
-  color: #2fbc8c;
-  border: none;
-}
-
-.node-table {
-  width: 42.99vw;
-  height: 20.51vh;
-  right: 1.58vw;
-  bottom: 30.18vh;
-  position: absolute;
-}
-
-.node-table-title {
-  width: 14.24vw;
-  height: 4.25vh;
-  top: 0vh;
-  border: solid;
-  position: absolute;
-  background-color: #1f666e;
-  color: white;
-  font-size: 1.66vh;
-  font-family: "FiraGO", sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-
-.node-table-pcscf-title {
-  right: 0vw;
-}
-
-.node-table-rtp-proxy-title {
-  right: 14.38vw;
-}
-
-.node-table-core-title {
-  left: 0vw;
-}
-
-.node-table-content-title {
-  width: 42.66vw;
-  height: 4.25vh;
-  background-color: #1f666e;
-  right: 0.166vw;
-  top: 4.7vh;
-  position: absolute;
-  border-color: white;
-}
-
-.node-table-content-title-description {
-  width: 31.9vw;
-  height: 1.76vh;
-  right: 9.088vw;
-  top: 1.203vh;
-  position: absolute;
-  display: flex;
-  justify-content: space-between;
-}
-
-.node-table-content-title-description span {
-  color: white;
-  font-size: 1.29vh;
-  font-family: "FiraGO", sans-serif;
-}
-
-#node-table-contents {
-  width: 42.66vw;
-  right: 0.166vw;
-  top: 9.49vh;
-  position: absolute;
-  border-color: white;
-  background-color: white;
-}
-
-.node-table-content {
-  width: 42.66vw;
-  height: 2.77vh;
-  border-bottom: 0.046vh solid #dfdfdf;
-  position: relative;
-}
-
-.node-table-content-name {
-  width: 3.64vw;
-  height: 1.85vh;
-  top: 0.46vh;
-  left: 2.32vw;
-  position: absolute;
-  color: #1a4348;
-  font-size: 1.2vh;
-  font-family: "FiraGO", sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0.277vh;
-}
-
-.node-table-content-ip {
-  width: 4.68vw;
-  height: 1.85vh;
-  top: 0.46vh;
-  left: 16.58vw;
-  position: absolute;
-  color: #1a4348;
-  font-size: 1.2vh;
-  font-family: "FiraGO", sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0.277vh;
-}
-
-.node-table-content-status {
-  width: 4.37vw;
-  height: 1.57vh;
-  top: 0.6vh;
-  left: 30.67vw;
-  position: absolute;
-  font-size: 1.2vh;
-  font-family: "FiraGO", sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.pencil {
-  right: 1.29vw;
-  top: 0.814vh;
-  position: absolute;
-}
-
-.trash {
-  right: 0.223vw;
-  top: 0.814vh;
-  position: absolute;
-}
-
-.close {
-  right: 4.062vw;
-  top: 0.64vh;
-  position: absolute;
-  display: none;
-}
-
-.tick {
-  right: 2.67vw;
-  top: 0.64vh;
-  position: absolute;
-  border: none;
-  display: none;
-}
-
-.save-node-button {
-  width: 7.29vw;
-  height: 3.7vh;
-  right: 1.56vw;
-  bottom: 3.24vh;
-  position: absolute;
-  border-style: none;
-  border-radius: 0.65vh;
-  background-color: #1f666e;
-}
-
-.virtual-ips {
-  background-color: white;
-  width: 29.89vw;
-  height: 72.31vh;
-  right: 4.68vw;
-  top: 20.46vh;
-  position: absolute;
-  border-radius: 20px;
-}
-
-.virtual-ips-save-button {
-  width: 7.29vw;
-  height: 3.7vh;
-  right: 1.46vw;
-  bottom: 3.24vh;
-  position: absolute;
-  border-style: none;
-  border-radius: 0.65vh;
-  background-color: #1f666e;
-}
-
-.virtual-ips-database {
-  width: 27.083vw;
-  height: 6.29vh;
-  right: 1.46vw;
-  top: 8.15vh;
-  position: absolute;
-  border-radius: 0.65vh;
-}
-
-.virtual-ips-dns-server {
-  width: 27.083vw;
-  height: 6.29vh;
-  right: 1.46vw;
-  top: 16.66vh;
-  position: absolute;
-  border-radius: 0.65vh;
-}
-
-.virtual-ips-homer {
-  width: 27.083vw;
-  height: 6.29vh;
-  right: 1.46vw;
-  top: 25.18vh;
-  position: absolute;
-  border-radius: 0.65vh;
-}
-
-.virtual-ips-main-text {
-  color: #1a4348;
-  font-size: 1.66vh;
-  font-family: "FiraGO", sans-serif;
-  left: 0vw;
-  top: 0.64vh;
-  position: absolute;
-}
-
-.virtual-ips-down-text {
-  color: #1f666e;
-  font-size: 1.48vh;
-  font-family: "FiraGO", sans-serif;
-  left: 0vw;
-  bottom: 0vh;
-  position: absolute;
-}
-
-.virtual-ips-title {
-  width: 11.98vw;
-  height: 2.22vh;
-  left: 1.35vw;
-  top: 3.7vh;
-  width: 11.98vw;
-  height: 2.22vh;
-  position: absolute;
-  color: #83a79a;
-  font-size: 1.66vh;
-  font-family: "FiraGO", sans-serif;
-} */
