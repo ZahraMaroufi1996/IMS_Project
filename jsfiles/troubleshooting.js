@@ -1,4 +1,4 @@
-const url = "https://cdfb4ab4-65e8-498e-890c-570e0ade6a15.mock.pstmn.io";
+const url = "https://ba09580e-e7a2-4d8f-ac33-1e59e5594f17.mock.pstmn.io";
 const my_token = localStorage.getItem("token");
 const pingNodeForm = document.getElementById("ping-node-form");
 const error_close = document.querySelector(".error-close-icon");

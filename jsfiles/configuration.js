@@ -1,265 +1,328 @@
-let network_Info = {};
-let ims_Domain;
-let Encryption_Algorithms = [];
-let pcscf_Shared_Memory, icscf_Shared_Memory, scscf_Shared_Memory;
-let pcscf_Private_Memory, icscf_Private_Memory, scscf_Private_Memory;
-let PCRF_IP_Address = [];
-let PCRF_FQDN;
-let PCRF_Realm;
-let Transport_Protocol = [];
-let Enable_SRTP,
-  Enable_IPsec,
-  Enable_Rx_Source_Port,
-  Enable_TLS,
-  Enable_CallDuration,
-  CallDuration,
-  LossTimeout;
-let Minimum_Register_Time, Maximum_Register_Time;
-let Supported_HD_Codes = [];
-let inbound_Port_Minimum, inbound_Port_Maximum;
-let outbound_Port_Minimum, outbound_Port_Maximum;
-
-const url = "https://88d188a7-0705-4aa4-b0f9-0d2781378c89.mock.pstmn.io";
-let my_token = localStorage.getItem("token");
+// const url = "https://ba09580e-e7a2-4d8f-ac33-1e59e5594f17.mock.pstmn.io";
+const token = localStorage.getItem("token");
 
 function load_page() {
   fetch(`${url}/api/configuration`, {
     method: "GET",
     headers: {
-      Authorization: `Bearer ${my_token}`,
+      Authorization: `Bearer ${token}`,
     },
   })
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
-      network_Info = data;
+      data = data;
 
-      ims_Domain = document.querySelector(`.general-class-content-field1-box`);
-      ims_Domain.setAttribute("value", `${network_Info.domain}`);
+      // getGeneralData(data);
+      // getPcscfData(data);
+      // getScscfData(data);
+      // getIcscfData(data);
+      // getRtpProxyData(data);
 
-      let Enable_Homer_In1 = [];
-      Enable_Homer_In1 = document.getElementsByName(`General-type-icon1`);
+      const imsDomain = document.querySelector(
+        `.general-class-content-ims-domain-box`
+      );
+      imsDomain.setAttribute("value", `${data.domain}`);
 
-      let Enable_Homer_In2 = [];
-      Enable_Homer_In2 = document.getElementsByName(`General-type-icon2`);
+      const enableHomerPcscf = document.getElementsByName(`enable_homer_pcscf`);
 
-      let Enable_Homer_In3 = [];
-      Enable_Homer_In3 = document.getElementsByName(`General-type-icon3`);
+      const enableHomerScscf = document.getElementsByName(`enable_homer_scscf`);
 
-      let Enable_Homer_In = [
-        Enable_Homer_In1[0],
-        Enable_Homer_In2[0],
-        Enable_Homer_In3[0],
+      const enableHomerIcscf = document.getElementsByName(`enable_homer_icscf`);
+
+      const enableHomer = [
+        enableHomerPcscf[0],
+        enableHomerScscf[0],
+        enableHomerIcscf[0],
       ];
 
-      for (let i = 0; i < network_Info.homerEnable.length; i++) {
-        for (let j = 0; j < Enable_Homer_In.length; j++) {
-          if (Enable_Homer_In[j].value === network_Info.homerEnable[i]) {
-            Enable_Homer_In[j].checked = true;
+      for (let i = 0; i < data.homerEnable.length; i++) {
+        for (let j = 0; j < enableHomer.length; j++) {
+          if (enableHomer[j].value === data.homerEnable[i]) {
+            enableHomer[j].checked = true;
           }
         }
       }
 
-      let Encryption_Algorithm1 = [];
-      Encryption_Algorithm1 = document.getElementsByName(
-        `Encryption-Algorithm-type-icon1`
+      const encryptionAlgorithmAes = document.getElementsByName(
+        `encryption_algorithm_aes`
       );
 
-      let Encryption_Algorithm2 = [];
-      Encryption_Algorithm2 = document.getElementsByName(
-        `Encryption-Algorithm-type-icon2`
+      const encryptionAlgorithmDes = document.getElementsByName(
+        `encryption_algorithm_des`
       );
 
-      let Encryption_Algorithm3 = [];
-      Encryption_Algorithm3 = document.getElementsByName(
-        `Encryption-Algorithm-type-icon3`
+      const encryptionAlgorithmPlain = document.getElementsByName(
+        `encryption_algorithm_plain`
       );
 
-      Encryption_Algorithms = [
-        Encryption_Algorithm1[0],
-        Encryption_Algorithm2[0],
-        Encryption_Algorithm3[0],
+      const encryptionAlgorithms = [
+        encryptionAlgorithmAes[0],
+        encryptionAlgorithmDes[0],
+        encryptionAlgorithmPlain[0],
       ];
 
-      for (let i = 0; i < network_Info.pcscf.algorithms.length; i++) {
-        for (let j = 0; j < Encryption_Algorithms.length; j++) {
-          if (
-            Encryption_Algorithms[j].value === network_Info.pcscf.algorithms[i]
-          ) {
-            Encryption_Algorithms[j].checked = true;
+      for (let i = 0; i < data.pcscf.algorithms.length; i++) {
+        for (let j = 0; j < encryptionAlgorithms.length; j++) {
+          if (encryptionAlgorithms[j].value === data.pcscf.algorithms[i]) {
+            encryptionAlgorithms[j].checked = true;
           }
         }
       }
 
-      Transport_Protocol = document.getElementsByName("Transport_Protocol");
-      for (let i = 0; i < Transport_Protocol.length; i++) {
+      const transportProtocol =
+        document.getElementsByName("transport_protocol");
+      for (let i = 0; i < transportProtocol.length; i++) {
         {
           if (
-            Transport_Protocol[i].value ===
-            network_Info.pcscf.rxConfiguration.protocol
+            transportProtocol[i].value === data.pcscf.rxConfiguration.protocol
           ) {
-            Transport_Protocol[i].checked = true;
+            transportProtocol[i].checked = true;
           }
         }
       }
 
-      let Supported_HD_Code1 = [];
-      Supported_HD_Code1 = document.getElementsByName(
-        `Supported-HD-Codecs-type-icon1`
+      const supportedHdCodeG_722 = document.getElementsByName(
+        `supported_hd_codes_g.722`
       );
 
-      let Supported_HD_Code2 = [];
-      Supported_HD_Code2 = document.getElementsByName(
-        `Supported-HD-Codecs-type-icon2`
+      const supportedHdCodeAmrWB = document.getElementsByName(
+        `supported_hd_codes_amr_wb`
       );
 
-      Supported_HD_Codes = [Supported_HD_Code1[0], Supported_HD_Code2[0]];
+      const supportedHdCodes = [
+        supportedHdCodeG_722[0],
+        supportedHdCodeAmrWB[0],
+      ];
 
-      for (let i = 0; i < network_Info.rtpProxy.supportedHdCoders.length; i++) {
-        for (let j = 0; j < Supported_HD_Codes.length; j++) {
+      for (let i = 0; i < data.rtpProxy.supportedHdCoders.length; i++) {
+        for (let j = 0; j < supportedHdCodes.length; j++) {
           if (
-            Supported_HD_Codes[j].value ===
-            network_Info.rtpProxy.supportedHdCoders[i]
+            supportedHdCodes[j].value === data.rtpProxy.supportedHdCoders[i]
           ) {
-            Supported_HD_Codes[j].checked = true;
+            supportedHdCodes[j].checked = true;
           }
         }
       }
 
+      const pcrfIpAddress = [];
       for (let i = 0; i < 4; i++) {
-        PCRF_IP_Address[i] = document.getElementById(
-          `PCRF-IP-Address-box${4 - i}`
+        pcrfIpAddress[i] = document.getElementById(
+          `pcrf-ip-address-octet${i + 1}`
         );
-        PCRF_IP_Address[i].setAttribute(
+        pcrfIpAddress[i].setAttribute(
           "value",
-          `${network_Info.pcscf.rxConfiguration.ip.split(".")[i]}`
+          `${data.pcscf.rxConfiguration.ip.split(".")[i]}`
         );
       }
 
-      Enable_IPsec = document.getElementById("ipsec");
-      if (network_Info.pcscf.ipSec === true) {
-        Enable_IPsec.checked = true;
+      const enableIpSec = document.getElementById("ipsec");
+      if (data.pcscf.ipSec === true) {
+        enableIpSec.checked = true;
       }
 
-      Enable_TLS = document.getElementById("tls");
-      if (network_Info.pcscf.tls === true) {
-        Enable_TLS.checked = true;
+      const enableTls = document.getElementById("tls");
+      if (data.pcscf.tls === true) {
+        enableTls.checked = true;
       }
 
-      Enable_Rx_Source_Port = document.getElementById("Enable-Rx-Source-Port");
-      if (network_Info.pcscf.rxConfiguration.sourcePortEnabled === true) {
-        Enable_Rx_Source_Port.checked = true;
+      const enableRxSourcePort = document.getElementById(
+        "enable-rx-source-port"
+      );
+      if (data.pcscf.rxConfiguration.sourcePortEnabled === true) {
+        enableRxSourcePort.checked = true;
       }
 
-      Enable_SRTP = document.getElementById("srtp");
-      if (network_Info.rtpProxy.srtp === true) {
-        Enable_SRTP.checked = true;
+      const enableSrtp = document.getElementById("srtp");
+      if (data.rtpProxy.srtp === true) {
+        enableSrtp.checked = true;
       }
 
-      Enable_CallDuration = document.getElementById("Enable-Call-Duration");
-      if (network_Info.rtpProxy.maximumCallDurationEnable === true) {
-        Enable_CallDuration.checked = true;
+      const enableCallDuration = document.getElementById(
+        "enable-call-duration"
+      );
+      if (data.rtpProxy.maximumCallDurationEnable === true) {
+        enableCallDuration.checked = true;
       }
 
-      pcscf_Shared_Memory = document.getElementById("pcscf-shared-memory");
-      pcscf_Shared_Memory.setAttribute(
-        "value",
-        `${network_Info.pcscf.shareMemory}`
+      const pcscfSharedMemory = document.getElementById("pcscf-shared-memory");
+      pcscfSharedMemory.setAttribute("value", `${data.pcscf.shareMemory}`);
+      const pcscfPrivateMemory = document.getElementById(
+        "pcscf-private-memory"
       );
-      pcscf_Private_Memory = document.getElementById("pcscf-private-memory");
-      pcscf_Private_Memory.setAttribute(
+      pcscfPrivateMemory.setAttribute("value", `${data.pcscf.privateMemory}`);
+
+      const scscfSharedMemory = document.getElementById("scscf-shared-memory");
+      scscfSharedMemory.setAttribute("value", `${data.scscf.shareMemory}`);
+      const scscfPrivateMemory = document.getElementById(
+        "scscf-private-memory"
+      );
+      scscfPrivateMemory.setAttribute("value", `${data.scscf.privateMemory}`);
+
+      const icscfSharedMemory = document.getElementById("icscf-shared-memory");
+      icscfSharedMemory.setAttribute("value", `${data.icscf.shareMemory}`);
+      const icscfPrivateMemory = document.getElementById(
+        "icscf-private-memory"
+      );
+      icscfPrivateMemory.setAttribute("value", `${data.icscf.privateMemory}`);
+
+      const minimumRegisterTime = document.getElementById(
+        "minimum-register-time"
+      );
+      minimumRegisterTime.setAttribute(
         "value",
-        `${network_Info.pcscf.privateMemory}`
+        `${data.scscf.minimumRegisterTime}`
       );
 
-      scscf_Shared_Memory = document.getElementById("scscf-shared-memory");
-      scscf_Shared_Memory.setAttribute(
-        "value",
-        `${network_Info.scscf.shareMemory}`
+      const maximumRegisterTime = document.getElementById(
+        "maximum-register-time"
       );
-      scscf_Private_Memory = document.getElementById("scscf-private-memory");
-      scscf_Private_Memory.setAttribute(
+      maximumRegisterTime.setAttribute(
         "value",
-        `${network_Info.scscf.privateMemory}`
+        `${data.scscf.maximumRegisterTime}`
       );
 
-      icscf_Shared_Memory = document.getElementById("icscf-shared-memory");
-      icscf_Shared_Memory.setAttribute(
-        "value",
-        `${network_Info.icscf.shareMemory}`
+      const inboundPortMinimum = document.getElementById(
+        "inbound-port-minimum"
       );
-      icscf_Private_Memory = document.getElementById("icscf-private-memory");
-      icscf_Private_Memory.setAttribute(
+      inboundPortMinimum.setAttribute(
         "value",
-        `${network_Info.icscf.privateMemory}`
+        `${data.rtpProxy.inboundPortMinimum}`
       );
 
-      Minimum_Register_Time = document.getElementById("Minimum-Register-Time");
-      Minimum_Register_Time.setAttribute(
-        "value",
-        `${network_Info.scscf.minimumRegisterTime}`
+      const inboundPortMaximum = document.getElementById(
+        "inbound-port-maximum"
       );
-      Maximum_Register_Time = document.getElementById("Maximum-Register-Time");
-      Maximum_Register_Time.setAttribute(
+      inboundPortMaximum.setAttribute(
         "value",
-        `${network_Info.scscf.maximumRegisterTime}`
+        `${data.rtpProxy.inboundPortMaximum}`
       );
 
-      inbound_Port_Minimum = document.getElementById("Inbound-Port-Minimum");
-      inbound_Port_Minimum.setAttribute(
-        "value",
-        `${network_Info.rtpProxy.inboundPortMinimum}`
+      const outboundPortMinimum = document.getElementById(
+        "outbound-port-minimum"
       );
-      inbound_Port_Maximum = document.getElementById("Inbound-Port-Maximum");
-      inbound_Port_Maximum.setAttribute(
+      outboundPortMinimum.setAttribute(
         "value",
-        `${network_Info.rtpProxy.inboundPortMaximum}`
+        `${data.rtpProxy.outboundPortMinimum}`
       );
 
-      outbound_Port_Minimum = document.getElementById("Outbound-Port-Minimum");
-      outbound_Port_Minimum.setAttribute(
-        "value",
-        `${network_Info.rtpProxy.outboundPortMinimum}`
+      const outboundPortMaximum = document.getElementById(
+        "outbound-port-maximum"
       );
-      outbound_Port_Maximum = document.getElementById("Outbound-Port-Maximum");
-      outbound_Port_Maximum.setAttribute(
+      outboundPortMaximum.setAttribute(
         "value",
-        `${network_Info.rtpProxy.outboundPortMaximum}`
+        `${data.rtpProxy.outboundPortMaximum}`
       );
 
-      CallDuration = document.getElementById("Call-Duration");
-      CallDuration.setAttribute(
+      const callDuration = document.getElementById("call-duration");
+      callDuration.setAttribute(
         "value",
-        `${network_Info.rtpProxy.maximumCallDuration}`
+        `${data.rtpProxy.maximumCallDuration}`
       );
-      LossTimeout = document.getElementById("RTP-Loss-Timeout");
-      LossTimeout.setAttribute(
+      const lossTimeout = document.getElementById("rtp-proxy-loss-timeout");
+      lossTimeout.setAttribute("value", `${data.rtpProxy.rtpLossTimeout}`);
+
+      const rxSourcePort = document.getElementById("rx-source-port");
+      rxSourcePort.setAttribute(
         "value",
-        `${network_Info.rtpProxy.rtpLossTimeout}`
+        `${data.pcscf.rxConfiguration.sourcePort}`
       );
 
-      Rx_Source_Port = document.getElementById("Rx-Source-Port");
-      Rx_Source_Port.setAttribute(
-        "value",
-        `${network_Info.pcscf.rxConfiguration.sourcePort}`
-      );
+      const PcrfFqnd = document.getElementById("rx-configuration-pcrf-fqdn");
+      PcrfFqnd.setAttribute("value", `${data.pcscf.rxConfiguration.fqdn}`);
 
-      PCRF_FQDN = document.getElementById("Rx-configuration-field2");
-      PCRF_FQDN.setAttribute(
-        "value",
-        `${network_Info.pcscf.rxConfiguration.fqdn}`
-      );
-
-      PCRF_Realm = document.getElementById("Rx-configuration-field3");
-      PCRF_Realm.setAttribute(
-        "value",
-        `${network_Info.pcscf.rxConfiguration.realm}`
-      );
+      const pcrfRealm = document.getElementById("rx-configuration-pcrf-realm");
+      pcrfRealm.setAttribute("value", `${data.pcscf.rxConfiguration.realm}`);
     })
     .catch((error) => {
       console.log(error);
     });
 }
+
+function showError(response) {
+  if (response.status !== 200) {
+    errorElement.style.display = "block";
+    errorElement.style.backgroundColor = "#c65161";
+    const errorMsg = document.getElementById("error-content");
+    errorMsg.innerHTML = `<img  src="images/error-logo.svg" class="error-icon"/>
+            <p id="error-message">
+            Your request was failed !! (status code : ${response.status})
+            </p>`;
+  } else {
+    errorElement.style.display = "block";
+    errorElement.style.backgroundColor = "#58cc87";
+    const successMsg = document.getElementById("error-content");
+    successMsg.innerHTML = `<img  src="images/success Icon.svg" class="error-icon"/>
+            <p id="error-message">
+            Your request was done successfully !!
+            </p>`;
+  }
+}
+
+function getTime() {
+  fetch(`${url}/api/general`)
+    .then((response) => response.json())
+    .then((data) => {
+      const globalHour = data.timeHour;
+      const globalMin = data.timeMin;
+      const globalSec = data.timeSec;
+
+      let localHour;
+      let localMin;
+      let localSec;
+
+      if (data.timeZone === "Iran") {
+        localHour = data.timeHour + 3;
+        localMin = data.timeMin + 30;
+        localSec = data.timeSec;
+      }
+
+      if (localHour < 10) {
+        localHour = `0${localHour}`;
+      }
+
+      if (localMin < 10) {
+        localMin = `0${localMin}`;
+      }
+
+      if (localSec < 10) {
+        localSec = `0${localSec}`;
+      }
+
+      if (globalHour < 10) {
+        globalHour = `0${globalHour}`;
+      }
+
+      if (globalMin < 10) {
+        globalMin = `0${globalMin}`;
+      }
+
+      if (globalSec < 10) {
+        globalSec = `0${globalSec}`;
+      }
+
+      const localTime = document.getElementById("local-time");
+      const globalTime = document.getElementById("global-time");
+
+      localTime.innerHTML = `${localHour}:${localMin}:${localSec}`;
+      globalTime.innerHTML = `${globalHour}:${globalMin}:${globalSec}`;
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
+
+// getGeneralData(data);
+// getPcscfData(data);
+// getScscfData(data);
+// getIcscfData(data);
+// getRtpProxyData(data);
+
+function getGeneralData(data) {}
+function getPcscfData(data) {}
+function getScscfData(data) {}
+function getIcscfData(data) {}
+function getRtpProxyData(data) {}
 
 async function init() {
   await load_page();
@@ -267,238 +330,163 @@ async function init() {
 
 init();
 
-/////////////////////////////////////// edit -icon /////////////////////////////////////
-
-let edit_btn = document.querySelector(".information-edit-button");
-edit_btn.addEventListener("click", function (e) {
+/// edit form ///
+const editButton = document.querySelector(".information-edit-button");
+editButton.addEventListener("click", function (e) {
   e.preventDefault();
-  const all_inputs = document.getElementsByTagName("input");
-  for (let i = 0; i < all_inputs.length; i++) {
-    all_inputs[i].disabled = false;
+  const allInputs = document.getElementsByTagName("input");
+  for (let i = 0; i < allInputs.length; i++) {
+    allInputs[i].disabled = false;
   }
 });
 
-///////////////////////////////////////// error show /////////////////////////
+/// error show ///
+const errorClose = document.querySelector(".error-close-icon");
+const errorElement = document.querySelector(".show-error");
 
-let error_close = document.querySelector(".error-close");
-let show_error = document.querySelector(".show-error");
-
-error_close.addEventListener("click", function (e) {
+errorClose.addEventListener("click", function (e) {
   e.preventDefault();
-  show_error.style.display = "none";
+  errorElement.style.display = "none";
 });
 
 ////////////////////////////////// save icon ////////////////////////////////////
 
-let total_form = document.getElementById("total-form");
-total_form.addEventListener("submit", function (e) {
+const totalForm = document.getElementById("total-form");
+totalForm.addEventListener("submit", function (e) {
   e.preventDefault();
   const formData = Object.fromEntries(new FormData(e.target));
-  let hasMessage = false;
-  let result = fetch(`${url}/api/configuration/submittForm`, {
+  const result = fetch(`${url}/api/configuration/submittForm`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${my_token}`,
+      Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify(formData),
   })
     .then((response) => {
+      showError(response);
       console.log(response);
-      if (response.status !== 200) {
-        hasMessage = true;
-        show_error.style.display = "block";
-        show_error.style.backgroundColor = "#c65161";
-        let error_msg = document.getElementById("error-content");
-        error_msg.innerHTML = `<img  src="images/error-logo.svg" class="error-logo"/>
-                <p id="erroe-message">
-                Your request was failed (status code : ${response.status})
-                </p>`;
-      } else {
-        hasMessage = false;
-        show_error.style.display = "block";
-        show_error.style.backgroundColor = "#58cc87";
-        let success_msg = document.getElementById("error-content");
-        success_msg.innerHTML = `<img  src="images/success Icon.svg" class="error-logo"/>
-                  <p id="erroe-message">
-                  Your request was done successfully!
-                  </p>`;
-      }
     })
     .catch((error) => {
       console.log(error);
     });
 });
 
-function getTime() {
-  fetch(`${url}/api/general`)
-    .then((response) => response.json())
-    .then((data) => {
-      time_Info = data;
-      let my_global_hour = time_Info.timeHour;
-      let my_global_min = time_Info.timeMin;
-      let my_global_sec = time_Info.timeSec;
-
-      let my_local_hour;
-      let my_local_min;
-      let my_local_sec;
-
-      if (time_Info.timeZone === "Iran") {
-        my_local_hour = time_Info.timeHour + 3;
-        my_local_min = time_Info.timeMin + 30;
-        my_local_sec = time_Info.timeSec;
-      }
-
-      if (my_local_hour < 10) {
-        my_local_hour = `0${my_local_hour}`;
-      }
-
-      if (my_local_min < 10) {
-        my_local_min = `0${my_local_min}`;
-      }
-
-      if (my_local_sec < 10) {
-        my_local_sec = `0${my_local_sec}`;
-      }
-
-      if (my_global_hour < 10) {
-        my_global_hour = `0${my_global_hour}`;
-      }
-
-      if (my_global_min < 10) {
-        my_global_min = `0${my_global_min}`;
-      }
-
-      if (my_global_sec < 10) {
-        my_global_sec = `0${my_global_sec}`;
-      }
-
-      let local_time = document.getElementById("local-time");
-      let global_time = document.getElementById("global-time");
-
-      local_time.innerHTML = `${my_local_hour}:${my_local_min}:${my_local_sec}`;
-      global_time.innerHTML = `${my_global_hour}:${my_global_min}:${my_global_sec}`;
-    })
-    .catch((error) => {
-      console.log("error");
-    });
-}
-
 //   getTime();
 //   setInterval(getTime, 60 * 1000 * 15);
 
 ///////////////////////////////////////////////////////// toolbar icons///////////////////////
 
-let exit_show = document.querySelector(".exit");
-let exit_icon = document.getElementById("exit-icon");
-let exit_button = document.querySelector(".exit-button");
-let exit_cancel_button = document.querySelector(".exit-cancel-button");
+// let exit_show = document.querySelector(".exit");
+// let exit_icon = document.getElementById("exit-icon");
+// let exit_button = document.querySelector(".exit-button");
+// let exit_cancel_button = document.querySelector(".exit-cancel-button");
 
-let log_out_show = document.querySelector(".log-out");
-let log_out_icon = document.getElementById("log-out-icon");
-let log_out_button = document.querySelector(".log-out-button");
-let log_out_cancel_button = document.querySelector(".log-out-cancel-button");
+// let log_out_show = document.querySelector(".log-out");
+// let log_out_icon = document.getElementById("log-out-icon");
+// let log_out_button = document.querySelector(".log-out-button");
+// let log_out_cancel_button = document.querySelector(".log-out-cancel-button");
 
-exit_icon.addEventListener("click", function (e) {
-  e.preventDefault();
-  exit_show.style.display = "block";
-});
+// exit_icon.addEventListener("click", function (e) {
+//   e.preventDefault();
+//   exit_show.style.display = "block";
+// });
 
-exit_button.addEventListener("click", function (e) {
-  "use strict";
-  e.preventDefault();
-  var confirm_result = confirm("Are you sure you want to quit?");
-  if (confirm_result == true) {
-    window.close();
-  }
-});
+// exit_button.addEventListener("click", function (e) {
+//   "use strict";
+//   e.preventDefault();
+//   var confirm_result = confirm("Are you sure you want to quit?");
+//   if (confirm_result == true) {
+//     window.close();
+//   }
+// });
 
-exit_cancel_button.addEventListener("click", function (e) {
-  e.preventDefault();
-  exit_show.style.display = "none";
-});
+// exit_cancel_button.addEventListener("click", function (e) {
+//   e.preventDefault();
+//   exit_show.style.display = "none";
+// });
 
-log_out_icon.addEventListener("click", function (e) {
-  e.preventDefault();
-  log_out_show.style.display = "block";
-});
+// log_out_icon.addEventListener("click", function (e) {
+//   e.preventDefault();
+//   log_out_show.style.display = "block";
+// });
 
-log_out_button.addEventListener("click", function (e) {
-  e.preventDefault();
-  localStorage.removeItem("token");
-  $("head").append(
-    `<meta http-equiv="refresh" content="0; URL=Login Page – Language Toggle.html" />`
-  );
-});
+// log_out_button.addEventListener("click", function (e) {
+//   e.preventDefault();
+//   localStorage.removeItem("token");
+//   $("head").append(
+//     `<meta http-equiv="refresh" content="0; URL=Login Page – Language Toggle.html" />`
+//   );
+// });
 
-log_out_cancel_button.addEventListener("click", function (e) {
-  e.preventDefault();
-  log_out_show.style.display = "none";
-});
+// log_out_cancel_button.addEventListener("click", function (e) {
+//   e.preventDefault();
+//   log_out_show.style.display = "none";
+// });
 
-let profile_show = document.querySelector(".profile");
-let profile_icon = document.getElementById("profile-icon");
-let image_close_icon = document.getElementById("image-close");
-let image_tick_icon = document.getElementById("image-tick");
-let profile_content_images = document.querySelector(".profile-content-images");
-let Account_info_img = document.querySelector(".Account-info-img");
+// let profile_show = document.querySelector(".profile");
+// let profile_icon = document.getElementById("profile-icon");
+// let image_close_icon = document.getElementById("image-close");
+// let image_tick_icon = document.getElementById("image-tick");
+// let profile_content_images = document.querySelector(".profile-content-images");
+// let Account_info_img = document.querySelector(".Account-info-img");
 
-profile_icon.addEventListener("click", function (e) {
-  e.preventDefault();
-  profile_show.style.display = "block";
-});
+// profile_icon.addEventListener("click", function (e) {
+//   e.preventDefault();
+//   profile_show.style.display = "block";
+// });
 
-profile_content_images.addEventListener("click", function (e) {
-  e.preventDefault();
-  for (let i = 0; i < profile_content_images.children.length; i++) {
-    profile_content_images.children[i].style.backgroundColor = "#374775";
-  }
+// profile_content_images.addEventListener("click", function (e) {
+//   e.preventDefault();
+//   for (let i = 0; i < profile_content_images.children.length; i++) {
+//     profile_content_images.children[i].style.backgroundColor = "#374775";
+//   }
 
-  if (e.target.classList.contains("img-list")) {
-    const id = e.target.id;
-    e.target.style.backgroundColor = "white";
+//   if (e.target.classList.contains("img-list")) {
+//     const id = e.target.id;
+//     e.target.style.backgroundColor = "white";
 
-    image_tick_icon.addEventListener("click", function (e) {
-      e.preventDefault();
-      Account_info_img.setAttribute("src", `images/${id}.svg`);
-    });
-  }
-});
+//     image_tick_icon.addEventListener("click", function (e) {
+//       e.preventDefault();
+//       Account_info_img.setAttribute("src", `images/${id}.svg`);
+//     });
+//   }
+// });
 
-image_close_icon.addEventListener("click", function (e) {
-  e.preventDefault();
-  for (let i = 0; i < 9; i++) {
-    profile_content_images.children[i].style.backgroundColor = "#374775";
-  }
-  profile_content_images.style.backgroundColor = "#374775";
-  profile_show.style.display = "none";
-});
+// image_close_icon.addEventListener("click", function (e) {
+//   e.preventDefault();
+//   for (let i = 0; i < 9; i++) {
+//     profile_content_images.children[i].style.backgroundColor = "#374775";
+//   }
+//   profile_content_images.style.backgroundColor = "#374775";
+//   profile_show.style.display = "none";
+// });
 
-let sound_show = document.querySelector(".sound");
-let sound_icon = document.getElementById("sound-icon");
-let sound_text = document.querySelector(".sound-text");
-let sound_img = sound_icon.children[0];
+// let sound_show = document.querySelector(".sound");
+// let sound_icon = document.getElementById("sound-icon");
+// let sound_text = document.querySelector(".sound-text");
+// let sound_img = sound_icon.children[0];
 
-let sound_enable = true;
+// let sound_enable = true;
 
-sound_icon.addEventListener("click", function (e) {
-  e.preventDefault();
-  sound_show.style.display = "block";
+// sound_icon.addEventListener("click", function (e) {
+//   e.preventDefault();
+//   sound_show.style.display = "block";
 
-  sound_enable = !sound_enable;
+//   sound_enable = !sound_enable;
 
-  if (sound_enable === true) {
-    sound_text.innerHTML = "System has unmuted!";
-    sound_img.setAttribute(
-      "src",
-      `images/IMS_TOPOLOGY_images/Title Bar Icon _ Sound.svg`
-    );
-  } else {
-    sound_text.innerHTML = "System has muted!";
-    sound_img.setAttribute("src", `images/Title Bar Icon _ Sound OFF.svg`);
-  }
+//   if (sound_enable === true) {
+//     sound_text.innerHTML = "System has unmuted!";
+//     sound_img.setAttribute(
+//       "src",
+//       `images/IMS_TOPOLOGY_images/Title Bar Icon _ Sound.svg`
+//     );
+//   } else {
+//     sound_text.innerHTML = "System has muted!";
+//     sound_img.setAttribute("src", `images/Title Bar Icon _ Sound OFF.svg`);
+//   }
 
-  setTimeout(() => {
-    sound_show.style.display = "none";
-  }, 2000);
-});
+//   setTimeout(() => {
+//     sound_show.style.display = "none";
+//   }, 2000);
+// });

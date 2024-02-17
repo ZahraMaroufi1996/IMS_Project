@@ -14,7 +14,7 @@
   background-color: white;
 }
 
-.general-class {
+.general {
   width: 36.82vw;
   height: 12.68vh;
   margin-left: 2.083vw;
@@ -23,7 +23,7 @@
   border-radius: 0.83vh;
 }
 
-.general-class-content {
+.general-content {
   width: 34.48vw;
   height: 8.42vh;
   margin-left: 1.3vw;
@@ -31,13 +31,13 @@
   border-radius: 0.83vh;
 }
 
-.general-class-content-field1 {
+.general-class-content-ims-domain {
   width: 29.06vw;
   height: 3.7vh;
   margin-left: 2.5vw;
 }
 
-.general-class-content-title {
+.general-content-title {
   margin-left: 0;
   width: 3.17vw;
   height: 2.22vh;
@@ -47,7 +47,7 @@
   font-family: "FiraGO", sans-serif;
 }
 
-.general-class-content-field1-box {
+.general-class-content-ims-domain-box {
   width: 21.125vw;
   height: 3.7vh;
   background-color: #eef5f2;
@@ -62,7 +62,7 @@ p {
   font-family: "FiraGO", sans-serif;
 }
 
-input.general-class-content-field1-box {
+input.general-class-content-ims-domain-box {
   border: none;
 }
 
@@ -72,18 +72,18 @@ input[type="text"] {
   border: none;
 }
 
-.general-class-content-field2 {
+.general-content-enable-homer {
   height: 2.037vh;
   margin-top: 2.66vh;
   margin-left: 5.57vw;
 }
 
-.general-class-content-field2-checkbox {
+.general-content-enable-homer-checkbox {
   height: 2.04vh;
   width: 4vw;
 }
 
-.P-CSCF-class {
+.pcscf {
   width: 36.82vw;
   height: 61.57vh;
   margin-left: 2.083vw;
@@ -92,7 +92,7 @@ input[type="text"] {
   border-radius: 0.83vh;
 }
 
-.P-CSCF-class-content {
+.pcscf-content {
   width: 34.41vw;
   height: 21.57vh;
   margin-left: 1.31vw;
@@ -100,10 +100,10 @@ input[type="text"] {
   border-radius: 0.83vh;
 }
 
-.P-CSCF-class-content-title,
-.S-CSCF-class-content-title,
-.RTP-Proxy-class-content-title,
-.I-CSCF-class-content-title,
+.pcscf-content-title,
+.scscf-content-title,
+.rtp-proxy-content-title,
+.icscf-content-title,
 .P-CSCF-class-Rx-configuration-title {
   font-size: 1.66vh;
   font-family: "FiraGO", sans-serif;
@@ -115,60 +115,58 @@ input[type="text"] {
   height: 2.22vh;
 }
 
-.RTP-Proxy-class-content-title {
+.rtp-proxy-content-title {
   width: 4.06vw;
   height: 2.22vh;
   margin-left: 0vw;
 }
 
-.P-CSCF-class-content-field1,
-.P-CSCF-class-content-field3 {
+.pcscf-content-enable-ipsec,
+.pcscf-content-enable-tls {
   width: 7.62vw;
   height: 1.94vh;
   border-radius: 0.83vh;
 }
 
-.P-CSCF-class-content-field1 {
+.pcscf-content-enable-ipsec {
   margin-left: 3.12vw;
 }
 
-.P-CSCF-class-content-field3 {
+.pcscf-content-enable-tls {
   margin-left: 5.51vw;
 }
 
-.P-CSCF-class-content-field2 {
+.pcscf-content-encryption-algorithms {
   width: 28.82vw;
   height: 5.69vh;
   margin-left: 5.51vw;
   border-radius: 0.83vh;
 }
 
-.P-CSCF-class-content-field4,
-.S-CSCF-class-content-input12,
-.S-CSCF-class-content-input34,
-.I-CSCF-class-content-input12 {
+.pcscf-content-memory,
+.scscf-content-content-register-time,
+.scscf-content-content-memory,
+.icscf-content-memory {
   width: 28.95vw;
   height: 3.7vh;
   border-radius: 0.83vh;
 }
 
-.P-CSCF-class-content-field4,
-.S-CSCF-class-content-input34 {
+.pcscf-content-memory,
+.scscf-content-content-memory {
   margin-left: 5.51vw;
 }
 
-.S-CSCF-class-content-input12 {
+.scscf-content-content-register-time {
   margin-left: 1.91vw;
 }
-.I-CSCF-class-content-input12 {
+.icscf-content-memory {
   margin-left: 2.8vw;
 }
 
-.P-CSCF-class-content-field4-input,
-.I-CSCF-class-content-input1,
-.I-CSCF-class-content-input2,
-.S-CSCF-class-content-input3,
-.S-CSCF-class-content-input4 {
+.pcscf-content-memory-input,
+.icscf-content-memory-input,
+.scscf-content-content-memory-input {
   height: 3.7vh;
   width: 11.61vw;
 }
@@ -189,7 +187,7 @@ input[type="text"] {
   border-radius: 0.64vh;
 }
 
-.P-CSCF-class-Rx-configuration {
+.pcscf-content-rx-configuration {
   width: 29.01vw;
   height: 32.59vh;
   margin-left: 6.72vw;
@@ -198,25 +196,25 @@ input[type="text"] {
   border: 0.092vh solid #d5e8e1;
 }
 
-.P-CSCF-class-Rx-configuration-title {
+.pcscf-content-rx-configuration-title {
   width: 6.14vw;
   height: 1.94vh;
 }
 
-.P-CSCF-class-Rx-configuration-field1 {
+.pcscf-content-rx-configuration-pcrf-ip {
   width: 19.43vw;
   height: 3.7vh;
   margin-left: 2.12vw;
 }
 
-.P-CSCF-class-Rx-configuration-field2,
-.P-CSCF-class-Rx-configuration-field3 {
+.pcscf-content-rx-configuration-pcrf-fqdn,
+.pcscf-content-rx-configuration-pcrf-realm {
   width: 19.63vw;
   height: 3.7vh;
   margin-left: 8.49vw;
 }
 
-.P-CSCF-class-Rx-configuration-field4 {
+.pcscf-content-rx-configuration-protocol {
   margin-left: 8.49vw;
   width: 19.32vw;
   height: 2.037vh;
@@ -228,7 +226,7 @@ input[type="text"] {
   border-radius: 0.83vh;
 }
 
-.P-CSCF-class-Rx-configuration-field5 {
+.pcscf-content-rx-configuration-port {
   margin-left: 8.49vw;
   width: 19.27vw;
   height: 3.7vh;
@@ -242,7 +240,7 @@ input[type="text"] {
   border: none;
 }
 
-.P-CSCF-class-content-field2 p {
+.pcscf-content-encryption-algorithms p {
   margin: 0;
 }
 
@@ -251,13 +249,13 @@ input[type="text"] {
   width: 6.51vw;
 }
 
-.P-CSCF-class-content-field2-checkboxes {
+.pcscf-content-encryption-algorithms-checkboxes {
   width: 28.82vw;
   height: 2.037vh;
   margin-left: 0px;
 }
 
-.P-CSCF-class-content-field2-checkbox1 {
+.pcscf-content-encryption-algorithms-aes-checkbox {
   background-color: red;
   width: 4.68vw;
   height: 2.037vh;
@@ -266,7 +264,7 @@ input[type="text"] {
   font-family: "FiraGO", sans-serif;
 }
 
-.P-CSCF-class-content-field2-checkbox2 {
+.pcscf-content-encryption-algorithms-des-checkbox {
   width: 6.94vw;
   height: 2.037vh;
   color: #1a4348;
@@ -274,7 +272,7 @@ input[type="text"] {
   font-family: "FiraGO", sans-serif;
 }
 
-.P-CSCF-class-content-field2-checkbox3 {
+.pcscf-content-encryption-algorithms-plain-checkbox {
   width: 8.92vw;
   height: 2.037vh;
   color: #1a4348;
@@ -296,7 +294,7 @@ input[type="text"] {
   border: none;
 }
 
-.I-CSCF-class {
+.icscf {
   width: 36.35vw;
   height: 6.94vh;
   margin-top: 3.7vh;
@@ -314,57 +312,56 @@ input[type="text"] {
   border-radius: 0.83vh;
 }
 
-.S-CSCF-class-content {
+.scscf-content {
   width: 34.46vw;
   height: 9.81vh;
   border-radius: 0.83vh;
 }
 
-.S-CSCF-class-content-input1,
-.S-CSCF-class-content-input2 {
+.scscf-content-content-register-time-input {
   width: 12.81vw;
   height: 3.7vh;
   border-radius: 0.83vh;
 }
 
-.RTP-Proxy-class-content {
+.rtp-proxy-content {
   width: 35.04vw;
   height: 40.55vh;
 }
 
-.RTP-Proxy-class-content-input1 {
+.rtp-proxy-content-hd-codes {
   width: 29.5vw;
   height: 2.037vh;
   margin-left: 1.35vw;
 }
 
-.RTP-Proxy-class-content-input1-checkbox {
+.rtp-proxy-content-hd-codes-checkbox {
   width: 4.81vw;
   height: 2.037vh;
 }
 
-.RTP-Proxy-class-content-input2 {
+.rtp-proxy-content-enable-srtp {
   width: 7.57vw;
   height: 1.94vh;
   margin-left: 5.31vw;
 }
 
-.RTP-Proxy-class-content-input3,
-.RTP-Proxy-class-content-input4 {
+.rtp-proxy-content-inbound-port-range,
+.rtp-proxy-content-outbound-port-range {
   width: 29.63vw;
   height: 6.2vh;
   margin-left: 5.31vw;
 }
 
-.RTP-Proxy-class-content-input5,
-.RTP-Proxy-class-content-input6 {
+.rtp-proxy-content-call-duration,
+.rtp-proxy-content-loss-timeout {
   width: 29.53vw;
   height: 3.7vh;
   margin-left: 5.31vw;
 }
 
 #RTP-Loss-Timeout,
-#Call-Duration,
+#call-duration,
 .port {
   width: 4.58vw;
   height: 3.7vh;
@@ -377,22 +374,22 @@ input[type="text"] {
   margin-left: 15px;
 }
 
-.RTP-Proxy-Ports-title {
+.rtp-proxy-port-title {
   width: 11.61vw;
   height: 1.94vh;
   margin-bottom: 5px;
 }
 
-.RTP-Proxy-Ports {
+.rtp-proxy-port {
   width: 29.63vw;
   height: 3.7vh;
 }
 
-.RTP-Proxy-Ports input {
+.rtp-proxy-port input {
   margin-left: 7px;
 }
 
-.RTP-Proxy-class {
+.rtp-proxy {
   width: 36.35vw;
   height: 45.09vh;
   margin-top: 2.59vh;

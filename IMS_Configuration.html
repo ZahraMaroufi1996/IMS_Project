@@ -210,72 +210,72 @@
       <div class="content d-flex align-items-center justify-content-center">
         <form id="total-form" class="main-content d-flex flex-row">
           <div class="d-flex flex-column">
-            <div class="general-class">
-              <div class="general-class-content">
+            <div class="general">
+              <div class="general-content">
                 <div
                   class="d-flex flex-row justify-content-between align-items-center"
                 >
-                  <span class="general-class-content-title">General</span>
+                  <span class="general-content-title">General</span>
                   <div
-                    class="general-class-content-field1 d-flex justify-content-between align-items-center"
+                    class="general-class-content-ims-domain d-flex justify-content-between align-items-center"
                   >
                     <label for="test">IMS Domain*</label>
                     <input
-                      class="general-class-content-field1-box"
+                      class="general-class-content-ims-domain-box"
                       id="test"
                       type="text"
-                      name="IMS_Domain"
+                      name="ims_domain"
                       disabled
                     />
                   </div>
                 </div>
 
                 <div
-                  class="general-class-content-field2 d-flex flex-row align-items-center justify-content-between"
+                  class="general-content-enable-homer d-flex flex-row align-items-center justify-content-between"
                 >
                   <span class="enable-homer-title">Enable Homer In :</span>
                   <div
-                    class="general-class-content-field2-checkbox d-flex align-items-center justify-content-between"
+                    class="general-content-enable-homer-checkbox d-flex align-items-center justify-content-between"
                   >
                     <input
                       class="chb chb-1"
                       type="checkbox"
-                      id="General-type-1"
-                      name="General-type-icon1"
+                      id="enable-homer-pcscf"
+                      name="enable_homer_pcscf"
                       value="p_cscf"
                       disabled
                     />
-                    <label for="General-type-1" class="checkbox-label"
+                    <label for="enable-homer-pcscf" class="checkbox-label"
                       >P-CSCF</label
                     >
                   </div>
                   <div
-                    class="general-class-content-field2-checkbox d-flex align-items-center justify-content-between"
+                    class="general-content-enable-homer-checkbox d-flex align-items-center justify-content-between"
                   >
                     <input
                       class="chb chb-1"
                       type="checkbox"
-                      id="General-type-2"
-                      name="General-type-icon2"
+                      id="enable-homer-scscf"
+                      name="enable_homer_scscf"
                       value="s_cscf"
                       disabled
                     />
-                    <label for="General-type-2" class="checkbox-label"
+                    <label for="enable-homer-scscf" class="checkbox-label"
                       >S-CSCF</label
                     >
                   </div>
                   <div
-                    class="general-class-content-field2-checkbox d-flex align-items-center justify-content-between"
+                    class="general-content-enable-homer-checkbox d-flex align-items-center justify-content-between"
                   >
                     <input
                       class="chb chb-1"
                       type="checkbox"
-                      id="General-type-3"
-                      name="General-type-icon3"
+                      id="enable-homer-icscf"
+                      name="enable_homer_icscf"
                       value="i_cscf"
                       disabled
                     />
-                    <label for="General-type-3" class="checkbox-label"
+                    <label for="enable-homer-icscf" class="checkbox-label"
                       >I-CSCF</label
                     >
                   </div>
@@ -283,20 +283,20 @@
               </div>
             </div>
 
-            <div class="P-CSCF-class">
+            <div class="pcscf">
               <div
-                class="P-CSCF-class-content d-flex flex-column justify-content-between"
+                class="pcscf-content d-flex flex-column justify-content-between"
               >
                 <div class="d-flex align-item-center">
-                  <span class="P-CSCF-class-content-title"> P-CSCF </span>
+                  <span class="pcscf-content-title"> P-CSCF </span>
                   <div
-                    class="P-CSCF-class-content-field1 d-flex justify-content-between"
+                    class="pcscf-content-enable-ipsec d-flex justify-content-between"
                   >
                     <span>Enable IPsec</span>
                     <label class="switch">
                       <input
                         type="checkbox"
-                        name="Enable-IPsec"
+                        name="enable_ipsec"
                         id="ipsec"
                         disabled
                       />
@@ -306,59 +306,59 @@
                 </div>
 
                 <div
-                  class="P-CSCF-class-content-field2 d-flex flex-column justify-content-between"
+                  class="pcscf-content-encryption-algorithms d-flex flex-column justify-content-between"
                 >
                   <p>Supported IPsec Encryption Algorithms :</p>
                   <div
-                    class="P-CSCF-class-content-field2-checkboxes d-flex justify-content-between align-items-center"
+                    class="pcscf-content-encryption-algorithms-checkboxes d-flex justify-content-between align-items-center"
                   >
                     <div
-                      class="P-CSCF-class-content-field2-checkbox1 d-flex justify-content-between align-items-center"
+                      class="pcscf-content-encryption-algorithms-aes-checkbox d-flex justify-content-between align-items-center"
                     >
                       <input
                         class="chb chb-1"
                         type="checkbox"
-                        id="Encryption-Algorithm-type-1"
-                        name="Encryption-Algorithm-type-icon1"
+                        id="encryption-algorithm-aes"
+                        name="encryption_algorithm_aes"
                         value="AES_CBC"
                         disabled
                       />
                       <label
-                        for="Encryption-Algorithm-type-1"
+                        for="encryption-algorithm-aes"
                         class="checkbox-label"
                         >AES-CBC</label
                       >
                     </div>
                     <div
-                      class="P-CSCF-class-content-field2-checkbox2 d-flex justify-content-between align-items-center"
+                      class="pcscf-content-encryption-algorithms-des-checkbox d-flex justify-content-between align-items-center"
                     >
                       <input
                         class="chb chb-1"
                         type="checkbox"
-                        id="Encryption-Algorithm-type-2"
-                        name="Encryption-Algorithm-type-icon2"
+                        id="encryption-algorithm-des"
+                        name="encryption_algorithm_des"
                         value="DES_EDE3_CBC"
                         disabled
                       />
                       <label
-                        for="Encryption-Algorithm-type-2"
+                        for="encryption-algorithm-des"
                         class="checkbox-label"
                         >DES-EDE3-CBC</label
                       >
                     </div>
                     <div
-                      class="P-CSCF-class-content-field2-checkbox3 d-flex justify-content-between align-items-center"
+                      class="pcscf-content-encryption-algorithms-plain-checkbox d-flex justify-content-between align-items-center"
                     >
                       <input
                         class="chb chb-1"
                         type="checkbox"
-                        id="Encryption-Algorithm-type-3"
-                        name="Encryption-Algorithm-type-icon3"
+                        id="encryption-algorithm-plain"
+                        name="encryption_algorithm_plain"
                         value="Plain"
                         disabled
                       />
                       <label
-                        for="Encryption-Algorithm-type-3"
+                        for="encryption-algorithm-plain"
                         class="checkbox-label"
                         >Plain (No encryption)</label
                       >
@@ -367,13 +367,13 @@
                 </div>
 
                 <div
-                  class="P-CSCF-class-content-field3 d-flex justify-content-between"
+                  class="pcscf-content-enable-tls d-flex justify-content-between"
                 >
                   <span>Enable TLS</span>
                   <label class="switch">
                     <input
                       type="checkbox"
-                      name="Enable-TLS"
+                      name="enable_tls"
                       id="tls"
                       disabled
                     />
@@ -382,29 +382,29 @@
                 </div>
 
                 <div
-                  class="P-CSCF-class-content-field4 d-flex align-items-center justify-content-between"
+                  class="pcscf-content-memory d-flex align-items-center justify-content-between"
                 >
                   <div
-                    class="P-CSCF-class-content-field4-input d-flex justify-content-between align-items-center"
+                    class="pcscf-content-memory-input d-flex justify-content-between align-items-center"
                   >
                     <label for="pcscf-shared-memory">Shared Memory*</label>
                     <input
                       type="text"
                       id="pcscf-shared-memory"
-                      name="p_shared_memory"
+                      name="pcscf_shared_memory"
                       class="memory"
                       disabled
                     />
                     <span>MB</span>
                   </div>
                   <div
-                    class="P-CSCF-class-content-field4-input d-flex justify-content-between align-items-center"
+                    class="pcscf-content-memory-input d-flex justify-content-between align-items-center"
                   >
                     <label for="pcscf-private-memory">Private Memory*</label>
                     <input
                       type="text"
                       id="pcscf-private-memory"
-                      name="p_private_memory"
+                      name="pcscf_private_memory"
                       class="memory"
                       disabled
                     />
@@ -414,73 +414,72 @@
               </div>
 
               <div
-                class="P-CSCF-class-Rx-configuration d-flex flex-column justify-content-around align-items-center"
+                class="pcscf-content-rx-configuration d-flex flex-column justify-content-around align-items-center"
               >
                 <div class="d-flex align-items-center">
-                  <span class="P-CSCF-class-Rx-configuration-title">
+                  <span class="pcscf-content-rx-configuration-title">
                     Rx Configuration
                   </span>
                   <div
-                    class="P-CSCF-class-Rx-configuration-field1 d-flex justify-content-between align-items-center"
+                    class="pcscf-content-rx-configuration-pcrf-ip d-flex justify-content-between align-items-center"
                   >
                     <span>PCRF IP Address*</span>
                     <input
                       type="text"
-                      name="PCRF_IP_Address_box4"
+                      name="pcrf_ip_address_octet1"
                       class="ip-octet"
-                      id="PCRF-IP-Address-box1"
+                      id="pcrf-ip-address-octet1"
                       disabled
                     />
                     <input
                       type="text"
-                      name="PCRF_IP_Address_box3"
+                      name="pcrf_ip_address_octet2"
                       class="ip-octet"
-                      id="PCRF-IP-Address-box2"
+                      id="pcrf-ip-address-octet2"
                       disabled
                     />
                     <input
                       type="text"
-                      name="PCRF_IP_Address_box2"
+                      name="pcrf_ip_address_octet3"
                       class="ip-octet"
-                      id="PCRF-IP-Address-box3"
+                      id="pcrf-ip-address-octet3"
                       disabled
                     />
                     <input
                       type="text"
-                      name="PCRF_IP_Address-box1"
+                      name="pcrf_ip_address_octet4"
                       class="ip-octet"
-                      id="PCRF-IP-Address-box4"
+                      id="pcrf-ip-address-octet4"
                       disabled
                     />
-                    <!-- </div> -->
                   </div>
                 </div>
 
                 <div
-                  class="P-CSCF-class-Rx-configuration-field2 d-flex justify-content-between align-items-center"
+                  class="pcscf-content-rx-configuration-pcrf-fqdn d-flex justify-content-between align-items-center"
                 >
-                  <label for="Rx-configuration-field2">PCRF FQDN*</label>
+                  <label for="rx-configuration-pcrf-fqdn">PCRF FQDN*</label>
                   <input
                     class="rx-configuration-box"
                     type="text"
-                    id="Rx-configuration-field2"
+                    id="rx-configuration-pcrf-fqdn"
                   />
                 </div>
 
                 <div
-                  class="P-CSCF-class-Rx-configuration-field3 d-flex justify-content-between align-items-center"
+                  class="pcscf-content-rx-configuration-pcrf-realm d-flex justify-content-between align-items-center"
                 >
-                  <label for="Rx-configuration-field3">PCRF Realm*</label>
+                  <label for="rx-configuration-pcrf-realm">PCRF Realm*</label>
                   <input
                     class="rx-configuration-box"
                     type="text"
-                    id="Rx-configuration-field3"
+                    id="rx-configuration-pcrf-realm"
                     disabled
                   />
                 </div>
 
                 <div
-                  class="P-CSCF-class-Rx-configuration-field4 d-flex justify-content-between align-items-center"
+                  class="pcscf-content-rx-configuration-protocol d-flex justify-content-between align-items-center"
                 >
                   <span>Transport Protocol</span>
                   <div
@@ -489,12 +488,12 @@
                     <input
                       class="chb chb-1-circle"
                       type="radio"
-                      id="Transport-Protocol-type-1"
-                      name="Transport_Protocol"
+                      id="transport-protocol-sctp"
+                      name="transport_protocol"
                       value="SCTP"
                       disabled
                     />
-                    <label for="Transport-Protocol-type-1">SCTP</label>
+                    <label for="transport-protocol-sctp">SCTP</label>
                   </div>
 
                   <div
@@ -503,32 +502,32 @@
                     <input
                       class="chb chb-1-circle"
                       type="radio"
-                      id="Transport-Protocol-type-2"
-                      name="Transport_Protocol"
+                      id="transport-protocol-tcp"
+                      name="transport_protocol"
                       value="TCP"
                       disabled
                     />
-                    <label for="Transport-Protocol-type-2">TCP</label>
+                    <label for="transport-protocol-tcp">TCP</label>
                   </div>
                 </div>
 
                 <div
-                  class="P-CSCF-class-Rx-configuration-field5 d-flex justify-content-between align-items-center"
+                  class="pcscf-content-rx-configuration-port d-flex justify-content-between align-items-center"
                 >
                   <span>Rx Source Port</span>
                   <label class="switch">
                     <input
                       type="checkbox"
-                      id="Enable-Rx-Source-Port"
-                      name="Enable-Rx-Source-Port"
+                      id="enable-rx-source-port"
+                      name="enable_rx_source_port"
                       disabled
                     />
                     <span class="slider round"></span>
                   </label>
                   <input
                     type="text"
-                    id="Rx-Source-Port"
-                    name="Rx_Source_Port"
+                    id="rx-source-port"
+                    name="rx_source_port"
                     disabled
                   />
                 </div>
@@ -537,32 +536,32 @@
           </div>
 
           <div class="d-flex flex-column">
-            <div class="I-CSCF-class d-flex align-items-center">
-              <span class="I-CSCF-class-content-title">I-CSCF</span>
+            <div class="icscf d-flex align-items-center">
+              <span class="icscf-content-title">I-CSCF</span>
               <div
-                class="I-CSCF-class-content-input12 d-flex justify-content-between align-items-center"
+                class="icscf-content-memory d-flex justify-content-between align-items-center"
               >
                 <div
-                  class="I-CSCF-class-content-input1 d-flex justify-content-between align-items-center"
+                  class="icscf-content-memory-input d-flex justify-content-between align-items-center"
                 >
                   <label for="icscf-shared-memory">Shared Memory*</label>
                   <input
                     type="text"
                     id="icscf-shared-memory"
-                    name="i_shared_memory"
+                    name="icscf_shared_memory"
                     class="memory"
                     disabled
                   />
                   <span>MB</span>
                 </div>
                 <div
-                  class="I-CSCF-class-content-input2 d-flex justify-content-between align-items-center"
+                  class="icscf-content-memory-input d-flex justify-content-between align-items-center"
                 >
                   <label for="icscf-private-memory">Private Memory*</label>
                   <input
                     type="text"
                     id="icscf-private-memory"
-                    name="i_private_memory"
+                    name="icscf_private_memory"
                     class="memory"
                     disabled
                   />
@@ -571,44 +570,42 @@
               </div>
             </div>
 
-            <div
-              class="S-CSCF-class d-flex justify-content-center align-items-center"
-            >
+            <div class="scscf d-flex justify-content-center align-items-center">
               <div
-                class="S-CSCF-class-content d-flex flex-column justify-content-between"
+                class="scscf-content d-flex flex-column justify-content-between"
               >
                 <div class="d-flex justify-content-between">
-                  <span class="S-CSCF-class-content-title">S-CSCF</span>
+                  <span class="scscf-content-content-title">S-CSCF</span>
 
                   <div
-                    class="S-CSCF-class-content-input12 d-flex justify-content-between align-items-center"
+                    class="scscf-content-content-register-time d-flex justify-content-between align-items-center"
                   >
                     <div
-                      class="S-CSCF-class-content-input1 d-flex justify-content-between align-items-center"
+                      class="scscf-content-content-register-time-input d-flex justify-content-between align-items-center"
                     >
-                      <label for="Minimum-Register-Time"
+                      <label for="minimum-register-time"
                         >Minimum Register Time</label
                       >
                       <input
                         class="register-time"
                         type="text"
-                        id="Minimum-Register-Time"
-                        name="Minimum_Register_Time"
+                        id="minimum-register-time"
+                        name="minimum_register_time"
                         disabled
                       />
                       <span>S</span>
                     </div>
                     <div
-                      class="S-CSCF-class-content-input2 d-flex justify-content-between align-items-center"
+                      class="scscf-content-content-register-time-input d-flex justify-content-between align-items-center"
                     >
-                      <label for="Maximum-Register-Time"
+                      <label for="maximum-register-time"
                         >Maximum Register Time</label
                       >
                       <input
                         type="text"
                         class="register-time"
-                        id="Maximum-Register-Time"
-                        name="Maximum_Register_Time"
+                        id="maximum-register-time"
+                        name="maximum_register_time"
                         disabled
                       />
                       <span>S</span>
@@ -617,29 +614,29 @@
                 </div>
 
                 <div
-                  class="S-CSCF-class-content-input34 d-flex justify-content-between"
+                  class="scscf-content-content-memory d-flex justify-content-between"
                 >
                   <div
-                    class="S-CSCF-class-content-input3 d-flex justify-content-between align-items-center"
+                    class="scscf-content-content-memory-input d-flex justify-content-between align-items-center"
                   >
                     <label for="scscf-shared-memory">Shared Memory*</label>
                     <input
                       type="text"
                       id="scscf-shared-memory"
-                      name="s_shared_memory"
+                      name="scscf_shared_memory"
                       class="memory"
                       disabled
                     />
                     <span>MB</span>
                   </div>
                   <div
-                    class="S-CSCF-class-content-input4 d-flex justify-content-between align-items-center"
+                    class="scscf-content-content-memory-input d-flex justify-content-between align-items-center"
                   >
                     <label for="scscf-private-memory">Private Memory*</label>
                     <input
                       type="text"
                       id="scscf-private-memory"
-                      name="s_private_memory"
+                      name="scscf_private_memory"
                       class="memory"
                       disabled
                     />
@@ -650,47 +647,47 @@
             </div>
 
             <div
-              class="RTP-Proxy-class d-flex justify-content-center align-items-center"
+              class="rtp-proxy d-flex justify-content-center align-items-center"
             >
               <div
-                class="RTP-Proxy-class-content d-flex flex-column justify-content-between"
+                class="rtp-proxy-content d-flex flex-column justify-content-between"
               >
                 <div class="d-flex justify-content-between">
-                  <span class="RTP-Proxy-class-content-title">RTP Proxy</span>
+                  <span class="rtp-proxy-content-title">RTP Proxy</span>
                   <div
-                    class="RTP-Proxy-class-content-input1 d-flex justify-content-between align-items-center"
+                    class="rtp-proxy-content-hd-codes d-flex justify-content-between align-items-center"
                   >
                     <span>Supported HD Codecs :</span>
                     <div
-                      class="RTP-Proxy-class-content-input1-checkbox justify-content-between align-items-center"
+                      class="rtp-proxy-content-hd-codes-checkbox justify-content-between align-items-center"
                     >
                       <input
                         class="chb chb-1"
                         type="checkbox"
-                        id="Supported-HD-Codecs-type-1"
-                        name="Supported-HD-Codecs-type-icon1"
+                        id="supported-hd-codes-g.722"
+                        name="supported_hd_codes_g.722"
                         value="G.722"
                         disabled
                       />
                       <label
-                        for="Supported-HD-Codecs-type-1"
+                        for="supported-hd-codes-g.722"
                         class="checkbox-label"
                         >G.722</label
                       >
                     </div>
                     <div
-                      class="RTP-Proxy-class-content-input1-checkbox justify-content-between align-items-center"
+                      class="rtp-proxy-content-hd-codes-checkbox justify-content-between align-items-center"
                     >
                       <input
                         class="chb chb-1"
                         type="checkbox"
-                        id="Supported-HD-Codecs-type-2"
-                        name="Supported-HD-Codecs-type-icon2"
+                        id="supported-hd-codes-amr-wb"
+                        name="supported_hd_codes_amr_wb"
                         value="AMR_WB"
                         disabled
                       />
                       <label
-                        for="Supported-HD-Codecs-type-2"
+                        for="supported-hd-codes-amr-wb"
                         class="checkbox-label"
                         >AMR-WB</label
                       >
@@ -699,14 +696,14 @@
                 </div>
 
                 <div
-                  class="RTP-Proxy-class-content-input2 d-flex justify-content-between align-items-center"
+                  class="rtp-proxy-content-enable-srtp d-flex justify-content-between align-items-center"
                 >
                   <span>Enable SRTP</span>
                   <label class="switch">
                     <input
                       type="checkbox"
                       id="srtp"
-                      name="Enable-SRTP"
+                      name="enable_srtp"
                       disabled
                     />
                     <span class="slider round"></span>
@@ -714,35 +711,35 @@
                 </div>
 
                 <div
-                  class="RTP-Proxy-class-content-input3 d-flex flex-column justify-content-between"
+                  class="rtp-proxy-content-inbound-port-range d-flex flex-column justify-content-between"
                 >
-                  <span class="RTP-Proxy-Ports-title"
+                  <span class="rtp-proxy-port-title"
                     >Outbound RTP Proxy Port Range :</span
                   >
                   <div
-                    class="RTP-Proxy-Ports d-flex justify-content-between align-items-center"
+                    class="rtp-proxy-port d-flex justify-content-between align-items-center"
                   >
                     <div
                       class="d-flex justify-content-between align-items-center"
                     >
-                      <label for="Inbound-Port-Minimum">Port Minimum*</label>
+                      <label for="inbound-port-minimum">Port Minimum*</label>
                       <input
                         type="text"
-                        id="Inbound-Port-Minimum"
+                        id="inbound-port-minimum"
                         class="port"
-                        name="Inbound_Port_Minimum"
+                        name="inbound_port_minimum"
                         disabled
                       />
                     </div>
                     <div
                       class="d-flex justify-content-between align-items-center"
                     >
-                      <label for="Inbound-Port-Maximum">Port Maximum*</label>
+                      <label for="inbound-port-maximum">Port Maximum*</label>
                       <input
                         type="text"
-                        id="Inbound-Port-Maximum"
+                        id="inbound-port-maximum"
                         class="port"
-                        name="Inbound_Port_Maximum"
+                        name="inbound_port_maximum"
                         disabled
                       />
                     </div>
@@ -750,36 +747,36 @@
                 </div>
 
                 <div
-                  class="RTP-Proxy-class-content-input4 d-flex flex-column justify-content-between"
+                  class="rtp-proxy-content-outbound-port-range d-flex flex-column justify-content-between"
                 >
-                  <span class="RTP-Proxy-Ports-title"
+                  <span class="rtp-proxy-port-title"
                     >Outbound RTP Proxy Port Range :</span
                   >
 
                   <div
-                    class="RTP-Proxy-Ports d-flex justify-content-between align-items-center"
+                    class="rtp-proxy-port d-flex justify-content-between align-items-center"
                   >
                     <div
                       class="d-flex justify-content-between align-items-center"
                     >
-                      <label for="Outbound-Port-Minimum">Port Minimum*</label>
+                      <label for="outbound-port-minimum">Port Minimum*</label>
                       <input
                         type="text"
-                        id="Outbound-Port-Minimum"
+                        id="outbound-port-minimum"
                         class="port"
-                        name="Outbound_Port_Minimum"
+                        name="outbound_port_minimum"
                         disabled
                       />
                     </div>
                     <div
                       class="d-flex justify-content-between align-items-center"
                     >
-                      <label for="Outbound-Port-Maximum">Port Maximum*</label>
+                      <label for="outbound-port-maximum">Port Maximum*</label>
                       <input
                         type="text"
-                        id="Outbound-Port-Maximum"
+                        id="outbound-port-maximum"
                         class="port"
-                        name="Outbound_Port_Maximum"
+                        name="outbound_port_maximum"
                         disabled
                       />
                     </div>
@@ -787,15 +784,15 @@
                 </div>
 
                 <div
-                  class="RTP-Proxy-class-content-input5 d-flex justify-content-between align-items-center"
+                  class="rtp-proxy-content-call-duration d-flex justify-content-between align-items-center"
                 >
                   <div class="d-flex align-items-center">
                     <span>Enable Maximum Call Duration :</span>
                     <label class="switch call-duration-label">
                       <input
                         type="checkbox"
-                        id="Enable-Call-Duration"
-                        name="Enable-Maximum-Call-Duration"
+                        id="enable-call-duration"
+                        name="enable_call_duration"
                         disabled
                       />
                       <span class="slider round"></span>
@@ -805,22 +802,22 @@
                   <div class="d-flex align-items-center">
                     <input
                       type="text"
-                      id="Call-Duration"
-                      name="Call_Duration"
+                      id="call-duration"
+                      name="call_duration"
                       disabled
                     />
                     <span>Second</span>
                   </div>
                 </div>
                 <div
-                  class="RTP-Proxy-class-content-input6 d-flex align-items-center justify-content-between"
+                  class="rtp-proxy-content-loss-timeout d-flex align-items-center justify-content-between"
                 >
-                  <label for="RTP-Loss-Timeout">RTP Loss Timeout :</label>
+                  <label for="rtp-proxy-loss-timeout">RTP Loss Timeout :</label>
                   <div class="d-flex align-items-center">
                     <input
                       type="text"
-                      id="RTP-Loss-Timeout"
-                      name="RTP_Loss_Timeout"
+                      id="rtp-proxy-loss-timeout"
+                      name="rtp_proxy_loss_timeout"
                       disabled
                     />
                     <span>Second</span>

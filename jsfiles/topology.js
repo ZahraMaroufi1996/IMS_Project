@@ -1,6 +1,6 @@
 let nodeType = [];
 let nodeInfo;
-const url = "https://cdfb4ab4-65e8-498e-890c-570e0ade6a15.mock.pstmn.io";
+// const url = "https://ba09580e-e7a2-4d8f-ac33-1e59e5594f17.mock.pstmn.io";
 const token = localStorage.getItem("token");
 
 function load_page() {
@@ -523,6 +523,7 @@ modalDeleteButton.addEventListener("click", function (e) {
 //   getTime();
 //   setInterval(getTime, 60 * 1000 * 15);
 
+/// error show ///
 const errorClose = document.querySelector(".error-close-icon");
 const errorElement = document.querySelector(".show-error");
 
@@ -559,28 +560,28 @@ errorClose.addEventListener("click", function (e) {
 // });
 
 // /// logout ///
-// const logOutShow = document.querySelector(".log-out");
-// const logOutIcon = document.getElementById("log-out-icon");
-// const logOutConfirmButton = document.getElementById("log-out-confirm-button");
-// const logOutCancelButton = document.getElementById("log-out-cancel-button");
+const logOutShow = document.querySelector(".log-out");
+const logOutIcon = document.getElementById("log-out-icon");
+const logOutConfirmButton = document.getElementById("log-out-confirm-button");
+const logOutCancelButton = document.getElementById("log-out-cancel-button");
 
-// logOutIcon.addEventListener("click", function (e) {
-//   e.preventDefault();
-//   logOutShow.style.display = "block";
-// });
+logOutIcon.addEventListener("click", function (e) {
+  e.preventDefault();
+  logOutShow.style.display = "block";
+});
 
-// logOutConfirmButton.addEventListener("click", function (e) {
-//   e.preventDefault();
-//   localStorage.removeItem("token");
-//   $("head").append(
-//     `<meta http-equiv="refresh" content="0; URL=Login Page – Language Toggle.html" />`
-//   );
-// });
+logOutConfirmButton.addEventListener("click", function (e) {
+  e.preventDefault();
+  localStorage.removeItem("token");
+  $("head").append(
+    `<meta http-equiv="refresh" content="0; URL=Login Page – Language Toggle.html" />`
+  );
+});
 
-// logOutCancelButton.addEventListener("click", function (e) {
-//   e.preventDefault();
-//   logOutShow.style.display = "none";
-// });
+logOutCancelButton.addEventListener("click", function (e) {
+  e.preventDefault();
+  logOutShow.style.display = "none";
+});
 
 // /// profile ///
 // const profileShow = document.querySelector(".profile");
