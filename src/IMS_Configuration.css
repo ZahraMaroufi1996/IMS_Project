@@ -104,13 +104,13 @@ input[type="text"] {
 .scscf-content-title,
 .rtp-proxy-content-title,
 .icscf-content-title,
-.P-CSCF-class-Rx-configuration-title {
+.pcscf-content-rx-configuration-title {
   font-size: 1.66vh;
   font-family: "FiraGO", sans-serif;
   color: #83a79a;
 }
 
-.S-CSCF-class-content-title {
+.scscf-content-title {
   width: 3.5vw;
   height: 2.22vh;
 }
@@ -144,8 +144,8 @@ input[type="text"] {
 }
 
 .pcscf-content-memory,
-.scscf-content-content-register-time,
-.scscf-content-content-memory,
+.scscf-content-register-time,
+.scscf-content-memory,
 .icscf-content-memory {
   width: 28.95vw;
   height: 3.7vh;
@@ -153,11 +153,11 @@ input[type="text"] {
 }
 
 .pcscf-content-memory,
-.scscf-content-content-memory {
+.scscf-content-memory {
   margin-left: 5.51vw;
 }
 
-.scscf-content-content-register-time {
+.scscf-content-register-time {
   margin-left: 1.91vw;
 }
 .icscf-content-memory {
@@ -166,7 +166,7 @@ input[type="text"] {
 
 .pcscf-content-memory-input,
 .icscf-content-memory-input,
-.scscf-content-content-memory-input {
+.scscf-content-memory-input {
   height: 3.7vh;
   width: 11.61vw;
 }
@@ -232,7 +232,7 @@ input[type="text"] {
   height: 3.7vh;
 }
 
-#Rx-Source-Port {
+#rx-source-port {
   width: 8.48vw;
   height: 3.7vh;
   background-color: #f9f9f9;
@@ -280,7 +280,7 @@ input[type="text"] {
   font-family: "FiraGO", sans-serif;
 }
 
-.I-CSCF-class-content-title {
+.icscf-content-title {
   width: 2.76vw;
   height: 2.22vh;
   margin-left: 1vw;
@@ -303,7 +303,7 @@ input[type="text"] {
   border-radius: 0.83vh;
 }
 
-.S-CSCF-class {
+.scscf {
   width: 36.35vw;
   height: 13.33vh;
   margin-top: 2.59vh;
@@ -318,7 +318,7 @@ input[type="text"] {
   border-radius: 0.83vh;
 }
 
-.scscf-content-content-register-time-input {
+.scscf-content-register-time-input {
   width: 12.81vw;
   height: 3.7vh;
   border-radius: 0.83vh;

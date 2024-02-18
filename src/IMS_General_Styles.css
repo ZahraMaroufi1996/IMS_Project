@@ -1,6 +1,8 @@
 .ims-body {
   background-color: rgba(0, 0, 0, 0.04);
   height: 100vh;
+  position: relative;
+  overflow: hidden;
 }
 
 .main-body {
@@ -519,13 +521,14 @@
   z-index: 1;
   width: 20.83vw;
   height: 9.26vh;
-  background-color: #1a4348;
-  right: 4.166vw;
+  right: -400px;
   bottom: 7.41vh;
-  position: fixed;
-  background-color: rgba(198, 81, 97);
+  position: absolute;
   border-radius: 0.65vh;
-  display: none;
+  /* display: none; */
+  transition: all 0.2s ease-out;
+  background-color: red;
+  /* transition: width 2s, height 2s, background-color 2s, rotate 2s; */
 }
 
 .error-close-icon {
@@ -698,6 +701,5 @@ input[type="text"] {
   text-align: center;
   color: #2fbc8c;
   border: none;
-  font-size: 1.66vh;
   font-family: "FiraGO", sans-serif;
 }

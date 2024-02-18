@@ -20,6 +20,22 @@
   </head>
 
   <body class="ims-body d-flex">
+    <div class="show-error">
+      <div
+        class="h-100 w-100 d-flex flex-column justify-content-start align-items-center"
+      >
+        <span class="error-close-icon">&times;</span>
+
+        <div
+          id="error-content"
+          class="d-flex justify-content-start align-items-center"
+        >
+          <img src="images/success Icon.svg" class="error-icon" />
+          <p id="error-message">successfull message!</p>
+        </div>
+      </div>
+    </div>
+
     <!-- <div class="exit">
       <div class="triangle"></div>
       <div class="exit-content">
@@ -92,16 +108,7 @@
         <span class="sound-text">System has muted!</span>
       </div>
     </div>
-
-    <div class="show-error">
-      <div class="modal-header">
-        <span class="error-close-icon">&times;</span>
-      </div>
-      <div id="error-content">
-        <img src="images/success Icon.svg" class="error-logo" />
-        <p id="erroe-message">successfull message!</p>
-      </div>
-    </div> -->
+ -->
 
     <div class="sidebar">
       <div
@@ -575,13 +582,13 @@
                 class="scscf-content d-flex flex-column justify-content-between"
               >
                 <div class="d-flex justify-content-between">
-                  <span class="scscf-content-content-title">S-CSCF</span>
+                  <span class="scscf-content-title">S-CSCF</span>
 
                   <div
-                    class="scscf-content-content-register-time d-flex justify-content-between align-items-center"
+                    class="scscf-content-register-time d-flex justify-content-between align-items-center"
                   >
                     <div
-                      class="scscf-content-content-register-time-input d-flex justify-content-between align-items-center"
+                      class="scscf-content-register-time-input d-flex justify-content-between align-items-center"
                     >
                       <label for="minimum-register-time"
                         >Minimum Register Time</label
@@ -596,7 +603,7 @@
                       <span>S</span>
                     </div>
                     <div
-                      class="scscf-content-content-register-time-input d-flex justify-content-between align-items-center"
+                      class="scscf-content-register-time-input d-flex justify-content-between align-items-center"
                     >
                       <label for="maximum-register-time"
                         >Maximum Register Time</label
@@ -614,10 +621,10 @@
                 </div>
 
                 <div
-                  class="scscf-content-content-memory d-flex justify-content-between"
+                  class="scscf-content-memory d-flex justify-content-between"
                 >
                   <div
-                    class="scscf-content-content-memory-input d-flex justify-content-between align-items-center"
+                    class="scscf-content-memory-input d-flex justify-content-between align-items-center"
                   >
                     <label for="scscf-shared-memory">Shared Memory*</label>
                     <input
@@ -630,7 +637,7 @@
                     <span>MB</span>
                   </div>
                   <div
-                    class="scscf-content-content-memory-input d-flex justify-content-between align-items-center"
+                    class="scscf-content-memory-input d-flex justify-content-between align-items-center"
                   >
                     <label for="scscf-private-memory">Private Memory*</label>
                     <input

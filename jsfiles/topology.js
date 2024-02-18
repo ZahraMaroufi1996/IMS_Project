@@ -1,6 +1,6 @@
 let nodeType = [];
 let nodeInfo;
-// const url = "https://ba09580e-e7a2-4d8f-ac33-1e59e5594f17.mock.pstmn.io";
+const url = "https://ba09580e-e7a2-4d8f-ac33-1e59e5594f17.mock.pstmn.io";
 const token = localStorage.getItem("token");
 
 function load_page() {
@@ -106,7 +106,7 @@ function render(typeIndex) {
                         value= "${item.status}"
                         disabled
                       />
-                      <div class="node-table-content-icon d-flex flex-row">
+                      <div class="d-flex ">
                         <img
                           class="close"
                           id="${item.id}pc"

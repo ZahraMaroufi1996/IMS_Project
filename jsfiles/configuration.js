@@ -1,8 +1,8 @@
-// const url = "https://ba09580e-e7a2-4d8f-ac33-1e59e5594f17.mock.pstmn.io";
+const url = "https://ba09580e-e7a2-4d8f-ac33-1e59e5594f17.mock.pstmn.io";
 const token = localStorage.getItem("token");
 
 function load_page() {
-  fetch(`${url}/api/configuration`, {
+  fetch(`${url}/api/configuration/javaScript`, {
     method: "GET",
     headers: {
       Authorization: `Bearer ${token}`,
@@ -10,229 +10,12 @@ function load_page() {
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
-      data = data;
-
-      // getGeneralData(data);
-      // getPcscfData(data);
-      // getScscfData(data);
-      // getIcscfData(data);
-      // getRtpProxyData(data);
-
-      const imsDomain = document.querySelector(
-        `.general-class-content-ims-domain-box`
-      );
-      imsDomain.setAttribute("value", `${data.domain}`);
-
-      const enableHomerPcscf = document.getElementsByName(`enable_homer_pcscf`);
-
-      const enableHomerScscf = document.getElementsByName(`enable_homer_scscf`);
-
-      const enableHomerIcscf = document.getElementsByName(`enable_homer_icscf`);
-
-      const enableHomer = [
-        enableHomerPcscf[0],
-        enableHomerScscf[0],
-        enableHomerIcscf[0],
-      ];
-
-      for (let i = 0; i < data.homerEnable.length; i++) {
-        for (let j = 0; j < enableHomer.length; j++) {
-          if (enableHomer[j].value === data.homerEnable[i]) {
-            enableHomer[j].checked = true;
-          }
-        }
-      }
-
-      const encryptionAlgorithmAes = document.getElementsByName(
-        `encryption_algorithm_aes`
-      );
-
-      const encryptionAlgorithmDes = document.getElementsByName(
-        `encryption_algorithm_des`
-      );
-
-      const encryptionAlgorithmPlain = document.getElementsByName(
-        `encryption_algorithm_plain`
-      );
-
-      const encryptionAlgorithms = [
-        encryptionAlgorithmAes[0],
-        encryptionAlgorithmDes[0],
-        encryptionAlgorithmPlain[0],
-      ];
-
-      for (let i = 0; i < data.pcscf.algorithms.length; i++) {
-        for (let j = 0; j < encryptionAlgorithms.length; j++) {
-          if (encryptionAlgorithms[j].value === data.pcscf.algorithms[i]) {
-            encryptionAlgorithms[j].checked = true;
-          }
-        }
-      }
-
-      const transportProtocol =
-        document.getElementsByName("transport_protocol");
-      for (let i = 0; i < transportProtocol.length; i++) {
-        {
-          if (
-            transportProtocol[i].value === data.pcscf.rxConfiguration.protocol
-          ) {
-            transportProtocol[i].checked = true;
-          }
-        }
-      }
-
-      const supportedHdCodeG_722 = document.getElementsByName(
-        `supported_hd_codes_g.722`
-      );
-
-      const supportedHdCodeAmrWB = document.getElementsByName(
-        `supported_hd_codes_amr_wb`
-      );
-
-      const supportedHdCodes = [
-        supportedHdCodeG_722[0],
-        supportedHdCodeAmrWB[0],
-      ];
-
-      for (let i = 0; i < data.rtpProxy.supportedHdCoders.length; i++) {
-        for (let j = 0; j < supportedHdCodes.length; j++) {
-          if (
-            supportedHdCodes[j].value === data.rtpProxy.supportedHdCoders[i]
-          ) {
-            supportedHdCodes[j].checked = true;
-          }
-        }
-      }
-
-      const pcrfIpAddress = [];
-      for (let i = 0; i < 4; i++) {
-        pcrfIpAddress[i] = document.getElementById(
-          `pcrf-ip-address-octet${i + 1}`
-        );
-        pcrfIpAddress[i].setAttribute(
-          "value",
-          `${data.pcscf.rxConfiguration.ip.split(".")[i]}`
-        );
-      }
-
-      const enableIpSec = document.getElementById("ipsec");
-      if (data.pcscf.ipSec === true) {
-        enableIpSec.checked = true;
-      }
-
-      const enableTls = document.getElementById("tls");
-      if (data.pcscf.tls === true) {
-        enableTls.checked = true;
-      }
-
-      const enableRxSourcePort = document.getElementById(
-        "enable-rx-source-port"
-      );
-      if (data.pcscf.rxConfiguration.sourcePortEnabled === true) {
-        enableRxSourcePort.checked = true;
-      }
-
-      const enableSrtp = document.getElementById("srtp");
-      if (data.rtpProxy.srtp === true) {
-        enableSrtp.checked = true;
-      }
-
-      const enableCallDuration = document.getElementById(
-        "enable-call-duration"
-      );
-      if (data.rtpProxy.maximumCallDurationEnable === true) {
-        enableCallDuration.checked = true;
-      }
-
-      const pcscfSharedMemory = document.getElementById("pcscf-shared-memory");
-      pcscfSharedMemory.setAttribute("value", `${data.pcscf.shareMemory}`);
-      const pcscfPrivateMemory = document.getElementById(
-        "pcscf-private-memory"
-      );
-      pcscfPrivateMemory.setAttribute("value", `${data.pcscf.privateMemory}`);
-
-      const scscfSharedMemory = document.getElementById("scscf-shared-memory");
-      scscfSharedMemory.setAttribute("value", `${data.scscf.shareMemory}`);
-      const scscfPrivateMemory = document.getElementById(
-        "scscf-private-memory"
-      );
-      scscfPrivateMemory.setAttribute("value", `${data.scscf.privateMemory}`);
-
-      const icscfSharedMemory = document.getElementById("icscf-shared-memory");
-      icscfSharedMemory.setAttribute("value", `${data.icscf.shareMemory}`);
-      const icscfPrivateMemory = document.getElementById(
-        "icscf-private-memory"
-      );
-      icscfPrivateMemory.setAttribute("value", `${data.icscf.privateMemory}`);
-
-      const minimumRegisterTime = document.getElementById(
-        "minimum-register-time"
-      );
-      minimumRegisterTime.setAttribute(
-        "value",
-        `${data.scscf.minimumRegisterTime}`
-      );
-
-      const maximumRegisterTime = document.getElementById(
-        "maximum-register-time"
-      );
-      maximumRegisterTime.setAttribute(
-        "value",
-        `${data.scscf.maximumRegisterTime}`
-      );
-
-      const inboundPortMinimum = document.getElementById(
-        "inbound-port-minimum"
-      );
-      inboundPortMinimum.setAttribute(
-        "value",
-        `${data.rtpProxy.inboundPortMinimum}`
-      );
-
-      const inboundPortMaximum = document.getElementById(
-        "inbound-port-maximum"
-      );
-      inboundPortMaximum.setAttribute(
-        "value",
-        `${data.rtpProxy.inboundPortMaximum}`
-      );
-
-      const outboundPortMinimum = document.getElementById(
-        "outbound-port-minimum"
-      );
-      outboundPortMinimum.setAttribute(
-        "value",
-        `${data.rtpProxy.outboundPortMinimum}`
-      );
-
-      const outboundPortMaximum = document.getElementById(
-        "outbound-port-maximum"
-      );
-      outboundPortMaximum.setAttribute(
-        "value",
-        `${data.rtpProxy.outboundPortMaximum}`
-      );
-
-      const callDuration = document.getElementById("call-duration");
-      callDuration.setAttribute(
-        "value",
-        `${data.rtpProxy.maximumCallDuration}`
-      );
-      const lossTimeout = document.getElementById("rtp-proxy-loss-timeout");
-      lossTimeout.setAttribute("value", `${data.rtpProxy.rtpLossTimeout}`);
-
-      const rxSourcePort = document.getElementById("rx-source-port");
-      rxSourcePort.setAttribute(
-        "value",
-        `${data.pcscf.rxConfiguration.sourcePort}`
-      );
-
-      const PcrfFqnd = document.getElementById("rx-configuration-pcrf-fqdn");
-      PcrfFqnd.setAttribute("value", `${data.pcscf.rxConfiguration.fqdn}`);
-
-      const pcrfRealm = document.getElementById("rx-configuration-pcrf-realm");
-      pcrfRealm.setAttribute("value", `${data.pcscf.rxConfiguration.realm}`);
+      // console.log(data);
+      getGeneralData(data);
+      getPcscfData(data);
+      getScscfData(data);
+      getIcscfData(data);
+      getRtpProxyData(data);
     })
     .catch((error) => {
       console.log(error);
@@ -240,6 +23,15 @@ function load_page() {
 }
 
 function showError(response) {
+  /// error show ///
+  const errorClose = document.querySelector(".error-close-icon");
+  const errorElement = document.querySelector(".show-error");
+
+  errorClose.addEventListener("click", function (e) {
+    e.preventDefault();
+    errorElement.style.display = "none";
+  });
+
   if (response.status !== 200) {
     errorElement.style.display = "block";
     errorElement.style.backgroundColor = "#c65161";
@@ -312,17 +104,186 @@ function getTime() {
     });
 }
 
-// getGeneralData(data);
-// getPcscfData(data);
-// getScscfData(data);
-// getIcscfData(data);
-// getRtpProxyData(data);
+function getGeneralData(data) {
+  const imsDomain = document.querySelector(
+    `.general-class-content-ims-domain-box`
+  );
+  imsDomain.setAttribute("value", `${data.domain}`);
+  const enableHomerPcscf = document.getElementsByName(`enable_homer_pcscf`);
+  const enableHomerScscf = document.getElementsByName(`enable_homer_scscf`);
+  const enableHomerIcscf = document.getElementsByName(`enable_homer_icscf`);
+  const enableHomer = [
+    enableHomerPcscf[0],
+    enableHomerScscf[0],
+    enableHomerIcscf[0],
+  ];
+  for (let i = 0; i < data.homerEnable.length; i++) {
+    for (let j = 0; j < enableHomer.length; j++) {
+      if (enableHomer[j].value === data.homerEnable[i]) {
+        enableHomer[j].checked = true;
+      }
+    }
+  }
+}
 
-function getGeneralData(data) {}
-function getPcscfData(data) {}
-function getScscfData(data) {}
-function getIcscfData(data) {}
-function getRtpProxyData(data) {}
+function getPcscfData(data) {
+  const enableIpSec = document.getElementById("ipsec");
+  if (data.pcscf.ipSec === true) {
+    enableIpSec.checked = true;
+  }
+
+  const encryptionAlgorithmAes = document.getElementsByName(
+    `encryption_algorithm_aes`
+  );
+
+  const encryptionAlgorithmDes = document.getElementsByName(
+    `encryption_algorithm_des`
+  );
+
+  const encryptionAlgorithmPlain = document.getElementsByName(
+    `encryption_algorithm_plain`
+  );
+
+  const encryptionAlgorithms = [
+    encryptionAlgorithmAes[0],
+    encryptionAlgorithmDes[0],
+    encryptionAlgorithmPlain[0],
+  ];
+
+  for (let i = 0; i < data.pcscf.algorithms.length; i++) {
+    for (let j = 0; j < encryptionAlgorithms.length; j++) {
+      if (encryptionAlgorithms[j].value === data.pcscf.algorithms[i]) {
+        encryptionAlgorithms[j].checked = true;
+      }
+    }
+  }
+
+  const enableTls = document.getElementById("tls");
+  if (data.pcscf.tls === true) {
+    enableTls.checked = true;
+  }
+
+  const pcscfSharedMemory = document.getElementById("pcscf-shared-memory");
+  pcscfSharedMemory.setAttribute("value", `${data.pcscf.shareMemory}`);
+  const pcscfPrivateMemory = document.getElementById("pcscf-private-memory");
+  pcscfPrivateMemory.setAttribute("value", `${data.pcscf.privateMemory}`);
+  getRxConfigurationData(data.pcscf.rxConfiguration);
+}
+
+function getRxConfigurationData(data) {
+  const transportProtocol = document.getElementsByName("transport_protocol");
+  for (let i = 0; i < transportProtocol.length; i++) {
+    {
+      if (transportProtocol[i].value === data.protocol) {
+        transportProtocol[i].checked = true;
+      }
+    }
+  }
+
+  const pcrfIpAddress = [];
+  for (let i = 0; i < 4; i++) {
+    pcrfIpAddress[i] = document.getElementById(`pcrf-ip-address-octet${i + 1}`);
+    pcrfIpAddress[i].setAttribute("value", `${data.ip.split(".")[i]}`);
+  }
+
+  const enableRxSourcePort = document.getElementById("enable-rx-source-port");
+  if (data.sourcePortEnabled === true) {
+    enableRxSourcePort.checked = true;
+  }
+
+  const rxSourcePort = document.getElementById("rx-source-port");
+  rxSourcePort.setAttribute("value", `${data.sourcePort}`);
+
+  const pcrfFqnd = document.getElementById("rx-configuration-pcrf-fqdn");
+  pcrfFqnd.setAttribute("value", `${data.fqdn}`);
+
+  const pcrfRealm = document.getElementById("rx-configuration-pcrf-realm");
+  pcrfRealm.setAttribute("value", `${data.realm}`);
+}
+
+function getScscfData(data) {
+  const scscfSharedMemory = document.getElementById("scscf-shared-memory");
+  scscfSharedMemory.setAttribute("value", `${data.scscf.shareMemory}`);
+  const scscfPrivateMemory = document.getElementById("scscf-private-memory");
+  scscfPrivateMemory.setAttribute("value", `${data.scscf.privateMemory}`);
+
+  const minimumRegisterTime = document.getElementById("minimum-register-time");
+  minimumRegisterTime.setAttribute(
+    "value",
+    `${data.scscf.minimumRegisterTime}`
+  );
+
+  const maximumRegisterTime = document.getElementById("maximum-register-time");
+  maximumRegisterTime.setAttribute(
+    "value",
+    `${data.scscf.maximumRegisterTime}`
+  );
+}
+
+function getIcscfData(data) {
+  const icscfSharedMemory = document.getElementById("icscf-shared-memory");
+  icscfSharedMemory.setAttribute("value", `${data.icscf.shareMemory}`);
+  const icscfPrivateMemory = document.getElementById("icscf-private-memory");
+  icscfPrivateMemory.setAttribute("value", `${data.icscf.privateMemory}`);
+}
+
+function getRtpProxyData(data) {
+  const supportedHdCodeG_722 = document.getElementsByName(
+    `supported_hd_codes_g.722`
+  );
+
+  const supportedHdCodeAmrWB = document.getElementsByName(
+    `supported_hd_codes_amr_wb`
+  );
+
+  const supportedHdCodes = [supportedHdCodeG_722[0], supportedHdCodeAmrWB[0]];
+
+  for (let i = 0; i < data.rtpProxy.supportedHdCoders.length; i++) {
+    for (let j = 0; j < supportedHdCodes.length; j++) {
+      if (supportedHdCodes[j].value === data.rtpProxy.supportedHdCoders[i]) {
+        supportedHdCodes[j].checked = true;
+      }
+    }
+  }
+
+  const enableSrtp = document.getElementById("srtp");
+  if (data.rtpProxy.srtp === true) {
+    enableSrtp.checked = true;
+  }
+
+  const inboundPortMinimum = document.getElementById("inbound-port-minimum");
+  inboundPortMinimum.setAttribute(
+    "value",
+    `${data.rtpProxy.inboundPortMinimum}`
+  );
+
+  const inboundPortMaximum = document.getElementById("inbound-port-maximum");
+  inboundPortMaximum.setAttribute(
+    "value",
+    `${data.rtpProxy.inboundPortMaximum}`
+  );
+
+  const outboundPortMinimum = document.getElementById("outbound-port-minimum");
+  outboundPortMinimum.setAttribute(
+    "value",
+    `${data.rtpProxy.outboundPortMinimum}`
+  );
+
+  const outboundPortMaximum = document.getElementById("outbound-port-maximum");
+  outboundPortMaximum.setAttribute(
+    "value",
+    `${data.rtpProxy.outboundPortMaximum}`
+  );
+
+  const enableCallDuration = document.getElementById("enable-call-duration");
+  if (data.rtpProxy.maximumCallDurationEnable === true) {
+    enableCallDuration.checked = true;
+  }
+  const callDuration = document.getElementById("call-duration");
+  callDuration.setAttribute("value", `${data.rtpProxy.maximumCallDuration}`);
+  const lossTimeout = document.getElementById("rtp-proxy-loss-timeout");
+  lossTimeout.setAttribute("value", `${data.rtpProxy.rtpLossTimeout}`);
+}
 
 async function init() {
   await load_page();
@@ -340,22 +301,13 @@ editButton.addEventListener("click", function (e) {
   }
 });
 
-/// error show ///
-const errorClose = document.querySelector(".error-close-icon");
-const errorElement = document.querySelector(".show-error");
-
-errorClose.addEventListener("click", function (e) {
-  e.preventDefault();
-  errorElement.style.display = "none";
-});
-
-////////////////////////////////// save icon ////////////////////////////////////
-
+/// save button ///
 const totalForm = document.getElementById("total-form");
 totalForm.addEventListener("submit", function (e) {
   e.preventDefault();
   const formData = Object.fromEntries(new FormData(e.target));
-  const result = fetch(`${url}/api/configuration/submittForm`, {
+  console.log(formData);
+  const result = fetch(`${url}/api/configuration/submitForm/javaScript`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

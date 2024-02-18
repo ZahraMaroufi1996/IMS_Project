@@ -221,35 +221,34 @@
   width: 3.64vw;
   height: 1.85vh;
   margin-left: 2.32vw;
-  color: #1a4348;
-  font-size: 1.2vh;
-  font-family: "FiraGO", sans-serif;
-  border-radius: 0.277vh;
 }
 
 .node-table-content-ip {
   width: 4.68vw;
   height: 1.85vh;
   margin-left: 6.61vw;
-  color: #1a4348;
-  font-size: 1.2vh;
-  font-family: "FiraGO", sans-serif;
-  border-radius: 0.277vh;
 }
 
 .node-table-content-status {
   width: 4.37vw;
   height: 1.57vh;
   margin-left: 6.61vw;
-  font-size: 1.2vh;
-  font-family: "FiraGO", sans-serif;
 }
 
-input[type="text"] {
+input.node-table-content-status,
+input.node-table-content-ip,
+input.node-table-content-name {
+  color: #1a4348;
+  font-size: 1.2vh;
+  font-family: "FiraGO", sans-serif;
+  border-radius: 0.277vh;
+}
+
+/* input[type="text"] {
   text-align: center;
   color: #2fbc8c;
   border: none;
-}
+} */
 
 .save-node-button {
   margin-left: 38.54vw;
