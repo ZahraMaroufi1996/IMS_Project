@@ -10,7 +10,6 @@ function load_page() {
   })
     .then((response) => response.json())
     .then((data) => {
-      // console.log(data);
       getGeneralData(data);
       getPcscfData(data);
       getScscfData(data);

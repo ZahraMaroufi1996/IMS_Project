@@ -29,8 +29,6 @@
 .toolbar-nav-content {
   width: 23.62vw;
   height: 2.77vh;
-  /* background-color: red; */
-  /* margin-left: 4.66vw; */
   margin-left: 57vw;
   margin-top: 1.57vh;
   display: flex;
@@ -42,7 +40,7 @@
   height: 2.77vh;
 }
 
-/*/////////////////////////////////// sidebar styles////////////////////////////////////////////////////////////// */
+/*/////////////////////////////////// sidebar styles///////////////////////////////////////////////// */
 
 .sidebar {
   width: 15.1vw;
@@ -55,7 +53,6 @@
   height: 12.96vh;
   margin-top: 8.33vh;
   margin-left: 4.088vw;
-  /* background-color: red; */
   border-bottom: 0.092vh solid rgba(255, 255, 255, 0.25);
 }
 
@@ -146,7 +143,6 @@
 }
 
 .sidebar-icons {
-  /* background-color: red; */
   width: 100%;
   height: 7.13vh;
   margin-top: 20px;
@@ -197,7 +193,6 @@
 #time-box {
   width: 13.32vw;
   height: 3vh;
-  /* margin-right: 4.7vw; */
   margin-left: 67vw;
   margin-top: 0.78vh;
   border-left: 0.046vh solid #83a79a;
@@ -291,8 +286,6 @@
 .log-out-title {
   margin-top: 10px;
 }
-
-/* /////////////////////////// previous styles /////////////////////////////////////*/
 
 /* ////////////////////////////////////////////////////toolbar styles ///////////////////////////////////////////////////*/
 
@@ -521,14 +514,11 @@
   z-index: 1;
   width: 20.83vw;
   height: 9.26vh;
-  right: -400px;
+  right: 4.166vw;
   bottom: 7.41vh;
   position: absolute;
   border-radius: 0.65vh;
-  /* display: none; */
-  transition: all 0.2s ease-out;
-  background-color: red;
-  /* transition: width 2s, height 2s, background-color 2s, rotate 2s; */
+  display: none;
 }
 
 .error-close-icon {
@@ -571,7 +561,6 @@
 .chb + label {
   position: relative;
   padding-right: 1px;
-  /* margin-left: 5px; */
 }
 
 .chb-1 + label::before {
@@ -672,7 +661,6 @@ input:checked + .slider:before {
 .ip-octet {
   width: 2.604vw;
   height: 3.7vh;
-  /* position: absolute; */
   border-radius: 0.65vh;
   background-color: #eef5f2;
 }

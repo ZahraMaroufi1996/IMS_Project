@@ -1,37 +1,39 @@
-.Pre-Login-body {
+.pre-login-body {
   background-image: url("../images/Pre-Login\ Page.svg");
   object-fit: fill;
 }
 
-.Login-body {
+.login-body {
   background-image: url("../images/Login\ Page\ –\ Language\ Toggle.svg");
   height: 100vh;
 }
 
-.After-Login-body {
+.after-login-body {
   background-image: url("../images/After_Login_Page.svg");
+  height: 100vh;
 }
 
 .content {
   height: 100%;
   width: 17.71vw;
   margin: 0 auto;
+  background-color: red;
 }
 
 .saleh-photo {
   width: 6.25vw;
   height: 11.11vh;
-  position: absolute;
+  /* position: absolute;
   top: 42.5vh;
-  right: 46.87vw;
-  display: block;
+  right: 46.87vw; */
+  /* display: block; */
 }
 
-.After-login-text {
+.after-login-text {
   color: white;
-  right: 47.18vw;
+  /* right: 47.18vw;
   top: 56.02vh;
-  position: absolute;
+  position: absolute; */
   font-size: 2.59vh;
   font-family: "FiraGO", sans-serif;
   margin-top: 0;
@@ -46,12 +48,10 @@
   position: absolute;
 }
 
-.Login-container {
+.login-container {
   width: 17.71vw;
   height: 40.83vh;
   margin: auto auto;
-  /* top: 29.53vh;
-  right: 41.14vw; */
 }
 
 .username-container,
@@ -91,7 +91,7 @@ input::placeholder {
   height: 3.7vh;
 }
 
-.Login-Avatar {
+.login-avatar {
   border: 1px solid white;
   border-radius: 50%;
   width: 4.16vw;
@@ -103,7 +103,7 @@ form.d-flex {
   gap: 3.7vh;
 }
 
-.Login-Avatar img {
+.login-avatar img {
   margin: auto auto;
   display: block;
   margin-top: 8px;
@@ -112,32 +112,27 @@ form.d-flex {
 button.submit-button {
   background-color: #68d5b0;
   color: white;
-  /* right: 0; */
   bottom: 6.76vh;
   height: 5.185vh;
   width: 17.71vw;
-  /* position: absolute; */
   border: none;
   border-radius: 0.65vh;
   font-size: 2.037vh;
   font-family: "Iranian Sans", sans-serif;
 }
 
-.Login-Logo-image {
-  display: block;
+.login-logo-image {
+  /* display: block; */
   width: 10.42vw;
   height: 6.018vh;
   margin: 8px auto;
 }
 
-.Login-Logo-text {
+.login-logo-text {
   text-align: center;
   color: white;
   font-size: 1.48vh;
   font-weight: thin;
-  /* right: 44.4vw;
-  position: absolute;
-  bottom: 7vh; */
   font-family: "FiraGO", sans-serif;
   width: 10.83vw;
   height: 1.94vh;
@@ -145,7 +140,7 @@ button.submit-button {
   margin-bottom: 8vh;
 }
 
-.Login-Language {
+.login-language {
   width: 3.85vw;
   height: 3.15vh;
   margin: 0 auto;
