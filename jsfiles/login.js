@@ -1,7 +1,6 @@
 const url = "https://ba09580e-e7a2-4d8f-ac33-1e59e5594f17.mock.pstmn.io";
-let my_token;
-let my_form = document.getElementById("login-form");
-my_form.addEventListener("submit", function (e) {
+const myForm = document.getElementById("login-form");
+myForm.addEventListener("submit", function (e) {
   e.preventDefault();
   const formData = Object.fromEntries(new FormData(e.target));
 
@@ -15,9 +14,9 @@ my_form.addEventListener("submit", function (e) {
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
-      my_token = data.token;
-      console.log(my_token);
-      localStorage.setItem("token", my_token);
+      const token = data.token;
+      console.log(token);
+      localStorage.setItem("token", token);
       $("head").append(
         `<meta http-equiv="refresh" content="0; URL=After_Login_Page.html" />`
       );

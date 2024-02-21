@@ -20,6 +20,15 @@ function load_page() {
 }
 
 function showError(response) {
+  /// error show ///
+  const errorClose = document.querySelector(".error-close-icon");
+  const errorElement = document.querySelector(".show-error");
+
+  errorClose.addEventListener("click", function (e) {
+    e.preventDefault();
+    errorElement.style.display = "none";
+  });
+
   if (response.status !== 200) {
     errorElement.style.display = "block";
     errorElement.style.backgroundColor = "#c65161";
@@ -523,17 +532,7 @@ modalDeleteButton.addEventListener("click", function (e) {
 //   getTime();
 //   setInterval(getTime, 60 * 1000 * 15);
 
-/// error show ///
-const errorClose = document.querySelector(".error-close-icon");
-const errorElement = document.querySelector(".show-error");
-
-errorClose.addEventListener("click", function (e) {
-  e.preventDefault();
-  errorElement.style.display = "none";
-});
-
 ///////////////////////////////// toolbar icons ///////////////////////////////////////////////////////////
-
 // /// exit ///
 // const exitShow = document.querySelector(".exit");
 // const exitIcon = document.getElementById("exit-icon");

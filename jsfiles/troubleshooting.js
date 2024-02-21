@@ -10,21 +10,28 @@ error_close.addEventListener("click", function (e) {
 });
 
 function showError(response) {
+  /// error show ///
+  const errorClose = document.querySelector(".error-close-icon");
+  const errorElement = document.querySelector(".show-error");
+
+  errorClose.addEventListener("click", function (e) {
+    e.preventDefault();
+    errorElement.style.display = "none";
+  });
+
   if (response.status !== 200) {
-    // hasMessage = true;
-    show_error.style.display = "block";
-    show_error.style.backgroundColor = "#c65161";
-    const error_msg = document.getElementById("error-content");
-    error_msg.innerHTML = `<img  src="images/error-logo.svg" class="error-icon"/>
+    errorElement.style.display = "block";
+    errorElement.style.backgroundColor = "#c65161";
+    const errorMsg = document.getElementById("error-content");
+    errorMsg.innerHTML = `<img  src="images/error-logo.svg" class="error-icon"/>
             <p id="error-message">
             Your request was failed !! (status code : ${response.status})
             </p>`;
   } else {
-    // hasMessage = false;
-    show_error.style.display = "block";
-    show_error.style.backgroundColor = "#58cc87";
-    const success_msg = document.getElementById("error-content");
-    success_msg.innerHTML = `<img  src="images/success Icon.svg" class="error-icon"/>
+    errorElement.style.display = "block";
+    errorElement.style.backgroundColor = "#58cc87";
+    const successMsg = document.getElementById("error-content");
+    successMsg.innerHTML = `<img  src="images/success Icon.svg" class="error-icon"/>
             <p id="error-message">
             Your request was done successfully !!
             </p>`;
@@ -92,4 +99,29 @@ packetCaptureForm.addEventListener("submit", function (e) {
     .catch((error) => {
       console.log(error);
     });
+});
+
+///////////////////////////////// toolbar icons ///////////////////////////////////////////////////////////
+
+const logOutShow = document.querySelector(".log-out");
+const logOutIcon = document.getElementById("log-out-icon");
+const logOutConfirmButton = document.getElementById("log-out-confirm-button");
+const logOutCancelButton = document.getElementById("log-out-cancel-button");
+
+logOutIcon.addEventListener("click", function (e) {
+  e.preventDefault();
+  logOutShow.style.display = "block";
+});
+
+logOutConfirmButton.addEventListener("click", function (e) {
+  e.preventDefault();
+  localStorage.removeItem("token");
+  $("head").append(
+    `<meta http-equiv="refresh" content="0; URL=Login Page – Language Toggle.html" />`
+  );
+});
+
+logOutCancelButton.addEventListener("click", function (e) {
+  e.preventDefault();
+  logOutShow.style.display = "none";
 });

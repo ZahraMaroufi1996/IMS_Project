@@ -327,6 +327,28 @@ totalForm.addEventListener("submit", function (e) {
 //   setInterval(getTime, 60 * 1000 * 15);
 
 ///////////////////////////////////////////////////////// toolbar icons///////////////////////
+const logOutShow = document.querySelector(".log-out");
+const logOutIcon = document.getElementById("log-out-icon");
+const logOutConfirmButton = document.getElementById("log-out-confirm-button");
+const logOutCancelButton = document.getElementById("log-out-cancel-button");
+
+logOutIcon.addEventListener("click", function (e) {
+  e.preventDefault();
+  logOutShow.style.display = "block";
+});
+
+logOutConfirmButton.addEventListener("click", function (e) {
+  e.preventDefault();
+  localStorage.removeItem("token");
+  $("head").append(
+    `<meta http-equiv="refresh" content="0; URL=Login Page – Language Toggle.html" />`
+  );
+});
+
+logOutCancelButton.addEventListener("click", function (e) {
+  e.preventDefault();
+  logOutShow.style.display = "none";
+});
 
 // let exit_show = document.querySelector(".exit");
 // let exit_icon = document.getElementById("exit-icon");
@@ -355,24 +377,6 @@ totalForm.addEventListener("submit", function (e) {
 // exit_cancel_button.addEventListener("click", function (e) {
 //   e.preventDefault();
 //   exit_show.style.display = "none";
-// });
-
-// log_out_icon.addEventListener("click", function (e) {
-//   e.preventDefault();
-//   log_out_show.style.display = "block";
-// });
-
-// log_out_button.addEventListener("click", function (e) {
-//   e.preventDefault();
-//   localStorage.removeItem("token");
-//   $("head").append(
-//     `<meta http-equiv="refresh" content="0; URL=Login Page – Language Toggle.html" />`
-//   );
-// });
-
-// log_out_cancel_button.addEventListener("click", function (e) {
-//   e.preventDefault();
-//   log_out_show.style.display = "none";
 // });
 
 // let profile_show = document.querySelector(".profile");

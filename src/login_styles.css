@@ -17,23 +17,19 @@
   height: 100%;
   width: 17.71vw;
   margin: 0 auto;
-  background-color: red;
+}
+
+.after-login-picture {
+  margin-bottom: 280px;
 }
 
 .saleh-photo {
   width: 6.25vw;
   height: 11.11vh;
-  /* position: absolute;
-  top: 42.5vh;
-  right: 46.87vw; */
-  /* display: block; */
 }
 
 .after-login-text {
   color: white;
-  /* right: 47.18vw;
-  top: 56.02vh;
-  position: absolute; */
   font-size: 2.59vh;
   font-family: "FiraGO", sans-serif;
   margin-top: 0;
@@ -122,7 +118,6 @@ button.submit-button {
 }
 
 .login-logo-image {
-  /* display: block; */
   width: 10.42vw;
   height: 6.018vh;
   margin: 8px auto;
