@@ -10,6 +10,7 @@ function load_page() {
   })
     .then((response) => response.json())
     .then((data) => {
+      console.log(data);
       getGeneralData(data);
       getPcscfData(data);
       getScscfData(data);
@@ -104,9 +105,7 @@ function getTime() {
 }
 
 function getGeneralData(data) {
-  const imsDomain = document.querySelector(
-    `.general-class-content-ims-domain-box`
-  );
+  const imsDomain = document.querySelector(`.general-content-ims-domain-box`);
   imsDomain.setAttribute("value", `${data.domain}`);
   const enableHomerPcscf = document.getElementsByName(`enable_homer_pcscf`);
   const enableHomerScscf = document.getElementsByName(`enable_homer_scscf`);

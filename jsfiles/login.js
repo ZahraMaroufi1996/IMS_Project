@@ -25,3 +25,55 @@ myForm.addEventListener("submit", function (e) {
       console.log(error);
     });
 });
+
+/// language switch ///
+const languageElement = document.getElementById("language");
+languageElement.addEventListener("click", function (e) {
+  console.log(languageElement.checked);
+  let formContent;
+  if (languageElement.checked === false) {
+    formContent = `
+      <div class="username-container d-flex flex-row justify-content-around">
+        <input
+          class="username-input-persian"
+          type="text"
+          name="username"
+          placeholder="نام کاربری"
+        />
+        <img src="images/Group 8492.svg" class="username-icon" />
+      </div>
+      <div class="password-container d-flex flex-row justify-content-around">
+        <input
+          class="password-input-persian"
+          type="password"
+          name="password"
+          placeholder="رمز عبور"
+        />
+        <img src="images/Group 8493.svg" class="password-icon" />
+      </div>
+      <button type="submit" class="submit-button">وارد شوید</button>`;
+  } else {
+    formContent = `
+      <div class="username-container d-flex flex-row justify-content-around">
+        <img src="images/User_inverse.svg" class="username-icon" />
+        <input
+          class="username-input-english"
+          type="text"
+          name="username"
+          placeholder="username"
+        />
+      </div>
+      <div class="password-container d-flex flex-row justify-content-around">
+        <img src="images/Pass_inverse.svg" class="password-icon" />
+        <input
+          class="password-input-english"
+          type="password"
+          name="password"
+          placeholder="password"
+        />
+      </div>
+      <button type="submit" class="submit-button">Login</button>`;
+  }
+  const nodeList = $("#login-form");
+  nodeList.html(formContent);
+});

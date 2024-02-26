@@ -62,9 +62,14 @@
   opacity: 20%;
 }
 
-.username-input,
-.password-input {
+.username-input-persian,
+.password-input-persian {
   margin-left: 60px;
+}
+
+.username-input-english,
+.password-input-english {
+  margin-right: 60px;
 }
 
 input {
@@ -85,6 +90,7 @@ input::placeholder {
 .password-icon {
   width: 1.87vw;
   height: 3.7vh;
+  margin-top: 5px;
 }
 
 .login-avatar {

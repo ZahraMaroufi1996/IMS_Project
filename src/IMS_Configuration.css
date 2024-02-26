@@ -1,13 +1,3 @@
-/* .total-information-body-class {
-  width: 78.75vw;
-  height: 84.26vh;
-  right: 4.68vw;
-  top: 8.52vh;
-  position: absolute;
-  background-color: white;
-  border-radius: 1.85vh;
-} */
-
 .main-content {
   width: 78.75vw;
   height: 84.25vh;
@@ -31,7 +21,7 @@
   border-radius: 0.83vh;
 }
 
-.general-class-content-ims-domain {
+.general-content-ims-domain {
   width: 29.06vw;
   height: 3.7vh;
   margin-left: 2.5vw;
@@ -47,7 +37,7 @@
   font-family: "FiraGO", sans-serif;
 }
 
-.general-class-content-ims-domain-box {
+.general-content-ims-domain-box {
   width: 21.125vw;
   height: 3.7vh;
   background-color: #eef5f2;
@@ -62,7 +52,7 @@ p {
   font-family: "FiraGO", sans-serif;
 }
 
-input.general-class-content-ims-domain-box {
+input.general-content-ims-domain-box {
   border: none;
 }
 
@@ -256,7 +246,6 @@ input[type="text"] {
 }
 
 .pcscf-content-encryption-algorithms-aes-checkbox {
-  background-color: red;
   width: 4.68vw;
   height: 2.037vh;
   color: #1a4348;
@@ -360,7 +349,7 @@ input[type="text"] {
   margin-left: 5.31vw;
 }
 
-#RTP-Loss-Timeout,
+#rtp-proxy-loss-timeout,
 #call-duration,
 .port {
   width: 4.58vw;
@@ -368,6 +357,11 @@ input[type="text"] {
   background-color: #f9f9f9;
   border: none;
   border-radius: 0.65vh;
+}
+
+.call-duration-unit,
+.loss-timeout-unit {
+  margin-left: 5px;
 }
 
 .call-duration-label {
