@@ -326,6 +326,8 @@ totalForm.addEventListener("submit", function (e) {
 //   setInterval(getTime, 60 * 1000 * 15);
 
 ///////////////////////////////////////////////////////// toolbar icons///////////////////////
+
+/// log out ///
 const logOutShow = document.querySelector(".log-out");
 const logOutIcon = document.getElementById("log-out-icon");
 const logOutConfirmButton = document.getElementById("log-out-confirm-button");
@@ -349,15 +351,49 @@ logOutCancelButton.addEventListener("click", function (e) {
   logOutShow.style.display = "none";
 });
 
+/// profile ///
+const profileShow = document.querySelector(".profile");
+const profileIcon = document.getElementById("profile-icon");
+const imageCloseIcon = document.getElementById("image-close");
+const imageTickIcon = document.getElementById("image-tick");
+const profileContentImages = document.querySelector(".profile-content-images");
+const accountInfoImg = document.querySelector(".sidebar-account-info-image");
+
+profileIcon.addEventListener("click", function (e) {
+  e.preventDefault();
+  profileShow.style.display = "block";
+});
+
+profileContentImages.addEventListener("click", function (e) {
+  e.preventDefault();
+  for (let i = 0; i < profileContentImages.children.length; i++) {
+    profileContentImages.children[i].style.backgroundColor = "#1f666e";
+  }
+
+  if (e.target.classList.contains("list-image")) {
+    const id = e.target.id;
+    e.target.style.backgroundColor = "white";
+
+    imageTickIcon.addEventListener("click", function (e) {
+      e.preventDefault();
+      accountInfoImg.setAttribute("src", `images/${id}.svg`);
+    });
+  }
+});
+
+imageCloseIcon.addEventListener("click", function (e) {
+  e.preventDefault();
+  for (let i = 0; i < 9; i++) {
+    profileContentImages.children[i].style.backgroundColor = "#1f666e";
+  }
+  profileContentImages.style.backgroundColor = "#1f666e";
+  profileShow.style.display = "none";
+});
+
 // let exit_show = document.querySelector(".exit");
 // let exit_icon = document.getElementById("exit-icon");
 // let exit_button = document.querySelector(".exit-button");
 // let exit_cancel_button = document.querySelector(".exit-cancel-button");
-
-// let log_out_show = document.querySelector(".log-out");
-// let log_out_icon = document.getElementById("log-out-icon");
-// let log_out_button = document.querySelector(".log-out-button");
-// let log_out_cancel_button = document.querySelector(".log-out-cancel-button");
 
 // exit_icon.addEventListener("click", function (e) {
 //   e.preventDefault();
@@ -376,44 +412,6 @@ logOutCancelButton.addEventListener("click", function (e) {
 // exit_cancel_button.addEventListener("click", function (e) {
 //   e.preventDefault();
 //   exit_show.style.display = "none";
-// });
-
-// let profile_show = document.querySelector(".profile");
-// let profile_icon = document.getElementById("profile-icon");
-// let image_close_icon = document.getElementById("image-close");
-// let image_tick_icon = document.getElementById("image-tick");
-// let profile_content_images = document.querySelector(".profile-content-images");
-// let Account_info_img = document.querySelector(".Account-info-img");
-
-// profile_icon.addEventListener("click", function (e) {
-//   e.preventDefault();
-//   profile_show.style.display = "block";
-// });
-
-// profile_content_images.addEventListener("click", function (e) {
-//   e.preventDefault();
-//   for (let i = 0; i < profile_content_images.children.length; i++) {
-//     profile_content_images.children[i].style.backgroundColor = "#374775";
-//   }
-
-//   if (e.target.classList.contains("img-list")) {
-//     const id = e.target.id;
-//     e.target.style.backgroundColor = "white";
-
-//     image_tick_icon.addEventListener("click", function (e) {
-//       e.preventDefault();
-//       Account_info_img.setAttribute("src", `images/${id}.svg`);
-//     });
-//   }
-// });
-
-// image_close_icon.addEventListener("click", function (e) {
-//   e.preventDefault();
-//   for (let i = 0; i < 9; i++) {
-//     profile_content_images.children[i].style.backgroundColor = "#374775";
-//   }
-//   profile_content_images.style.backgroundColor = "#374775";
-//   profile_show.style.display = "none";
 // });
 
 // let sound_show = document.querySelector(".sound");

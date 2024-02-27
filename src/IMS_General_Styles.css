@@ -238,9 +238,6 @@
   margin-right: 4.125vw;
 }
 
-/*.profile-triangle {
-  right: 6.6vw;
-}*/
 .log-out-content {
   width: 18.48vw;
   height: 17.037vh;
@@ -285,6 +282,94 @@
 
 .log-out-title {
   margin-top: 10px;
+}
+
+/* ///////////  profile styles //////////// */
+
+.profile {
+  position: absolute;
+  width: 18.49vw;
+  height: 45.86vh;
+  right: 4.68vw;
+  top: 5.53vh;
+  z-index: 1;
+  display: none;
+}
+
+.profile-triangle {
+  margin-right: 6.2vw;
+}
+
+.profile-content {
+  width: 18.49vw;
+  height: 44.72vh;
+  right: 0vw;
+  bottom: 0vh;
+  border-radius: 1.38vh;
+  background-color: #1f666e;
+  position: absolute;
+}
+
+.profile-description {
+  margin-left: 1.3vw;
+}
+
+.default-user {
+  color: white;
+  font-size: 1.66vh;
+  font-family: "FiraGO", sans-serif;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.default-user span {
+  margin-left: 12px;
+}
+
+.default-user img {
+  float: left;
+}
+
+.user-label {
+  color: #58cc87;
+  font-size: 1.66vh;
+  font-family: "FiraGO", sans-serif;
+  margin-bottom: 5px;
+}
+
+.profile-text {
+  color: white;
+  font-size: 1.29vh;
+  font-family: "FiraGO", sans-serif;
+  margin-bottom: 0;
+}
+
+.profile-content-images {
+  width: 16.2vw;
+  height: 28.79vh;
+  margin-top: 3px;
+  margin-left: 1.3vw;
+  display: grid;
+  grid-row-gap: 0.83vw;
+  grid-column-gap: 1.48vh;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto;
+}
+
+.profile-footer {
+  width: 17.39vw;
+  height: 1.76vh;
+  margin-left: 0.57vw;
+}
+
+.profile-content-images img {
+  width: 4.5vw;
+  height: 8.3vh;
+}
+
+.profile-footer img {
+  width: 0.98vw;
+  height: 1.76vh;
 }
 
 /* ////////////////////////////////////////////////////toolbar styles ///////////////////////////////////////////////////*/

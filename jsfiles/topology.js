@@ -582,44 +582,43 @@ logOutCancelButton.addEventListener("click", function (e) {
   logOutShow.style.display = "none";
 });
 
-// /// profile ///
-// const profileShow = document.querySelector(".profile");
-// const profileIcon = document.getElementById("profile-icon");
-// const imageCloseIcon = document.getElementById("image-close");
-// const imageTickIcon = document.getElementById("image-tick");
-// const profileContentImages = document.querySelector(".profile-content-images");
-// const accountInfoImg = document.querySelector(".sidebar-account-info-image");
+/// profile ///
+const profileShow = document.querySelector(".profile");
+const profileIcon = document.getElementById("profile-icon");
+const imageCloseIcon = document.getElementById("image-close");
+const imageTickIcon = document.getElementById("image-tick");
+const profileContentImages = document.querySelector(".profile-content-images");
+const accountInfoImg = document.querySelector(".sidebar-account-info-image");
 
-// profileIcon.addEventListener("click", function (e) {
-//   e.preventDefault();
-//   profileShow.style.display = "block";
-// });
+profileIcon.addEventListener("click", function (e) {
+  e.preventDefault();
+  profileShow.style.display = "block";
+});
 
-// profileContentImages.addEventListener("click", function (e) {
-//   e.preventDefault();
-//   for (let i = 0; i < profileContentImages.children.length; i++) {
-//     profileContentImages.children[i].style.backgroundColor = "#374775";
-//   }
+profileContentImages.addEventListener("click", function (e) {
+  e.preventDefault();
+  for (let i = 0; i < profileContentImages.children.length; i++) {
+    profileContentImages.children[i].style.backgroundColor = "#1f666e";
+  }
 
-//   if (e.target.classList.contains("img-list")) {
-//     const id = e.target.id;
-//     e.target.style.backgroundColor = "white";
+  if (e.target.classList.contains("list-image")) {
+    const id = e.target.id;
+    e.target.style.backgroundColor = "white";
+    imageTickIcon.addEventListener("click", function (e) {
+      e.preventDefault();
+      accountInfoImg.setAttribute("src", `images/${id}.svg`);
+    });
+  }
+});
 
-//     imageTickIcon.addEventListener("click", function (e) {
-//       e.preventDefault();
-//       accountInfoImg.setAttribute("src", `images/${id}.svg`);
-//     });
-//   }
-// });
-
-// imageCloseIcon.addEventListener("click", function (e) {
-//   e.preventDefault();
-//   for (let i = 0; i < 9; i++) {
-//     profileContentImages.children[i].style.backgroundColor = "#374775";
-//   }
-//   profileContentImages.style.backgroundColor = "#374775";
-//   profileShow.style.display = "none";
-// });
+imageCloseIcon.addEventListener("click", function (e) {
+  e.preventDefault();
+  for (let i = 0; i < 9; i++) {
+    profileContentImages.children[i].style.backgroundColor = "#1f666e";
+  }
+  profileContentImages.style.backgroundColor = "#1f666e";
+  profileShow.style.display = "none";
+});
 
 // /// sound ///
 // const soundShow = document.querySelector(".sound");
