@@ -1,8 +1,8 @@
-const url = "https://ba09580e-e7a2-4d8f-ac33-1e59e5594f17.mock.pstmn.io";
+const url = "https://6caa7857-e223-4452-a358-4d23018bc06a.mock.pstmn.io";
 const token = localStorage.getItem("token");
 
-function load_page() {
-  fetch(`${url}/api/configuration/javaScript`, {
+function loadPage() {
+  fetch(`${url}/api/configuration`, {
     method: "GET",
     headers: {
       Authorization: `Bearer ${token}`,
@@ -284,7 +284,7 @@ function getRtpProxyData(data) {
 }
 
 async function init() {
-  await load_page();
+  await loadPage();
 }
 
 init();
@@ -305,7 +305,7 @@ totalForm.addEventListener("submit", function (e) {
   e.preventDefault();
   const formData = Object.fromEntries(new FormData(e.target));
   console.log(formData);
-  const result = fetch(`${url}/api/configuration/submitForm/javaScript`, {
+  const result = fetch(`${url}/api/configuration/submitForm`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

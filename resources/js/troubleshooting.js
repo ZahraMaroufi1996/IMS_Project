@@ -1,13 +1,6 @@
-const url = "https://ba09580e-e7a2-4d8f-ac33-1e59e5594f17.mock.pstmn.io";
-const my_token = localStorage.getItem("token");
+const url = "https://6caa7857-e223-4452-a358-4d23018bc06a.mock.pstmn.io";
+const token = localStorage.getItem("token");
 const pingNodeForm = document.getElementById("ping-node-form");
-const error_close = document.querySelector(".error-close-icon");
-const show_error = document.querySelector(".show-error");
-
-error_close.addEventListener("click", function (e) {
-  e.preventDefault();
-  show_error.style.display = "none";
-});
 
 function showError(response) {
   /// error show ///
@@ -53,18 +46,15 @@ pingNodeForm.addEventListener("submit", function (e) {
     ping_node_ip: pingNodeIp.join("."),
   };
 
-  console.log(JSON.stringify(formData));
-
   fetch(`${url}/api/troubleshooting/ping`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${my_token}`,
+      Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify(formData),
   })
     .then((response) => {
-      console.log(response);
       showError(response);
       return response.json();
     })
@@ -88,12 +78,11 @@ packetCaptureForm.addEventListener("submit", function (e) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${my_token}`,
+      Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify(formData),
   })
     .then((response) => {
-      console.log(response);
       showError(response);
     })
     .catch((error) => {

@@ -1,4 +1,4 @@
-const url = "https://ba09580e-e7a2-4d8f-ac33-1e59e5594f17.mock.pstmn.io";
+const url = "https://6caa7857-e223-4452-a358-4d23018bc06a.mock.pstmn.io";
 const myForm = document.getElementById("login-form");
 myForm.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -18,7 +18,7 @@ myForm.addEventListener("submit", function (e) {
       console.log(token);
       localStorage.setItem("token", token);
       $("head").append(
-        `<meta http-equiv="refresh" content="0; URL=After_Login_Page.html" />`
+        `<meta http-equiv="refresh" content="0; URL=after-login.html" />`
       );
     })
     .catch((error) => {
@@ -40,7 +40,7 @@ languageElement.addEventListener("click", function (e) {
           name="username"
           placeholder="نام کاربری"
         />
-        <img src="images/Group 8492.svg" class="username-icon" />
+        <img src="resources/images/Group 8492.svg" class="username-icon" />
       </div>
       <div class="password-container d-flex flex-row justify-content-around">
         <input
@@ -49,13 +49,13 @@ languageElement.addEventListener("click", function (e) {
           name="password"
           placeholder="رمز عبور"
         />
-        <img src="images/Group 8493.svg" class="password-icon" />
+        <img src="resources/images/Group 8493.svg" class="password-icon" />
       </div>
       <button type="submit" class="submit-button">وارد شوید</button>`;
   } else {
     formContent = `
       <div class="username-container d-flex flex-row justify-content-around">
-        <img src="images/User_inverse.svg" class="username-icon" />
+        <img src="resources/images/User_inverse.svg" class="username-icon" />
         <input
           class="username-input-english"
           type="text"
@@ -64,7 +64,7 @@ languageElement.addEventListener("click", function (e) {
         />
       </div>
       <div class="password-container d-flex flex-row justify-content-around">
-        <img src="images/Pass_inverse.svg" class="password-icon" />
+        <img src="resources/images/Pass_inverse.svg" class="password-icon" />
         <input
           class="password-input-english"
           type="password"

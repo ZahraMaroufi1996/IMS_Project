@@ -1,9 +1,9 @@
 let nodeType = [];
 let nodeInfo;
-const url = "https://ba09580e-e7a2-4d8f-ac33-1e59e5594f17.mock.pstmn.io";
+const url = "https://6caa7857-e223-4452-a358-4d23018bc06a.mock.pstmn.io";
 const token = localStorage.getItem("token");
 
-function load_page() {
+function loadPage() {
   fetch(`${url}/api/topology`, {
     method: "GET",
     headers: {
@@ -33,7 +33,7 @@ function showError(response) {
     errorElement.style.display = "block";
     errorElement.style.backgroundColor = "#c65161";
     const errorMsg = document.getElementById("error-content");
-    errorMsg.innerHTML = `<img  src="images/error-logo.svg" class="error-icon"/>
+    errorMsg.innerHTML = `<img  src="resources/images/error-logo.svg" class="error-icon"/>
             <p id="error-message">
             Your request was failed !! (status code : ${response.status})
             </p>`;
@@ -41,7 +41,7 @@ function showError(response) {
     errorElement.style.display = "block";
     errorElement.style.backgroundColor = "#58cc87";
     const successMsg = document.getElementById("error-content");
-    successMsg.innerHTML = `<img  src="images/success Icon.svg" class="error-icon"/>
+    successMsg.innerHTML = `<img  src="resources/images/success Icon.svg" class="error-icon"/>
             <p id="error-message">
             Your request was done successfully !!
             </p>`;
@@ -119,22 +119,22 @@ function render(typeIndex) {
                         <img
                           class="close"
                           id="${item.id}pc"
-                          src="images/IMS_TOPOLOGY_images/close.svg"
+                          src="resources/images/IMS_TOPOLOGY_images/close.svg"
                         />
                         <img
                           class="tick p-1"
                           id="${item.id}pt"
-                          src="images/IMS_TOPOLOGY_images/tick.svg"
+                          src="resources/images/IMS_TOPOLOGY_images/tick.svg"
                         />
                         <img
                           class="pencil p-1"
                           id="${item.id}p"
-                          src="images/IMS_TOPOLOGY_images/pencil.svg"
+                          src="resources/images/IMS_TOPOLOGY_images/pencil.svg"
                         />
                         <img
                           class="trash p-1"
                           id="${item.id}"
-                          src="images/IMS_TOPOLOGY_images/trash-simple.svg"
+                          src="resources/images/IMS_TOPOLOGY_images/trash-simple.svg"
                         />
                       </div>
                     </form>
@@ -249,7 +249,7 @@ function showInitialValue(data) {
 }
 
 async function init() {
-  await load_page();
+  await loadPage();
 }
 
 init();
@@ -606,7 +606,7 @@ profileContentImages.addEventListener("click", function (e) {
     e.target.style.backgroundColor = "white";
     imageTickIcon.addEventListener("click", function (e) {
       e.preventDefault();
-      accountInfoImg.setAttribute("src", `images/${id}.svg`);
+      accountInfoImg.setAttribute("src", `resources/images/${id}.svg`);
     });
   }
 });

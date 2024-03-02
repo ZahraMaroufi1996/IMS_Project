@@ -1,19 +1,18 @@
 .monitoring-content {
   width: 18.33vw;
   height: 12.5vh;
-  /* background-color: brown; */
 }
 
-.monitoring-content p{
+.monitoring-content p {
   width: 100%;
   height: 2.22vh;
-  color: #83A79A;
+  color: #83a79a;
   margin: 5px 0;
   font-size: 1.8vh;
   font-family: "FiraGO", sans-serif;
 }
 
-.monitoring-content img{
+.monitoring-content img {
   width: 2.34vw;
   height: 3.99vh;
 }
