@@ -572,9 +572,7 @@ logOutIcon.addEventListener("click", function (e) {
 logOutConfirmButton.addEventListener("click", function (e) {
   e.preventDefault();
   localStorage.removeItem("token");
-  $("head").append(
-    `<meta http-equiv="refresh" content="0; URL=Login Page – Language Toggle.html" />`
-  );
+  $("head").append(`<meta http-equiv="refresh" content="0; URL=login.html" />`);
 });
 
 logOutCancelButton.addEventListener("click", function (e) {
